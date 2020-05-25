@@ -1,0 +1,195 @@
+.header {
+    &__banner {
+        height: 156px;
+        width: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    &__box,
+    &__nav,
+    &__wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    &__func {
+        display: flex;
+        align-items: center;
+        margin-right: 167px;
+    }
+
+    &__form {
+        position: relative;
+        width: 204px;
+        margin-left: auto;
+        background: #A3D0C3;
+
+        input::placeholder {
+            color: $gray-2;
+            font-family: 'OpenSans', sans-serif;
+        }
+
+        input,
+        button {
+            border: none;
+            outline: none;
+            background: transparent;
+        }
+
+        button {
+            height: 42px;
+            width: 42px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+            background-color: $purple-3;
+        }
+
+        button:before {
+            content: "";
+            position: absolute;
+            background-image: url("../img/icon/ar_right.png");
+            width: 12px;
+            height: 12px;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        input {
+            position: absolute;
+            width: 100%;
+            height: 43px;
+            padding-left: 43px;
+            font-family: 'OpenSans', sans-serif;
+            background-color: $gray-1;
+            border: 1px solid $gray-2;
+            left: 0px;
+        }
+    }
+
+    &__field {
+        position: relative;
+        padding-left: 32px;
+        width: 204px;
+        height: 42px;
+
+        &:after {
+            position: absolute;
+            content: "";
+            width: 13px;
+            height: 13px;
+            background-image: url(../img/icon/search.png);
+            left: 20px;
+            right: auto;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    }
+
+    &__link {
+        font-size: 16px;
+        line-height: 22px;
+        font-family: 'OpenSans', sans-serif;
+        letter-spacing: 1px;
+        transition: .3s;
+
+        &:hover {
+            color: $purple-3;
+        }
+
+        &:not(:last-child) {
+            margin-right: 53px;
+        }
+
+        &--active {
+            color: $purple-3;
+        }
+    }
+
+    &__logo {
+        height: 67px;
+        width: 223px;
+        margin-right: 47px;
+
+        .b-svg {
+            height: 100%;
+            width: 100%;
+            fill: $purple-1;
+        }
+    }
+
+    &__soc {
+        width: 24px;
+        height: 24px;
+
+        &:not(:last-child) {
+            margin-right: 29px;
+        }
+
+        &--vk {
+            .b-svg {
+                fill: $purple-1;
+            }
+        }
+
+        &--face {
+            fill: $blue-1;
+        }
+
+        &--ok {
+            fill: $orange-1;
+        }
+
+        .b-svg {
+            height: 100%;
+            width: 100%;
+        }
+
+        img {
+            display: block;
+            height: auto;
+            width: 100%;
+        }
+    }
+
+    &__top {
+        .container {
+            padding: 28px 20px 20px;
+        }
+    }
+
+    &__bottom {
+        border: 1px solid #D7D7D7;
+
+        .header__link {
+            &:not(:last-child) {
+                margin-right: 36px;
+            }
+        }
+
+        .header__nav {
+            margin-right: 67px;
+        }
+
+        .header__box {
+            margin-right: 28px;
+        }
+
+        .container {
+            padding: 12px 20px 13px;
+        }
+    }
+
+    &__special {
+        .container {
+            padding: 30px 20px 20px;
+        }
+    }
+}

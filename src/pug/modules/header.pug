@@ -1,0 +1,50 @@
+include ../mixins
+header.header
+    .header__special
+        .container
+            .header__banner(style="background-image:url(./img/banner.png)")
+
+    .header__inner
+        .header__top
+            .container
+                .header__wrapper
+                    .header__logo
+                        +svg('logo')
+                    .header__func
+                        .burger
+                            span
+                            span
+                            span
+                        .header__article Все рубрики
+                    .header__nav
+                        a(href="javascript:void(0);").header__link Фоторепортажи
+                        a(href="javascript:void(0);").header__link История города
+                        a(href="javascript:void(0);").header__link Подать объявление
+                        a(href="javascript:void(0);").header__link Архив
+                        a(href="javascript:void(0);").header__link Редакция
+        .header__bottom
+            .container
+                .header__wrapper
+                    .header__nav
+                            a(href="javascript:void(0);").header__link.header__link--active Экономика
+                            a(href="javascript:void(0);").header__link Политика
+                            a(href="javascript:void(0);").header__link Спорт
+                            a(href="javascript:void(0);").header__link Город
+                            a(href="javascript:void(0);").header__link Область
+                            a(href="javascript:void(0);").header__link Мир
+                            a(href="javascript:void(0);").header__link Россия
+                            a(href="javascript:void(0);").header__link События
+                            a(href="javascript:void(0);").header__link ММК
+                    .header__box
+                        a(href="javascript:void(0);").header__soc.header__soc--vk
+                            +svg('vk')
+                        a(href="javascript:void(0);").header__soc.header__soc--inst
+                            img(src="./img/icon/inst.png" alt="")
+                        a(href="javascript:void(0);").header__soc.header__soc--face
+                            +svg('face')
+                        a(href="javascript:void(0);").header__soc.header__soc--ok
+                            +svg('ok')
+                    form(class="header__form" action="" method="get")
+                        .header__field
+                            input(name="s" placeholder="Поиск" type="search")
+                        button(type="submit")

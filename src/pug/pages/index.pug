@@ -1,0 +1,386 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Главная страница'
+	- var pageClass = 'index-page';
+
+block content
+	.container
+		.wrapper
+			.wrapper__left
+				.news-basic
+					.news-basic__wrapper
+						.news-basic__left
+							.news-basic__img
+								img(src="./img/index/p1.jpg" alt="")
+						.news-basic__right
+							a(href="javascript:void(0);").news-basic__article Область
+							a(href="javascript:void(0);").news-basic__cover
+								.news-basic__title.title-1 Металл в "цифре"
+								.news-basic__text На международной конференции RPA Connect 4.0, прошедшей на площадке ММК, были представлены лучшие идеи, тенденции и практики развития программной роботизации в промышленной сфере.
+							.publish
+								.publish__wrapper
+									a(href="javascript:void(0);").publish__date 19 марта
+									a(href="javascript:void(0);").publish__person Фантасмогорьев Фантасмогорь
+				.news-set
+					.news-set__wrapper.news-set__wrapper--set
+						.news-set__items
+							.news-set__item
+								.news-set__pic
+									img(src="./img/index/p2.jpg" alt="")
+								.news-set__content
+									a(href="javascript:void(0);").news-set__article Действующие лица
+									a(href="javascript:void(0);").news-set__cover
+										.news-set__title Металл в "цифре"
+										.news-set__text Депутат Государственной Думы Виталий Бахметьев в последние дни февраля встретился с жителями сельских поселений и трудовыми коллективами Магнитогорска.
+									.publish
+										.publish__wrapper
+											a(href="javascript:void(0);").publish__date 19 марта
+											a(href="javascript:void(0);").publish__person Фантасмогорьев Фантасмогорь
+							.news-set__item
+								.news-set__pic
+									img(src="./img/index/p3.jpg" alt="")
+								.news-set__content
+									a(href="javascript:void(0);").news-set__article Действующие лица
+									a(href="javascript:void(0);").news-set__cover
+										.news-set__title Конституционная неделя
+										.news-set__text Депутат Государственной Думы Виталий Бахметьев в последние дни февраля встретился с жителями сельских поселений и трудовыми коллективами Магнитогорска.
+									.publish
+										.publish__wrapper
+											a(href="javascript:void(0);").publish__date 19 марта
+											a(href="javascript:void(0);").publish__person Фантасмогорьев Андрей
+					.news-set__wrapper.news-set__wrapper--basic
+						.news-set__item
+									.news-set__pic
+										img(src="./img/index/p4.jpg" alt="")
+									.news-set__content
+										a(href="javascript:void(0);").news-set__article Действующие лица
+										a(href="javascript:void(0);").news-set__cover 
+											.news-set__title С чувством уважения к истории
+											.news-set__text В детской библиотеке № 2 прошла тематическая встреча учащихся Магнитогорского государственного многопрофильного лицея при МГТУ имени Г. И. Носова с представителями военно-патриотического клуба "Гранит" и хуторского казачьего общества "Хутор Могутовский".
+										.publish
+											.publish__wrapper
+												a(href="javascript:void(0);").publish__date 19 марта
+												a(href="javascript:void(0);").publish__person Фантасмогорьев Андрей
+
+				.news-actual
+					.news-actual__wrapper
+						.news-actual__left
+							a(href="javascript:void(0);").news-actual__title.title-2 Свежие новости
+							.news-actual__items
+								.news-actual__item
+									.news-actual__pic
+										img(src="./img/index/p5.jpg" alt="")
+									.news-actual__content
+										.news-actual__date 17:41
+										.news-actual__text Туристов застали врасплох. Коронавирус мутирует в экономическую инфекцию.
+								.news-actual__item
+									.news-actual__pic
+										img(src="./img/index/p8.jpg" alt="")
+									.news-actual__content
+										.news-actual__date 17:41
+										.news-actual__text Не доверяй и проверяй. У мошенников всё новые методы отъёма денег у населения.
+								.news-actual__item
+									.news-actual__pic
+										img(src="./img/index/p9.jpg" alt="")
+									.news-actual__content
+										.news-actual__date 17:41
+										.news-actual__text Никто не обещал, что будет легко. Сегодня Магнитка сыграет в столице Казахстана второй матч Кубка Гагарина.
+								.news-actual__item
+									.news-actual__pic
+										img(src="./img/index/p10.jpg" alt="")
+									.news-actual__content
+										.news-actual__date 17:41
+										.news-actual__text Генеральный директор ПАО "ММК": обедать нужно в столовых
+								.news-actual__item
+									.news-actual__pic
+										img(src="./img/index/p11.jpg" alt="")
+									.news-actual__content
+										.news-actual__date 17:41
+										.news-actual__text На имя председателя совета директоров ПАО "ММК" В. Ф. Рашникова поступила благодарность от ЦБ России.
+								.news-actual__item
+									.news-actual__pic
+										img(src="./img/index/p12.jpg" alt="")
+									.news-actual__content
+										.news-actual__date 17:41
+										.news-actual__text Помощь от города и комбината
+
+						.news-actual__right
+							a(href="javascript:void(0);").news-actual__title.title-2 Популярное
+							.news-actual__items
+								.news-actual__item
+									.news-actual__lft
+										img(src="./img/index/p6.jpg" alt="")
+									.news-actual__rgh
+										.news-actual__category Область
+										a(href="javascript:void(0);").news-actual__article Навстречу весне
+										.news-actual__txt ДКМ имени Серго Орджоникидзе был наполнен цветами, улыбками и красивыми женщинами, коими всегда славилась Магнитка.
+										.publish
+											.publish__wrapper
+												.publish__date 19 марта
+												a(href="javascript:void(0);").publish__person Фантасмогорьев Андрей
+								.news-actual__item
+									.news-actual__lft
+										img(src="./img/index/p13.jpg" alt="")
+									.news-actual__rgh
+										.news-actual__category Вокруг света
+										a(href="javascript:void(0);").news-actual__article Загадочный Урарту
+										.news-actual__txt На территории Армянского нагорья когда-то располагалось древнее царство.
+										.publish
+											.publish__wrapper
+												.publish__date 19 марта
+												a(href="javascript:void(0);").publish__person Фантасмогорьев Андрей
+								.news-actual__item
+									.news-actual__lft
+										img(src="./img/index/p14.jpg" alt="")
+									.news-actual__rgh
+										.news-actual__category Спорт
+										a(href="javascript:void(0);").news-actual__article Чуда не произошло
+										.news-actual__txt "Металлург" завершил свой двенадцатый сезон в Континентальной хоккейной лиге.
+										.publish
+											.publish__wrapper
+												.publish__date 19 марта
+												a(href="javascript:void(0);").publish__person Фантасмогорьев Андрей
+								.news-actual__item.news-actual__item--banner
+									img(src="./img/index/p7.jpg" alt="")
+								
+				.news-most
+					.news-most__wrapper
+						.news-most__left
+							a(href="javascript:void(0);").news-actual__title.title-2 Самое читаемое
+							.news-most__items
+								.news-most__item
+									.news-most__lft
+										.news-most__pic
+											img(src="./img/icon/eye.svg" alt="")
+										.news-most__count 1211
+									.news-most__rght
+										a(href="javascript:void(0);").news-most__txt <span>На Южном Урале ФСБ</span> задержали автомобиль с восемью коробками одноразовых хирургических перчаток, которые относятся к временно запрещённым для вывоза из России.
+								.news-most__item
+										.news-most__lft
+											.news-most__pic
+												img(src="./img/icon/eye.svg" alt="")
+											.news-most__count 1211
+										.news-most__rght
+											a(href="javascript:void(0);").news-most__txt <span>Жители Челябинской области</span>, прибывшие домой из стран с неблагоприятной ситуацией по коронавирусной инфекции, должны самоизолироваться на две недели.
+								.news-most__item
+									.news-most__lft
+										.news-most__pic
+											img(src="./img/icon/eye.svg" alt="")
+										.news-most__count 1211
+									.news-most__rght
+										a(href="javascript:void(0);").news-most__txt <span>Специалисты из Уральского</span> федерального округа востребованы не только на родине, но и за рубежом.
+								.news-most__item
+									.news-most__lft
+										.news-most__pic
+											img(src="./img/icon/eye.svg" alt="")
+										.news-most__count 1211
+									.news-most__rght
+										a(href="javascript:void(0);").news-most__txt <span>В Краснодаре стартует</span> "финал восьми" Студенческой лиги ВТБ, в который вновь пробились "Стальные сердца".
+								.news-most__item
+									.news-most__lft
+										.news-most__pic
+											img(src="./img/icon/eye.svg" alt="")
+										.news-most__count 1211
+									.news-most__rght
+										a(href="javascript:void(0);").news-most__txt <span>Малкин забивает</span>, но "Питтсбург" проигрывает.
+								.news-most__item
+									.news-most__lft
+										.news-most__pic
+											img(src="./img/icon/eye.svg" alt="")
+										.news-most__count 1211
+									.news-most__rght
+										a(href="javascript:void(0);").news-most__txt <span>В Краснодаре стартует</span> "финал восьми" Студенческой лиги ВТБ, в который вновь пробились "Стальные сердца".
+						.news-most__right
+							a(href="javascript:void(0);").news-actual__title.title-2 Экспертиза
+							.news-most__items
+								.news-most__item
+									.news-most__pic
+										img(src="./img/index/p15.jpg" alt="")
+									.news-most__content
+										a(href="javascript:void(0);").news-most__article.title-3 На пенсию? Ещё потрудимся
+										.news-most__text Юные инспекторы движения, текст в две строчки.
+								.news-most__item
+									.news-most__pic
+										img(src="./img/index/p16.jpg" alt="")
+									.news-most__content
+										a(href="javascript:void(0);").news-most__article.title-3 Чужие долги никому не нужны
+										.news-most__text Юные инспекторы движения, текст в две строчки.
+								.news-most__item
+									.news-most__pic
+										img(src="./img/index/p17.jpg" alt="")
+									.news-most__content
+										a(href="javascript:void(0);").news-most__article.title-3 Мастер-класс для активистов
+										.news-most__text Юные инспекторы движения, текст в две строчки.
+								.news-most__item
+									.news-most__pic
+										img(src="./img/index/p18.jpg" alt="")
+									.news-most__content
+										a(href="javascript:void(0);").news-most__article.title-3 Вода не бесплатная
+										.news-most__text Юные инспекторы движения, текст в две строчки.
+								.news-most__item
+									.news-most__pic
+										img(src="./img/index/p19.jpg" alt="")
+									.news-most__content
+										a(href="javascript:void(0);").news-most__article.title-3 Эффективные тенденции
+										.news-most__text Юные инспекторы движения, текст в две строчки.
+								
+			.wrapper__right
+				.news-media
+					<video muted="" loop="" preload="">
+							<source data-src="/upload/iblock/577/57749c45214e5eaee1705ceb348532ac.mp4" type="video/mp4" muted="muted">
+					</video>
+				.news-survey
+					a(href="javascript:void(0);").news-survey__title.title-3 Что вы думаете об обязательном тестировании на коронавирусную инфекцию?
+					form.news-survey__form(method="get")
+						input(type="radio" id="qu1")
+						label(for="qu1")
+				.news-city
+					a(href="javascript:void(0);").news-city__title.title-2 История города
+					.news-city__items
+						.news-city__item
+							.news-city__pic(style="background-image: url(./img/history/city/hc1.jpg);")
+							.news-city__title.title-3 Газета в рабочей спецовке
+		.news-photo
+			a(href="javascript:void(0);").news-actual__title.title-2 Фоторепортажи
+			.news-photo__wrapper
+				.news-photo__block
+					.news-photo__pic
+						img(src="./img/index/p20.jpg" alt="")
+					.news-photo__content
+						.news-photo__article События
+						a(href="javascript:void(0);").news-photo__cover
+								.news-photo__title.title-2 Навстречу весне
+								.news-photo__info ДКМ имени Серго Орджоникидзе был наполнен цветами, улыбками и красивыми женщинами, коими всегда славилась Магнитка.		
+				.news-photo__items
+					.news-photo__item
+						.news-photo__pic
+							img(src="./img/index/p21.jpg" alt="")
+						.news-photo__content
+							.news-photo__article Вокруг света
+							a(href="javascript:void(0);").news-photo__cover
+								.news-photo__title.title-2 Страна открытого неба
+								.news-photo__info Индия считается одним из самых бюджетных направлений для тех, кто любит море и солнце.
+					.news-photo__item
+						.news-photo__pic
+							img(src="./img/index/p22.jpg" alt="")
+						.news-photo__content
+							.news-photo__article Вокруг света
+							a(href="javascript:void(0);").news-photo__cover
+								.news-photo__title.title-2 Загадочный Урарту
+								.news-photo__info На территории Армянского нагорья когда-то располагалось древнее царство.
+					.news-photo__item
+						.news-photo__pic
+							img(src="./img/index/p23.jpg" alt="")
+						.news-photo__content
+							.news-photo__article Спорт
+							a(href="javascript:void(0);").news-photo__cover
+								.news-photo__title.title-2 Чуда не произошло
+								.news-photo__info "Металлург" завершил свой двенадцатый сезон в Континентальной хоккейной лиге.
+		.news-slider
+			.news-slider__grid
+				.news-slider__gallery
+					.swiper-wrapper
+						a(href="javascript:void(0);").swiper-slide
+							img(src="./img/index/p31.jpg" alt="")
+						a(href="javascript:void(0);").swiper-slide
+							img(src="./img/index/p30.jpg" alt="")
+				.news-slider__box
+					.news-slider__thumbs
+						.swiper-wrapper
+								.swiper-slide 
+									a(href="javascript:void(0);").news-slider__article Социум
+									a(href="javascript:void(0);").news-slider__cover
+										.news-slider__title.title-3 Память Магнитки
+										.news-slider__txt В городе появилась новая общественная организация. Геннадий Васильев более тридцати лет жизни посвятил историческим исследованиям. Недавно закончил двенадцатый том "Книги памяти" со списками репрессированных и рассказом о времени, в котором они жили.
+								.swiper-slide 
+									a(href="javascript:void(0);").news-slider__article Социум
+									a(href="javascript:void(0);").news-slider__cover
+										.news-slider__title.title-3 Память Магнитки 2
+										.news-slider__txt В городе появилась новая общественная организация. 
+					.news-slider__func
+						.news-slider__pagination
+							.news-slider__arrow.news-slider__arrow--prev
+								<svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M5.94971 1L0.999959 5.94975L5.94971 10.8995" stroke="#49474A"/>
+								</svg>
+							.news-slider__arrow.news-slider__arrow--next
+								<svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M5.94971 1L0.999959 5.94975L5.94971 10.8995" stroke="#49474A"/>
+								</svg>
+						.publish
+							.publish__wrapper
+								.publish__date 19 марта
+								a(href="javascript:void(0);").publish__person Фантасмогорьев Фантасмогорь
+							
+							
+
+
+		
+		.news-archive
+			.news-archive__wrapper
+				.news-archive__left
+					a(href="javascript:void(0);").news-actual__title.title-2 Редакция
+					.news-archive__items
+						.news-archive__item
+							.news-archive__photo
+								img(src="./img/index/p24.jpg" alt="1")
+							.news-archive__content 
+								.news-archive__name.title-3 Фролов Олег Валерьевич
+								.news-archive__job Корреспондент
+						.news-archive__item
+							.news-archive__photo
+								img(src="./img/index/p25.jpg" alt="1")
+							.news-archive__content 
+								.news-archive__name.title-3 Юлин Максим
+								.news-archive__job Главный редактор
+						.news-archive__item
+							.news-archive__photo
+								img(src="./img/index/p26.jpg" alt="1")
+							.news-archive__content 
+								.news-archive__name.title-3 Кондратьева Алина
+								.news-archive__job Редактор технический
+						.news-archive__item
+							.news-archive__photo
+								img(src="./img/index/p27.jpg" alt="1")
+							.news-archive__content 
+								.news-archive__name.title-3 Фролов Олег Валерьевич
+								.news-archive__job Главный редактор
+							.news-archive__right
+				.news-archive__right
+					a(href="javascript:void(0);").news-actual__title.title-2 Видеоархив
+					.news-archive__blocks
+						.news-archive__block
+							a(href="javascript:void(0);" style="background-image: url(./img/index/p28.jpg);").news-archive__lft
+								.news-archive__cover
+									.news-archive__btn
+									.news-archive__time 22:00
+							.news-archive__rght
+								a(href="javascript:void(0);").news-archive__text Строительство первой палатки в Магнитогорске
+						.news-archive__block
+							a(href="javascript:void(0);" style="background-image: url(./img/index/p29.jpg);").news-archive__lft
+								.news-archive__cover
+									.news-archive__btn
+									.news-archive__time 22:00
+							.news-archive__rght
+								a(href="javascript:void(0);").news-archive__text Памятник «ТЫЛ ФРОНТУ», история монумента
+						.news-archive__block
+							a(href="javascript:void(0);" style="background-image: url(./img/index/p30.jpg);").news-archive__lft
+								.news-archive__cover
+									.news-archive__btn
+									.news-archive__time 22:00
+							.news-archive__rght
+								a(href="javascript:void(0);").news-archive__text ММК. С самого начала магнитогорска вплоть до сегодняшних дней
+		.news-temp
+			img(src="./img/banner2.jpg" alt="")
+							
+							
+							
+
+					
+
+		
+							
+
+
+block script

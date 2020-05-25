@@ -1,0 +1,34 @@
+.publish {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 32px;
+
+    &__wrapper {
+        display: flex;
+    }
+
+    &__date {
+        margin-right: 23px;
+    }
+
+    &__person {
+        position: relative;
+        padding-left: 22px;
+        letter-spacing: 0.5px;
+
+        &:before {
+            position: absolute;
+            content: "";
+            background-image: url('../img/icon/user.png');
+            background-repeat: no-repeat;
+            width: 14px;
+            height: 14px;
+            left: 0;
+            bottom: 0;
+            top: 0;
+            margin: auto;
+        }
+    }
+}

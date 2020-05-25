@@ -1,0 +1,22 @@
+@font-face{
+    font-family: 'OpenSans';
+    src: local('OpenSans'), url('../fonts/OpenSans/opensans.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face{
+    font-family: 'OpenSans';
+    src: local('OpenSans'), url('../fonts/OpenSans/opensansbold.ttf') format('ttf');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face{
+    font-family: 'MinionPro';
+    src: local('MinionPro'), url('../fonts/minion_pro/MinionPro-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

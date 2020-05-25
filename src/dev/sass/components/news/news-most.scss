@@ -1,0 +1,122 @@
+.news-most {
+    margin-top: 30px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid $black;
+    max-width: 975px;
+
+    &__wrapper {
+        display: flex;
+    }
+
+    &__items {
+        margin-top: 24px;
+        padding: 30px 30px 42px 30px;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+
+        &:not(:first-child) {
+            margin-top: 7px;
+        }
+
+        &:last-child {
+            .news-most__rght {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    &__rght {
+        min-width: 423px;
+        padding-bottom: 11px;
+        border-bottom: 1px solid $gray-3;
+    }
+
+    &__lft {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 18px;
+        align-self: flex-start;
+    }
+
+    &__left {
+        position: relative;
+        max-width: 530px;
+        padding-right: 19px;
+        margin-right: 19px;
+        box-sizing: content-box;
+
+        &:after {
+            position: absolute;
+            content: "";
+            height: 495px;
+            width: 1px;
+            background-color: #d7d7d7;
+            right: 0;
+            bottom: 0px;
+            top: auto;
+        }
+    }
+
+    &__right {
+        max-width: 407px;
+
+        .title-3 {
+            //  font-size: 21px;
+        }
+
+        .news-most__items {
+            padding: 0;
+            margin-top: 26px;
+        }
+
+        .news-most__item {
+            &:not(:first-child) {
+                margin-top: 25px;
+            }
+        }
+
+        .news-most__pic {
+            margin-right: 18px;
+            align-self: flex-start;
+            height: 66px;
+            width: 94px;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    &__text {
+        margin-top: 5px;
+        max-width: 220px;
+    }
+
+    &__txt {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: .45px;
+
+        span {
+            color: $purple-3;
+        }
+    }
+
+    &__count {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 160%;
+        text-align: center;
+        color: $purple-3;
+    }
+}

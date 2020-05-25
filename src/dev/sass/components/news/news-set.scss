@@ -1,0 +1,132 @@
+.news-set {
+    padding-bottom: 24px;
+    margin-top: 32px;
+    border-bottom: 1px solid $black;
+
+    &__wrapper {
+        display: flex;
+
+        &:last-child {
+            margin-top: 32px;
+        }
+
+
+        &--set {
+            padding-bottom: 34px;
+
+            border-bottom: 1px solid $gray-3;
+
+            .news-set__items {
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: -70px;
+            }
+
+            .news-set__item {
+                position: relative;
+                display: flex;
+                width: calc(50% - 30px);
+                margin-left: 30px;
+                padding-left: 40px;
+
+                &:last-child {
+                    &:after {
+                        position: absolute;
+                        content: "";
+                        height: 217px;
+                        width: 2px;
+                        background-color: $gray-3;
+                        left: 0;
+                        margin: auto;
+                    }
+                }
+            }
+
+            .news-set__pic {
+                height: 120px;
+                width: 120px;
+                margin-right: 18px;
+            }
+
+            .news-set__content {
+                width: calc(100% - 120px - 18px);
+            }
+
+            .publish {
+                margin-top: 16px;
+            }
+        }
+
+        &--basic {
+            .news-set__pic {
+                width: 363px;
+                height: 262px;
+                margin-right: 24px;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .news-set__content {
+                width: calc(100% - 363px - 24px);
+                padding-top: 36px;
+            }
+
+
+            .news-set__item {
+                display: flex;
+            }
+        }
+    }
+
+    &__article {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 160%;
+        color: $purple-3;
+    }
+
+    &__title {
+        font-family: "MinionPro", sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 30px;
+        display: flex;
+        align-items: flex-end;
+        letter-spacing: 0.05px;
+    }
+
+    &__text {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 160%;
+        margin-top: 8px;
+    }
+
+    &__content {
+        max-width: 550px;
+    }
+
+    &__pic {
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__cover {
+        display: block;
+        margin-top: 20px;
+
+        &:hover .news-set__title {
+            color: $purple-1;
+        }
+    }
+}

@@ -1,0 +1,15 @@
+.wrapper {
+    display: flex;
+    margin-top: 32px;
+
+    &__right {
+        max-width: 320px;
+        width: 100%;
+    }
+
+    &__left {
+        margin-right: 18px;
+        max-width: 990px;
+        width: 100%;
+    }
+}
