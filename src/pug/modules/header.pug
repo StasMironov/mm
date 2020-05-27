@@ -46,5 +46,6 @@ header.header
                             +svg('ok')
                     form(class="header__form" action="" method="get")
                         .header__field
-                            input(name="s" placeholder="Поиск" type="search")
-                        button(type="submit")
+                            input(name="s" placeholder="Поиск" type="search" id="input-search")
+                            +svg('search')
+                        button(type="submit" class="mf-search")

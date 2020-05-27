@@ -46,6 +46,9 @@
             right: 0;
             cursor: pointer;
             background-color: $purple-3;
+            opacity: 0;
+            visibility: hidden;
+            transition: .2s ease-out;
         }
 
         button:before {
@@ -67,9 +70,29 @@
             height: 43px;
             padding-left: 43px;
             font-family: 'OpenSans', sans-serif;
-            background-color: $gray-1;
+            background-color: white;
             border: 1px solid $gray-2;
             left: 0px;
+            transition: .2s ease-out;
+            cursor: pointer;
+            padding-right: 69px;
+
+            &:hover {
+                background-color: $gray-1;
+                border-color: $basic;
+            }
+
+            &:focus {
+                background-color: white;
+                border-color: $basic;
+            }
+        }
+
+        input[type='search']::-webkit-search-decoration,
+        input[type='search']::-webkit-search-cancel-button,
+        input[type='search']::-webkit-search-results-button,
+        input[type='search']::-webkit-search-results-decoration {
+            display: none;
         }
     }
 
@@ -79,17 +102,18 @@
         width: 204px;
         height: 42px;
 
-        &:after {
+        .b-svg {
+            fill: none;
+            stroke: $gray-2;
+            z-index: 1;
             position: absolute;
-            content: "";
-            width: 13px;
             height: 13px;
-            background-image: url(../img/icon/search.png);
-            left: 20px;
-            right: auto;
+            width: 13px;
             top: 0;
             bottom: 0;
             margin: auto;
+            left: 20px;
+            transition: .2s ease-out;
         }
     }
 

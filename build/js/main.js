@@ -1,5 +1,31 @@
 "use strict";
 
+//===== Function check element ==========//
+jQuery.fn.exists = function () {
+  return $(this).length;
+};
+
+$("#input-search").on('keyup', function () {
+  if (!$(this).val()) {
+    $(".mf-search").removeClass("mf-search--active");
+    $(".header__field .b-svg").css({
+      "stroke": "#DBD4E0"
+    });
+  } else {
+    $(".mf-search").addClass("mf-search--active");
+    $(".header__field .b-svg").css({
+      "stroke": "#27202C"
+    });
+  }
+});
+$("#input-search").focusout(function () {
+  if (!$(this).val()) {
+    $(".mf-search").removeClass("mf-search--active");
+    $(".header__field .b-svg").css({
+      "stroke": "#DBD4E0"
+    });
+  }
+});
 var newsGallery = new Swiper('.news-slider__gallery', {
   spaceBetween: 10,
   slidesPerView: 1,

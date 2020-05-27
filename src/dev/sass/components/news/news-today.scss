@@ -1,0 +1,33 @@
+.news-today {
+    margin-top: 30px;
+
+    &__block {
+        display: block;
+        max-width: 318px;
+        height: 212px;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        &--other {
+            height: 228px;
+            margin-top: 32px;
+        }
+    }
+
+    &__item {
+        margin-top: 32px;
+    }
+
+    &__title {
+        padding: 0;
+        text-align: center;
+
+        &:hover {
+            color: initial;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+.news-media {
+    max-width: 318px;
+    height: 194px;
+    padding-bottom: 32px;
+    box-sizing: content-box;
+    border-bottom: 1px solid $gray-3;
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}

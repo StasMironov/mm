@@ -1,0 +1,90 @@
+.news-survey {
+
+    padding-bottom: 34px;
+    border-bottom: 1px solid $gray-3;
+    margin-top: 30px;
+
+    &__title {
+        max-width: 300px;
+    }
+
+    &__form {
+        margin-top: 14px;
+
+        input {
+            position: absolute;
+            z-index: -1;
+            opacity: 0;
+            margin: 10px 0 0 7px;
+        }
+
+        input:checked+.news-survey__text:after {
+            opacity: 1;
+        }
+    }
+
+    &__radio {
+        display: block;
+
+        &:not(:first-child) {
+            margin-top: 10px;
+        }
+    }
+
+    &__btn {
+        height: 56px;
+        max-width: 186px;
+        margin-top: 20px;
+        background-color: $gray-1;
+        border: 1px solid $black;
+        cursor: pointer;
+        transition: .2s ease-out;
+
+        &:hover {
+            background-color: $purple-3;
+            color: white
+        }
+    }
+
+    &__text {
+        position: relative;
+        padding: 0 0 0 31px;
+        cursor: pointer;
+        font-size: 14px;
+        line-height: 160%;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 0;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: $gray-5;
+            transition: .2s ease-out;
+        }
+
+        &:hover:before {
+            background-color: $black;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 0;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: $purple-3;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .5);
+            opacity: 0;
+            transition: .2s ease-out;
+        }
+    }
+
+    .btn {
+        max-width: 186px;
+    }
+}

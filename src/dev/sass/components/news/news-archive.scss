@@ -139,6 +139,11 @@
         display: block;
         letter-spacing: 0.5px;
         max-width: 200px;
+        transition: .2s ease-out;
+
+        &:hover {
+            color: $purple-3;
+        }
     }
 
     &__photo {
@@ -154,8 +159,28 @@
     }
 
     &__photo {
+        position: relative;
         min-width: 206px;
         max-width: 206px;
+
+        &:after {
+            position: absolute;
+            content: "";
+            background-image: url("../img/icon/hover-block2.svg");
+            background-color: white;
+            border-radius: 17px;
+            height: 34px;
+            width: 34px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            opacity: 0;
+            transition: .3s ease-in-out;
+        }
     }
 
     &__job {
@@ -163,8 +188,19 @@
     }
 
     &__name {
+        display: block;
         line-height: 25px;
         max-width: 180px;
+    }
+
+    &__item:hover .news-archive__photo:after {
+        opacity: 1;
+    }
+
+    &__item {
+        &:hover .title-3 {
+            color: $purple-3;
+        }
     }
 
 }

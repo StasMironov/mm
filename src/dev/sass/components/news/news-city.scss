@@ -1,6 +1,32 @@
 .news-city {
+    margin-top: 32px;
+    padding-bottom: 27px;
+    border-bottom: 1px solid $gray-3;
+
+
     &__pic {
         height: 200px;
         max-width: 318px;
+    }
+
+    &__items {
+        margin-top: 32px;
+    }
+
+    &__item {
+        display: block;
+
+        &:hover .title-3 {
+            color: $purple-3;
+        }
+
+        &:not(:first-child) {
+            margin-top: 36px;
+        }
+    }
+
+    &__title {
+        margin-top: 12px;
+        max-width: 245px;
     }
 }

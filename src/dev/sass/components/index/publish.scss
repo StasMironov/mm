@@ -5,6 +5,10 @@
     line-height: 22px;
     margin-top: 32px;
 
+    @media(max-width: 1235px) {
+        margin-top: 16px;
+    }
+
     &__wrapper {
         display: flex;
     }

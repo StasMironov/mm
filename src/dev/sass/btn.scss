@@ -1,0 +1,16 @@
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    margin-top: 20px;
+    background-color: $gray-1;
+    border: 1px solid $black;
+    cursor: pointer;
+    transition: .2s ease-out;
+
+    &:hover {
+        background-color: $purple-3;
+        color: white
+    }
+}

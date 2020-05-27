@@ -82,7 +82,11 @@
 
     &__cover {
         display: block;
-        margin-top: 41px;
+        margin-top: 37px;
+
+        &:hover .title-3 {
+            color: $purple-1;
+        }
     }
 
     &__txt {
@@ -116,17 +120,28 @@
             opacity: 1;
         }
 
+        &:hover .b-svg {
+            stroke: $purple-3;
+        }
+
         .b-svg {
-            height: 100%;
-            width: 100%;
+            height: 12px;
+            width: 12px;
         }
 
         &:not(:last-child) {
             margin-right: 22px;
         }
 
-        &:last-child {
+        &:first-child {
             transform: scale(-1, 1);
+        }
+
+
+        .b-svg {
+            fill: none;
+            stroke: $basic;
+            stroke-width: 2;
         }
     }
 

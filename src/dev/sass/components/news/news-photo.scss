@@ -3,7 +3,21 @@
     padding-bottom: 32px;
     border-bottom: 1px solid $black;
 
+    &__cover {
+        display: block;
+        margin-top: 16px;
+
+        @media(max-width: 1235px) {
+            margin-top: 8px;
+        }
+
+        &:hover .title-2 {
+            color: $purple-3;
+        }
+    }
+
     &__article {
+        display: block;
         font-style: normal;
         font-weight: normal;
         font-size: 14px;
@@ -20,10 +34,7 @@
         letter-spacing: 1px;
     }
 
-    &__cover {
-        display: block;
-        margin-top: 16px;
-    }
+
 
     &__article {
         margin-top: 22px;
@@ -32,15 +43,12 @@
     &__wrapper {
         display: flex;
         margin-top: 24px;
+
+        @media(max-width: 1235px) {
+            margin-left: -24px;
+        }
     }
 
-    &__block {
-        max-width: 384px;
-        width: 100%;
-        padding-right: 24px;
-        margin-right: 24px;
-        box-sizing: content-box;
-    }
 
     &__items {
         display: flex;
@@ -53,6 +61,19 @@
         margin-left: 24px;
         padding-left: 24px;
         border-left: 1px solid $gray-3;
+
+        &--block {
+            max-width: 384px;
+            width: 100%;
+            padding-left: 0;
+            border-left: none;
+            margin-left: 0;
+
+            @media(max-width: 1235px) {
+                width: calc(33.333% - 24px);
+                padding-left: 24px;
+            }
+        }
     }
 
     &__pic {
