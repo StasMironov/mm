@@ -9,6 +9,12 @@
         margin-top: 16px;
     }
 
+    @media(max-width: 1024px) {
+        margin-top: 7px;
+        font-size: 12px;
+        line-height: 19px;
+    }
+
     &__wrapper {
         display: flex;
     }

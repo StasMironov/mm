@@ -42,7 +42,7 @@ body {
   padding: 0 20px 0px;
   box-sizing: border-box;
 
-  @media (max-width:1023px) {
+  @media (max-width:1024px) {
     padding: 0 15px 30px;
   }
 }
@@ -94,6 +94,11 @@ input::-ms-clear {
   line-height: 42px;
   transition: .2s ease-out;
 
+  @media (max-width:1024px) {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
   &:hover {
     color: $purple-3;
   }
@@ -108,6 +113,15 @@ input::-ms-clear {
   line-height: 33px;
   transition: .2s ease-out;
   padding-right: 30px;
+
+  @media (max-width:1024px) {
+    font-size: 25px;
+    line-height: 30px;
+  }
+
+  @media (max-width:600px) {
+    padding-right: 17px;
+  }
 
   &:hover {
     color: $purple-3;
@@ -138,6 +152,11 @@ input::-ms-clear {
   font-size: 22px;
   line-height: 26px;
   transition: .2s ease-out;
+
+  @media (max-width:1024px) {
+    font-size: 22px;
+    line-height: 26px;
+  }
 
   &:hover {
     color: $purple-3;
