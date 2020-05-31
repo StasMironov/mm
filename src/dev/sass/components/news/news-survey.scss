@@ -28,6 +28,10 @@
 
         &:not(:first-child) {
             margin-top: 10px;
+
+            @media(max-width: 600px) {
+                margin-top: 8px
+            }
         }
     }
 
@@ -56,7 +60,7 @@
         &:before {
             content: '';
             position: absolute;
-            top: 3px;
+            top: 5px;
             left: 0;
             width: 15px;
             height: 15px;
@@ -72,7 +76,7 @@
         &:after {
             content: '';
             position: absolute;
-            top: 3px;
+            top: 5px;
             left: 0;
             width: 15px;
             height: 15px;

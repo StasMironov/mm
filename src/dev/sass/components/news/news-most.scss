@@ -6,6 +6,7 @@
 
     @media(max-width: 600px) {
         padding-bottom: 6px;
+        display: none;
     }
 
     &__wrapper {
@@ -122,6 +123,10 @@
             max-width: 100%;
         }
 
+        @media(max-width: 600px) {
+            display: none;
+        }
+
         &:after {
             position: absolute;
             content: "";
@@ -147,6 +152,17 @@
             @media(max-width: 600px) {
                 background-color: transparent;
                 padding: 0;
+            }
+        }
+
+        &--hidden {
+            display: none;
+
+            @media(max-width: 600px) {
+                display: block;
+                margin-top: 30px;
+                padding-bottom: 16px;
+                border-bottom: 1px solid $black;
             }
         }
     }

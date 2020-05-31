@@ -15,11 +15,27 @@
         @media(max-width: 1235px) {
             max-width: 270px;
         }
+
+        @media(max-width: 1024px) {
+            max-width: 100%;
+            padding-top: 0;
+        }
+
+        .news-media,
+        .news-survey {
+            @media(max-width: 1024px) {
+                display: none;
+            }
+        }
     }
 
     &__left {
         margin-right: 18px;
         max-width: 990px;
         width: 100%;
+
+        @media(max-width: 1024px) {
+            margin-right: 0;
+        }
     }
 }

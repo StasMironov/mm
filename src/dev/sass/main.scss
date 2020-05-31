@@ -121,6 +121,8 @@ input::-ms-clear {
 
   @media (max-width:600px) {
     padding-right: 17px;
+    font-size: 25px;
+    line-height: 30px;
   }
 
   &:hover {
@@ -156,6 +158,11 @@ input::-ms-clear {
   @media (max-width:1024px) {
     font-size: 22px;
     line-height: 26px;
+  }
+
+  @media (max-width:600px) {
+    font-size: 22px;
+    line-height: 120%;
   }
 
   &:hover {
@@ -209,3 +216,4 @@ input::-ms-clear {
 @import "./components/news/news-survey.scss";
 @import "./components/news/news-today.scss";
 @import "./components/news/news-media.scss";
+@import "./components/news/news-hidden.scss";
