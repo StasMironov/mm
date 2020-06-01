@@ -6,6 +6,24 @@
     &__grid {
         position: relative;
         height: 515px;
+
+        @media(max-width: 1024px) {
+            height: 450px;
+        }
+
+        @media(max-width: 920px) {
+            height: 370px;
+        }
+
+
+        @media(max-width: 768px) {
+            height: 300px;
+        }
+
+        @media(max-width: 768px) {
+            height: 235px;
+        }
+
     }
 
     &__gallery {
@@ -60,15 +78,42 @@
         background-color: $gray-1;
         padding: 53px 37px 52px 51px;
         z-index: 1;
+
+
+        @media(max-width: 1024px) {
+            max-width: 530px;
+            height: 300px;
+            padding: 30px 30px 40px 51px;
+        }
+
+        @media(max-width: 920px) {
+            display: flex;
+            justify-content: flex-end;
+            max-width: 100%;
+            padding: 30px 81px 30px 16px;
+            height: 100%;
+            top: auto;
+            background: transparent;
+        }
+
+
     }
 
     &__thumbs {
         overflow: hidden;
 
-
-
         .swiper-wrapper {
             min-height: 210px;
+
+            @media(max-width: 920px) {
+                min-height: auto;
+            }
+        }
+    }
+
+    &__title {
+        @media(max-width: 920px) {
+            color: white
         }
     }
 
@@ -78,11 +123,19 @@
         font-size: 14px;
         line-height: 22px;
         color: $purple-3;
+
+        @media(max-width: 920px) {
+            display: none;
+        }
     }
 
     &__cover {
         display: block;
         margin-top: 37px;
+
+        @media(max-width: 920px) {
+            margin-top: 0;
+        }
 
         &:hover .title-3 {
             color: $purple-1;
@@ -95,12 +148,28 @@
         font-size: 14px;
         line-height: 160%;
         margin-top: 8px;
+
+        @media(max-width: 920px) {
+            display: none;
+        }
     }
 
     &__func {
         display: flex;
         align-items: center;
         margin-top: auto;
+
+        @media(max-width: 920px) {
+            position: absolute;
+            max-width: 100%;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            justify-content: space-between;
+            padding: 0 16px;
+        }
     }
 
     &__pagination {
@@ -109,6 +178,18 @@
         width: 100%;
         height: 10px;
         margin-right: 20px;
+
+        @media(max-width: 920px) {
+            position: absolute;
+            max-width: 100%;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            justify-content: space-between;
+            padding: 0 16px;
+        }
     }
 
     &__arrow {
@@ -124,11 +205,6 @@
             stroke: $purple-3;
         }
 
-        .b-svg {
-            height: 12px;
-            width: 12px;
-        }
-
         &:not(:last-child) {
             margin-right: 22px;
         }
@@ -139,13 +215,26 @@
 
 
         .b-svg {
+            height: 12px;
+            width: 12px;
             fill: none;
             stroke: $basic;
             stroke-width: 2;
+
+
+            @media(max-width: 920px) {
+                height: 20px;
+                width: 20px;
+                stroke: white;
+            }
         }
     }
 
     .publish {
         margin-top: 0;
+
+        @media(max-width: 920px) {
+            display: none;
+        }
     }
 }
