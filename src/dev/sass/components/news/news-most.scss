@@ -9,6 +9,12 @@
         display: none;
     }
 
+    &__title {
+        &:hover {
+            color: $purple-3;
+        }
+    }
+
     &__wrapper {
         display: flex;
 

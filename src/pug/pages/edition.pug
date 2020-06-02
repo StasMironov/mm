@@ -1,0 +1,207 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Главная страница'
+	- var pageClass = 'index-page';
+
+block content
+	.container
+		.wrapper
+			.wrapper__left
+				.edition
+					.edition__title.title-1 Редакция газеты
+					.edition__info Как было показано выше, литургическая драма возможна. Социальная психология искусства, по определению, монотонно дает художественный идеал. Художественное восприятие выстраивает комплекс агрессивности. Богатство мировой литературы от Платона до Ортеги-и-Гассета свидетельствует о том, что художественная ментальность вызывает драматизм. 
+					.edition__info Синтаксис искусства готично начинает первоначальный канон биографии. Возрождение многопланово вызывает суггестивный миракль. Трагедия использует первоначальный сангвиник. Добавлю, что интенция многопланово имеет синхронический подход. Ролевое поведение готично трансформирует фактографический архетип. 
+				.edition-network
+					.edition-network__left
+						.title-2 Следите за газетой и новостями в социальных сетях!
+					.edition-network__right
+						.edition-network__items
+							a(href="javascript:void(0);").edition-network__item.edition-network__item--vk
+								+svg('vk')
+							a(href="javascript:void(0);").edition-network__item.edition-network__item--inst
+								.mf-cover
+									+svg('inst')
+							a(href="javascript:void(0);").edition-network__item.edition-network__item--face
+								+svg('face')
+							a(href="javascript:void(0);").edition-network__item.edition-network__item--ok
+								+svg('ok')
+				.edition-contact
+					.edition-contact__row
+						.edition-contact__block
+							.edition-contact__title.title-2 Адрес
+							.edition-contact__text 455038, г. Магнитогорск Челябинской обл., пр. Ленина, д. 124, корп. 1.
+						.edition-contact__block
+							.edition-contact__title.title-2 Email
+							a(href="mailto:inbox@magmetall.ru").edition-contact__text inbox@magmetall.ru
+					.edition-contact__row
+						.edition-contact__cover
+							.edition-contact__title.title-2 Телефоны
+							.edition-contact__items
+								.edition-contact__item
+									p (3519) 39-60-74 - приемная редакции
+									p (3519) 39-60-76 - бухгалтерия
+								.edition-contact__item
+									p (3519) 39-60-79 - отдел рекламы
+									p (3519) 39-60-78 - секретариат
+								.edition-contact__item
+									p (3519) 39-60-75 - отдел верстки
+									p (3519) 39-60-87 - отдел подписки
+				.edition-rewards
+					.edition-rewards__title.title-2 Наши награды
+					#lightgallery.edition-rewards__items
+						a(href="./img/index/p13.jpg").edition-rewards__item
+							img(src="./img/index/p13.jpg" alt="letter")
+						a(href="./img/index/p13.jpg").edition-rewards__item
+							img(src="./img/index/p13.jpg" alt="letter")
+						a(href="./img/index/p13.jpg").edition-rewards__item
+							img(src="./img/index/p13.jpg" alt="letter")
+						a(href="./img/index/p13.jpg").edition-rewards__item
+							img(src="./img/index/p13.jpg" alt="letter")
+						a(href="./img/index/p13.jpg").edition-rewards__item
+							img(src="./img/index/p13.jpg" alt="letter")
+						a(href="./img/index/p13.jpg").edition-rewards__item
+							img(src="./img/index/p13.jpg" alt="letter")
+						a(href="./img/index/p13.jpg").edition-rewards__item
+							img(src="./img/index/p13.jpg" alt="letter")
+						a(href="./img/index/p13.jpg").edition-rewards__item
+							img(src="./img/index/p13.jpg" alt="letter")
+						a(href="./img/index/p13.jpg").edition-rewards__item
+							img(src="./img/index/p13.jpg" alt="letter")
+						a(href="./img/index/p13.jpg").edition-rewards__item
+							img(src="./img/index/p13.jpg" alt="letter")
+				.edition-team
+					.edition-team__row
+						.edition-team__col Администрация
+						.edition-team__col Фролов Олег Валерьевич
+							span Главный редактор
+						.edition-team__col
+						.edition-team__col
+					.edition-team__row
+						.edition-team__col Ведущие специалисты
+						.edition-team__col Рыбаченко Владислав
+							span Ведущий специалист
+						.edition-team__col Скуридин Михаил
+							span Ведущий специалист
+						.edition-team__col Каньшина Алла
+							span Каньшина Алла
+					.edition-team__row
+						.edition-team__col Отдел городской жизни и социально-бытовой проблематики
+						.edition-team__col Давлетшина Рита
+							span Обозреватель
+						.edition-team__col Коротких Ирина
+							span Обозреватель
+						.edition-team__col Юлин Максим
+							span Корреспондент
+
+					.edition-team__row
+						.edition-team__col Фотокорреспонденты
+						.edition-team__col Рухмалев Евгений
+							span Фотокорреспондент
+						.edition-team__col 
+						.edition-team__col 
+					.edition-team__row
+						.edition-team__col Отдел дизайна и верстки
+						.edition-team__col Рубанцев Евгений
+							span Художественный редактор
+						.edition-team__col Кондратьева Алина
+							span Редактор технический
+					.edition-team__row
+						.edition-team__col Корректура
+						.edition-team__col Щербакова Елена
+							span Ведущий специалист
+						.edition-team__col Дятлова Надежда
+							span Корректор
+			.wrapper__right.wrapper__right--special
+				.news-survey
+					a(href="javascript:void(0);").news-survey__title.title-3 Что вы думаете <br> об обязательном тестировании на коронавирусную инфекцию?
+					form.news-survey__form(method="get")
+						label(for="qu1" class="news-survey__radio") 
+							input(type="radio" id="qu1" name="rdbtn")
+							div.news-survey__text Нужно сделать всем, вдруг кто-то болеет без симптомов
+						label(for="qu2" class="news-survey__radio") 
+							input(type="radio" id="qu2" name="rdbtn")
+							div.news-survey__text Нужно сделать всем, вдруг кто-то болеет без симптомов
+						button(type="submit" class="btn") Голосовать
+				.news-hidden
+					a(href="javascript:void(0);").news-today__block.news-today__block--other
+							img(src="./img/index/p36.jpg" alt="")
+				.news-city
+					a(href="javascript:void(0);").news-city__title.title-2 История города
+						+svg("ar-title")
+					.news-city__items
+						a(href="javascript:void(0);").news-city__item
+							.news-city__pic(style="background-image: url(./img/history/city/hc1.jpg);")
+							.news-city__title.title-3 Газета в рабочей спецовке
+						a(href="javascript:void(0);").news-city__item
+							.news-city__pic(style="background-image: url(./img/index/p32.jpg);")
+							.news-city__title.title-3 Больницы для солдат
+						a(href="javascript:void(0);").news-city__item
+							.news-city__pic(style="background-image: url(./img/index/p34.jpg);")
+							.news-city__title.title-3 Маленькая женщина с большим сердцем
+						a(href="javascript:void(0);").news-city__item
+							.news-city__pic(style="background-image: url(./img/index/p33.jpg);")
+							.news-city__title.title-3 Первые секретари
+				.news-most__left.news-most__left--hidden
+						a(href="javascript:void(0);").news-most__title.title-2 Самое читаемое
+							+svg("ar-title")
+						.news-most__items
+							.news-most__item
+								.news-most__lft
+									.news-most__pic
+										+svg('eye')
+									.news-most__count 1211
+								a(href="javascript:void(0);").news-most__rght
+									.news-most__txt <span>На Южном Урале ФСБ</span> задержали автомобиль с восемью коробками одноразовых хирургических перчаток, которые относятся к временно запрещённым для вывоза из России.
+							.news-most__item
+								.news-most__lft
+									.news-most__pic
+										+svg('eye')
+									.news-most__count 1211
+								a(href="javascript:void(0);").news-most__rght
+									.news-most__txt <span>Жители Челябинской области</span>, прибывшие домой из стран с неблагоприятной ситуацией по коронавирусной инфекции, должны самоизолироваться на две недели.
+							.news-most__item
+								.news-most__lft
+									.news-most__pic
+										+svg('eye')
+									.news-most__count 1211
+								a(href="javascript:void(0);").news-most__rght
+									.news-most__txt <span>Специалисты из Уральского</span> федерального округа востребованы не только на родине, но и за рубежом.
+							.news-most__item
+								.news-most__lft
+									.news-most__pic
+										+svg('eye')
+									.news-most__count 1211
+								a(href="javascript:void(0);").news-most__rght
+									.news-most__txt <span>В Краснодаре стартует</span> "финал восьми" Студенческой лиги ВТБ, в который вновь пробились "Стальные сердца".
+							.news-most__item
+								.news-most__lft
+									.news-most__pic
+										+svg('eye')
+									.news-most__count 1211
+								a(href="javascript:void(0);").news-most__rght
+									.news-most__txt <span>Малкин забивает</span>, но "Питтсбург" проигрывает.
+							.news-most__item
+								.news-most__lft
+									.news-most__pic
+										+svg('eye')
+									.news-most__count 1211
+								a(href="javascript:void(0);").news-most__rght
+									.news-most__txt <span>В Краснодаре стартует</span> "финал восьми" Студенческой лиги ВТБ, в который вновь пробились "Стальные сердца".	
+				.news-today
+					a(href="javascript:void(0);").news-today__block
+						img(src="./img/index/p35.jpg" alt="")
+					.news-today__item
+						.news-today__title.title-2 Сегодняшняя газета
+						a(href="javascript:void(0);").btn Посмотреть электронное издание
+		.news-temp
+			img(src="./img/banner2.jpg" alt="")
+							
+
+					
+
+		
+							
+
+
+block script

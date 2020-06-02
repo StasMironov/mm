@@ -1,6 +1,12 @@
 .news-archive {
     margin-top: 31px;
 
+    &__title {
+        &:hover {
+            color: $purple-3;
+        }
+    }
+
     &__wrapper {
         display: flex;
 

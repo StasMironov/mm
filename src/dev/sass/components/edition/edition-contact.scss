@@ -1,0 +1,59 @@
+.edition-contact {
+    margin-top: 30px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid $black;
+
+
+    &__row {
+        display: flex;
+
+        &:last-child {
+            margin-top: 20px;
+        }
+    }
+
+    &__block {
+        max-width: 265px;
+
+        &:not(:last-child) {
+            margin-right: 70px;
+        }
+    }
+
+    &__text {
+        display: block;
+        margin-top: 8px;
+    }
+
+    &__items {
+        display: flex;
+        margin-top: 10px;
+
+        @media(max-width: 1024px) {
+            flex-wrap: wrap;
+            margin-left: -40px;
+        }
+    }
+
+    &__item {
+        @media(max-width: 1024px) {
+            width: calc(33.333% - 40px);
+            margin-left: 40px;
+        }
+
+        &:not(:last-child) {
+            margin-right: 40px;
+        }
+
+        &:nth-child(1) {
+            max-width: 252px;
+            width: 100%;
+        }
+
+        &:nth-child(2) {}
+    }
+
+    &__cover {
+        width: 100%;
+    }
+}

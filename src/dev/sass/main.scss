@@ -29,8 +29,8 @@ body {
   color: $basic;
   font-weight: normal;
   overflow: hidden;
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 14px;
+  line-height: 22px;
   background-color: #fff;
   word-wrap: break-word;
 }
@@ -99,9 +99,9 @@ input::-ms-clear {
     line-height: 36px;
   }
 
-  &:hover {
-    color: $purple-3;
-  }
+  // &:hover {
+  //   color: $purple-3;
+  // }
 }
 
 .title-2 {
@@ -125,9 +125,9 @@ input::-ms-clear {
     line-height: 30px;
   }
 
-  &:hover {
-    color: $purple-3;
-  }
+  // &:hover {
+  //   color: $purple-3;
+  // }
 
   &:hover .b-svg {
     stroke: $purple-3
@@ -166,7 +166,7 @@ input::-ms-clear {
   }
 
   &:hover {
-    color: $purple-3;
+    // color: $purple-3;
   }
 }
 
@@ -201,6 +201,11 @@ input::-ms-clear {
   }
 }
 
+
+button {
+  width: auto;
+}
+
 @import "./components/header.scss";
 @import "./components/wrapper.scss";
 @import "./components/news/news-basic.scss";
@@ -217,3 +222,8 @@ input::-ms-clear {
 @import "./components/news/news-today.scss";
 @import "./components/news/news-media.scss";
 @import "./components/news/news-hidden.scss";
+@import "./components/edition/edition.scss";
+@import "./components/edition/edition-network.scss";
+@import "./components/edition/edition-contact.scss";
+@import "./components/edition/edition-team.scss";
+@import "./components/edition/edition-rewards.scss";

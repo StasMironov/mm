@@ -1,0 +1,57 @@
+.edition-team {
+    margin-top: 30px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid $black;
+
+    &__row {
+        display: flex;
+        margin-top: 30px;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid $gray-3;
+            padding-bottom: 24px;
+        }
+    }
+
+    &__col {
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 120%;
+        font-family: "MinionPro", sans-serif;
+
+        &:not(:first-child) {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &:nth-child(1) {
+            max-width: 230px;
+            width: 100%;
+            margin-right: 37px;
+        }
+
+        &:nth-child(2) {
+            max-width: 235px;
+            width: 100%;
+            margin-right: 50px;
+        }
+
+        &:nth-child(3) {
+            max-width: 184px;
+            width: 100%;
+            margin-right: 50px;
+        }
+
+        &:nth-child(4) {
+            max-width: 150px;
+            width: 100%;
+        }
+
+        span {
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 160%;
+            margin-top: 6px;
+        }
+    }
+}

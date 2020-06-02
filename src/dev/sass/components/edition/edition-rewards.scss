@@ -1,0 +1,26 @@
+.edition-rewards {
+    margin-top: 30px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid $black;
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -18px;
+        margin-top: 4px;
+    }
+
+    &__item {
+        width: calc(16.6% - 18px);
+        margin-left: 18px;
+        margin-top: 18px;
+        height: 204px;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+}

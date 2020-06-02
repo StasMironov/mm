@@ -11,6 +11,12 @@
         padding-bottom: 16px;
     }
 
+    &__title {
+        &:hover {
+            color: $purple-3;
+        }
+    }
+
     &__cover {
         display: block;
         margin-top: 16px;

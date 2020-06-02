@@ -5,6 +5,7 @@ jQuery.fn.exists = function () {
   return $(this).length;
 };
 
+lightGallery(document.getElementById('lightgallery'));
 $("#input-search").on('keyup', function () {
   if (!$(this).val()) {
     $(".mf-search").removeClass("mf-search--active");

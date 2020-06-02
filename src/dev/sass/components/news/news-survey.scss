@@ -5,7 +5,17 @@
     margin-top: 30px;
 
     &__title {
+        display: block;
         max-width: 300px;
+
+        @media(max-width: 1235px) {
+            font-size: 19px;
+            line-height: 23px;
+        }
+
+        &:hover {
+            color: $purple-3;
+        }
     }
 
     &__form {
@@ -90,5 +100,6 @@
 
     .btn {
         max-width: 186px;
+        width: 100%;
     }
 }
