@@ -4,6 +4,10 @@
     border-bottom: 1px solid $black;
     max-width: 975px;
 
+    @media(max-width: 1024px) {
+        margin-top: 24px;
+    }
+
     @media(max-width: 600px) {
         padding-bottom: 6px;
         display: none;

@@ -1,6 +1,10 @@
 .news-archive {
     margin-top: 31px;
 
+    @media(max-width: 1024px) {
+        margin-top: 24px;
+    }
+
     &__title {
         &:hover {
             color: $purple-3;
@@ -62,6 +66,8 @@
 
         @media(max-width: 640px) {
             margin-top: 30px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid $black;
         }
 
         .news-actual__title {

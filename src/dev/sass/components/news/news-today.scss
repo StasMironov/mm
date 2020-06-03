@@ -1,6 +1,10 @@
 .news-today {
     margin-top: 30px;
 
+    @media(max-width: 1024px) {
+        margin-top: 24px;
+    }
+
     @media(max-width: 640px) {
         padding-bottom: 16px;
         border-bottom: 1px solid $black;
@@ -37,6 +41,31 @@
 
         &:hover {
             color: initial;
+        }
+    }
+
+    &--include {
+        display: none;
+
+        @media(max-width: 1024px) {
+            display: block;
+        }
+
+        .news-today__title {
+            @media(max-width: 600px) {
+                font-size: 22px;
+                line-height: 26px;
+            }
+        }
+
+        .btn {
+            max-width: 560px;
+            margin: 0 auto;
+            margin-top: 20px;
+
+            @media(max-width: 600px) {
+                max-width: 100%;
+            }
         }
     }
 }

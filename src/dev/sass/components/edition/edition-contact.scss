@@ -1,14 +1,37 @@
 .edition-contact {
     margin-top: 30px;
-    padding-bottom: 24px;
+    padding-bottom: 23px;
     border-bottom: 1px solid $black;
 
+
+    @media(max-width: 600px) {
+        margin-top: 25px;
+        padding-bottom: 16px;
+    }
 
     &__row {
         display: flex;
 
+        @media(max-width: 600px) {
+            flex-direction: column;
+        }
+
         &:last-child {
-            margin-top: 20px;
+            margin-top: 27px;
+
+            @media(max-width: 600px) {
+                flex-direction: column;
+            }
+
+            @media(max-width: 600px) {
+                margin-top: 12px;
+            }
+        }
+
+        &:first-child {
+            @media(max-width: 600px) {
+                margin-top: 12px;
+            }
         }
     }
 
@@ -17,43 +40,69 @@
 
         &:not(:last-child) {
             margin-right: 70px;
+
+            @media(max-width: 1024px) {
+                margin-right: 35px;
+            }
+        }
+
+        &:not(:first-child) {
+            @media(max-width: 600px) {
+                margin-top: 10px;
+            }
         }
     }
 
     &__text {
         display: block;
-        margin-top: 8px;
+        margin-top: 12px;
     }
 
     &__items {
         display: flex;
         margin-top: 10px;
 
-        @media(max-width: 1024px) {
-            flex-wrap: wrap;
-            margin-left: -40px;
+        @media(max-width: 768px) {
+            flex-direction: column;
         }
     }
 
     &__item {
-        @media(max-width: 1024px) {
-            width: calc(33.333% - 40px);
-            margin-left: 40px;
+
+        &:not(:first-child) {
+            @media(max-width: 768px) {
+                margin-top: 16px;
+            }
+
+            @media(max-width: 600px) {
+                margin-top: 8px;
+            }
         }
 
         &:not(:last-child) {
             margin-right: 40px;
+
+            @media(max-width: 1235px) {
+                margin-right: 20px;
+            }
         }
 
         &:nth-child(1) {
             max-width: 252px;
             width: 100%;
+
+            @media(max-width: 1235px) {
+                width: auto;
+            }
         }
 
-        &:nth-child(2) {}
     }
 
     &__cover {
         width: 100%;
+    }
+
+    &__title {
+        @media screen {}
     }
 }

@@ -161,7 +161,7 @@ input::-ms-clear {
   }
 
   @media (max-width:600px) {
-    font-size: 22px;
+    font-size: 20px;
     line-height: 120%;
   }
 
@@ -227,3 +227,4 @@ button {
 @import "./components/edition/edition-contact.scss";
 @import "./components/edition/edition-team.scss";
 @import "./components/edition/edition-rewards.scss";
+@import "./components/author/author.scss";
