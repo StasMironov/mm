@@ -67,5 +67,11 @@
                 max-width: 100%;
             }
         }
+
+        .news-today__item {
+            @media(max-width: 1024px) {
+                margin-top: 24px;
+            }
+        }
     }
 }

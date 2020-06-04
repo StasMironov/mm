@@ -4,8 +4,12 @@
     border-bottom: 1px solid $black;
 
 
+    @media(max-width: 1024px) {
+        margin-top: 24px;
+    }
+
     @media(max-width: 600px) {
-        margin-top: 25px;
+        margin-top: 24px;
         padding-bottom: 16px;
     }
 

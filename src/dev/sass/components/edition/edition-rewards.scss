@@ -74,6 +74,11 @@
         @media(max-width: 640px) {
             display: flex;
         }
+
+        &--basic {
+            display: flex;
+            margin-top: 44px;
+        }
     }
 
     &__link {
