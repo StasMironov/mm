@@ -3,6 +3,8 @@
 
     @media(max-width: 1024px) {
         margin-top: 24px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid $black;
     }
 
     &__num,
@@ -18,6 +20,10 @@
             margin-top: 12PX;
             flex-direction: column;
         }
+
+        @media(max-width: 1024px) {
+            flex-direction: row;
+        }
     }
 
     &__num {
@@ -26,6 +32,14 @@
 
     &__box {
         margin-top: 24px;
+
+        @media(max-width: 1235px) {
+            margin-top: 0;
+        }
+
+        @media(max-width: 768px) {
+            margin-top: 24px;
+        }
     }
 
     &__date {
@@ -39,6 +53,12 @@
         &:not(:last-child) {
             padding-bottom: 24px;
             border-bottom: 1px solid $gray-3;
+
+            @media(max-width: 1024px) {
+                border: none;
+                padding-bottom: 0;
+                ;
+            }
         }
     }
 
@@ -53,6 +73,11 @@
 
         @media(max-width: 1235px) {
             margin-left: -40px;
+        }
+
+        @media(max-width: 600px) {
+            flex-wrap: wrap;
+            margin-left: 0;
         }
     }
 
@@ -74,8 +99,31 @@
             padding-left: 20px;
         }
 
+        @media(max-width: 768px) {
+            flex-direction: column;
+        }
+
+        @media(max-width: 600px) {
+            width: 100%;
+            margin-left: 0;
+            padding-left: 0;
+            padding-bottom: 16px;
+            border-bottom: 1px solid $gray-3;
+        }
+
+        &:not(:first-child) {
+            @media(max-width: 600px) {
+                margin-top: 32px;
+            }
+        }
+
+
         &:last-child {
             border-left: 1px solid $gray-3;
+
+            @media(max-width: 600px) {
+                border-left: none;
+            }
         }
 
         &:hover .author-articles__pic {
@@ -92,9 +140,15 @@
         width: 100%;
         margin-right: 18px;
 
-        // @media(max-width: 1235px) {
-        //     max-width: 100%;
-        // }
+        @media(max-width: 1235px) {
+            max-width: 92px;
+            margin-right: 15px;
+        }
+
+        @media(max-width: 768px) {
+            max-width: 100%;
+            height: 161px;
+        }
 
         &:after {
             position: absolute;
@@ -151,5 +205,11 @@
     &__title {
         padding-right: 0;
         transition: .2s ease-out;
+    }
+
+    .edition-rewards__pagination--basic {
+        @media(max-width: 1024px) {
+            margin-top: 24px;
+        }
     }
 }

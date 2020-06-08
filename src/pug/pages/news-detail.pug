@@ -1,0 +1,112 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Главная страница'
+	- var pageClass = 'index-page';
+
+block content
+	.container
+		.wrapper
+			.wrapper__left
+				.news-detail
+					.news-detail__info
+						a(href="javascript:void(0);").news-detail__caption Кушайте на здоровье
+						a(href="javascript:void(0);").news-detail__date 19 марта
+						a(href="javascript:void(0);").news-detail__author Ольга Балабанова 
+					.news-detail__content.content
+						.news-detail__title.title-1 Техника для обучения
+						.news-detail__txt Председателем совета директоров ПАО "ММК" Виктором Рашниковым принято решение об оказании помощи учреждениям социальной сферы - школам, детским садам, интернатам.
+						.news-detail__block 
+							.title-2 Как обстоят дела и как мы решаем задачу
+			.wrapper__right.wrapper__right--special
+				.news-survey
+					a(href="javascript:void(0);").news-survey__title.title-3 Что вы думаете <br> об обязательном тестировании на коронавирусную инфекцию?
+					form.news-survey__form(method="get")
+						label(for="qu1" class="news-survey__radio") 
+							input(type="radio" id="qu1" name="rdbtn")
+							div.news-survey__text Нужно сделать всем, вдруг кто-то болеет без симптомов
+						label(for="qu2" class="news-survey__radio") 
+							input(type="radio" id="qu2" name="rdbtn")
+							div.news-survey__text Нужно сделать всем, вдруг кто-то болеет без симптомов
+						button(type="submit" class="btn") Голосовать
+				.news-hidden
+					a(href="javascript:void(0);").news-today__block.news-today__block--other
+							img(src="./img/index/p36.jpg" alt="")
+				.news-city
+					a(href="javascript:void(0);").news-city__title.title-2 История города
+						+svg("ar-title")
+					.news-city__items
+						a(href="javascript:void(0);").news-city__item
+							.news-city__pic(style="background-image: url(./img/history/city/hc1.jpg);")
+							.news-city__title.title-3 Газета в рабочей спецовке
+						a(href="javascript:void(0);").news-city__item
+							.news-city__pic(style="background-image: url(./img/index/p32.jpg);")
+							.news-city__title.title-3 Больницы для солдат
+						a(href="javascript:void(0);").news-city__item
+							.news-city__pic(style="background-image: url(./img/index/p34.jpg);")
+							.news-city__title.title-3 Маленькая женщина с большим сердцем
+						a(href="javascript:void(0);").news-city__item
+							.news-city__pic(style="background-image: url(./img/index/p33.jpg);")
+							.news-city__title.title-3 Первые секретари
+				.news-most__left.news-most__left--hidden
+						a(href="javascript:void(0);").news-most__title.title-2 Самое читаемое
+							+svg("ar-title")
+						.news-most__items
+							.news-most__item
+								.news-most__lft
+									.news-most__pic
+										+svg('eye')
+									.news-most__count 1211
+								a(href="javascript:void(0);").news-most__rght
+									.news-most__txt <span>На Южном Урале ФСБ</span> задержали автомобиль с восемью коробками одноразовых хирургических перчаток, которые относятся к временно запрещённым для вывоза из России.
+							.news-most__item
+								.news-most__lft
+									.news-most__pic
+										+svg('eye')
+									.news-most__count 1211
+								a(href="javascript:void(0);").news-most__rght
+									.news-most__txt <span>Жители Челябинской области</span>, прибывшие домой из стран с неблагоприятной ситуацией по коронавирусной инфекции, должны самоизолироваться на две недели.
+							.news-most__item
+								.news-most__lft
+									.news-most__pic
+										+svg('eye')
+									.news-most__count 1211
+								a(href="javascript:void(0);").news-most__rght
+									.news-most__txt <span>Специалисты из Уральского</span> федерального округа востребованы не только на родине, но и за рубежом.
+							.news-most__item
+								.news-most__lft
+									.news-most__pic
+										+svg('eye')
+									.news-most__count 1211
+								a(href="javascript:void(0);").news-most__rght
+									.news-most__txt <span>В Краснодаре стартует</span> "финал восьми" Студенческой лиги ВТБ, в который вновь пробились "Стальные сердца".
+							.news-most__item
+								.news-most__lft
+									.news-most__pic
+										+svg('eye')
+									.news-most__count 1211
+								a(href="javascript:void(0);").news-most__rght
+									.news-most__txt <span>Малкин забивает</span>, но "Питтсбург" проигрывает.
+							.news-most__item
+								.news-most__lft
+									.news-most__pic
+										+svg('eye')
+									.news-most__count 1211
+								a(href="javascript:void(0);").news-most__rght
+									.news-most__txt <span>В Краснодаре стартует</span> "финал восьми" Студенческой лиги ВТБ, в который вновь пробились "Стальные сердца".	
+				.news-today
+					a(href="javascript:void(0);").news-today__block
+						img(src="./img/index/p35.jpg" alt="")
+					.news-today__item
+						.news-today__title.title-2 Сегодняшняя газета
+						a(href="javascript:void(0);").btn Посмотреть электронное издание
+		
+							
+
+					
+
+		
+							
+
+
+block script
