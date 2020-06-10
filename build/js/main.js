@@ -3,7 +3,37 @@
 //===== Function check element ==========//
 jQuery.fn.exists = function () {
   return $(this).length;
-}; //======================ArticleSlider=========
+};
+
+if ($('.author-articles__grid--slider').exists) {
+  var breakpoint = window.matchMedia('(min-width:600px)');
+  var mySwiper;
+
+  var breakpointChecker = function breakpointChecker() {
+    if (breakpoint.matches === true) {
+      if (mySwiper !== undefined) mySwiper.destroy(true, true);
+      return;
+    } else if (breakpoint.matches === false) {
+      return enableSwiper();
+    }
+  };
+
+  var enableSwiper = function enableSwiper() {
+    mySwiper = new Swiper('.author-articles__grid--slider', {
+      slidesPerView: 'auto',
+      spaceBetween: 16,
+      centeredSlides: true,
+      a11y: true,
+      keyboardControl: true,
+      grabCursor: true
+    });
+  }; // keep an eye on viewport size changes
+
+
+  breakpoint.addListener(breakpointChecker); // kickstart
+
+  breakpointChecker();
+} //======================ArticleSlider=========
 
 
 function createGallery() {
