@@ -4,6 +4,36 @@ jQuery.fn.exists = function () {
 }
 
 
+if ($('.author-articles__grid--slider').exists) {
+    const breakpoint = window.matchMedia('(min-width:600px)');
+    let mySwiper;
+
+    const breakpointChecker = function () {
+        if (breakpoint.matches === true) {
+            if (mySwiper !== undefined) mySwiper.destroy(true, true);
+            return;
+        } else if (breakpoint.matches === false) {
+            return enableSwiper();
+        }
+    };
+
+    const enableSwiper = function () {
+        mySwiper = new Swiper('.author-articles__grid--slider', {
+            slidesPerView: 'auto',
+            spaceBetween: 16,
+            centeredSlides: true,
+            a11y: true,
+            keyboardControl: true,
+            grabCursor: true,
+        });
+    };
+
+    // keep an eye on viewport size changes
+    breakpoint.addListener(breakpointChecker);
+    // kickstart
+    breakpointChecker();
+}
+
 //======================ArticleSlider=========
 
 
