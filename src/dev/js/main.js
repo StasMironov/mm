@@ -3,6 +3,16 @@ jQuery.fn.exists = function () {
     return $(this).length;
 }
 
+if ($('.header__func').exists) {
+    try {
+        $('.header__func').on('click', () => {
+            $('.header__func').toggleClass('header__func--active');
+            $('.header__section').toggleClass('header__section--active');
+        });
+    } catch (err) {
+        console.log(err);
+    }
+}
 
 if ($('.author-articles__grid--slider').exists) {
     const breakpoint = window.matchMedia('(min-width:600px)');
@@ -28,9 +38,7 @@ if ($('.author-articles__grid--slider').exists) {
         });
     };
 
-    // keep an eye on viewport size changes
     breakpoint.addListener(breakpointChecker);
-    // kickstart
     breakpointChecker();
 }
 

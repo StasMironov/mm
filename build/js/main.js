@@ -5,6 +5,17 @@ jQuery.fn.exists = function () {
   return $(this).length;
 };
 
+if ($('.header__func').exists) {
+  try {
+    $('.header__func').on('click', function () {
+      $('.header__func').toggleClass('header__func--active');
+      $('.header__section').toggleClass('header__section--active');
+    });
+  } catch (err) {
+    console.log(err);
+  }
+}
+
 if ($('.author-articles__grid--slider').exists) {
   var breakpoint = window.matchMedia('(min-width:600px)');
   var mySwiper;
@@ -27,11 +38,9 @@ if ($('.author-articles__grid--slider').exists) {
       keyboardControl: true,
       grabCursor: true
     });
-  }; // keep an eye on viewport size changes
+  };
 
-
-  breakpoint.addListener(breakpointChecker); // kickstart
-
+  breakpoint.addListener(breakpointChecker);
   breakpointChecker();
 } //======================ArticleSlider=========
 

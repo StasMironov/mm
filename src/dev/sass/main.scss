@@ -164,10 +164,6 @@ input::-ms-clear {
     font-size: 20px;
     line-height: 120%;
   }
-
-  &:hover {
-    // color: $purple-3;
-  }
 }
 
 .title-4 {
@@ -190,10 +186,19 @@ input::-ms-clear {
   margin-right: 8px;
 
   span {
+    position: relative;
     display: block;
     height: 3px;
     width: 100%;
-    background-color: $black;
+    background-color: black;
+    transition: .3s;
+
+    &:nth-child(2) {
+      position: relative;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
 
     &:not(:last-child) {
       margin-bottom: 4px;
@@ -372,6 +377,10 @@ button {
       opacity: 0;
     }
   }
+}
+
+.b-page {
+  position: relative;
 }
 
 
