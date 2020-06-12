@@ -206,4 +206,113 @@
             margin-top: 24px;
         }
     }
+
+    a {
+        font-weight: normal !important;
+    }
+
+
+    &--news {
+        padding-bottom: 0 !important;
+        border-bottom: none !important;
+
+        @media(max-width: 1024px) {
+            border-top: 1px solid #27202c;
+            padding-top: 16px;
+        }
+
+        padding-bottom: 20px;
+        border-bottom: 1px solid #27202c;
+
+        &__wrapper {
+            padding-bottom: 0px;
+        }
+
+        &__items {
+            @media(max-width: 600px) {
+                flex-wrap: nowrap;
+            }
+        }
+
+        &__txt,
+        &__top,
+        &__publish {
+            @media(max-width: 600px) {
+                display: none;
+            }
+        }
+
+        &__title {
+            @media(max-width: 600px) {
+                font-size: 16px;
+                line-height: 130%;
+            }
+        }
+
+        &__cover {
+            @media(max-width: 600px) {
+                margin-top: 0;
+            }
+        }
+
+        &__box {
+            @media(max-width: 600px) {
+                margin-top: 18px;
+            }
+        }
+
+        &__pic {
+            @media(max-width: 600px) {
+                height: 134px;
+            }
+
+
+            img {
+                height: 100%;
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+
+        &__item {
+
+            @media(max-width: 600px) {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+
+            &:not(:first-child) {
+                @media(max-width: 600px) {
+                    margin-top: 0;
+                }
+            }
+
+            &:not(:last-child) {
+                @media(max-width: 600px) {
+                    margin-right: 16px;
+                }
+            }
+        }
+
+        .swiper-slide {
+            &:not(:last-child) {
+                .author-articles__wrapper {
+                    padding-bottom: 24px;
+                    border-bottom: 1px solid $gray-3;
+
+                    @media(max-width: 600px) {
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+
+        .swiper-wrapper {
+            display: block;
+
+            @media(max-width: 600px) {
+                display: flex;
+            }
+        }
+    }
 }
