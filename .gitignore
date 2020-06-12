@@ -2,3 +2,5 @@ node_modules
 .idea/
 build/css/*
 build/*.html
+.npm-debug.log
+.vscode
