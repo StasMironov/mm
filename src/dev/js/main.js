@@ -3,6 +3,33 @@ jQuery.fn.exists = function () {
     return $(this).length;
 }
 
+if ($('.header__search--laptop').exists) {
+    try {
+        $('.header__search--laptop').on('click', function (e) {
+            e.preventDefault();
+
+            $(this).toggleClass('header__search--laptop--active');
+        });
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+let $window = $(window),
+    $target = $(".header__inner"),
+    $h = $target.offset().top;
+$window.on('scroll', function () {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > $h) {
+        $target.addClass("mf-fixed");
+        return;
+    } else {
+        $target.removeClass("mf-fixed");
+    }
+    return;
+});
+
+
 if ($('.header__func').exists) {
     try {
         $('.header__func').on('click', () => {

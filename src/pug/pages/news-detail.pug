@@ -9,7 +9,10 @@ block content
 		.wrapper
 			.wrapper__left
 				.news-detail
-					a(href="javascript:void(0);").news-detail__back Вернуться в рубрику
+					a(href="javascript:void(0);").news-detail__back
+						.news-detail__ic
+							+svg('back')
+						.news-detail__word Вернуться в рубрику
 					.news-detail__content
 						.news-detail__item
 							.news-detail__cover

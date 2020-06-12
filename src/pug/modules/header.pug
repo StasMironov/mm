@@ -1,13 +1,17 @@
 include ../mixins
+.temp
+    .container
+        .header__banner(style="background-image:url(./img/banner.png)")
 header.header
-    .header__special
-        .container
-            .header__banner(style="background-image:url(./img/banner.png)")
-
     .header__inner
         .header__top
             .container
                 .header__wrapper
+                    .header__block
+                        .burger.burger--laptop
+                            span
+                            span
+                            span
                     a(href="javascript:void(0);").header__logo
                         +svg('logo')
                     a(href="javascript:void(0);").header__func
@@ -22,6 +26,11 @@ header.header
                         a(href="javascript:void(0);").header__link Подать объявление
                         a(href="javascript:void(0);").header__link Архив
                         a(href="javascript:void(0);").header__link Редакция
+                    .header__block
+                    form(class="header__search header__search--laptop" action="" method="get")
+                        input(type="search" placeholder="Ваш запрос")
+                        button
+                            +svg('search')
         .header__bottom
             .container
                 .header__wrapper

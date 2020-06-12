@@ -16,3 +16,27 @@
         border-radius: 7px;
     }
 }
+
+.mf-fixed {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    box-shadow: 0 2px 12px rgba(51, 51, 51, .55);
+    transition: .2s ease-out;
+    min-height: auto !important;
+
+    .container {
+        padding: 15px 20px 15px !important;
+
+        @media (max-width: 1024px) {
+            padding: 15px 15px 15px !important;
+        }
+    }
+
+    .header__logo {
+        height: 55px;
+        width: 185px;
+    }
+}

@@ -253,30 +253,38 @@
         }
     }
 
+    &__ic {
+        margin-right: 10px;
+    }
+
     &__back {
         position: relative;
+        display: flex;
+        align-items: center;
         font-weight: bold;
         font-size: 12px;
         line-height: 19px;
-        padding-left: 40px;
         margin-top: -14px;
-        display: block;
+        transition: .3s;
+
 
         @media(max-width: 640px) {
             margin-top: 0px;
         }
 
-        &:after {
-            position: absolute;
-            content: "";
+        .b-svg {
             width: 30px;
             height: 10px;
-            background-image: url('../img/icon/ar_pag.png');
-            background-repeat: no-repeat;
-            left: 0;
-            bottom: 0;
-            top: 0;
-            margin: auto;
+            transition: .3s;
+        }
+
+        &:hover {
+            color: $purple-3;
+        }
+
+        &:hover .b-svg {
+            transform: translateX(-5px);
+            fill: $purple-3;
         }
     }
 
