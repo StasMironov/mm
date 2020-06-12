@@ -5,10 +5,10 @@ jQuery.fn.exists = function () {
 
 if ($('.header__search--laptop').exists) {
     try {
-        $('.header__search--laptop').on('click', function (e) {
+        $('.header__btn').on('click', function (e) {
             e.preventDefault();
 
-            $(this).toggleClass('header__search--laptop--active');
+            $('.header__search--laptop').toggleClass('header__search--laptop--active');
         });
     } catch (err) {
         console.log(err);
