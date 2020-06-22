@@ -49,6 +49,10 @@
             color: $purple-1;
         }
 
+        &:hover .fill {
+            fill: $purple-1;
+        }
+
         &:not(:first-child) {
             margin-top: 7px;
 
@@ -106,6 +110,7 @@
         align-items: center;
         margin-right: 18px;
         align-self: flex-start;
+        padding-top: 3px;
 
         @media(max-width: 600px) {
             margin-right: 15px;
@@ -118,6 +123,23 @@
             height: 10px;
             stroke-width: 2;
         }
+
+
+        svg {
+            fill: transparent;
+            stroke: $purple-3;
+            width: 20px;
+            height: 10px;
+            stroke-width: 2;
+        }
+
+        .fill {
+            fill: transparent;
+            transition: fill .4s ease;
+        }
+
+
+
     }
 
     &__left {
@@ -126,6 +148,7 @@
         padding-right: 19px;
         margin-right: 19px;
         box-sizing: content-box;
+
 
         @media(max-width: 600px) {
             padding-right: 0;
@@ -217,6 +240,11 @@
                 height: 100%;
                 width: 100%;
                 object-fit: cover;
+            }
+
+            .b-svg {
+                width: 20px;
+                height: 10px;
             }
         }
     }

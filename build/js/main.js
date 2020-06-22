@@ -60,10 +60,14 @@ if ($('.author-articles__grid--slider').exists) {
     mySwiper = new Swiper('.author-articles__grid--slider', {
       slidesPerView: 'auto',
       spaceBetween: 16,
-      centeredSlides: true,
-      a11y: true,
-      keyboardControl: true,
-      grabCursor: true
+      // a11y: true,
+      // keyboardControl: true,
+      // grabCursor: true,
+      loop: true,
+      autoplay: true,
+      delay: 3000,
+      stopOnLastSlide: false,
+      disableOnInteraction: true
     });
   };
 
