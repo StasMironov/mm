@@ -272,6 +272,19 @@
     &__bloc {
         margin-top: 30px;
 
+        &:first-child {
+            .news-popular__item {
+                &:first-child {
+                    .news-popular__pic {
+                        @media(max-width: 640px) {
+                            display: block;
+                            height: 184px;
+                        }
+                    }
+                }
+            }
+        }
+
         &:not(:last-child) {
             padding-bottom: 30px;
             border-bottom: 1px solid #d7d7d7;
