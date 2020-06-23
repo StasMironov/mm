@@ -8,11 +8,8 @@
     }
 
     .news-today__block {
-        @media(max-width: 1024px) {
-            display: none;
-        }
 
-        @media(max-width: 640px) {
+        @media(max-width: 1024px) {
             padding-bottom: 16px;
             margin: 0 auto;
             margin-top: 30px;
@@ -26,7 +23,7 @@
         }
 
         img {
-            @media(max-width: 640px) {
+            @media(max-width: 1024px) {
                 object-fit: contain;
             }
         }
