@@ -290,11 +290,11 @@
         }
 
         &:not(:last-child) {
-            padding-bottom: 30px;
+            padding-bottom: 24px;
             border-bottom: 1px solid #d7d7d7;
 
-            @media(max-width: 1024px) {
-                padding-bottom: 24px;
+            @media(max-width: 640px) {
+                padding-bottom: 16px;
             }
         }
 
@@ -379,6 +379,15 @@
     }
 
     &--latest {
+
+        .news-popular__cover {
+            margin-bottom: 0;
+        }
+
+        .news-popular__wrapper {
+            margin-top: 38px;
+        }
+
         .news-popular__bloc {
             &:last-child {
                 .news-popular__item {
