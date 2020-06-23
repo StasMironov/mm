@@ -1,0 +1,17 @@
+.archive {
+    &__bloc {
+        max-width: 878px;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    &__title {
+        letter-spacing: -.5px;
+    }
+
+    &__info {
+        &:not(:first-child) {
+            margin-top: 20px;
+        }
+    }
+}
