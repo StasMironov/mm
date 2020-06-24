@@ -6,11 +6,112 @@ jQuery.fn.exists = function () {
 };
 
 $(function () {
+  var nowYear = new Date().getFullYear();
+  var parentEl = '';
+
+  function crYear(parent, qty) {
+    console.log(1);
+
+    if (parent == '.archive-filter__item--year') {
+      parentEl = $(parent).find('.archive-filter__list');
+
+      for (var _i3 = nowYear; _i3 >= 1935; _i3--) {
+        var newEl = document.createElement('div'),
+            inputEl = document.createElement('input'),
+            inputLabel = document.createElement('label');
+        newEl.classList.add('archive-filter__block');
+        inputEl.setAttribute('id', "y-".concat(_i3));
+        inputEl.setAttribute('type', 'radio');
+        inputEl.setAttribute('name', 'check[]');
+        inputEl.setAttribute('value', "".concat(_i3));
+        inputLabel.setAttribute('for', "y-".concat(_i3));
+        inputLabel.textContent = _i3;
+        newEl.append(inputEl);
+        newEl.append(inputLabel);
+        parentEl.append(newEl);
+      }
+    } else {
+      parentEl = $(parent).find('.archive-filter__list');
+
+      for (var _i4 = qty; _i4 > 0; _i4--) {
+        var _newEl = document.createElement('div'),
+            _inputEl = document.createElement('input'),
+            _inputLabel = document.createElement('label');
+
+        _newEl.classList.add('archive-filter__block');
+
+        _inputEl.setAttribute('id', "d-".concat(_i4));
+
+        _inputEl.setAttribute('type', 'radio');
+
+        _inputEl.setAttribute('name', 'check[]');
+
+        _inputEl.setAttribute('value', "".concat(_i4));
+
+        _inputLabel.setAttribute('for', "d-".concat(_i4));
+
+        _inputLabel.textContent = _i4;
+
+        _newEl.append(_inputEl);
+
+        _newEl.append(_inputLabel);
+
+        parentEl.append(_newEl);
+      }
+    }
+  }
+
+  crYear('.archive-filter__item--year', 1935);
+
+  if ($('.archive-filter__item').exists()) {
+    $('.archive-filter__item').each(function () {
+      var temp = '',
+          linkEl = '',
+          txt = '';
+      temp = $(this).find('.archive-filter__box');
+      $(temp).mCustomScrollbar({
+        theme: "dark",
+        mouseWheelPixels: 90
+      });
+      temp = $(this).find('.archive-filter__bloc');
+      txt = $(this).find('.archive-filter__txt');
+      $(temp).on('click', function () {
+        $(this).toggleClass("archive-filter__item--active").siblings().removeClass("archive-filter__item--active");
+
+        if ($(this).hasClass('archive-filter__item--active') || $(this).hasClass('archive-filter__item--month')) {
+          linkEl = $(this).find('.archive-filter__block');
+          $(linkEl).each(function () {
+            $(this).on('click', function () {
+              $('.archive-filter__item--day').find('.archive-filter__block').remove();
+
+              if ($(this).text().indexOf("Декабрь") != -1 || $(this).text().indexOf("Январь") != -1 || $(this).text().indexOf("Март") != -1 || $(this).text().indexOf("Май") != -1 || $(this).text().indexOf("Июль") != -1 || $(this).text().indexOf("Август") != -1 || $(this).text().indexOf("Октябрь") != -1) {
+                crYear('.archive-filter__item--day', 31);
+              } else if ($(this).text().indexOf("Сентябрь") != -1 || $(this).text().indexOf("Июнь") != -1 || $(this).text().indexOf("Ноябрь") != -1 || $(this).text().indexOf("Апрель") != -1) {
+                crYear('.archive-filter__item--day', 30);
+              } else {
+                crYear('.archive-filter__item--day', 28);
+              }
+            });
+          });
+        }
+
+        if ($(this).hasClass('archive-filter__item--active')) {
+          linkEl = $(this).find('.archive-filter__block');
+          $(linkEl).each(function () {
+            $(this).on('click', function () {
+              $(txt).text($(this).text());
+            });
+          });
+        }
+      }.bind(this));
+    });
+  }
+
   if ($('.news-popular__text').exists()) {
     var truncate = document.querySelectorAll(".news-popular__text");
 
-    for (var _i3 = 0; _i3 < truncate.length; _i3++) {
-      $clamp(truncate[_i3], {
+    for (var _i5 = 0; _i5 < truncate.length; _i5++) {
+      $clamp(truncate[_i5], {
         clamp: 4,
         // Число строк
         useNativeClamp: false

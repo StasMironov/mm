@@ -4,6 +4,127 @@ jQuery.fn.exists = function () {
 }
 $(() => {
 
+
+    let nowYear = new Date().getFullYear();
+    let parentEl = '';
+
+    function crYear(parent, qty) {
+        console.log(1);
+
+        if (parent == '.archive-filter__item--year') {
+            parentEl = $(parent).find('.archive-filter__list');
+            for (let i = nowYear; i >= 1935; i--) {
+                let newEl = document.createElement('div'),
+                    inputEl = document.createElement('input'),
+                    inputLabel = document.createElement('label');
+
+                newEl.classList.add('archive-filter__block');
+
+                inputEl.setAttribute('id', `y-${i}`);
+                inputEl.setAttribute('type', 'radio');
+                inputEl.setAttribute('name', 'check[]');
+                inputEl.setAttribute('value', `${i}`);
+
+                inputLabel.setAttribute('for', `y-${i}`);
+                inputLabel.textContent = i;
+                newEl.append(inputEl);
+                newEl.append(inputLabel);
+
+                parentEl.append(newEl);
+            }
+
+        } else {
+            parentEl = $(parent).find('.archive-filter__list');
+            for (let i = qty; i > 0; i--) {
+                let newEl = document.createElement('div'),
+                    inputEl = document.createElement('input'),
+                    inputLabel = document.createElement('label');
+
+                newEl.classList.add('archive-filter__block');
+
+                inputEl.setAttribute('id', `d-${i}`);
+                inputEl.setAttribute('type', 'radio');
+                inputEl.setAttribute('name', 'check[]');
+                inputEl.setAttribute('value', `${i}`);
+
+                inputLabel.setAttribute('for', `d-${i}`);
+                inputLabel.textContent = i;
+                newEl.append(inputEl);
+                newEl.append(inputLabel);
+
+                parentEl.append(newEl);
+            }
+        }
+    }
+
+    crYear('.archive-filter__item--year', 1935);
+
+    if ($('.archive-filter__item').exists()) {
+        $('.archive-filter__item').each(function () {
+            let temp = '',
+                linkEl = '',
+                txt = '';
+
+            temp = $(this).find('.archive-filter__box');
+            $(temp).mCustomScrollbar({
+                theme: "dark",
+                mouseWheelPixels: 90
+            });
+
+            temp = $(this).find('.archive-filter__bloc');
+            txt = $(this).find('.archive-filter__txt');
+
+            $(temp).on('click', function () {
+
+                $(this).toggleClass("archive-filter__item--active").siblings().removeClass("archive-filter__item--active");
+
+                if (($(this).hasClass('archive-filter__item--active')) || ($(this).hasClass('archive-filter__item--month'))) {
+                    linkEl = $(this).find('.archive-filter__block');
+                    $(linkEl).each(function () {
+                        $(this).on('click', function () {
+                            $('.archive-filter__item--day').find('.archive-filter__block').remove();
+
+                            if (($(this).text().indexOf("Декабрь") != -1) ||
+                                ($(this).text().indexOf("Январь") != -1) ||
+                                ($(this).text().indexOf("Март") != -1) ||
+                                ($(this).text().indexOf("Май") != -1) ||
+                                ($(this).text().indexOf("Июль") != -1) ||
+                                ($(this).text().indexOf("Август") != -1) ||
+                                ($(this).text().indexOf("Октябрь") != -1)
+                            ) {
+                                crYear('.archive-filter__item--day', 31);
+                            } else if (($(this).text().indexOf("Сентябрь") != -1) ||
+                                ($(this).text().indexOf("Июнь") != -1) ||
+                                ($(this).text().indexOf("Ноябрь") != -1) ||
+                                ($(this).text().indexOf("Апрель") != -1)) {
+                                crYear('.archive-filter__item--day', 30);
+                            } else {
+                                crYear('.archive-filter__item--day', 28);
+                            }
+
+                        });
+
+                    });
+
+                }
+
+
+                if ($(this).hasClass('archive-filter__item--active')) {
+
+                    linkEl = $(this).find('.archive-filter__block');
+                    $(linkEl).each(function () {
+
+                        $(this).on('click', function () {
+
+                            $(txt).text($(this).text());
+
+                        });
+                    });
+                }
+            }.bind(this));
+        });
+    }
+
     if ($('.news-popular__text').exists()) {
         let truncate = document.querySelectorAll(".news-popular__text");
 
@@ -317,5 +438,4 @@ $(() => {
 
     newsThumbs.controller.control = newsGallery;
     newsGallery.controller.control = newsThumbs;
-
 });
