@@ -10,8 +10,7 @@ $(function () {
   var parentEl = '';
 
   function crYear(parent, qty) {
-    console.log(1);
-
+    // console.log(1);
     if (parent == '.archive-filter__item--year') {
       parentEl = $(parent).find('.archive-filter__list');
 
@@ -76,12 +75,48 @@ $(function () {
       temp = $(this).find('.archive-filter__bloc');
       txt = $(this).find('.archive-filter__txt');
       $(temp).on('click', function () {
-        $(this).toggleClass("archive-filter__item--active").siblings().removeClass("archive-filter__item--active");
+        $(this).toggleClass("archive-filter__item--active").siblings().removeClass("archive-filter__item--active"); // if (($(this).hasClass('archive-filter__item--active')) || ($(this).hasClass('archive-filter__item--month'))) {
+        //     linkEl = $(this).find('.archive-filter__block');
+        //     $(linkEl).each(function () {
+        //         $(this).on('click', function () {
+        //             $('.archive-filter__item--day').find('.archive-filter__block').remove();
+        //             if (($(this).text().indexOf("Декабрь") != -1) ||
+        //                 ($(this).text().indexOf("Январь") != -1) ||
+        //                 ($(this).text().indexOf("Март") != -1) ||
+        //                 ($(this).text().indexOf("Май") != -1) ||
+        //                 ($(this).text().indexOf("Июль") != -1) ||
+        //                 ($(this).text().indexOf("Август") != -1) ||
+        //                 ($(this).text().indexOf("Октябрь") != -1)
+        //             ) {
+        //                 crYear('.archive-filter__item--day', 31);
+        //             } else if (($(this).text().indexOf("Сентябрь") != -1) ||
+        //                 ($(this).text().indexOf("Июнь") != -1) ||
+        //                 ($(this).text().indexOf("Ноябрь") != -1) ||
+        //                 ($(this).text().indexOf("Апрель") != -1)) {
+        //                 crYear('.archive-filter__item--day', 30);
+        //             } else {
+        //                 crYear('.archive-filter__item--day', 28);
+        //             }
+        //         });
+        //     });
+        // }
 
-        if ($(this).hasClass('archive-filter__item--active') || $(this).hasClass('archive-filter__item--month')) {
+        if ($(this).hasClass('archive-filter__item--active')) {
+          console.log($(this));
           linkEl = $(this).find('.archive-filter__block');
           $(linkEl).each(function () {
             $(this).on('click', function () {
+              $(txt).text($(this).text());
+            });
+          });
+        }
+
+        if ($(this).hasClass('archive-filter__item--active') && $(this).hasClass('archive-filter__item--month')) {
+          console.log($(this));
+          linkEl = $(this).find('.archive-filter__block');
+          $(linkEl).each(function () {
+            $(this).on('click', function () {
+              $(txt).text($(this).text());
               $('.archive-filter__item--day').find('.archive-filter__block').remove();
 
               if ($(this).text().indexOf("Декабрь") != -1 || $(this).text().indexOf("Январь") != -1 || $(this).text().indexOf("Март") != -1 || $(this).text().indexOf("Май") != -1 || $(this).text().indexOf("Июль") != -1 || $(this).text().indexOf("Август") != -1 || $(this).text().indexOf("Октябрь") != -1) {
@@ -91,15 +126,6 @@ $(function () {
               } else {
                 crYear('.archive-filter__item--day', 28);
               }
-            });
-          });
-        }
-
-        if ($(this).hasClass('archive-filter__item--active')) {
-          linkEl = $(this).find('.archive-filter__block');
-          $(linkEl).each(function () {
-            $(this).on('click', function () {
-              $(txt).text($(this).text());
             });
           });
         }
