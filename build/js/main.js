@@ -9,7 +9,12 @@ $(function () {
   var nowYear = new Date().getFullYear();
   var parentEl = '';
   var form = document.querySelector('.archive-filter__items');
-  console.log(form); //===========Truncate text=============
+  $(document).on('click', function (e) {
+    if (!e.target.classList.contains('.archive-filter__item')) {
+      // console.log(true);
+      console.log(e.target);
+    }
+  }); //===========Truncate text=============
 
   var truncateText = function truncateText(bloc, qty) {
     if ($(bloc).exists()) {
@@ -33,15 +38,19 @@ $(function () {
     var accordions = document.getElementsByClassName("archive-filter__panel");
 
     for (var _i4 = 0; _i4 < accordions.length; _i4++) {
-      accordions[_i4].onclick = function () {
-        this.classList.toggle('archive-filter__panel--active');
-        $(this).parent().toggleClass('archive-filter__wrp--active');
-        var content = this.nextElementSibling;
+      accordions[_i4].onclick = function (event) {
+        var target = event.target;
 
-        if (content.style.maxHeight) {
-          content.style.maxHeight = null;
-        } else {
-          content.style.maxHeight = content.scrollHeight + "px";
+        if (!$(target).attr('href')) {
+          this.classList.toggle('archive-filter__panel--active');
+          $(this).parent().toggleClass('archive-filter__wrp--active');
+          var content = this.nextElementSibling;
+
+          if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+          }
         }
       };
     }

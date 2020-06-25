@@ -114,7 +114,6 @@
         width: 100%;
         background-color: $gray-1;
         left: 0px;
-        bottom: 0;
         outline: 1px solid $gray-2 !important;
         box-sizing: content-box;
         right: 0;
@@ -123,10 +122,12 @@
         box-sizing: border-box;
         padding: 16px 0 14px 16px;
         min-height: 220px;
-        top: 274px;
         overflow: hidden;
         transition: .2s ease-out;
         z-index: 1;
+        top: auto;
+        bottom: auto;
+        height: 175px;
 
         &--active {
             opacity: 1;
@@ -187,7 +188,7 @@
     }
 
     &__panel {
-        display: flex;
+        display: inline-flex;
         align-items: center;
 
         @media(max-width: 640px) {
@@ -239,6 +240,7 @@
         align-items: center;
 
         span {
+            cursor: pointer;
             margin-right: 8px;
 
             @media(max-width: 640px) {
@@ -247,7 +249,13 @@
         }
 
         a {
+            color: $purple-3;
+            transition: .2s ease-out;
             margin-right: 5px;
+
+            &:hover {
+                color: $black;
+            }
         }
     }
 

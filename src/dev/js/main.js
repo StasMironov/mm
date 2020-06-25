@@ -6,9 +6,16 @@ jQuery.fn.exists = function () {
 $(() => {
     let nowYear = new Date().getFullYear();
     let parentEl = '';
-
     let form = document.querySelector('.archive-filter__items');
-    console.log(form);
+
+
+    $(document).on('click', (e) => {
+        if (!e.target.classList.contains('.archive-filter__item')) {
+            // console.log(true);
+            console.log(e.target);
+        }
+    });
+
 
     //===========Truncate text=============
 
@@ -36,16 +43,19 @@ $(() => {
         let accordions = document.getElementsByClassName("archive-filter__panel");
 
         for (let i = 0; i < accordions.length; i++) {
-            accordions[i].onclick = function () {
-                this.classList.toggle('archive-filter__panel--active');
-                $(this).parent().toggleClass('archive-filter__wrp--active');
+            accordions[i].onclick = function (event) {
+                let target = event.target;
+                if (!$(target).attr('href')) {
+                    this.classList.toggle('archive-filter__panel--active');
+                    $(this).parent().toggleClass('archive-filter__wrp--active');
 
-                let content = this.nextElementSibling;
+                    let content = this.nextElementSibling;
 
-                if (content.style.maxHeight) {
-                    content.style.maxHeight = null;
-                } else {
-                    content.style.maxHeight = content.scrollHeight + "px";
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
                 }
             }
         }
@@ -192,8 +202,6 @@ $(() => {
             }.bind(this));
         });
     }
-
-
 
     if ($('.header__search--laptop').exists) {
         try {
