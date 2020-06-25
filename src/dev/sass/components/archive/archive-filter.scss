@@ -1,16 +1,29 @@
 .archive-filter {
     margin-top: 31px;
 
+    @media(max-width: 640px) {
+        margin-top: 24px;
+    }
+
     &__items {
         display: flex;
         align-items: center;
+
+        @media(max-width: 640px) {
+            margin-left: -8px;
+            flex-wrap: wrap;
+        }
+
+        @media(max-width: 500px) {
+            margin-top: -8px;
+        }
     }
 
     &__item {
         cursor: pointer;
         position: relative;
         background-color: $gray-1;
-        border: 1px solid $gray-2;
+        outline: 1px solid $gray-2 !important;
         height: 53px;
 
         &:nth-child(1) {
@@ -44,6 +57,21 @@
 
         &:not(:last-child) {
             margin-right: 16px;
+        }
+
+        @media(max-width: 640px) {
+            width: calc(25% - 8px) !important;
+            max-width: initial !important;
+            margin-left: 8px;
+            margin-right: 0 !important;
+        }
+
+        @media(max-width: 500px) {
+            width: calc(50% - 8px) !important;
+            max-width: initial !important;
+            margin-left: 8px;
+            margin-right: 0 !important;
+            margin-top: 8px;
         }
 
         &--active {
@@ -83,11 +111,11 @@
         opacity: 0;
         visibility: hidden;
         position: absolute;
-        width: 102%;
+        width: 100%;
         background-color: $gray-1;
-        left: -1px;
+        left: 0px;
         bottom: 0;
-        border: 1px solid $gray-2;
+        outline: 1px solid $gray-2 !important;
         box-sizing: content-box;
         right: 0;
         margin: auto;
@@ -98,6 +126,7 @@
         top: 274px;
         overflow: hidden;
         transition: .2s ease-out;
+        z-index: 1;
 
         &--active {
             opacity: 1;
@@ -133,6 +162,7 @@
 
         }
 
+
         input[type=radio]:checked+label {
             color: $purple-3;
         }
@@ -145,6 +175,104 @@
             display: block;
             width: 100%;
             cursor: pointer;
+        }
+    }
+
+    &__wrp {
+        margin-top: 32px;
+
+        @media(max-width: 500px) {
+            margin-top: 17px;
+        }
+    }
+
+    &__panel {
+        display: flex;
+        align-items: center;
+
+        @media(max-width: 640px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        &--active {
+            .archive-filter__ic {
+                transform: scale(1, -1);
+                transform-origin: center;
+            }
+        }
+    }
+
+    &__pic {
+        height: 12px;
+        width: 12px;
+        transform: translateY(-1px);
+        transition: .2s ease-out;
+
+        .b-svg {
+            display: block;
+            fill: none;
+            stroke: #27202c;
+            width: 100%;
+            height: 100%;
+            stroke-width: 2px;
+        }
+    }
+
+    &__text {
+        font-size: 14px;
+        line-height: 22px;
+        cursor: pointer;
+
+        a {
+            color: $purple-3;
+            transition: .2s ease-out;
+
+            &:hover {
+                color: $black;
+            }
+        }
+    }
+
+    &__cover {
+        display: flex;
+        align-items: center;
+
+        span {
+            margin-right: 8px;
+
+            @media(max-width: 640px) {
+                margin-right: 13px;
+            }
+        }
+
+        a {
+            margin-right: 5px;
+        }
+    }
+
+    &__select {
+        font-size: 14px;
+        line-height: 22px;
+        padding: 0px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .4s ease-in-out;
+        background-color: #fff;
+    }
+
+    &__content {
+        padding-top: 19px;
+    }
+
+    &__unit {
+        a {
+            color: $purple-3;
+            transition: .2s ease-out;
+
+            &:hover {
+                color: $black;
+            }
         }
     }
 }

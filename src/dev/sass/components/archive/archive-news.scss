@@ -1,0 +1,285 @@
+.archive-news {
+    margin-top: 32px;
+
+    &__header {
+        padding-right: 0;
+    }
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+
+        @media(max-width: 1235px) {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        @media(max-width: 1024px) {
+            margin-top: 0;
+        }
+    }
+
+    &__item {
+        display: flex;
+        width: calc(50% - 35px);
+        margin-left: 35px;
+        padding-left: 35px;
+
+
+        @media(max-width: 1300px) {
+            width: calc(50% - 20px);
+            margin-left: 20px;
+            padding-left: 20px;
+        }
+
+        @media(max-width: 1235px) {
+            flex-direction: column;
+            width: calc(50% - 25px);
+            margin-left: 25px;
+            padding-left: 25px;
+        }
+
+
+        @media(max-width: 768px) {
+            width: calc(50% - 15px);
+            margin-left: 15px;
+            padding-left: 15px;
+        }
+
+        @media(max-width: 640px) {
+            width: 100%;
+            margin-left: 0;
+            padding-left: 0;
+        }
+
+        @media (max-width: 640px) {
+            &:not(:first-child) {
+                margin-top: 30px;
+            }
+        }
+
+        &:not(:last-child) {
+            @media(max-width: 640px) {
+                padding-bottom: 16px;
+                border-bottom: 1px solid #d7d7d7;
+            }
+        }
+
+        &:last-child {
+            border-left: 1px solid #d7d7d7;
+
+            @media(max-width: 640px) {
+                border-left: none;
+            }
+        }
+
+        &:hover .archive-news__pic:after {
+            opacity: 1;
+        }
+
+        &:hover .archive-news__header {
+            color: $purple-1;
+        }
+    }
+
+    &__bloc {
+        padding-bottom: 31px;
+        border-bottom: 1px solid #d7d7d7;
+
+        @media(max-width: 1024px) {
+            padding-bottom: 24px;
+        }
+
+        @media(max-width: 768px) {
+            padding-bottom: 16px;
+        }
+
+        &:not(:first-child) {
+            margin-top: 30px;
+        }
+
+        &--other {
+            .archive-news__item {
+                border-left: none !important;
+                width: 100%;
+                margin-left: 0;
+                padding-left: 0;
+
+                @media(max-width: 1235px) {
+                    flex-direction: row;
+                    width: 100%;
+                }
+            }
+
+            .archive-news__pic {
+                min-width: 363px;
+                height: 262px;
+                margin-right: 23px;
+
+                @media(max-width: 1235px) {
+                    min-width: 295px;
+                    width: auto;
+                    height: 205px;
+                }
+
+                @media(max-width: 1024px) {
+                    display: block;
+                    margin-right: 20px;
+                }
+
+                @media(max-width: 768px) {
+                    min-width: 195px;
+                    height: 184px;
+                }
+
+                @media(max-width: 640px) {
+                    display: none;
+                }
+            }
+
+            .archive-news__text {
+                max-width: 100%;
+                max-width: 525px;
+            }
+
+            .archive-news__box {
+                padding-top: 36px;
+                width: calc(100% - 375px - 22px);
+
+                @media(max-width: 1235px) {
+                    width: calc(100% - 307px - 22px);
+                    padding-top: 0;
+                    margin-top: 0;
+                }
+
+                @media(max-width: 768px) {
+                    width: calc(100% - 207px - 20px);
+                }
+
+                @media(max-width: 640px) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &__items {
+        display: flex;
+        margin-left: -70px;
+
+        @media(max-width: 1300px) {
+            margin-left: -40px;
+        }
+
+        @media(max-width: 1235px) {
+            margin-left: -50px;
+        }
+
+        @media(max-width: 768px) {
+            margin-left: -30px;
+        }
+
+        @media(max-width: 640px) {
+            flex-direction: column;
+            margin-left: 0;
+            width: 100%;
+        }
+    }
+
+    &__pic {
+        position: relative;
+        display: block;
+        max-width: 120px;
+        min-width: 120px;
+        height: 120px;
+        width: 100%;
+        margin-right: 18px;
+
+        @media(max-width: 1600px) {
+            min-width: 85px;
+            max-width: 85px;
+        }
+
+        @media(max-width: 1300px) {
+            min-width: 75px;
+            max-width: 75px;
+            margin-right: 15px;
+        }
+
+        @media(max-width: 1235px) {
+            width: 100%;
+            height: 75px;
+            min-width: auto;
+            max-width: 100%;
+            margin-right: 0;
+        }
+
+        @media(max-width: 1024px) {
+            display: none;
+        }
+
+        &:after {
+            position: absolute;
+            content: "";
+            background-repeat: no-repeat;
+            bottom: 0;
+            top: 0;
+            margin: auto;
+            right: 0;
+            left: 0;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+            background-image: url(../img/icon/hover-block.png);
+            opacity: 0;
+            transition: .2s ease-out;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__top {
+        color: $purple-3;
+        letter-spacing: .5px;
+    }
+
+    &__cover {
+        display: block;
+        margin-top: 18px;
+        margin-bottom: 17px;
+
+        @media(max-width: 1235px) {
+            margin-top: 8px;
+        }
+
+        @media(max-width: 1024px) {
+            margin-bottom: 12px;
+        }
+    }
+
+    &__text {
+        margin-top: 8px;
+        max-width: 300px;
+
+        @media(max-width: 1235px) {
+            max-width: 415px;
+        }
+
+        @media(max-width: 1024px) {
+            max-width: 100%;
+            margin-top: 3px;
+        }
+    }
+
+    &__wrapper {
+        margin-top: 24px;
+    }
+
+    .publish {
+        margin-top: auto;
+    }
+}

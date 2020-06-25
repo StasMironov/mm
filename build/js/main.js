@@ -8,23 +8,83 @@ jQuery.fn.exists = function () {
 $(function () {
   var nowYear = new Date().getFullYear();
   var parentEl = '';
+  var form = document.querySelector('.archive-filter__items');
+  console.log(form); //===========Truncate text=============
+
+  var truncateText = function truncateText(bloc, qty) {
+    if ($(bloc).exists()) {
+      var truncate = document.querySelectorAll(bloc); //".news-popular__text"
+
+      for (var _i3 = 0; _i3 < truncate.length; _i3++) {
+        $clamp(truncate[_i3], {
+          clamp: qty,
+          // Число строк
+          useNativeClamp: false
+        });
+      }
+    }
+  };
+
+  truncateText('.news-popular__text', 4);
+  truncateText('.archive-news__text', 4);
+  truncateText('.author-articles__txt', 2); //===========Accordion=============
+
+  if ($('.archive-filter__panel').exists()) {
+    var accordions = document.getElementsByClassName("archive-filter__panel");
+
+    for (var _i4 = 0; _i4 < accordions.length; _i4++) {
+      accordions[_i4].onclick = function () {
+        this.classList.toggle('archive-filter__panel--active');
+        $(this).parent().toggleClass('archive-filter__wrp--active');
+        var content = this.nextElementSibling;
+
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      };
+    }
+  }
+
+  function checkEl() {
+    var linkEl = $('.archive-filter__item--month').find('.archive-filter__block'),
+        temp = '';
+    $(linkEl).each(function () {
+      if ($(this).children('input').prop("checked")) {
+        temp = $(this).children('input').val();
+
+        if (temp.indexOf("Декабрь") != -1 || temp.indexOf("Январь") != -1 || temp.indexOf("Март") != -1 || temp.indexOf("Май") != -1 || temp.indexOf("Июль") != -1 || temp.indexOf("Август") != -1 || temp.indexOf("Октябрь") != -1) {
+          crYear('.archive-filter__item--day', 31);
+        } else if (temp.indexOf("Сентябрь") != -1 || temp.indexOf("Июнь") != -1 || temp.indexOf("Ноябрь") != -1 || temp.indexOf("Апрель") != -1) {
+          crYear('.archive-filter__item--day', 30);
+        } else {
+          crYear('.archive-filter__item--day', 28);
+        }
+      }
+    });
+  }
 
   function crYear(parent, qty) {
-    // console.log(1);
     if (parent == '.archive-filter__item--year') {
       parentEl = $(parent).find('.archive-filter__list');
 
-      for (var _i3 = nowYear; _i3 >= 1935; _i3--) {
+      for (var _i5 = nowYear; _i5 >= 1935; _i5--) {
         var newEl = document.createElement('div'),
             inputEl = document.createElement('input'),
             inputLabel = document.createElement('label');
         newEl.classList.add('archive-filter__block');
-        inputEl.setAttribute('id', "y-".concat(_i3));
+
+        if (_i5 == nowYear) {
+          inputEl.setAttribute('checked', 'checked');
+        }
+
+        inputEl.setAttribute('id', "y-".concat(_i5));
         inputEl.setAttribute('type', 'radio');
         inputEl.setAttribute('name', 'check[]');
-        inputEl.setAttribute('value', "".concat(_i3));
-        inputLabel.setAttribute('for', "y-".concat(_i3));
-        inputLabel.textContent = _i3;
+        inputEl.setAttribute('value', "".concat(_i5));
+        inputLabel.setAttribute('for', "y-".concat(_i5));
+        inputLabel.textContent = _i5;
         newEl.append(inputEl);
         newEl.append(inputLabel);
         parentEl.append(newEl);
@@ -32,24 +92,28 @@ $(function () {
     } else {
       parentEl = $(parent).find('.archive-filter__list');
 
-      for (var _i4 = qty; _i4 > 0; _i4--) {
+      for (var _i6 = qty; _i6 > 0; _i6--) {
         var _newEl = document.createElement('div'),
             _inputEl = document.createElement('input'),
             _inputLabel = document.createElement('label');
 
         _newEl.classList.add('archive-filter__block');
 
-        _inputEl.setAttribute('id', "d-".concat(_i4));
+        if (_i6 == qty) {
+          _inputEl.setAttribute('checked', 'checked');
+        }
+
+        _inputEl.setAttribute('id', "d-".concat(_i6));
 
         _inputEl.setAttribute('type', 'radio');
 
-        _inputEl.setAttribute('name', 'check[]');
+        _inputEl.setAttribute('name', 'check3[]');
 
-        _inputEl.setAttribute('value', "".concat(_i4));
+        _inputEl.setAttribute('value', "".concat(_i6));
 
-        _inputLabel.setAttribute('for', "d-".concat(_i4));
+        _inputLabel.setAttribute('for', "d-".concat(_i6));
 
-        _inputLabel.textContent = _i4;
+        _inputLabel.textContent = _i6;
 
         _newEl.append(_inputEl);
 
@@ -60,13 +124,15 @@ $(function () {
     }
   }
 
+  checkEl();
   crYear('.archive-filter__item--year', 1935);
 
   if ($('.archive-filter__item').exists()) {
     $('.archive-filter__item').each(function () {
       var temp = '',
           linkEl = '',
-          txt = '';
+          txt = '',
+          inpEl = '';
       temp = $(this).find('.archive-filter__box');
       $(temp).mCustomScrollbar({
         theme: "dark",
@@ -74,35 +140,17 @@ $(function () {
       });
       temp = $(this).find('.archive-filter__bloc');
       txt = $(this).find('.archive-filter__txt');
+      inpEl = $(this).find('.archive-filter__list').find('input'); //prop("checked")
+
+      $(inpEl).each(function () {
+        if ($(this).prop("checked")) {
+          $(txt).text($(this).val());
+        }
+      });
       $(temp).on('click', function () {
-        $(this).toggleClass("archive-filter__item--active").siblings().removeClass("archive-filter__item--active"); // if (($(this).hasClass('archive-filter__item--active')) || ($(this).hasClass('archive-filter__item--month'))) {
-        //     linkEl = $(this).find('.archive-filter__block');
-        //     $(linkEl).each(function () {
-        //         $(this).on('click', function () {
-        //             $('.archive-filter__item--day').find('.archive-filter__block').remove();
-        //             if (($(this).text().indexOf("Декабрь") != -1) ||
-        //                 ($(this).text().indexOf("Январь") != -1) ||
-        //                 ($(this).text().indexOf("Март") != -1) ||
-        //                 ($(this).text().indexOf("Май") != -1) ||
-        //                 ($(this).text().indexOf("Июль") != -1) ||
-        //                 ($(this).text().indexOf("Август") != -1) ||
-        //                 ($(this).text().indexOf("Октябрь") != -1)
-        //             ) {
-        //                 crYear('.archive-filter__item--day', 31);
-        //             } else if (($(this).text().indexOf("Сентябрь") != -1) ||
-        //                 ($(this).text().indexOf("Июнь") != -1) ||
-        //                 ($(this).text().indexOf("Ноябрь") != -1) ||
-        //                 ($(this).text().indexOf("Апрель") != -1)) {
-        //                 crYear('.archive-filter__item--day', 30);
-        //             } else {
-        //                 crYear('.archive-filter__item--day', 28);
-        //             }
-        //         });
-        //     });
-        // }
+        $(this).toggleClass("archive-filter__item--active").siblings().removeClass("archive-filter__item--active");
 
         if ($(this).hasClass('archive-filter__item--active')) {
-          console.log($(this));
           linkEl = $(this).find('.archive-filter__block');
           $(linkEl).each(function () {
             $(this).on('click', function () {
@@ -112,37 +160,17 @@ $(function () {
         }
 
         if ($(this).hasClass('archive-filter__item--active') && $(this).hasClass('archive-filter__item--month')) {
-          console.log($(this));
           linkEl = $(this).find('.archive-filter__block');
           $(linkEl).each(function () {
             $(this).on('click', function () {
               $(txt).text($(this).text());
               $('.archive-filter__item--day').find('.archive-filter__block').remove();
-
-              if ($(this).text().indexOf("Декабрь") != -1 || $(this).text().indexOf("Январь") != -1 || $(this).text().indexOf("Март") != -1 || $(this).text().indexOf("Май") != -1 || $(this).text().indexOf("Июль") != -1 || $(this).text().indexOf("Август") != -1 || $(this).text().indexOf("Октябрь") != -1) {
-                crYear('.archive-filter__item--day', 31);
-              } else if ($(this).text().indexOf("Сентябрь") != -1 || $(this).text().indexOf("Июнь") != -1 || $(this).text().indexOf("Ноябрь") != -1 || $(this).text().indexOf("Апрель") != -1) {
-                crYear('.archive-filter__item--day', 30);
-              } else {
-                crYear('.archive-filter__item--day', 28);
-              }
+              checkEl();
             });
           });
         }
       }.bind(this));
     });
-  }
-
-  if ($('.news-popular__text').exists()) {
-    var truncate = document.querySelectorAll(".news-popular__text");
-
-    for (var _i5 = 0; _i5 < truncate.length; _i5++) {
-      $clamp(truncate[_i5], {
-        clamp: 4,
-        // Число строк
-        useNativeClamp: false
-      });
-    }
   }
 
   if ($('.header__search--laptop').exists) {
@@ -200,9 +228,6 @@ $(function () {
       mySwiper = new Swiper('.author-articles__grid--slider', {
         slidesPerView: 'auto',
         spaceBetween: 16,
-        // a11y: true,
-        // keyboardControl: true,
-        // grabCursor: true,
         loop: true,
         autoplay: true,
         delay: 3000,
@@ -254,8 +279,6 @@ $(function () {
   var result = "";
   var arrTemp = [];
   var ch = 0; // Итерация по выбранным элементам
-
-  console.log(allEl);
 
   for (var i = 0; i < allEl.length; i++) {
     if ($(allEl[i]).is('img')) {

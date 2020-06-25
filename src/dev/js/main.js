@@ -2,23 +2,98 @@
 jQuery.fn.exists = function () {
     return $(this).length;
 }
+
 $(() => {
-
-
     let nowYear = new Date().getFullYear();
     let parentEl = '';
 
+    let form = document.querySelector('.archive-filter__items');
+    console.log(form);
+
+    //===========Truncate text=============
+
+    const truncateText = (bloc, qty) => {
+        if ($(bloc).exists()) {
+            let truncate = document.querySelectorAll(bloc); //".news-popular__text"
+
+            for (let i = 0; i < truncate.length; i++) {
+                $clamp(truncate[i], {
+                    clamp: qty, // Число строк
+                    useNativeClamp: false
+                });
+            }
+        }
+    }
+
+    truncateText('.news-popular__text', 4);
+    truncateText('.archive-news__text', 4);
+    truncateText('.author-articles__txt', 2);
+
+
+    //===========Accordion=============
+
+    if ($('.archive-filter__panel').exists()) {
+        let accordions = document.getElementsByClassName("archive-filter__panel");
+
+        for (let i = 0; i < accordions.length; i++) {
+            accordions[i].onclick = function () {
+                this.classList.toggle('archive-filter__panel--active');
+                $(this).parent().toggleClass('archive-filter__wrp--active');
+
+                let content = this.nextElementSibling;
+
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            }
+        }
+    }
+
+    function checkEl() {
+        let linkEl = $('.archive-filter__item--month').find('.archive-filter__block'),
+            temp = '';
+
+        $(linkEl).each(function () {
+            if ($(this).children('input').prop("checked")) {
+                temp = $(this).children('input').val();
+                if ((temp.indexOf("Декабрь") != -1) ||
+                    (temp.indexOf("Январь") != -1) ||
+                    (temp.indexOf("Март") != -1) ||
+                    (temp.indexOf("Май") != -1) ||
+                    (temp.indexOf("Июль") != -1) ||
+                    (temp.indexOf("Август") != -1) ||
+                    (temp.indexOf("Октябрь") != -1)
+                ) {
+                    crYear('.archive-filter__item--day', 31);
+                } else if ((temp.indexOf("Сентябрь") != -1) ||
+                    (temp.indexOf("Июнь") != -1) ||
+                    (temp.indexOf("Ноябрь") != -1) ||
+                    (temp.indexOf("Апрель") != -1)) {
+                    crYear('.archive-filter__item--day', 30);
+                } else {
+                    crYear('.archive-filter__item--day', 28);
+                }
+            }
+        });
+    }
+
     function crYear(parent, qty) {
-        // console.log(1);
 
         if (parent == '.archive-filter__item--year') {
             parentEl = $(parent).find('.archive-filter__list');
+
             for (let i = nowYear; i >= 1935; i--) {
                 let newEl = document.createElement('div'),
                     inputEl = document.createElement('input'),
                     inputLabel = document.createElement('label');
 
                 newEl.classList.add('archive-filter__block');
+
+                if (i == nowYear) {
+                    inputEl.setAttribute('checked', 'checked');
+                }
 
                 inputEl.setAttribute('id', `y-${i}`);
                 inputEl.setAttribute('type', 'radio');
@@ -32,9 +107,9 @@ $(() => {
 
                 parentEl.append(newEl);
             }
-
         } else {
             parentEl = $(parent).find('.archive-filter__list');
+
             for (let i = qty; i > 0; i--) {
                 let newEl = document.createElement('div'),
                     inputEl = document.createElement('input'),
@@ -42,9 +117,13 @@ $(() => {
 
                 newEl.classList.add('archive-filter__block');
 
+                if (i == qty) {
+                    inputEl.setAttribute('checked', 'checked');
+                }
+
                 inputEl.setAttribute('id', `d-${i}`);
                 inputEl.setAttribute('type', 'radio');
-                inputEl.setAttribute('name', 'check[]');
+                inputEl.setAttribute('name', 'check3[]');
                 inputEl.setAttribute('value', `${i}`);
 
                 inputLabel.setAttribute('for', `d-${i}`);
@@ -53,17 +132,22 @@ $(() => {
                 newEl.append(inputLabel);
 
                 parentEl.append(newEl);
+
             }
         }
     }
 
+    checkEl();
+
     crYear('.archive-filter__item--year', 1935);
+
 
     if ($('.archive-filter__item').exists()) {
         $('.archive-filter__item').each(function () {
             let temp = '',
                 linkEl = '',
-                txt = '';
+                txt = '',
+                inpEl = '';
 
             temp = $(this).find('.archive-filter__box');
             $(temp).mCustomScrollbar({
@@ -73,43 +157,20 @@ $(() => {
 
             temp = $(this).find('.archive-filter__bloc');
             txt = $(this).find('.archive-filter__txt');
+            inpEl = $(this).find('.archive-filter__list').find('input'); //prop("checked")
+
+            $(inpEl).each(function () {
+                if ($(this).prop("checked")) {
+                    $(txt).text($(this).val());
+                }
+            });
+
 
             $(temp).on('click', function () {
 
                 $(this).toggleClass("archive-filter__item--active").siblings().removeClass("archive-filter__item--active");
 
-                // if (($(this).hasClass('archive-filter__item--active')) || ($(this).hasClass('archive-filter__item--month'))) {
-                //     linkEl = $(this).find('.archive-filter__block');
-                //     $(linkEl).each(function () {
-                //         $(this).on('click', function () {
-                //             $('.archive-filter__item--day').find('.archive-filter__block').remove();
-
-                //             if (($(this).text().indexOf("Декабрь") != -1) ||
-                //                 ($(this).text().indexOf("Январь") != -1) ||
-                //                 ($(this).text().indexOf("Март") != -1) ||
-                //                 ($(this).text().indexOf("Май") != -1) ||
-                //                 ($(this).text().indexOf("Июль") != -1) ||
-                //                 ($(this).text().indexOf("Август") != -1) ||
-                //                 ($(this).text().indexOf("Октябрь") != -1)
-                //             ) {
-                //                 crYear('.archive-filter__item--day', 31);
-                //             } else if (($(this).text().indexOf("Сентябрь") != -1) ||
-                //                 ($(this).text().indexOf("Июнь") != -1) ||
-                //                 ($(this).text().indexOf("Ноябрь") != -1) ||
-                //                 ($(this).text().indexOf("Апрель") != -1)) {
-                //                 crYear('.archive-filter__item--day', 30);
-                //             } else {
-                //                 crYear('.archive-filter__item--day', 28);
-                //             }
-
-                //         });
-
-                //     });
-
-                // }
-
                 if ($(this).hasClass('archive-filter__item--active')) {
-                    console.log($(this));
                     linkEl = $(this).find('.archive-filter__block');
                     $(linkEl).each(function () {
                         $(this).on('click', function () {
@@ -119,54 +180,20 @@ $(() => {
                 }
 
                 if (($(this).hasClass('archive-filter__item--active')) && ($(this).hasClass('archive-filter__item--month'))) {
-                    console.log($(this));
                     linkEl = $(this).find('.archive-filter__block');
                     $(linkEl).each(function () {
                         $(this).on('click', function () {
                             $(txt).text($(this).text());
                             $('.archive-filter__item--day').find('.archive-filter__block').remove();
-
-                            if (($(this).text().indexOf("Декабрь") != -1) ||
-                                ($(this).text().indexOf("Январь") != -1) ||
-                                ($(this).text().indexOf("Март") != -1) ||
-                                ($(this).text().indexOf("Май") != -1) ||
-                                ($(this).text().indexOf("Июль") != -1) ||
-                                ($(this).text().indexOf("Август") != -1) ||
-                                ($(this).text().indexOf("Октябрь") != -1)
-                            ) {
-                                crYear('.archive-filter__item--day', 31);
-                            } else if (($(this).text().indexOf("Сентябрь") != -1) ||
-                                ($(this).text().indexOf("Июнь") != -1) ||
-                                ($(this).text().indexOf("Ноябрь") != -1) ||
-                                ($(this).text().indexOf("Апрель") != -1)) {
-                                crYear('.archive-filter__item--day', 30);
-                            } else {
-                                crYear('.archive-filter__item--day', 28);
-                            }
-
+                            checkEl();
                         });
                     });
                 }
             }.bind(this));
-
-
-
-
-
-
         });
     }
 
-    if ($('.news-popular__text').exists()) {
-        let truncate = document.querySelectorAll(".news-popular__text");
 
-        for (let i = 0; i < truncate.length; i++) {
-            $clamp(truncate[i], {
-                clamp: 4, // Число строк
-                useNativeClamp: false
-            });
-        }
-    }
 
     if ($('.header__search--laptop').exists) {
         try {
@@ -193,7 +220,6 @@ $(() => {
         }
         return;
     });
-
 
     if ($('.header__func').exists) {
         try {
@@ -223,9 +249,6 @@ $(() => {
             mySwiper = new Swiper('.author-articles__grid--slider', {
                 slidesPerView: 'auto',
                 spaceBetween: 16,
-                // a11y: true,
-                // keyboardControl: true,
-                // grabCursor: true,
                 loop: true,
                 autoplay: true,
                 delay: 3000,
@@ -280,8 +303,6 @@ $(() => {
     var result = "";
     var arrTemp = [];
     var ch = 0; // Итерация по выбранным элементам
-
-    console.log(allEl);
 
     for (var i = 0; i < allEl.length; i++) {
         if ($(allEl[i]).is('img')) {
@@ -470,4 +491,8 @@ $(() => {
 
     newsThumbs.controller.control = newsGallery;
     newsGallery.controller.control = newsThumbs;
+
+
+
+
 });

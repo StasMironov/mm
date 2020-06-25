@@ -391,6 +391,13 @@ button {
   position: relative;
 }
 
+.temp {
+  @media(max-width: 640px) {
+    display: none;
+  }
+}
+
+@import "./components/archive/archive-news.scss";
 @import "./components/archive/archive-filter.scss";
 @import "./components/archive/archive.scss";
 @import "./components/header.scss";
