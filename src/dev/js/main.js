@@ -8,14 +8,26 @@ $(() => {
     let parentEl = '';
     let form = document.querySelector('.archive-filter__items');
 
+    $(document).on('click', (event) => {
+        if ($('.archive-filter__item').exists) {
+            try {
+                let $targetBloc = $(event.target).closest('.archive-filter__bloc');
+                let $targetScroll = $(event.target).closest('.mCSB_dragger');
+                let $temp = '';
 
-    $(document).on('click', (e) => {
-        if (!e.target.classList.contains('.archive-filter__item')) {
-            // console.log(true);
-            console.log(e.target);
+                if (!$targetBloc.length) {
+                    $temp = $('.archive-filter__item--active');
+                    $('.archive-filter__item--active').removeClass('archive-filter__item--active');
+                }
+
+                if ($targetScroll.length) {
+                    $temp.addClass('archive-filter__item--active');
+                }
+            } catch (err) {
+                console.log(err);
+            }
         }
     });
-
 
     //===========Truncate text=============
 
@@ -36,171 +48,190 @@ $(() => {
     truncateText('.archive-news__text', 4);
     truncateText('.author-articles__txt', 2);
 
-
     //===========Accordion=============
 
     if ($('.archive-filter__panel').exists()) {
-        let accordions = document.getElementsByClassName("archive-filter__panel");
+        try {
+            let accordions = document.getElementsByClassName("archive-filter__panel");
 
-        for (let i = 0; i < accordions.length; i++) {
-            accordions[i].onclick = function (event) {
-                let target = event.target;
-                if (!$(target).attr('href')) {
-                    this.classList.toggle('archive-filter__panel--active');
-                    $(this).parent().toggleClass('archive-filter__wrp--active');
+            for (let i = 0; i < accordions.length; i++) {
+                accordions[i].onclick = function (event) {
+                    let target = event.target;
+                    if (!$(target).attr('href')) {
+                        this.classList.toggle('archive-filter__panel--active');
+                        $(this).parent().toggleClass('archive-filter__wrp--active');
 
-                    let content = this.nextElementSibling;
+                        let content = this.nextElementSibling;
 
-                    if (content.style.maxHeight) {
-                        content.style.maxHeight = null;
-                    } else {
-                        content.style.maxHeight = content.scrollHeight + "px";
+                        if (content.style.maxHeight) {
+                            content.style.maxHeight = null;
+                        } else {
+                            content.style.maxHeight = content.scrollHeight + "px";
+                        }
                     }
                 }
             }
+        } catch (err) {
+            console.log(err);
         }
     }
 
     function checkEl() {
-        let linkEl = $('.archive-filter__item--month').find('.archive-filter__block'),
-            temp = '';
+        if ($('.archive-filter__item').exists) {
+            try {
+                let linkEl = $('.archive-filter__item--month').find('.archive-filter__block'),
+                    temp = '';
 
-        $(linkEl).each(function () {
-            if ($(this).children('input').prop("checked")) {
-                temp = $(this).children('input').val();
-                if ((temp.indexOf("Декабрь") != -1) ||
-                    (temp.indexOf("Январь") != -1) ||
-                    (temp.indexOf("Март") != -1) ||
-                    (temp.indexOf("Май") != -1) ||
-                    (temp.indexOf("Июль") != -1) ||
-                    (temp.indexOf("Август") != -1) ||
-                    (temp.indexOf("Октябрь") != -1)
-                ) {
-                    crYear('.archive-filter__item--day', 31);
-                } else if ((temp.indexOf("Сентябрь") != -1) ||
-                    (temp.indexOf("Июнь") != -1) ||
-                    (temp.indexOf("Ноябрь") != -1) ||
-                    (temp.indexOf("Апрель") != -1)) {
-                    crYear('.archive-filter__item--day', 30);
-                } else {
-                    crYear('.archive-filter__item--day', 28);
-                }
+                $(linkEl).each(function () {
+                    if ($(this).children('input').prop("checked")) {
+                        temp = $(this).children('input').val();
+                        if ((temp.indexOf("Декабрь") != -1) ||
+                            (temp.indexOf("Январь") != -1) ||
+                            (temp.indexOf("Март") != -1) ||
+                            (temp.indexOf("Май") != -1) ||
+                            (temp.indexOf("Июль") != -1) ||
+                            (temp.indexOf("Август") != -1) ||
+                            (temp.indexOf("Октябрь") != -1)
+                        ) {
+                            crYear('.archive-filter__item--day', 31);
+                            $('.archive-filter__item--day').find('.archive-filter__txt').text('31');
+                        } else if ((temp.indexOf("Сентябрь") != -1) ||
+                            (temp.indexOf("Июнь") != -1) ||
+                            (temp.indexOf("Ноябрь") != -1) ||
+                            (temp.indexOf("Апрель") != -1)) {
+                            crYear('.archive-filter__item--day', 30);
+                            $('.archive-filter__item--day').find('.archive-filter__txt').text('30');
+                        } else {
+                            crYear('.archive-filter__item--day', 28);
+                            $('.archive-filter__item--day').find('.archive-filter__txt').text('28');
+                        }
+                    }
+                });
+            } catch (err) {
+                console.log(err);
             }
-        });
+        }
     }
 
     function crYear(parent, qty) {
 
-        if (parent == '.archive-filter__item--year') {
-            parentEl = $(parent).find('.archive-filter__list');
+        if ($('.archive-filter__item').exists) {
+            try {
+                if (parent == '.archive-filter__item--year') {
+                    parentEl = $(parent).find('.archive-filter__list');
 
-            for (let i = nowYear; i >= 1935; i--) {
-                let newEl = document.createElement('div'),
-                    inputEl = document.createElement('input'),
-                    inputLabel = document.createElement('label');
+                    for (let i = nowYear; i >= 1935; i--) {
+                        let newEl = document.createElement('div'),
+                            inputEl = document.createElement('input'),
+                            inputLabel = document.createElement('label');
 
-                newEl.classList.add('archive-filter__block');
+                        newEl.classList.add('archive-filter__block');
 
-                if (i == nowYear) {
-                    inputEl.setAttribute('checked', 'checked');
+                        if (i == nowYear) {
+                            inputEl.setAttribute('checked', 'checked');
+                        }
+
+                        inputEl.setAttribute('id', `y-${i}`);
+                        inputEl.setAttribute('type', 'radio');
+                        inputEl.setAttribute('name', 'check[]');
+                        inputEl.setAttribute('value', `${i}`);
+
+                        inputLabel.setAttribute('for', `y-${i}`);
+                        inputLabel.textContent = i;
+                        newEl.append(inputEl);
+                        newEl.append(inputLabel);
+
+                        parentEl.append(newEl);
+                    }
+                } else {
+                    parentEl = $(parent).find('.archive-filter__list');
+
+                    for (let i = qty; i > 0; i--) {
+                        let newEl = document.createElement('div'),
+                            inputEl = document.createElement('input'),
+                            inputLabel = document.createElement('label');
+
+                        newEl.classList.add('archive-filter__block');
+
+                        if (i == qty) {
+                            inputEl.setAttribute('checked', 'checked');
+                        }
+
+                        inputEl.setAttribute('id', `d-${i}`);
+                        inputEl.setAttribute('type', 'radio');
+                        inputEl.setAttribute('name', 'check3[]');
+                        inputEl.setAttribute('value', `${i}`);
+
+                        inputLabel.setAttribute('for', `d-${i}`);
+                        inputLabel.textContent = i;
+                        newEl.append(inputEl);
+                        newEl.append(inputLabel);
+
+                        parentEl.append(newEl);
+                    }
                 }
-
-                inputEl.setAttribute('id', `y-${i}`);
-                inputEl.setAttribute('type', 'radio');
-                inputEl.setAttribute('name', 'check[]');
-                inputEl.setAttribute('value', `${i}`);
-
-                inputLabel.setAttribute('for', `y-${i}`);
-                inputLabel.textContent = i;
-                newEl.append(inputEl);
-                newEl.append(inputLabel);
-
-                parentEl.append(newEl);
-            }
-        } else {
-            parentEl = $(parent).find('.archive-filter__list');
-
-            for (let i = qty; i > 0; i--) {
-                let newEl = document.createElement('div'),
-                    inputEl = document.createElement('input'),
-                    inputLabel = document.createElement('label');
-
-                newEl.classList.add('archive-filter__block');
-
-                if (i == qty) {
-                    inputEl.setAttribute('checked', 'checked');
-                }
-
-                inputEl.setAttribute('id', `d-${i}`);
-                inputEl.setAttribute('type', 'radio');
-                inputEl.setAttribute('name', 'check3[]');
-                inputEl.setAttribute('value', `${i}`);
-
-                inputLabel.setAttribute('for', `d-${i}`);
-                inputLabel.textContent = i;
-                newEl.append(inputEl);
-                newEl.append(inputLabel);
-
-                parentEl.append(newEl);
-
+            } catch (err) {
+                console.log(err);
             }
         }
     }
 
     checkEl();
-
     crYear('.archive-filter__item--year', 1935);
 
-
     if ($('.archive-filter__item').exists()) {
-        $('.archive-filter__item').each(function () {
-            let temp = '',
-                linkEl = '',
-                txt = '',
-                inpEl = '';
+        try {
+            $('.archive-filter__item').each(function () {
+                let temp = '',
+                    linkEl = '',
+                    txt = '',
+                    inpEl = '';
 
-            temp = $(this).find('.archive-filter__box');
-            $(temp).mCustomScrollbar({
-                theme: "dark",
-                mouseWheelPixels: 90
-            });
+                temp = $(this).find('.archive-filter__box');
+                $(temp).mCustomScrollbar({
+                    theme: "dark",
+                    mouseWheelPixels: 90
+                });
 
-            temp = $(this).find('.archive-filter__bloc');
-            txt = $(this).find('.archive-filter__txt');
-            inpEl = $(this).find('.archive-filter__list').find('input'); //prop("checked")
+                temp = $(this).find('.archive-filter__bloc');
+                txt = $(this).find('.archive-filter__txt');
+                inpEl = $(this).find('.archive-filter__list').find('input'); //prop("checked")
 
-            $(inpEl).each(function () {
-                if ($(this).prop("checked")) {
-                    $(txt).text($(this).val());
-                }
-            });
+                $(inpEl).each(function () {
+                    if ($(this).prop("checked")) {
+                        $(txt).text($(this).val());
+                    }
+                });
 
+                $(temp).on('click', function () {
 
-            $(temp).on('click', function () {
+                    $(this).toggleClass("archive-filter__item--active").siblings().removeClass("archive-filter__item--active");
 
-                $(this).toggleClass("archive-filter__item--active").siblings().removeClass("archive-filter__item--active");
-
-                if ($(this).hasClass('archive-filter__item--active')) {
-                    linkEl = $(this).find('.archive-filter__block');
-                    $(linkEl).each(function () {
-                        $(this).on('click', function () {
-                            $(txt).text($(this).text());
+                    if ($(this).hasClass('archive-filter__item--active')) {
+                        linkEl = $(this).find('.archive-filter__block');
+                        $(linkEl).each(function () {
+                            $(this).on('click', function () {
+                                $(txt).text($(this).text());
+                                $('.archive-filter__item').removeClass('archive-filter__item--active');
+                            });
                         });
-                    });
-                }
+                    }
 
-                if (($(this).hasClass('archive-filter__item--active')) && ($(this).hasClass('archive-filter__item--month'))) {
-                    linkEl = $(this).find('.archive-filter__block');
-                    $(linkEl).each(function () {
-                        $(this).on('click', function () {
-                            $(txt).text($(this).text());
-                            $('.archive-filter__item--day').find('.archive-filter__block').remove();
-                            checkEl();
+                    if (($(this).hasClass('archive-filter__item--active')) && ($(this).hasClass('archive-filter__item--month'))) {
+                        linkEl = $(this).find('.archive-filter__block');
+                        $(linkEl).each(function () {
+                            $(this).on('click', function () {
+                                $(txt).text($(this).text());
+                                $('.archive-filter__item--day').find('.archive-filter__block').remove();
+                                checkEl();
+                            });
                         });
-                    });
-                }
-            }.bind(this));
-        });
+                    }
+                }.bind(this));
+            });
+        } catch (err) {
+            console.log(err);
+        }
     }
 
     if ($('.header__search--laptop').exists) {
@@ -215,19 +246,25 @@ $(() => {
         }
     }
 
-    let $window = $(window),
-        $target = $(".header__inner"),
-        $h = $target.offset().top;
-    $window.on('scroll', function () {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > $h) {
-            $target.addClass("mf-fixed");
-            return;
-        } else {
-            $target.removeClass("mf-fixed");
+    if ($('.header__inner').exists) {
+        try {
+            let $window = $(window),
+                $target = $(".header__inner"),
+                $h = $target.offset().top;
+            $window.on('scroll', function () {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > $h) {
+                    $target.addClass("mf-fixed");
+                    return;
+                } else {
+                    $target.removeClass("mf-fixed");
+                }
+                return;
+            });
+        } catch (err) {
+            console.log(err);
         }
-        return;
-    });
+    }
 
     if ($('.header__func').exists) {
         try {
@@ -241,69 +278,79 @@ $(() => {
     }
 
     if ($('.author-articles__grid--slider').exists) {
-        const breakpoint = window.matchMedia('(min-width:600px)');
-        let mySwiper;
+        try {
+            const breakpoint = window.matchMedia('(min-width:600px)');
+            let mySwiper;
 
-        const breakpointChecker = function () {
-            if (breakpoint.matches === true) {
-                if (mySwiper !== undefined) mySwiper.destroy(true, true);
-                return;
-            } else if (breakpoint.matches === false) {
-                return enableSwiper();
-            }
-        };
+            const breakpointChecker = function () {
+                if (breakpoint.matches === true) {
+                    if (mySwiper !== undefined) mySwiper.destroy(true, true);
+                    return;
+                } else if (breakpoint.matches === false) {
+                    return enableSwiper();
+                }
+            };
 
-        const enableSwiper = function () {
-            mySwiper = new Swiper('.author-articles__grid--slider', {
-                slidesPerView: 'auto',
-                spaceBetween: 16,
-                loop: true,
-                autoplay: true,
-                delay: 3000,
-                stopOnLastSlide: false,
-                disableOnInteraction: true,
-            });
-        };
+            const enableSwiper = function () {
+                mySwiper = new Swiper('.author-articles__grid--slider', {
+                    slidesPerView: 'auto',
+                    spaceBetween: 16,
+                    loop: true,
+                    autoplay: true,
+                    delay: 3000,
+                    stopOnLastSlide: false,
+                    disableOnInteraction: true,
+                });
+            };
 
-        breakpoint.addListener(breakpointChecker);
-        breakpointChecker();
+            breakpoint.addListener(breakpointChecker);
+            breakpointChecker();
+        } catch (err) {
+            console.log(err);
+        }
     }
 
     //======================ArticleSlider=========
 
-
     function createGallery() {
-        var galleryBlock = document.createElement('div');
-        var galleryWrapper = document.createElement('div');
-        var swiperWrapper = document.createElement('div');
-        var cont = allEl[a].parentNode;
-        $(galleryBlock).attr('class', 'gallery__top');
-        $(galleryBlock).addClass('gallery__main' + a);
-        $(galleryWrapper).attr('class', 'gallery');
-        $(swiperWrapper).attr('class', 'swiper-wrapper');
-        swiperWrapper.innerHTML += result;
-        $(galleryBlock).append(swiperWrapper);
-        $(galleryWrapper).append(galleryBlock);
-        var blockThumbs = document.createElement('div');
-        $(blockThumbs).attr('class', 'gallery__thumbs');
-        $(blockThumbs).addClass('gallery__btn' + a);
+
+        if ($('.news-detail__item').exists) {
+            try {
+                var galleryBlock = document.createElement('div');
+                var galleryWrapper = document.createElement('div');
+                var swiperWrapper = document.createElement('div');
+                var cont = allEl[a].parentNode;
+                $(galleryBlock).attr('class', 'gallery__top');
+                $(galleryBlock).addClass('gallery__main' + a);
+                $(galleryWrapper).attr('class', 'gallery');
+                $(swiperWrapper).attr('class', 'swiper-wrapper');
+                swiperWrapper.innerHTML += result;
+                $(galleryBlock).append(swiperWrapper);
+                $(galleryWrapper).append(galleryBlock);
+                var blockThumbs = document.createElement('div');
+                $(blockThumbs).attr('class', 'gallery__thumbs');
+                $(blockThumbs).addClass('gallery__btn' + a);
 
 
-        for (var i = 0; i < 2; i++) {
-            if (i == 1) {
-                var galleryArrow = document.createElement('div');
-                $(galleryArrow).attr('class', 'b-arrow b-arrow--prev');
-                $(blockThumbs).append(galleryArrow);
-            } else {
-                var galleryArrow = document.createElement('div');
-                $(galleryArrow).attr('class', 'b-arrow b-arrow--next');
-                $(blockThumbs).append(galleryArrow);
+                for (var i = 0; i < 2; i++) {
+                    if (i == 1) {
+                        var galleryArrow = document.createElement('div');
+                        $(galleryArrow).attr('class', 'b-arrow b-arrow--prev');
+                        $(blockThumbs).append(galleryArrow);
+                    } else {
+                        var galleryArrow = document.createElement('div');
+                        $(galleryArrow).attr('class', 'b-arrow b-arrow--next');
+                        $(blockThumbs).append(galleryArrow);
+                    }
+                }
+
+                cont.insertBefore(galleryWrapper, allEl[a]);
+                galleryWrapper.append(blockThumbs);
+                $(galleryBlock).find(swiperWrapper).clone().appendTo(blockThumbs);
+            } catch (err) {
+                console.log(err);
             }
         }
-
-        cont.insertBefore(galleryWrapper, allEl[a]);
-        galleryWrapper.append(blockThumbs);
-        $(galleryBlock).find(swiperWrapper).clone().appendTo(blockThumbs);
     }
 
     var allEl = document.querySelectorAll('.news-detail__item > *');

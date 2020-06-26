@@ -133,9 +133,14 @@
             opacity: 1;
             visibility: visible;
         }
+
+        .mCSB_inside>.mCSB_container {
+            margin-right: 15px;
+        }
     }
 
     &__ic {
+        flex-shrink: 0;
         height: 12px;
         width: 12px;
         transform: translateY(-1px);
