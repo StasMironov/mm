@@ -1,0 +1,135 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Главная страница'
+	- var pageClass = 'index-page';
+
+block content
+	.container
+		.wrapper
+			.wrapper__left
+				.advertising
+					.advertising__title.title-1 Рекламные объявления    
+					.advertising__bloc
+						.advertising__info Как было показано выше, литургическая драма возможна. Социальная психология искусства, по определению, монотонно дает художественный идеал. Художественное восприятие выстраивает комплекс агрессивности. Богатство мировой литературы от Платона до Ортеги-и-Гассета свидетельствует о том, что художественная ментальность вызывает драматизм. 
+						.advertising__info Синтаксис искусства готично начинает первоначальный канон биографии. Возрождение многопланово вызывает суггестивный миракль. Трагедия использует первоначальный сангвиник. Добавлю, что интенция многопланово имеет синхронический подход. Ролевое поведение готично трансформирует фактографический архетип. 
+					.advertising__block
+						.advertising__header.title-2 Печатная версия газеты
+						.advertising__text Цены действительны с 01 января 2019 г.
+					.advertising__cover
+						.advertising__unit
+							.advertising__items
+								.advertising__item
+									.advertising__header.title-3 Формат, объем (число полос), периодичность выхода
+									.advertising__txt Вторник, четверг – 16 полос А3. Суббота – 16 полос А3.
+								.advertising__item
+									.advertising__header.title-3 Тираж
+									.advertising__txt Не менее 65 000 и не более 80 000 экземпляров.
+								.advertising__item
+									.advertising__header.title-3 Регион распространения
+									.advertising__txt Челябинская область.
+						.advertising__unit
+							.advertising__items
+								.advertising__item
+									.advertising__header.title-3 Читательская аудитория
+									.advertising__txt Основная: от 6 до 82 лет. Преимущественная: мужчины и женщины от 25 до 65 лет, которые имеют деньги и интерес к жизни.
+								.advertising__item
+									.advertising__header.title-3 Доставка газеты подписчикам
+									.advertising__txt Распространение по подписке (адресная доставка).
+								.advertising__item
+									.advertising__header.title-3 Реализация газеты
+									.advertising__txt Подписка.
+					.advertising__box
+						.advertising__header.title-3 Достоинства и отличия
+						.advertising__wrp
+							.advertising__left
+								.advertising__par «Магнитогорский металл» – самая популярная и самая тиражная из подписных газет в Магнитогорске. «Магнитогорский металл» – организатор и основной участник Всероссийского литературного конкурса им. Нефедьева, организатор международного фестиваля поэзии в Магнитке, шахматного турнира «Кубок «Металла», участник ежегодных областных фестивалей прессы. «Магнитогорский металл» – лауреат всероссийских и региональных творческих конкурсов. Еженедельно на страницах газеты осуществляется целый ряд проектов различной направленности.
+							.advertising__right 
+								.advertising__par В «Магнитогорском металле» работает творческий коллектив, способный нестандартно подать материалы и рассказать широкой аудитории о деятельности вашей компании.
+								.advertising__par Газета имеет собственных корреспондентов в Москве, Челябинске и на юге Челябинской области.	
+
+			.wrapper__right.wrapper__right--special
+				.news-survey
+					a(href="javascript:void(0);").news-survey__title.title-3 Что вы думаете <br> об обязательном тестировании на коронавирусную инфекцию?
+					form.news-survey__form(method="get")
+						label(for="qu1" class="news-survey__radio") 
+							input(type="radio" id="qu1" name="rdbtn")
+							div.news-survey__text Нужно сделать всем, вдруг кто-то болеет без симптомов
+						label(for="qu2" class="news-survey__radio") 
+							input(type="radio" id="qu2" name="rdbtn")
+							div.news-survey__text Нужно сделать всем, вдруг кто-то болеет без симптомов
+						button(type="submit" class="btn") Голосовать
+				.news-hidden
+					a(href="javascript:void(0);").news-today__block.news-today__block--other
+							img(src="./img/index/p36.jpg" alt="")
+				.news-city
+					a(href="javascript:void(0);").news-city__title.title-2 История города
+						+svg("ar-title")
+					.news-city__items
+						a(href="javascript:void(0);").news-city__item
+							.news-city__pic(style="background-image: url(./img/history/city/hc1.jpg);")
+							.news-city__title.title-3 Газета в рабочей спецовке
+						a(href="javascript:void(0);").news-city__item
+							.news-city__pic(style="background-image: url(./img/index/p32.jpg);")
+							.news-city__title.title-3 Больницы для солдат
+						a(href="javascript:void(0);").news-city__item
+							.news-city__pic(style="background-image: url(./img/index/p34.jpg);")
+							.news-city__title.title-3 Маленькая женщина с большим сердцем
+						a(href="javascript:void(0);").news-city__item
+							.news-city__pic(style="background-image: url(./img/index/p33.jpg);")
+							.news-city__title.title-3 Первые секретари
+				.news-most__left.news-most__left--hidden
+						a(href="javascript:void(0);").news-most__title.title-2 Самое читаемое
+							+svg("ar-title")
+						.news-most__items
+							.news-most__item
+								.news-most__lft
+									.news-most__pic
+										+svg('eye')
+									.news-most__count 1211
+								a(href="javascript:void(0);").news-most__rght
+									.news-most__txt <span>На Южном Урале ФСБ</span> задержали автомобиль с восемью коробками одноразовых хирургических перчаток, которые относятся к временно запрещённым для вывоза из России.
+							.news-most__item
+								.news-most__lft
+									.news-most__pic
+										+svg('eye')
+									.news-most__count 1211
+								a(href="javascript:void(0);").news-most__rght
+									.news-most__txt <span>Жители Челябинской области</span>, прибывшие домой из стран с неблагоприятной ситуацией по коронавирусной инфекции, должны самоизолироваться на две недели.
+							.news-most__item
+								.news-most__lft
+									.news-most__pic
+										+svg('eye')
+									.news-most__count 1211
+								a(href="javascript:void(0);").news-most__rght
+									.news-most__txt <span>Специалисты из Уральского</span> федерального округа востребованы не только на родине, но и за рубежом.
+							.news-most__item
+								.news-most__lft
+									.news-most__pic
+										+svg('eye')
+									.news-most__count 1211
+								a(href="javascript:void(0);").news-most__rght
+									.news-most__txt <span>В Краснодаре стартует</span> "финал восьми" Студенческой лиги ВТБ, в который вновь пробились "Стальные сердца".
+							.news-most__item
+								.news-most__lft
+									.news-most__pic
+										+svg('eye')
+									.news-most__count 1211
+								a(href="javascript:void(0);").news-most__rght
+									.news-most__txt <span>Малкин забивает</span>, но "Питтсбург" проигрывает.
+							.news-most__item
+								.news-most__lft
+									.news-most__pic
+										+svg('eye')
+									.news-most__count 1211
+								a(href="javascript:void(0);").news-most__rght
+									.news-most__txt <span>В Краснодаре стартует</span> "финал восьми" Студенческой лиги ВТБ, в который вновь пробились "Стальные сердца".	
+				.news-today
+					a(href="javascript:void(0);").news-today__block
+						img(src="./img/index/p35.jpg" alt="")
+					.news-today__item
+						.news-today__title.title-2 Сегодняшняя газета
+						a(href="javascript:void(0);").btn Посмотреть электронное издание
+		
+						
+block script

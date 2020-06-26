@@ -235,15 +235,10 @@
 
     &__top {
         display: flex;
-    }
-
-    &__cover {
-        display: block;
-        margin-top: 18px;
-        margin-bottom: 17px;
+        margin-bottom: 23px;
 
         @media(max-width: 1235px) {
-            margin-top: 8px;
+            margin-bottom: 3px;
         }
 
         @media(max-width: 1024px) {
@@ -251,18 +246,31 @@
         }
     }
 
+    &__cover {
+        //  margin-top: 18px;
+        margin-bottom: 17px;
+        flex-direction: column;
+        height: 100%;
+        display: flex;
+
+        @media(max-width: 1235px) {
+            //       margin-top: 8px;
+        }
+
+        @media(max-width: 1024px) {
+            //        margin-bottom: 12px;
+        }
+    }
+
     &__header {
         padding-right: 0;
         transition: .2s ease-out;
         max-width: 320px;
+        margin-bottom: 8px;
     }
 
     &__text {
-        margin-top: 8px;
-
-        @media(max-width:1024px) {
-            margin-top: 3px;
-        }
+        margin-top: auto;
     }
 
     &__name {
@@ -337,24 +345,23 @@
             }
 
             .news-popular__text {
-                max-width: 308px;
-
-                @media(max-width: 1235px) {
-                    max-width: 100%;
-                }
+                max-width: 100%;
             }
 
             .news-popular__pic {
                 max-width: 206px;
+                min-width: 206px;
                 height: 206px;
                 margin-right: 24px;
 
                 @media(max-width: 1600px) {
                     max-width: 175px;
+                    min-width: 175px;
                 }
 
                 @media(max-width: 1300px) {
                     max-width: 154px;
+                    min-width: 154px;
                 }
 
                 @media(max-width: 1235px) {
@@ -362,8 +369,8 @@
                 }
             }
 
-            .news-popular__cover {
-                margin-top: 6px;
+            .news-popular__top {
+                margin-bottom: 9px;
             }
 
             .news-popular__name {
@@ -409,6 +416,10 @@
     }
 
     &--latest {
+
+        .news-popular__text {
+            height: 100%;
+        }
 
         .news-popular__cover {
             margin-bottom: 0;

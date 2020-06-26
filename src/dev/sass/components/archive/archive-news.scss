@@ -146,26 +146,25 @@
 
             .archive-news__text {
                 max-width: 100%;
-                max-width: 525px;
             }
 
             .archive-news__box {
                 padding-top: 36px;
-                width: calc(100% - 375px - 22px);
+                width: 100%;
 
                 @media(max-width: 1235px) {
-                    width: calc(100% - 307px - 22px);
+                    // width: calc(100% - 307px - 22px);
                     padding-top: 0;
                     margin-top: 0;
                 }
 
-                @media(max-width: 768px) {
-                    width: calc(100% - 207px - 20px);
-                }
+                // @media(max-width: 768px) {
+                //     width: calc(100% - 207px - 20px);
+                // }
 
-                @media(max-width: 640px) {
-                    width: 100%;
-                }
+                // @media(max-width: 640px) {
+                //     width: 100%;
+                // }
             }
         }
     }
@@ -270,10 +269,10 @@
 
     &__text {
         margin-top: 8px;
-        max-width: 300px;
+        max-width: 100%;
 
         @media(max-width: 1235px) {
-            max-width: 415px;
+            // max-width: 415px;
         }
 
         @media(max-width: 1024px) {

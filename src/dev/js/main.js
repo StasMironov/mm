@@ -8,6 +8,8 @@ $(() => {
     let parentEl = '';
     let form = document.querySelector('.archive-filter__items');
 
+
+
     $(document).on('click', (event) => {
         if ($('.archive-filter__item').exists) {
             try {
@@ -32,6 +34,7 @@ $(() => {
     //===========Truncate text=============
 
     const truncateText = (bloc, qty) => {
+        console.log($(bloc));
         if ($(bloc).exists()) {
             let truncate = document.querySelectorAll(bloc); //".news-popular__text"
 
@@ -43,8 +46,8 @@ $(() => {
             }
         }
     }
-
-    truncateText('.news-popular__text', 4);
+    truncateText('.news-popular__test', 3);
+    truncateText('.news-popular__text', 3);
     truncateText('.archive-news__text', 4);
     truncateText('.author-articles__txt', 2);
 

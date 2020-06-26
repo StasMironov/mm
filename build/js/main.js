@@ -31,6 +31,8 @@ $(function () {
   }); //===========Truncate text=============
 
   var truncateText = function truncateText(bloc, qty) {
+    console.log($(bloc));
+
     if ($(bloc).exists()) {
       var truncate = document.querySelectorAll(bloc); //".news-popular__text"
 
@@ -44,7 +46,8 @@ $(function () {
     }
   };
 
-  truncateText('.news-popular__text', 4);
+  truncateText('.news-popular__test', 3);
+  truncateText('.news-popular__text', 3);
   truncateText('.archive-news__text', 4);
   truncateText('.author-articles__txt', 2); //===========Accordion=============
 
