@@ -8,9 +8,23 @@ block content
 	.container
 		.wrapper
 			.wrapper__left
-				.archive-news
-					.archive-news__title.title-2 Новости за 6 марта 2020
-					.archive-news__wrapper
+				.archive-news.archive-news--rubric
+					.archive-news__title.title-1 Политика
+					.news-basic
+						.news-basic__wrapper
+							.news-basic__left
+								a(href="javascript:void(0);").news-basic__img(style="background-image: url(./img/index/p1.jpg);")
+							.news-basic__right
+								a(href="javascript:void(0);").news-basic__article Область
+								a(href="javascript:void(0);").news-basic__cover
+									.news-basic__title.title-2 Металл в "цифре"
+									.news-basic__text На международной конференции RPA Connect 4.0, прошедшей на площадке ММК, были представлены лучшие идеи, тенденции и практики развития программной роботизации в промышленной сфере.
+								.publish
+									.publish__wrapper
+										a(href="javascript:void(0);").publish__date 19 марта
+										a(href="javascript:void(0);").publish__person Фантасмогорьев Фантасмогорь
+
+					.archive-news__wrapper.archive-news__wrapper--rubric
 						.archive-news__bloc
 							.archive-news__items
 								.archive-news__item
@@ -50,6 +64,9 @@ block content
 											.publish__wrapper
 												.publish__date 19 марта
 												a(href="javascript:void(0);").publish__person Фантасмогорьев Андрей
+						.news-hidden
+							a(href="javascript:void(0);").news-today__block.news-today__block--other
+									img(src="./img/index/p36.jpg" alt="")
 						.archive-news__bloc
 							.archive-news__items
 								.archive-news__item
@@ -115,6 +132,9 @@ block content
 											.publish__wrapper
 												.publish__date 19 марта
 												a(href="javascript:void(0);").publish__person Фантасмогорьев Андрей
+						.news-hidden
+							a(href="javascript:void(0);").news-today__block.news-today__block--other
+									img(src="./img/index/p36.jpg" alt="")
 						.archive-news__bloc
 							.archive-news__items
 								.archive-news__item
@@ -167,6 +187,18 @@ block content
 											.publish__wrapper
 												.publish__date 19 марта
 												a(href="javascript:void(0);").publish__person Фантасмогорьев Андрей
+				.edition-rewards__pagination
+							a(href="javascript:void(0);").edition-rewards__link.edition-rewards__link--prev
+								img(src="./img/icon/ar_pag.png" alt="letter")
+							a(href="javascript:void(0);").edition-rewards__link.edition-rewards__link--active 1
+							a(href="javascript:void(0);").edition-rewards__link 2
+							a(href="javascript:void(0);").edition-rewards__link 3
+							a(href="javascript:void(0);").edition-rewards__link ...
+							a(href="javascript:void(0);").edition-rewards__link 13
+							a(href="javascript:void(0);").edition-rewards__link 14
+							a(href="javascript:void(0);").edition-rewards__link 15
+							a(href="javascript:void(0);").edition-rewards__link.edition-rewards__link--next
+								img(src="./img/icon/ar_pag_next.png" alt="letter")
 				.news-today.news-today--include
 					.news-today__item
 						.news-today__title.title-2 Сегодняшняя газета

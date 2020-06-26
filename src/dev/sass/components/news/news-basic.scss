@@ -14,7 +14,7 @@
 
     &__cover {
         display: block;
-        margin-top: 23px;
+        margin-top: 30px;
 
         &:hover .news-basic__title {
             color: $purple-1;
@@ -73,6 +73,8 @@
     }
 
     &__right {
+        display: flex;
+        flex-direction: column;
         width: calc(100% - 574px);
         padding: 44px 0 60px;
         box-sizing: border-box;
@@ -140,7 +142,7 @@
     }
 
     &__text {
-        margin-top: 10px;
+        margin-top: 13px;
         font-style: normal;
         font-weight: normal;
         font-size: 14px;

@@ -51,7 +51,31 @@
             @media(max-width: 600px) {
                 border: none;
                 padding-bottom: 0;
-                ;
+            }
+        }
+
+        &--special {
+            .author-articles__item {
+                width: 100%;
+                margin-left: 0;
+                padding-left: 0;
+                border-left: none !important;
+            }
+
+            .author-articles__items {
+                margin-left: 0;
+            }
+
+            .author-articles__pic {
+                @media(max-width: 768px) {
+                    // display: none;
+                }
+            }
+
+            .author-articles__box {
+                @media(max-width: 768px) {
+                    //margin-top: 0;
+                }
             }
         }
     }

@@ -67,17 +67,12 @@
     }
 
     &__pagination {
-        display: none;
         justify-content: center;
-        margin-top: 14px;
+        display: flex;
+        margin-top: 24px;
 
-        @media(max-width: 1024px) {
-            display: flex;
-        }
-
-        &--basic {
-            display: flex;
-            margin-top: 44px;
+        @media(max-width: 640px) {
+            margin-top: 24px;
         }
     }
 
