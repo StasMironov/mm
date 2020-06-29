@@ -40,14 +40,11 @@ $(() => {
 
     function adaptiveBloc(container, item, bloc, picture) {
         if ($(container).exists()) {
-            console.log(1);
-            // console.log(container);
             $(container).each(function () {
                 let ch = 0;
                 let childrenEl = $(this).find(item);
 
                 childrenEl.each(function (index) {
-                    console.log($(this));
                     let temp = $(this).find(picture);
                     if (!temp.length > 0) {
                         ch++;

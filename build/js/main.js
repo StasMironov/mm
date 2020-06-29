@@ -33,13 +33,10 @@ $(function () {
 
   function adaptiveBloc(container, item, bloc, picture) {
     if ($(container).exists()) {
-      console.log(1); // console.log(container);
-
       $(container).each(function () {
         var ch = 0;
         var childrenEl = $(this).find(item);
         childrenEl.each(function (index) {
-          console.log($(this));
           var temp = $(this).find(picture);
 
           if (!temp.length > 0) {
