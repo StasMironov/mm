@@ -10,6 +10,70 @@ $(() => {
 
 
 
+    // $('.news-popular__items').each(function () {
+    //     let ch = 0;
+    //     let childrenEl = $(this).find('.news-popular__item');
+
+    //     childrenEl.each(function (index) {
+    //         let temp = $(this).find('.news-popular__pic');
+    //         if (!temp.length > 0) {
+    //             ch++;
+    //         }
+    //     });
+
+    //     if (ch == 1) {
+    //         let temp = $(this).find('.news-popular__item');
+
+    //         temp.each(function (index) {
+    //             if ($(this).find('.news-popular__pic').exists()) {
+    //                 if (index == 0) {
+    //                     $(this).closest('.news-popular__bloc').addClass('news-popular__bloc--other');
+    //                 } else {
+    //                     $(this).closest('.news-popular__bloc').addClass('news-popular__bloc--reverse');
+    //                 }
+    //             }
+    //         });
+    //     }
+    // });
+
+
+
+    function adaptiveBloc(container, item, bloc, picture) {
+        if ($(container).exists()) {
+            console.log(1);
+            // console.log(container);
+            $(container).each(function () {
+                let ch = 0;
+                let childrenEl = $(this).find(item);
+
+                childrenEl.each(function (index) {
+                    console.log($(this));
+                    let temp = $(this).find(picture);
+                    if (!temp.length > 0) {
+                        ch++;
+                    }
+                });
+
+                if (ch == 1) {
+                    let temp = $(this).find(item);
+
+                    temp.each(function (index) {
+                        if ($(this).find(picture).exists()) {
+                            if (index == 0) {
+                                $(this).closest(bloc).addClass('news-popular__bloc--other');
+                            } else {
+                                $(this).closest(bloc).addClass('news-popular__bloc--reverse');
+                            }
+                        }
+                    });
+                }
+            });
+        }
+    }
+
+    adaptiveBloc('.news-popular__items', '.news-popular__item', '.news-popular__bloc', '.news-popular__pic');
+
+
     $(document).on('click', (event) => {
         if ($('.archive-filter__item').exists) {
             try {
@@ -34,7 +98,6 @@ $(() => {
     //===========Truncate text=============
 
     const truncateText = (bloc, qty) => {
-        console.log($(bloc));
         if ($(bloc).exists()) {
             let truncate = document.querySelectorAll(bloc); //".news-popular__text"
 
@@ -46,10 +109,19 @@ $(() => {
             }
         }
     }
-    truncateText('.news-popular__test', 3);
+
+
     truncateText('.news-popular__text', 3);
-    truncateText('.archive-news__text', 4);
-    truncateText('.author-articles__txt', 2);
+
+    //truncateText('.news-popular__test', 3);
+
+    // truncateText('.archive-news__text', 4);
+    // truncateText('.author-articles__txt', 2);
+
+    if ($('.news-popular--popular').exists) {
+        //  truncateText('.news-popular__text', 3);
+    }
+
 
     //===========Accordion=============
 
