@@ -28,6 +28,11 @@
             height: 235px;
         }
 
+        .swiper-slide,
+        .swiper-wrapper {
+            position: initial;
+        }
+
     }
 
     &__gallery {
@@ -81,8 +86,6 @@
         margin: auto;
         background-color: $gray-1;
         padding: 53px 37px 52px 51px;
-        z-index: 1;
-
 
         @media(max-width: 1024px) {
             max-width: 530px;

@@ -8,28 +8,7 @@ jQuery.fn.exists = function () {
 $(function () {
   var nowYear = new Date().getFullYear();
   var parentEl = '';
-  var form = document.querySelector('.archive-filter__items'); // $('.news-popular__items').each(function () {
-  //     let ch = 0;
-  //     let childrenEl = $(this).find('.news-popular__item');
-  //     childrenEl.each(function (index) {
-  //         let temp = $(this).find('.news-popular__pic');
-  //         if (!temp.length > 0) {
-  //             ch++;
-  //         }
-  //     });
-  //     if (ch == 1) {
-  //         let temp = $(this).find('.news-popular__item');
-  //         temp.each(function (index) {
-  //             if ($(this).find('.news-popular__pic').exists()) {
-  //                 if (index == 0) {
-  //                     $(this).closest('.news-popular__bloc').addClass('news-popular__bloc--other');
-  //                 } else {
-  //                     $(this).closest('.news-popular__bloc').addClass('news-popular__bloc--reverse');
-  //                 }
-  //             }
-  //         });
-  //     }
-  // });
+  var form = document.querySelector('.archive-filter__items');
 
   function adaptiveBloc(container, item, bloc, picture) {
     if ($(container).exists()) {

@@ -8,36 +8,6 @@ $(() => {
     let parentEl = '';
     let form = document.querySelector('.archive-filter__items');
 
-
-
-    // $('.news-popular__items').each(function () {
-    //     let ch = 0;
-    //     let childrenEl = $(this).find('.news-popular__item');
-
-    //     childrenEl.each(function (index) {
-    //         let temp = $(this).find('.news-popular__pic');
-    //         if (!temp.length > 0) {
-    //             ch++;
-    //         }
-    //     });
-
-    //     if (ch == 1) {
-    //         let temp = $(this).find('.news-popular__item');
-
-    //         temp.each(function (index) {
-    //             if ($(this).find('.news-popular__pic').exists()) {
-    //                 if (index == 0) {
-    //                     $(this).closest('.news-popular__bloc').addClass('news-popular__bloc--other');
-    //                 } else {
-    //                     $(this).closest('.news-popular__bloc').addClass('news-popular__bloc--reverse');
-    //                 }
-    //             }
-    //         });
-    //     }
-    // });
-
-
-
     function adaptiveBloc(container, item, bloc, picture) {
         if ($(container).exists()) {
             $(container).each(function () {
@@ -69,7 +39,6 @@ $(() => {
     }
 
     adaptiveBloc('.news-popular__items', '.news-popular__item', '.news-popular__bloc', '.news-popular__pic');
-
 
     $(document).on('click', (event) => {
         if ($('.archive-filter__item').exists) {
