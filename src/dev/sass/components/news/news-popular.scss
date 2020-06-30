@@ -354,6 +354,8 @@
                     border: none;
                     max-width: initial;
 
+
+
                     @media(max-width: 1235px) {
                         width: calc(50% - 25px);
                         margin-left: 25px;
@@ -371,6 +373,8 @@
                         width: 100%;
                         margin-left: 0;
                         padding-left: 0;
+                        padding-bottom: 16px;
+                        border-bottom: 1px solid #d7d7d7;
                     }
                 }
 
@@ -553,49 +557,24 @@
         .news-popular__wrapper {
             margin-top: 38px;
         }
+    }
 
-        // .news-popular__bloc:not(.news-popular__bloc--special) {
-        //     &:last-child {
-        //         .news-popular__item {
-        //             &:last-child {
+    &--rubric {
+        .news-popular__title {
+            margin-bottom: 25px;
+        }
 
-        //                 width: calc(50% - 25px);
-        //                 margin-left: 25px;
-        //                 padding-left: 25px;
+        .news-popular__pic {
+            @media(max-width: 500px) {
+                display: block;
+                height: 160px;
+                max-width: 100%;
+                min-width: 100%;
+            }
 
-
-        //                 @media(max-width: 768px) {
-        //                     width: calc(50% - 15px);
-        //                     margin-left: 15px;
-        //                     padding-left: 15px;
-        //                 }
-
-        //                 @media(max-width: 640px) {
-        //                     width: 100%;
-        //                     margin-left: 0;
-        //                     padding-left: 0;
-        //                 }
-
-        //                 .news-popular__pic {
-        //                     max-width: 206px;
-        //                     min-width: 206px;
-        //                     height: 206px;
-
-        //                     @media(max-width: 1300px) {
-        //                         max-width: 154px;
-        //                         min-width: 154px;
-        //                     }
-
-        //                     @media(max-width: 1235px) {
-        //                         min-width: 100%;
-        //                         max-width: 100%;
-        //                         margin-right: 0;
-        //                         height: 75px;
-        //                     }
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
+            &+.news-popular__box {
+                margin-top: 10px;
+            }
+        }
     }
 }

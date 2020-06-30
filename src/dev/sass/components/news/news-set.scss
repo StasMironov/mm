@@ -17,6 +17,8 @@
 
         &:last-child {
             margin-top: 32px;
+            padding-bottom: 0;
+            border-bottom: none;
         }
 
 
@@ -209,6 +211,12 @@
                     margin-right: 20px;
                 }
             }
+        }
+
+        &--archive {
+            padding-bottom: 24px;
+            border-bottom: 1px solid #d7d7d7;
+            margin-top: 30px;
         }
 
         &--basic {
