@@ -108,7 +108,7 @@ $(() => {
     }
 
 
-    truncateText('.news-popular__text', 3);
+    // truncateText('.news-popular__text', 3);
 
     //truncateText('.news-popular__test', 3);
 

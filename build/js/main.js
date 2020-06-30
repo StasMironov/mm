@@ -94,11 +94,11 @@ $(function () {
         });
       }
     }
-  };
-
-  truncateText('.news-popular__text', 3); //truncateText('.news-popular__test', 3);
+  }; // truncateText('.news-popular__text', 3);
+  //truncateText('.news-popular__test', 3);
   // truncateText('.archive-news__text', 4);
   // truncateText('.author-articles__txt', 2);
+
 
   if ($('.news-popular--popular').exists) {} //  truncateText('.news-popular__text', 3);
   //===========Accordion=============
