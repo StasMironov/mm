@@ -122,8 +122,6 @@ $(() => {
                 let linkEl = $('.archive-filter__item--month').find('.archive-filter__block'),
                     temp = '';
 
-                let linkEl2 = $('.archive-filter__item--year').find('.archive-filter__block');
-
                 $(linkEl).each(function () {
                     if ($(this).children('input').prop("checked")) {
                         temp = $(this).children('label').text();
@@ -610,13 +608,8 @@ $(() => {
         fadeEffect: {
             crossFade: true
         }
-
     });
 
     newsThumbs.controller.control = newsGallery;
     newsGallery.controller.control = newsThumbs;
-
-
-
-
 });

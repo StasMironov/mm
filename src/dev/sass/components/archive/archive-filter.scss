@@ -26,22 +26,22 @@
         outline: 1px solid $gray-2 !important;
         height: 53px;
 
-        &:nth-child(1) {
+        &--year {
             max-width: 100px;
             width: 100%;
         }
 
-        &:nth-child(2) {
+        &--month {
             max-width: 175px;
             width: 100%;
         }
 
-        &:nth-child(3) {
+        &--day {
             max-width: 93px;
             width: 100%;
         }
 
-        &:nth-child(4) {
+        &--btn {
             max-width: 141px;
             width: 100%;
             background-color: $purple-3;
@@ -54,6 +54,23 @@
                 color: $black;
             }
         }
+
+        // &:nth-child(1) {
+        //     max-width: 100px;
+        //     width: 100%;
+        // }
+
+        // &:nth-child(2) {
+        //     max-width: 175px;
+        //     width: 100%;
+        // }
+
+        // &:nth-child(3) {
+        //     max-width: 93px;
+        //     width: 100%;
+        // }
+
+        &:nth-child(4) {}
 
         &:not(:last-child) {
             margin-right: 16px;

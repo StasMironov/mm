@@ -113,7 +113,6 @@ $(function () {
       try {
         var linkEl = $('.archive-filter__item--month').find('.archive-filter__block'),
             temp = '';
-        var linkEl2 = $('.archive-filter__item--year').find('.archive-filter__block');
         $(linkEl).each(function () {
           if ($(this).children('input').prop("checked")) {
             temp = $(this).children('label').text();
