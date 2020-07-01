@@ -8,8 +8,6 @@ jQuery.fn.exists = function () {
 $(function () {
   var nowYear = new Date().getFullYear();
   var parentEl = '';
-  var form = document.querySelector('.archive-filter__items');
-  var atributeForm = $('.archive-filter__items').data("filter");
 
   function adaptiveBloc(container, item, bloc, picture) {
     if ($(container).exists()) {
@@ -206,11 +204,15 @@ $(function () {
     }
   }
 
-  checkEl();
-  crYear('.archive-filter__item--year', atributeForm.min);
-
   if ($('.archive-filter__item').exists()) {
     try {
+      if ($('.archive-filter__items').length > 0) {
+        var form = document.querySelector('.archive-filter__items');
+        var atributeForm = $('.archive-filter__items').data("filter");
+        checkEl();
+        crYear('.archive-filter__item--year', atributeForm.min);
+      }
+
       $('.archive-filter__item').each(function () {
         var temp = '',
             linkEl = '',

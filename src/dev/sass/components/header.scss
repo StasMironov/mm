@@ -1,4 +1,6 @@
 .header {
+    position: relative;
+    z-index: 200;
     min-height: 185px;
 
     @media(max-width: 1024px) {
