@@ -174,7 +174,7 @@ $(() => {
 
                         inputEl.setAttribute('id', `y-${i}`);
                         inputEl.setAttribute('type', 'radio');
-                        inputEl.setAttribute('name', 'check[]');
+                        inputEl.setAttribute('name', 'year');
                         inputEl.setAttribute('value', `${i}`);
 
                         inputLabel.setAttribute('for', `y-${i}`);
@@ -200,7 +200,7 @@ $(() => {
 
                         inputEl.setAttribute('id', `d-${i}`);
                         inputEl.setAttribute('type', 'radio');
-                        inputEl.setAttribute('name', 'check3[]');
+                        inputEl.setAttribute('name', 'day');
                         inputEl.setAttribute('value', `${i}`);
 
                         inputLabel.setAttribute('for', `d-${i}`);

@@ -154,7 +154,7 @@ $(function () {
 
             inputEl.setAttribute('id', "y-".concat(_i5));
             inputEl.setAttribute('type', 'radio');
-            inputEl.setAttribute('name', 'check[]');
+            inputEl.setAttribute('name', 'year');
             inputEl.setAttribute('value', "".concat(_i5));
             inputLabel.setAttribute('for', "y-".concat(_i5));
             inputLabel.textContent = _i5;
@@ -180,7 +180,7 @@ $(function () {
 
             _inputEl.setAttribute('type', 'radio');
 
-            _inputEl.setAttribute('name', 'check3[]');
+            _inputEl.setAttribute('name', 'day');
 
             _inputEl.setAttribute('value', "".concat(_i6));
 
