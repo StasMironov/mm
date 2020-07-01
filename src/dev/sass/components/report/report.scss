@@ -3,6 +3,12 @@
         margin-bottom: 30px;
     }
 
+    &__bloc {
+        .news-set__wrapper {
+            margin-bottom: 0;
+        }
+    }
+
     .news-basic {
         border-color: $gray-3;
     }

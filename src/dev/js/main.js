@@ -162,14 +162,14 @@ $(() => {
                 if (parent == '.archive-filter__item--year') {
                     parentEl = $(parent).find('.archive-filter__list');
 
-                    for (let i = nowYear; i >= qty; i--) {
+                    for (let i = atributeForm.currentYear; i >= qty; i--) {
                         let newEl = document.createElement('div'),
                             inputEl = document.createElement('input'),
                             inputLabel = document.createElement('label');
 
                         newEl.classList.add('archive-filter__block');
 
-                        if (i == nowYear) {
+                        if (i == atributeForm.currentYear) {
                             inputEl.setAttribute('checked', 'checked');
                             inputEl.setAttribute('currentyear', atributeForm.currentYear);
                         }
@@ -194,7 +194,7 @@ $(() => {
 
                         newEl.classList.add('archive-filter__block');
 
-                        if (i == qty) {
+                        if (i == atributeForm.currentDay) {
                             inputEl.setAttribute('checked', 'checked');
                             inputEl.setAttribute('currentday', atributeForm.currentDay);
                         }
