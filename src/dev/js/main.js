@@ -6,7 +6,12 @@ jQuery.fn.exists = function () {
 $(() => {
     let nowYear = new Date().getFullYear();
     let parentEl = '';
-    let form = document.querySelector('.archive-filter__items');
+
+    const form = document.querySelector('.archive-filter__items');
+    const atributeForm = $('.archive-filter__items').data("filter");
+
+
+
 
     function adaptiveBloc(container, item, bloc, picture) {
         if ($(container).exists()) {
@@ -117,108 +122,112 @@ $(() => {
         }
     }
 
-    // function checkEl() {
-    //     if ($('.archive-filter__item').exists) {
-    //         try {
-    //             let linkEl = $('.archive-filter__item--month').find('.archive-filter__block'),
-    //                 temp = '';
+    function checkEl() {
+        if ($('.archive-filter__item').exists) {
+            try {
+                let linkEl = $('.archive-filter__item--month').find('.archive-filter__block'),
+                    temp = '';
 
-    //             $(linkEl).each(function () {
-    //                 if ($(this).children('input').prop("checked")) {
-    //                     temp = $(this).children('input').val();
-    //                     if ((temp.indexOf("Декабрь") != -1) ||
-    //                         (temp.indexOf("Январь") != -1) ||
-    //                         (temp.indexOf("Март") != -1) ||
-    //                         (temp.indexOf("Май") != -1) ||
-    //                         (temp.indexOf("Июль") != -1) ||
-    //                         (temp.indexOf("Август") != -1) ||
-    //                         (temp.indexOf("Октябрь") != -1)
-    //                     ) {
-    //                         crYear('.archive-filter__item--day', 31);
-    //                         $('.archive-filter__item--day').find('.archive-filter__txt').text('31');
-    //                     } else if ((temp.indexOf("Сентябрь") != -1) ||
-    //                         (temp.indexOf("Июнь") != -1) ||
-    //                         (temp.indexOf("Ноябрь") != -1) ||
-    //                         (temp.indexOf("Апрель") != -1)) {
-    //                         crYear('.archive-filter__item--day', 30);
-    //                         $('.archive-filter__item--day').find('.archive-filter__txt').text('30');
-    //                     } else {
-    //                         crYear('.archive-filter__item--day', 28);
-    //                         $('.archive-filter__item--day').find('.archive-filter__txt').text('28');
-    //                     }
-    //                 }
-    //             });
-    //         } catch (err) {
-    //             console.log(err);
-    //         }
-    //     }
-    // }
+                let linkEl2 = $('.archive-filter__item--year').find('.archive-filter__block');
 
-    // function crYear(parent, qty) {
+                $(linkEl).each(function () {
+                    if ($(this).children('input').prop("checked")) {
+                        temp = $(this).children('label').text();
+                        if ((temp.indexOf("Декабрь") != -1) ||
+                            (temp.indexOf("Январь") != -1) ||
+                            (temp.indexOf("Март") != -1) ||
+                            (temp.indexOf("Май") != -1) ||
+                            (temp.indexOf("Июль") != -1) ||
+                            (temp.indexOf("Август") != -1) ||
+                            (temp.indexOf("Октябрь") != -1)
+                        ) {
+                            crYear('.archive-filter__item--day', 31);
+                            $('.archive-filter__item--day').find('.archive-filter__txt').text('31');
+                        } else if ((temp.indexOf("Сентябрь") != -1) ||
+                            (temp.indexOf("Июнь") != -1) ||
+                            (temp.indexOf("Ноябрь") != -1) ||
+                            (temp.indexOf("Апрель") != -1)) {
+                            crYear('.archive-filter__item--day', 30);
+                            $('.archive-filter__item--day').find('.archive-filter__txt').text('30');
+                        } else {
+                            crYear('.archive-filter__item--day', 28);
+                            $('.archive-filter__item--day').find('.archive-filter__txt').text('28');
+                        }
+                    }
+                });
+            } catch (err) {
+                console.log(err);
+            }
+        }
+    }
 
-    //     if ($('.archive-filter__item').exists) {
-    //         try {
-    //             if (parent == '.archive-filter__item--year') {
-    //                 parentEl = $(parent).find('.archive-filter__list');
+    function crYear(parent, qty) {
 
-    //                 for (let i = nowYear; i >= 1935; i--) {
-    //                     let newEl = document.createElement('div'),
-    //                         inputEl = document.createElement('input'),
-    //                         inputLabel = document.createElement('label');
+        if ($('.archive-filter__item').exists) {
+            try {
+                if (parent == '.archive-filter__item--year') {
+                    parentEl = $(parent).find('.archive-filter__list');
 
-    //                     newEl.classList.add('archive-filter__block');
+                    for (let i = nowYear; i >= 1935; i--) {
+                        let newEl = document.createElement('div'),
+                            inputEl = document.createElement('input'),
+                            inputLabel = document.createElement('label');
 
-    //                     if (i == nowYear) {
-    //                         inputEl.setAttribute('checked', 'checked');
-    //                     }
+                        newEl.classList.add('archive-filter__block');
 
-    //                     inputEl.setAttribute('id', `y-${i}`);
-    //                     inputEl.setAttribute('type', 'radio');
-    //                     inputEl.setAttribute('name', 'year');
-    //                     inputEl.setAttribute('value', `${i}`);
+                        if (i == nowYear) {
+                            inputEl.setAttribute('checked', 'checked');
+                            inputEl.setAttribute('currentyear', atributeForm.currentYear);
+                        }
 
-    //                     inputLabel.setAttribute('for', `y-${i}`);
-    //                     inputLabel.textContent = i;
-    //                     newEl.append(inputEl);
-    //                     newEl.append(inputLabel);
+                        inputEl.setAttribute('id', `y-${i}`);
+                        inputEl.setAttribute('type', 'radio');
+                        inputEl.setAttribute('name', atributeForm.year);
+                        inputEl.setAttribute('value', `${i}`);
 
-    //                     parentEl.append(newEl);
-    //                 }
-    //             } else {
-    //                 parentEl = $(parent).find('.archive-filter__list');
+                        inputLabel.setAttribute('for', `y-${i}`);
+                        inputLabel.textContent = i;
+                        newEl.append(inputEl);
+                        newEl.append(inputLabel);
 
-    //                 for (let i = qty; i > 0; i--) {
-    //                     let newEl = document.createElement('div'),
-    //                         inputEl = document.createElement('input'),
-    //                         inputLabel = document.createElement('label');
+                        parentEl.append(newEl);
+                    }
+                } else {
+                    parentEl = $(parent).find('.archive-filter__list');
 
-    //                     newEl.classList.add('archive-filter__block');
+                    for (let i = qty; i > 0; i--) {
+                        let newEl = document.createElement('div'),
+                            inputEl = document.createElement('input'),
+                            inputLabel = document.createElement('label');
 
-    //                     if (i == qty) {
-    //                         inputEl.setAttribute('checked', 'checked');
-    //                     }
+                        newEl.classList.add('archive-filter__block');
 
-    //                     inputEl.setAttribute('id', `d-${i}`);
-    //                     inputEl.setAttribute('type', 'radio');
-    //                     inputEl.setAttribute('name', 'day');
-    //                     inputEl.setAttribute('value', `${i}`);
+                        if (i == qty) {
+                            inputEl.setAttribute('checked', 'checked');
+                            inputEl.setAttribute('currentday', atributeForm.currentDay);
+                        }
 
-    //                     inputLabel.setAttribute('for', `d-${i}`);
-    //                     inputLabel.textContent = i;
-    //                     newEl.append(inputEl);
-    //                     newEl.append(inputLabel);
+                        inputEl.setAttribute('id', `d-${i}`);
+                        inputEl.setAttribute('type', 'radio');
+                        inputEl.setAttribute('name', atributeForm.day);
+                        inputEl.setAttribute('value', `${i}`);
 
-    //                     parentEl.append(newEl);
-    //                 }
-    //             }
-    //         } catch (err) {
-    //             console.log(err);
-    //         }
-    //     }
-    // }
+                        inputLabel.setAttribute('for', `d-${i}`);
+                        inputLabel.textContent = i;
+                        newEl.append(inputEl);
+                        newEl.append(inputLabel);
 
-    // checkEl();
-    //  crYear('.archive-filter__item--year', 1935);
+                        parentEl.append(newEl);
+                    }
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        }
+    }
+
+    checkEl();
+    crYear('.archive-filter__item--year', atributeForm.min);
 
     if ($('.archive-filter__item').exists()) {
         try {
@@ -258,13 +267,36 @@ $(() => {
                         });
                     }
 
+                    if (($(this).hasClass('archive-filter__item--active')) && ($(this).hasClass('archive-filter__item--year'))) {
+                        linkEl = $(this).find('.archive-filter__block');
+                        $(linkEl).each(function () {
+                            $(this).on('click', function () {
+                                $(txt).text($(this).text());
+                                $('.archive-filter__item--day').find('.archive-filter__block').remove();
+                                $(this).find('input').attr('currentYear', atributeForm.currentYear).closest('.archive-filter__block').siblings().find('input').removeAttr('currentyear');
+                                checkEl();
+                            });
+                        });
+                    }
+
+                    if (($(this).hasClass('archive-filter__item--active')) && ($(this).hasClass('archive-filter__item--day'))) {
+                        linkEl = $(this).find('.archive-filter__block');
+
+                        $(linkEl).each(function () {
+                            $(this).on('click', function () {
+                                $(this).find('input').attr('currentDay', atributeForm.currentDay).closest('.archive-filter__block').siblings().find('input').removeAttr('currentday');
+                            });
+                        });
+                    }
+
+
                     if (($(this).hasClass('archive-filter__item--active')) && ($(this).hasClass('archive-filter__item--month'))) {
                         linkEl = $(this).find('.archive-filter__block');
                         $(linkEl).each(function () {
                             $(this).on('click', function () {
                                 $(txt).text($(this).text());
                                 $('.archive-filter__item--day').find('.archive-filter__block').remove();
-                                // checkEl();
+                                checkEl();
                             });
                         });
                     }
