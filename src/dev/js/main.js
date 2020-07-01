@@ -217,8 +217,8 @@ $(() => {
         }
     }
 
-    checkEl();
-    crYear('.archive-filter__item--year', 1935);
+    // checkEl();
+    //  crYear('.archive-filter__item--year', 1935);
 
     if ($('.archive-filter__item').exists()) {
         try {
@@ -264,7 +264,7 @@ $(() => {
                             $(this).on('click', function () {
                                 $(txt).text($(this).text());
                                 $('.archive-filter__item--day').find('.archive-filter__block').remove();
-                                checkEl();
+                                // checkEl();
                             });
                         });
                     }

@@ -199,10 +199,9 @@ $(function () {
         console.log(err);
       }
     }
-  }
+  } // checkEl();
+  //  crYear('.archive-filter__item--year', 1935);
 
-  checkEl();
-  crYear('.archive-filter__item--year', 1935);
 
   if ($('.archive-filter__item').exists()) {
     try {
@@ -243,8 +242,7 @@ $(function () {
             $(linkEl).each(function () {
               $(this).on('click', function () {
                 $(txt).text($(this).text());
-                $('.archive-filter__item--day').find('.archive-filter__block').remove();
-                checkEl();
+                $('.archive-filter__item--day').find('.archive-filter__block').remove(); // checkEl();
               });
             });
           }
