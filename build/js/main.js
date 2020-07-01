@@ -107,99 +107,91 @@ $(function () {
     } catch (err) {
       console.log(err);
     }
-  }
-
-  function checkEl() {
-    if ($('.archive-filter__item').exists) {
-      try {
-        var linkEl = $('.archive-filter__item--month').find('.archive-filter__block'),
-            temp = '';
-        $(linkEl).each(function () {
-          if ($(this).children('input').prop("checked")) {
-            temp = $(this).children('input').val();
-
-            if (temp.indexOf("Декабрь") != -1 || temp.indexOf("Январь") != -1 || temp.indexOf("Март") != -1 || temp.indexOf("Май") != -1 || temp.indexOf("Июль") != -1 || temp.indexOf("Август") != -1 || temp.indexOf("Октябрь") != -1) {
-              crYear('.archive-filter__item--day', 31);
-              $('.archive-filter__item--day').find('.archive-filter__txt').text('31');
-            } else if (temp.indexOf("Сентябрь") != -1 || temp.indexOf("Июнь") != -1 || temp.indexOf("Ноябрь") != -1 || temp.indexOf("Апрель") != -1) {
-              crYear('.archive-filter__item--day', 30);
-              $('.archive-filter__item--day').find('.archive-filter__txt').text('30');
-            } else {
-              crYear('.archive-filter__item--day', 28);
-              $('.archive-filter__item--day').find('.archive-filter__txt').text('28');
-            }
-          }
-        });
-      } catch (err) {
-        console.log(err);
-      }
-    }
-  }
-
-  function crYear(parent, qty) {
-    if ($('.archive-filter__item').exists) {
-      try {
-        if (parent == '.archive-filter__item--year') {
-          parentEl = $(parent).find('.archive-filter__list');
-
-          for (var _i5 = nowYear; _i5 >= 1935; _i5--) {
-            var newEl = document.createElement('div'),
-                inputEl = document.createElement('input'),
-                inputLabel = document.createElement('label');
-            newEl.classList.add('archive-filter__block');
-
-            if (_i5 == nowYear) {
-              inputEl.setAttribute('checked', 'checked');
-            }
-
-            inputEl.setAttribute('id', "y-".concat(_i5));
-            inputEl.setAttribute('type', 'radio');
-            inputEl.setAttribute('name', 'year');
-            inputEl.setAttribute('value', "".concat(_i5));
-            inputLabel.setAttribute('for', "y-".concat(_i5));
-            inputLabel.textContent = _i5;
-            newEl.append(inputEl);
-            newEl.append(inputLabel);
-            parentEl.append(newEl);
-          }
-        } else {
-          parentEl = $(parent).find('.archive-filter__list');
-
-          for (var _i6 = qty; _i6 > 0; _i6--) {
-            var _newEl = document.createElement('div'),
-                _inputEl = document.createElement('input'),
-                _inputLabel = document.createElement('label');
-
-            _newEl.classList.add('archive-filter__block');
-
-            if (_i6 == qty) {
-              _inputEl.setAttribute('checked', 'checked');
-            }
-
-            _inputEl.setAttribute('id', "d-".concat(_i6));
-
-            _inputEl.setAttribute('type', 'radio');
-
-            _inputEl.setAttribute('name', 'day');
-
-            _inputEl.setAttribute('value', "".concat(_i6));
-
-            _inputLabel.setAttribute('for', "d-".concat(_i6));
-
-            _inputLabel.textContent = _i6;
-
-            _newEl.append(_inputEl);
-
-            _newEl.append(_inputLabel);
-
-            parentEl.append(_newEl);
-          }
-        }
-      } catch (err) {
-        console.log(err);
-      }
-    }
-  } // checkEl();
+  } // function checkEl() {
+  //     if ($('.archive-filter__item').exists) {
+  //         try {
+  //             let linkEl = $('.archive-filter__item--month').find('.archive-filter__block'),
+  //                 temp = '';
+  //             $(linkEl).each(function () {
+  //                 if ($(this).children('input').prop("checked")) {
+  //                     temp = $(this).children('input').val();
+  //                     if ((temp.indexOf("Декабрь") != -1) ||
+  //                         (temp.indexOf("Январь") != -1) ||
+  //                         (temp.indexOf("Март") != -1) ||
+  //                         (temp.indexOf("Май") != -1) ||
+  //                         (temp.indexOf("Июль") != -1) ||
+  //                         (temp.indexOf("Август") != -1) ||
+  //                         (temp.indexOf("Октябрь") != -1)
+  //                     ) {
+  //                         crYear('.archive-filter__item--day', 31);
+  //                         $('.archive-filter__item--day').find('.archive-filter__txt').text('31');
+  //                     } else if ((temp.indexOf("Сентябрь") != -1) ||
+  //                         (temp.indexOf("Июнь") != -1) ||
+  //                         (temp.indexOf("Ноябрь") != -1) ||
+  //                         (temp.indexOf("Апрель") != -1)) {
+  //                         crYear('.archive-filter__item--day', 30);
+  //                         $('.archive-filter__item--day').find('.archive-filter__txt').text('30');
+  //                     } else {
+  //                         crYear('.archive-filter__item--day', 28);
+  //                         $('.archive-filter__item--day').find('.archive-filter__txt').text('28');
+  //                     }
+  //                 }
+  //             });
+  //         } catch (err) {
+  //             console.log(err);
+  //         }
+  //     }
+  // }
+  // function crYear(parent, qty) {
+  //     if ($('.archive-filter__item').exists) {
+  //         try {
+  //             if (parent == '.archive-filter__item--year') {
+  //                 parentEl = $(parent).find('.archive-filter__list');
+  //                 for (let i = nowYear; i >= 1935; i--) {
+  //                     let newEl = document.createElement('div'),
+  //                         inputEl = document.createElement('input'),
+  //                         inputLabel = document.createElement('label');
+  //                     newEl.classList.add('archive-filter__block');
+  //                     if (i == nowYear) {
+  //                         inputEl.setAttribute('checked', 'checked');
+  //                     }
+  //                     inputEl.setAttribute('id', `y-${i}`);
+  //                     inputEl.setAttribute('type', 'radio');
+  //                     inputEl.setAttribute('name', 'year');
+  //                     inputEl.setAttribute('value', `${i}`);
+  //                     inputLabel.setAttribute('for', `y-${i}`);
+  //                     inputLabel.textContent = i;
+  //                     newEl.append(inputEl);
+  //                     newEl.append(inputLabel);
+  //                     parentEl.append(newEl);
+  //                 }
+  //             } else {
+  //                 parentEl = $(parent).find('.archive-filter__list');
+  //                 for (let i = qty; i > 0; i--) {
+  //                     let newEl = document.createElement('div'),
+  //                         inputEl = document.createElement('input'),
+  //                         inputLabel = document.createElement('label');
+  //                     newEl.classList.add('archive-filter__block');
+  //                     if (i == qty) {
+  //                         inputEl.setAttribute('checked', 'checked');
+  //                     }
+  //                     inputEl.setAttribute('id', `d-${i}`);
+  //                     inputEl.setAttribute('type', 'radio');
+  //                     inputEl.setAttribute('name', 'day');
+  //                     inputEl.setAttribute('value', `${i}`);
+  //                     inputLabel.setAttribute('for', `d-${i}`);
+  //                     inputLabel.textContent = i;
+  //                     newEl.append(inputEl);
+  //                     newEl.append(inputLabel);
+  //                     parentEl.append(newEl);
+  //                 }
+  //             }
+  //         } catch (err) {
+  //             console.log(err);
+  //         }
+  //     }
+  // }
+  // checkEl();
   //  crYear('.archive-filter__item--year', 1935);
 
 

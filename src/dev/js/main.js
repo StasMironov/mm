@@ -117,105 +117,105 @@ $(() => {
         }
     }
 
-    function checkEl() {
-        if ($('.archive-filter__item').exists) {
-            try {
-                let linkEl = $('.archive-filter__item--month').find('.archive-filter__block'),
-                    temp = '';
+    // function checkEl() {
+    //     if ($('.archive-filter__item').exists) {
+    //         try {
+    //             let linkEl = $('.archive-filter__item--month').find('.archive-filter__block'),
+    //                 temp = '';
 
-                $(linkEl).each(function () {
-                    if ($(this).children('input').prop("checked")) {
-                        temp = $(this).children('input').val();
-                        if ((temp.indexOf("Декабрь") != -1) ||
-                            (temp.indexOf("Январь") != -1) ||
-                            (temp.indexOf("Март") != -1) ||
-                            (temp.indexOf("Май") != -1) ||
-                            (temp.indexOf("Июль") != -1) ||
-                            (temp.indexOf("Август") != -1) ||
-                            (temp.indexOf("Октябрь") != -1)
-                        ) {
-                            crYear('.archive-filter__item--day', 31);
-                            $('.archive-filter__item--day').find('.archive-filter__txt').text('31');
-                        } else if ((temp.indexOf("Сентябрь") != -1) ||
-                            (temp.indexOf("Июнь") != -1) ||
-                            (temp.indexOf("Ноябрь") != -1) ||
-                            (temp.indexOf("Апрель") != -1)) {
-                            crYear('.archive-filter__item--day', 30);
-                            $('.archive-filter__item--day').find('.archive-filter__txt').text('30');
-                        } else {
-                            crYear('.archive-filter__item--day', 28);
-                            $('.archive-filter__item--day').find('.archive-filter__txt').text('28');
-                        }
-                    }
-                });
-            } catch (err) {
-                console.log(err);
-            }
-        }
-    }
+    //             $(linkEl).each(function () {
+    //                 if ($(this).children('input').prop("checked")) {
+    //                     temp = $(this).children('input').val();
+    //                     if ((temp.indexOf("Декабрь") != -1) ||
+    //                         (temp.indexOf("Январь") != -1) ||
+    //                         (temp.indexOf("Март") != -1) ||
+    //                         (temp.indexOf("Май") != -1) ||
+    //                         (temp.indexOf("Июль") != -1) ||
+    //                         (temp.indexOf("Август") != -1) ||
+    //                         (temp.indexOf("Октябрь") != -1)
+    //                     ) {
+    //                         crYear('.archive-filter__item--day', 31);
+    //                         $('.archive-filter__item--day').find('.archive-filter__txt').text('31');
+    //                     } else if ((temp.indexOf("Сентябрь") != -1) ||
+    //                         (temp.indexOf("Июнь") != -1) ||
+    //                         (temp.indexOf("Ноябрь") != -1) ||
+    //                         (temp.indexOf("Апрель") != -1)) {
+    //                         crYear('.archive-filter__item--day', 30);
+    //                         $('.archive-filter__item--day').find('.archive-filter__txt').text('30');
+    //                     } else {
+    //                         crYear('.archive-filter__item--day', 28);
+    //                         $('.archive-filter__item--day').find('.archive-filter__txt').text('28');
+    //                     }
+    //                 }
+    //             });
+    //         } catch (err) {
+    //             console.log(err);
+    //         }
+    //     }
+    // }
 
-    function crYear(parent, qty) {
+    // function crYear(parent, qty) {
 
-        if ($('.archive-filter__item').exists) {
-            try {
-                if (parent == '.archive-filter__item--year') {
-                    parentEl = $(parent).find('.archive-filter__list');
+    //     if ($('.archive-filter__item').exists) {
+    //         try {
+    //             if (parent == '.archive-filter__item--year') {
+    //                 parentEl = $(parent).find('.archive-filter__list');
 
-                    for (let i = nowYear; i >= 1935; i--) {
-                        let newEl = document.createElement('div'),
-                            inputEl = document.createElement('input'),
-                            inputLabel = document.createElement('label');
+    //                 for (let i = nowYear; i >= 1935; i--) {
+    //                     let newEl = document.createElement('div'),
+    //                         inputEl = document.createElement('input'),
+    //                         inputLabel = document.createElement('label');
 
-                        newEl.classList.add('archive-filter__block');
+    //                     newEl.classList.add('archive-filter__block');
 
-                        if (i == nowYear) {
-                            inputEl.setAttribute('checked', 'checked');
-                        }
+    //                     if (i == nowYear) {
+    //                         inputEl.setAttribute('checked', 'checked');
+    //                     }
 
-                        inputEl.setAttribute('id', `y-${i}`);
-                        inputEl.setAttribute('type', 'radio');
-                        inputEl.setAttribute('name', 'year');
-                        inputEl.setAttribute('value', `${i}`);
+    //                     inputEl.setAttribute('id', `y-${i}`);
+    //                     inputEl.setAttribute('type', 'radio');
+    //                     inputEl.setAttribute('name', 'year');
+    //                     inputEl.setAttribute('value', `${i}`);
 
-                        inputLabel.setAttribute('for', `y-${i}`);
-                        inputLabel.textContent = i;
-                        newEl.append(inputEl);
-                        newEl.append(inputLabel);
+    //                     inputLabel.setAttribute('for', `y-${i}`);
+    //                     inputLabel.textContent = i;
+    //                     newEl.append(inputEl);
+    //                     newEl.append(inputLabel);
 
-                        parentEl.append(newEl);
-                    }
-                } else {
-                    parentEl = $(parent).find('.archive-filter__list');
+    //                     parentEl.append(newEl);
+    //                 }
+    //             } else {
+    //                 parentEl = $(parent).find('.archive-filter__list');
 
-                    for (let i = qty; i > 0; i--) {
-                        let newEl = document.createElement('div'),
-                            inputEl = document.createElement('input'),
-                            inputLabel = document.createElement('label');
+    //                 for (let i = qty; i > 0; i--) {
+    //                     let newEl = document.createElement('div'),
+    //                         inputEl = document.createElement('input'),
+    //                         inputLabel = document.createElement('label');
 
-                        newEl.classList.add('archive-filter__block');
+    //                     newEl.classList.add('archive-filter__block');
 
-                        if (i == qty) {
-                            inputEl.setAttribute('checked', 'checked');
-                        }
+    //                     if (i == qty) {
+    //                         inputEl.setAttribute('checked', 'checked');
+    //                     }
 
-                        inputEl.setAttribute('id', `d-${i}`);
-                        inputEl.setAttribute('type', 'radio');
-                        inputEl.setAttribute('name', 'day');
-                        inputEl.setAttribute('value', `${i}`);
+    //                     inputEl.setAttribute('id', `d-${i}`);
+    //                     inputEl.setAttribute('type', 'radio');
+    //                     inputEl.setAttribute('name', 'day');
+    //                     inputEl.setAttribute('value', `${i}`);
 
-                        inputLabel.setAttribute('for', `d-${i}`);
-                        inputLabel.textContent = i;
-                        newEl.append(inputEl);
-                        newEl.append(inputLabel);
+    //                     inputLabel.setAttribute('for', `d-${i}`);
+    //                     inputLabel.textContent = i;
+    //                     newEl.append(inputEl);
+    //                     newEl.append(inputLabel);
 
-                        parentEl.append(newEl);
-                    }
-                }
-            } catch (err) {
-                console.log(err);
-            }
-        }
-    }
+    //                     parentEl.append(newEl);
+    //                 }
+    //             }
+    //         } catch (err) {
+    //             console.log(err);
+    //         }
+    //     }
+    // }
 
     // checkEl();
     //  crYear('.archive-filter__item--year', 1935);
