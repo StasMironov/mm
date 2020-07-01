@@ -142,7 +142,7 @@ $(function () {
         if (parent == '.archive-filter__item--year') {
           parentEl = $(parent).find('.archive-filter__list');
 
-          for (var _i5 = nowYear; _i5 >= 1935; _i5--) {
+          for (var _i5 = nowYear; _i5 >= qty; _i5--) {
             var newEl = document.createElement('div'),
                 inputEl = document.createElement('input'),
                 inputLabel = document.createElement('label');

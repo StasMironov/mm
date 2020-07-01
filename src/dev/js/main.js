@@ -7,9 +7,6 @@ $(() => {
     let nowYear = new Date().getFullYear();
     let parentEl = '';
 
-
-
-
     function adaptiveBloc(container, item, bloc, picture) {
         if ($(container).exists()) {
             $(container).each(function () {
@@ -165,7 +162,7 @@ $(() => {
                 if (parent == '.archive-filter__item--year') {
                     parentEl = $(parent).find('.archive-filter__list');
 
-                    for (let i = nowYear; i >= 1935; i--) {
+                    for (let i = nowYear; i >= qty; i--) {
                         let newEl = document.createElement('div'),
                             inputEl = document.createElement('input'),
                             inputLabel = document.createElement('label');
@@ -181,12 +178,10 @@ $(() => {
                         inputEl.setAttribute('type', 'radio');
                         inputEl.setAttribute('name', atributeForm.year);
                         inputEl.setAttribute('value', `${i}`);
-
                         inputLabel.setAttribute('for', `y-${i}`);
                         inputLabel.textContent = i;
                         newEl.append(inputEl);
                         newEl.append(inputLabel);
-
                         parentEl.append(newEl);
                     }
                 } else {
@@ -222,9 +217,6 @@ $(() => {
             }
         }
     }
-
-
-
 
     if ($('.archive-filter__item').exists()) {
         try {
