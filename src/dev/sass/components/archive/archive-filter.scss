@@ -203,6 +203,9 @@
             display: block;
             width: 100%;
             cursor: pointer;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     }
 
@@ -337,6 +340,15 @@
             @media(max-width: 620px) {
                 margin-top: 8px;
                 width: 100% !important;
+            }
+        }
+
+        .archive-filter__item--rubric {
+            max-width: 148px;
+
+            .archive-filter__txt {
+                white-space: nowrap;
+                overflow: hidden;
             }
         }
 
