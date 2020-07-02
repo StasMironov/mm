@@ -109,4 +109,9 @@
             color: $purple-3;
         }
     }
+
+    &--headings {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
 }

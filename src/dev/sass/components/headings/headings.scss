@@ -1,0 +1,40 @@
+.headings {
+    &__items {
+        display: flex;
+        margin-top: 40px;
+        max-width: 825px;
+        justify-content: space-between;
+
+        @media(max-width:600px) {
+            flex-direction: column;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+
+        &:not(:last-child) {
+            margin-right: 45px;
+
+            @media(max-width:768px) {
+                margin-right: 25px;
+            }
+        }
+    }
+
+    &__link {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 39px;
+        transition: .3s;
+
+        &:hover {
+            color: $purple-3;
+        }
+
+        &--active {
+            color: $purple-3;
+        }
+    }
+}
