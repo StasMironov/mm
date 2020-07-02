@@ -353,8 +353,10 @@
         }
 
         .archive-filter__item--day {
+            min-width: 85px;
+
             @media(max-width: 640px) {
-                max-width: 83px !important;
+                max-width: 85px !important;
                 width: 100% !important;
             }
         }
@@ -367,6 +369,8 @@
         }
 
         .archive-filter__item--month {
+            min-width: 124px;
+
             @media(max-width: 640px) {
                 max-width: 125px !important;
                 width: 100% !important;

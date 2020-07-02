@@ -2,10 +2,7 @@
     margin-top: 30px;
 
     @media(max-width: 1024px) {
-        margin-top: 24px;
-    }
-
-    @media(max-width: 640px) {
+        padding-top: 24px;
         padding-bottom: 16px;
         border-bottom: 1px solid $black;
     }
@@ -75,7 +72,7 @@
 
         .news-today__item {
             @media(max-width: 1024px) {
-                margin-top: 30px;
+                margin-top: 0px;
             }
         }
     }
