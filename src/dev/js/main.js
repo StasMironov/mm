@@ -7,6 +7,47 @@ $(() => {
     let nowYear = new Date().getFullYear();
     let parentEl = '';
 
+    if ($('.journal__items').exists) {
+        try {
+            const breakpoint = window.matchMedia('(min-width:600px)');
+            let mySwiper;
+
+            const breakpointChecker = function () {
+                if (breakpoint.matches === true) {
+                    return enableSwiper();
+                } else if (breakpoint.matches === false) {
+                    if (mySwiper !== undefined) mySwiper.destroy(true, true);
+                    return;
+                }
+            };
+
+            function enableSwiper() {
+                $('.journal__items').each(function () {
+                    mySwiper = new Swiper($(this), {
+                        slidesPerView: 4,
+                        spaceBetween: 18,
+                        stopOnLastSlide: false,
+                        disableOnInteraction: true,
+                        touchRatio: 0,
+                        navigation: {
+                            nextEl: '.journal__arrow.journal__arrow--next',
+                            prevEl: '.journal__arrow.journal__arrow--prev',
+                        },
+                    });
+                });
+            }
+
+
+            breakpoint.addListener(breakpointChecker);
+            breakpointChecker();
+
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+
+
     function adaptiveBloc(container, item, bloc, picture) {
         if ($(container).exists()) {
             $(container).each(function () {

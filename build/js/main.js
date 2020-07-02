@@ -9,6 +9,43 @@ $(function () {
   var nowYear = new Date().getFullYear();
   var parentEl = '';
 
+  if ($('.journal__items').exists) {
+    try {
+      var enableSwiper = function enableSwiper() {
+        $('.journal__items').each(function () {
+          mySwiper = new Swiper($(this), {
+            slidesPerView: 4,
+            spaceBetween: 18,
+            stopOnLastSlide: false,
+            disableOnInteraction: true,
+            touchRatio: 0,
+            navigation: {
+              nextEl: '.journal__arrow.journal__arrow--next',
+              prevEl: '.journal__arrow.journal__arrow--prev'
+            }
+          });
+        });
+      };
+
+      var breakpoint = window.matchMedia('(min-width:600px)');
+      var mySwiper;
+
+      var breakpointChecker = function breakpointChecker() {
+        if (breakpoint.matches === true) {
+          return enableSwiper();
+        } else if (breakpoint.matches === false) {
+          if (mySwiper !== undefined) mySwiper.destroy(true, true);
+          return;
+        }
+      };
+
+      breakpoint.addListener(breakpointChecker);
+      breakpointChecker();
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   function adaptiveBloc(container, item, bloc, picture) {
     if ($(container).exists()) {
       $(container).each(function () {
@@ -329,20 +366,21 @@ $(function () {
 
   if ($('.author-articles__grid--slider').exists) {
     try {
-      var breakpoint = window.matchMedia('(min-width:600px)');
-      var mySwiper;
+      var _breakpoint = window.matchMedia('(min-width:600px)');
 
-      var breakpointChecker = function breakpointChecker() {
-        if (breakpoint.matches === true) {
-          if (mySwiper !== undefined) mySwiper.destroy(true, true);
+      var _mySwiper;
+
+      var _breakpointChecker = function _breakpointChecker() {
+        if (_breakpoint.matches === true) {
+          if (_mySwiper !== undefined) _mySwiper.destroy(true, true);
           return;
-        } else if (breakpoint.matches === false) {
-          return enableSwiper();
+        } else if (_breakpoint.matches === false) {
+          return _enableSwiper();
         }
       };
 
-      var enableSwiper = function enableSwiper() {
-        mySwiper = new Swiper('.author-articles__grid--slider', {
+      var _enableSwiper = function _enableSwiper() {
+        _mySwiper = new Swiper('.author-articles__grid--slider', {
           slidesPerView: 'auto',
           spaceBetween: 16,
           loop: true,
@@ -353,8 +391,9 @@ $(function () {
         });
       };
 
-      breakpoint.addListener(breakpointChecker);
-      breakpointChecker();
+      _breakpoint.addListener(_breakpointChecker);
+
+      _breakpointChecker();
     } catch (err) {
       console.log(err);
     }

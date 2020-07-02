@@ -1,0 +1,140 @@
+.journal {
+
+    &__inner {
+        max-width: 878px;
+    }
+
+    &__txt {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 22px;
+        margin-top: 16px;
+        color: $purple-3;
+    }
+
+    &__arrow {
+        position: absolute;
+        height: 23px;
+        width: 22px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        cursor: pointer;
+
+        .b-svg {
+            height: 100%;
+            width: 100%;
+            fill: none;
+            stroke: $black;
+            transition: .2s ease-out;
+        }
+
+        &:hover {
+            .b-svg {
+                stroke: $purple-3;
+            }
+        }
+
+        &--next {
+            right: 0;
+
+            &.swiper-button-disabled {
+                opacity: 0;
+            }
+        }
+
+        &--prev {
+            left: 0;
+            transform: scale(-1, 1);
+
+            &.swiper-button-disabled {
+                opacity: 0;
+            }
+        }
+    }
+
+    &__cover {
+        position: relative;
+        max-width: 952px;
+        width: 100%;
+    }
+
+    &__info {
+        margin-top: 14px;
+        max-width: 812px;
+        font-weight: normal;
+        font-size: 16px;
+        letter-spacing: -0.2px;
+        line-height: 26px;
+    }
+
+    &__box {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        top: 0;
+        margin: auto;
+        width: 100%;
+        height: 50px;
+        left: -37px;
+        bottom: 36px;
+    }
+
+    &__wrapper {
+        margin-top: 30px;
+    }
+
+    &__age {
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 120%;
+        color: $black;
+        letter-spacing: 0.25px;
+        font-family: 'MinionPro', sans-serif;
+    }
+
+    &__items {
+        margin-top: 16px;
+        height: 353px;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    &__item {
+        display: block;
+
+        &:hover .journal__pic:after {
+            opacity: 1;
+        }
+    }
+
+    &__pic {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 315px;
+
+        &:after {
+            position: absolute;
+            content: "";
+            background-repeat: no-repeat;
+            left: 0;
+            bottom: 0;
+            top: 0;
+            margin: auto;
+            right: 0;
+            background-position: center;
+            transition: .2s ease-out;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(../img/icon/hover-block2.svg);
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+}
