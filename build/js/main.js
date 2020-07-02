@@ -224,11 +224,12 @@ $(function () {
         });
         temp = $(this).find('.archive-filter__bloc');
         txt = $(this).find('.archive-filter__txt');
-        inpEl = $(this).find('.archive-filter__list').find('input'); //prop("checked")
+        inpEl = $(this).find('.archive-filter__list').find('input'); //prop("checked") 
 
         $(inpEl).each(function () {
           if ($(this).prop("checked")) {
-            $(txt).text($(this).val());
+            console.log($(this));
+            $(txt).text($(this).next().text());
           }
         });
         $(temp).on('click', function () {

@@ -10,48 +10,77 @@ block content
 			.wrapper__left
 				.report
 					.report__title.title-1 Фоторепортажи
-					.archive-filter
-						<form class="archive-filter__items" action="" method="get" data-filter='{"min":"2000","year":"YEAR","day":"DAY","currentYear":"2013", "currentDay":"23"}'>
-							.archive-filter__item.archive-filter__item--rubric
-								.archive-filter__bloc
-									.archive-filter__txt Все рубрики
-									.archive-filter__ic
-										+svg('ar-f')
-								.archive-filter__box
-									.archive-filter__list
-							.archive-filter__item.archive-filter__item--year
-								.archive-filter__bloc
-									.archive-filter__txt 1935
-									.archive-filter__ic
-										+svg('ar-f')
-								.archive-filter__box
-									.archive-filter__list
-							.archive-filter__item.archive-filter__item--month
-								.archive-filter__bloc
-									.archive-filter__txt Декабрь
-									.archive-filter__ic
-										+svg('ar-f')
-								.archive-filter__box
-									.archive-filter__list
-										<div class="archive-filter__block">
-											<input id="m1" type="radio" name="month" value="01">
-											<label for="m1">Декабрь</label>
-										</div>
-										<div class="archive-filter__block">
-											<input id="m2" type="radio" name="month" value="Январь">
-											<label for="m2">Январь</label>
-										</div>
-										<div class="archive-filter__block">
-											<input id="m3" type="radio" name="month" value="Февраль" checked="checked">
-											<label for="m3">Февраль</label>
-										</div>
-							.archive-filter__item.archive-filter__item--day
-								.archive-filter__bloc
-									.archive-filter__txt 31
-									.archive-filter__ic
-										+svg('ar-f')
-								.archive-filter__box
-									.archive-filter__list
+					.archive-filter.archive-filter--report
+						<form class="archive-filter__items" action="" method="get" data-filter='{"min":"1995","year":"YEAR","day":"DAY","currentYear":"2020", "currentDay":"2"}'>
+							.archive-filter__group
+								.archive-filter__item.archive-filter__item--rubric
+									.archive-filter__bloc
+										.archive-filter__txt Все рубрики
+										.archive-filter__ic
+											+svg('ar-f')
+									.archive-filter__box
+										.archive-filter__list
+											<div class="archive-filter__block">
+												<input id="r1" type="radio" name="rubric" value="1">
+												<label for="r1">Test</label>
+											</div>
+											<div class="archive-filter__block">
+												<input id="r2" type="radio" name="rubric" value="2">
+												<label for="r2">Test2</label>
+											</div>
+											<div class="archive-filter__block">
+												<input id="r3" type="radio" name="rubric" value="3">
+												<label for="r3">Test3</label>
+											</div>
+											<div class="archive-filter__block">
+												<input id="r4" type="radio" name="rubric" value="4">
+												<label for="r4">Test4</label>
+											</div>
+											<div class="archive-filter__block">
+												<input id="r5" type="radio" name="rubric" value="5">
+												<label for="r5">Test5</label>
+											</div>
+											<div class="archive-filter__block">
+												<input id="r6" type="radio" name="rubric" value="6">
+												<label for="r6">Test6</label>
+											</div>
+											<div class="archive-filter__block">
+												<input id="r7" type="radio" name="rubric" value="7">
+												<label for="r7">Test7</label>
+											</div>
+								.archive-filter__item.archive-filter__item--year
+									.archive-filter__bloc
+										.archive-filter__txt 1935
+										.archive-filter__ic
+											+svg('ar-f')
+									.archive-filter__box
+										.archive-filter__list
+								.archive-filter__item.archive-filter__item--month
+									.archive-filter__bloc
+										.archive-filter__txt Декабрь
+										.archive-filter__ic
+											+svg('ar-f')
+									.archive-filter__box
+										.archive-filter__list
+											<div class="archive-filter__block">
+												<input id="m1" type="radio" name="month" value="12">
+												<label for="m1">Декабрь</label>
+											</div>
+											<div class="archive-filter__block">
+												<input id="m2" type="radio" name="month" value="01">
+												<label for="m2">Январь</label>
+											</div>
+											<div class="archive-filter__block">
+												<input id="m3" type="radio" name="month" value="02" checked="checked">
+												<label for="m3">Февраль</label>
+											</div>
+								.archive-filter__item.archive-filter__item--day
+									.archive-filter__bloc
+										.archive-filter__txt 31
+										.archive-filter__ic
+											+svg('ar-f')
+									.archive-filter__box
+										.archive-filter__list
 							button(type="submit").archive-filter__item.archive-filter__item--btn Найти
 					.report__wrapper
 						.news-basic
@@ -166,7 +195,6 @@ block content
 														.publish__wrapper
 															a(href="javascript:void(0);").publish__date 19 марта
 															a(href="javascript:void(0);").publish__person Фантасмогорьев Андрей
-
 			.wrapper__right.wrapper__right--special
 				.news-survey
 					a(href="javascript:void(0);").news-survey__title.title-3 Что вы думаете <br> об обязательном тестировании на коронавирусную инфекцию?
@@ -249,6 +277,8 @@ block content
 					.news-today__item
 						.news-today__title.title-2 Сегодняшняя газета
 						a(href="javascript:void(0);").btn Посмотреть электронное издание
+		.news-temp
+					img(src="./img/banner2.jpg" alt="")
 		
 							
 

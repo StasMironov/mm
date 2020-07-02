@@ -15,7 +15,7 @@
         }
 
         @media(max-width: 500px) {
-            margin-top: -8px;
+            //  margin-top: -8px;
         }
     }
 
@@ -25,6 +25,7 @@
         background-color: $gray-1;
         outline: 1px solid $gray-2 !important;
         height: 53px;
+        white-space: nowrap;
 
         &--year {
             max-width: 100px;
@@ -108,6 +109,10 @@
         font-size: 14px;
         line-height: 22px;
         margin-right: 22px;
+
+        @media(max-width: 640px) {
+            margin-right: 16px;
+        }
     }
 
     &__bloc {
@@ -302,6 +307,90 @@
 
             &:hover {
                 color: $black;
+            }
+        }
+    }
+
+
+
+    &--report {
+
+        @media(max-width: 640px) {
+            margin-top: 9px;
+        }
+
+        .archive-filter__item:not(:last-child) {
+            @media(max-width: 1235px) {
+                margin-right: 9px;
+            }
+
+            @media(max-width: 1024px) {
+                margin-right: 10px;
+            }
+        }
+
+        .archive-filter__item--btn {
+            @media(max-width: 640px) {
+                margin-top: 10px;
+            }
+
+            @media(max-width: 620px) {
+                margin-top: 8px;
+                width: 100% !important;
+            }
+        }
+
+        .archive-filter__item--day {
+            @media(max-width: 640px) {
+                max-width: 83px !important;
+                width: 100% !important;
+            }
+        }
+
+        .archive-filter__item--year {
+            @media(max-width: 640px) {
+                max-width: 100px !important;
+                width: 100% !important;
+            }
+        }
+
+        .archive-filter__item--month {
+            @media(max-width: 640px) {
+                max-width: 125px !important;
+                width: 100% !important;
+            }
+        }
+    }
+
+    &__group {
+        display: flex;
+        margin-right: 16px;
+
+        @media(max-width: 1235px) {
+            margin-right: 9px;
+        }
+
+        @media(max-width: 1024px) {
+            margin-right: 10px;
+            max-width: 550px;
+        }
+
+        @media(max-width: 640px) {
+            max-width: 100%;
+            margin-right: 0;
+            justify-content: normal;
+            width: 100%;
+        }
+
+        @media(max-width: 620px) {
+            flex-wrap: wrap;
+        }
+
+        .archive-filter__item {
+            @media(max-width: 620px) {
+                width: calc(50% - 8px) !important;
+                max-width: 100% !important;
+                margin-top: 8px;
             }
         }
     }

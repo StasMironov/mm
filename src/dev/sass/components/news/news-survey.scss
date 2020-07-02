@@ -33,7 +33,8 @@
     }
 
     &__radio {
-        display: block;
+        display: inline-flex;
+        flex-direction: column;
 
         &:not(:first-child) {
             margin-top: 10px;
