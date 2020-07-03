@@ -42,6 +42,8 @@
             width: 100%;
         }
 
+
+
         &--btn {
             max-width: 141px;
             width: 100%;
@@ -101,6 +103,18 @@
             .archive-filter__box {
                 opacity: 1;
                 visibility: visible;
+            }
+        }
+
+        &--journal {
+            display: none;
+            margin-top: 24px;
+            max-width: 100%;
+            z-index: 2;
+
+            @media(max-width: 500px) {
+                display: block;
+                width: 100% !important;
             }
         }
     }

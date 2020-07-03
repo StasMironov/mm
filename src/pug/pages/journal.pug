@@ -11,14 +11,30 @@ block content
 				.journal
 					.journal__title.title-1 «Бригада»
 					.journal__info Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					<form class="archive-filter__items" action="" method="get" data-filter='{"min":"2000","year":"YEAR","currentYear":"2013"}'>
+						.archive-filter__item.archive-filter__item--year.archive-filter__item--journal
+							.archive-filter__bloc
+								.archive-filter__txt 1935
+								.archive-filter__ic
+									+svg('ar-f')
+							.archive-filter__box
+								.archive-filter__list
+									<div class="archive-filter__block">
+										<input id="m1" type="radio" name="year" value="">
+										<label for="m1">2010</label>
+									</div>
+									<div class="archive-filter__block">
+										<input id="m2" type="radio" name="year" value="">
+										<label for="m2">2011</label>
+									</div>
+					</form>
 					.journal__wrapper
 						.journal__bloc
 							.journal__age 2012
 							.journal__cover
 								.journal__inner
-									.journal__items
+									.s1.journal__items(data-id="s1")
 										.swiper-wrapper
-										
 											a(href="./document/2012_01.pdf").swiper-slide.journal__item
 												.journal__pic 
 													img(src="./img/journal/img1.jpg" alt="1")
@@ -44,8 +60,75 @@ block content
 												+svg('ar-title')
 											.journal__arrow.journal__arrow--prev
 												+svg('ar-title')
-
-
+						.journal__bloc
+							.journal__age 2011
+							.journal__cover
+								.journal__inner
+									.s2.journal__items(data-id="s2")
+										.swiper-wrapper
+											a(href="./document/2012_01.pdf").swiper-slide.journal__item
+												.journal__pic 
+													img(src="./img/journal/img1.jpg" alt="1")
+												.journal__txt Выпуск 1. PDF
+										.journal__box
+											.journal__arrow.journal__arrow--next
+												+svg('ar-title')
+											.journal__arrow.journal__arrow--prev
+												+svg('ar-title')
+						.journal__bloc
+							.journal__age 2010
+							.journal__cover
+								.journal__inner
+									.s3.journal__items(data-id="s3")
+										.swiper-wrapper
+											a(href="./document/2012_01.pdf").swiper-slide.journal__item
+												.journal__pic 
+													img(src="./img/journal/img1.jpg" alt="1")
+												.journal__txt Выпуск 1. PDF
+											a(href="./document/2012_01.pdf").swiper-slide.journal__item
+												.journal__pic 
+													img(src="./img/journal/img1.jpg" alt="1")
+												.journal__txt Выпуск 1. PDF
+										.journal__box
+											.journal__arrow.journal__arrow--next
+												+svg('ar-title')
+											.journal__arrow.journal__arrow--prev
+												+svg('ar-title')
+						.journal__bloc
+							.journal__age 2009
+							.journal__cover
+								.journal__inner
+									.s1.journal__items(data-id="s1")
+										.swiper-wrapper
+											a(href="./document/2012_01.pdf").swiper-slide.journal__item
+												.journal__pic 
+													img(src="./img/journal/img1.jpg" alt="1")
+												.journal__txt Выпуск 1. PDF
+											a(href="./document/2012_01.pdf").swiper-slide.journal__item
+												.journal__pic 
+													img(src="./img/journal/img1.jpg" alt="1")
+												.journal__txt Выпуск 1. PDF
+											a(href="./document/2012_01.pdf").swiper-slide.journal__item
+												.journal__pic 
+													img(src="./img/journal/img1.jpg" alt="1")
+												.journal__txt Выпуск 1. PDF
+											a(href="./document/2012_01.pdf").swiper-slide.journal__item
+												.journal__pic 
+													img(src="./img/journal/img1.jpg" alt="1")
+												.journal__txt Выпуск 1. PDF
+											a(href="./document/2012_01.pdf").swiper-slide.journal__item
+												.journal__pic 
+													img(src="./img/journal/img1.jpg" alt="1")
+												.journal__txt Выпуск 1. PDF
+										.journal__box
+											.journal__arrow.journal__arrow--next
+												+svg('ar-title')
+											.journal__arrow.journal__arrow--prev
+												+svg('ar-title')
+				.news-today.news-today--include
+					.news-today__item
+						.news-today__title.title-2 Сегодняшняя газета
+						a(href="javascript:void(0);").btn Посмотреть электронное издание
 			.wrapper__right.wrapper__right--special
 				.news-survey
 					a(href="javascript:void(0);").news-survey__title.title-3 Что вы думаете <br> об обязательном тестировании на коронавирусную инфекцию?
