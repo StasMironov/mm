@@ -8,6 +8,9 @@
     border: 1px solid $black;
     cursor: pointer;
     transition: .2s ease-out;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 160%;
 
     &:hover {
         background-color: $purple-3;
@@ -16,5 +19,49 @@
 
     @media(max-width: 600px) {
         height: 53px;
+    }
+
+    &--video {
+        background-color: $purple-3;
+        color: white;
+        height: 53px;
+        margin-top: 30px;
+        border-color: $purple-3;
+
+        @media(max-width: 600px) {
+            margin-top: 16px;
+        }
+
+        &:hover {
+            background-color: white;
+            color: $black-2;
+            border-color: $black-2;
+
+            .b-svg {
+                fill: $black-2;
+            }
+        }
+
+        .b-svg {
+            fill: white;
+            transition: .2s ease-out;
+        }
+
+        .btn__txt {
+            margin-right: 10px;
+        }
+
+        .btn__ic {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 12px;
+            height: 12px;
+
+            .b-svg {
+                height: 100%;
+                width: 100%;
+            }
+        }
     }
 }

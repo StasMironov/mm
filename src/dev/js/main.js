@@ -13,6 +13,46 @@ $(() => {
         });
     }
 
+
+    function adaptiveArticle(container, text) {
+        if ($(container).exists()) {
+            $(container).each(function () {
+                let temp = $(this).find(text);
+                if (!temp.length > 0) {
+                    $(this).addClass('article__box--full');
+                }
+            });
+        }
+    }
+
+    adaptiveArticle('.article__box', '.article__cover');
+
+    if ($('.filter__item').exists()) {
+        $('.filter__box').mCustomScrollbar({
+            theme: "dark",
+            mouseWheelPixels: 90
+        });
+        $('.filter__bloc').on('click', function () {
+            $('.filter__item').toggleClass('filter__item--active');
+        });
+
+        $('.filter__block').each(function () {
+            $(this).on('click', function () {
+                let temp = $(this).find('label').text();
+                $('.filter__txt').text(temp);
+                $(this).closest('.filter__item').removeClass('filter__item--active');
+            });
+        });
+
+        $(document).on('click', function (event) {
+            let target = event.target;
+            console.log(target);
+            if (!$(target).hasClass('.filter__item')) {
+                $(this).closest('.filter__item').removeClass('filter__item--active');
+            }
+        });
+    }
+
     if ($('.journal__items').exists) {
         try {
             const breakpoint = window.matchMedia('(min-width:501px)');

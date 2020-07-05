@@ -211,5 +211,121 @@
         margin-top: 30px;
     }
 
+    &--article {
+        max-width: 904px;
+
+        @media(max-width: 1235px) {
+            max-width: 100%;
+        }
+
+        h2+* {
+            margin-top: 6px;
+        }
+
+
+        & blockquote,
+        & ol,
+        & ul,
+        & div,
+        & p,
+        & ul,
+        & img {
+            font-size: 16px;
+            line-height: 26px;
+        }
+
+        .article {
+            &__pic {
+                width: 442px;
+                height: 280px;
+                margin-right: 21px;
+
+                @media(max-width: 1235px) {
+                    width: 370px;
+                }
+
+                @media(max-width: 768px) {
+                    width: 100%;
+                    margin-right: 0;
+                    height: 220px;
+                }
+
+                @media(max-width: 600px) {
+                    height: 184px;
+                }
+
+                ~.article__cover {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    width: calc(100% - 442px - 21px);
+                    padding-top: 13px;
+
+                    @media(max-width: 1235px) {
+                        width: calc(100% - 370px - 21px);
+                    }
+
+                    @media(max-width: 768px) {
+                        width: 100%;
+                    }
+
+                    .article__text {
+                        max-width: 441px;
+
+                        @media(max-width: 1235px) {
+                            max-width: initial;
+                        }
+                    }
+                }
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            &__box {
+                display: flex;
+
+                div,
+                h2 {
+                    margin-top: 0;
+                }
+
+                img {
+                    margin-top: 0 !important;
+                }
+
+                .article__text {
+                    margin-top: 8px;
+                }
+
+                &--reverse {
+                    flex-direction: row-reverse;
+
+                    .article__pic {
+                        margin-right: 0;
+                    }
+
+                    .article__cover {
+                        margin-right: 21px;
+                    }
+                }
+
+                &--full {
+                    .article__pic {
+                        width: 100%;
+                        margin-right: 0;
+                    }
+                }
+
+                @media(max-width: 768px) {
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+
 
 }

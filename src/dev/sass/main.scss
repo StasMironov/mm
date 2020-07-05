@@ -235,6 +235,7 @@ button {
 
 .gallery {
   max-width: 962px;
+  margin-top: 24px;
 
   @media(max-width: 1600px) {
     max-width: 900px;
@@ -243,17 +244,17 @@ button {
   @media(max-width: 1235px) {
     max-width: 695px;
     margin: 0 auto;
+    margin-top: 24px;
   }
 
   @media(max-width: 1024px) {
     max-width: 100%;
-    margin: 0 auto;
   }
 }
 
 .gallery__top {
   height: 427px;
-  margin-top: 24px;
+  // margin-top: 24px;
   width: 100%;
 
   @media(max-width: 1235px) {
@@ -270,7 +271,7 @@ button {
 
   @media(max-width: 600px) {
     height: 184px;
-    margin-top: 0;
+    // margin-top: 0;
   }
 }
 
@@ -397,7 +398,8 @@ button {
   }
 }
 
-
+@import "./components/filter.scss";
+@import "./components/article/article.scss";
 @import "./components/journal/journal.scss";
 @import "./components/headings/headings.scss";
 @import "./components/report/report.scss";

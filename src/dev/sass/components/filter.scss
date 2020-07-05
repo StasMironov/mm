@@ -1,0 +1,110 @@
+ .filter {
+     display: none;
+
+     @media(max-width: 600px) {
+         display: block;
+         margin-top: 24px;
+     }
+
+     &__block {
+         cursor: pointer;
+
+         &:not(:first-child) {
+             margin-top: 20px;
+         }
+
+         input {
+             display: none;
+
+         }
+
+         input[type=radio]:checked+label {
+             color: $purple-3;
+         }
+
+         label:hover {
+             color: $black;
+         }
+
+         label {
+             display: block;
+             width: 100%;
+             cursor: pointer;
+             white-space: nowrap;
+             overflow: hidden;
+             text-overflow: ellipsis;
+         }
+     }
+
+     &__box {
+         opacity: 0;
+         visibility: hidden;
+         position: absolute;
+         width: 100%;
+         background-color: #f6f6f6;
+         left: 0;
+         outline: 1px solid #dbd4e0 !important;
+         right: 0;
+         margin: auto;
+         border-top: none;
+         box-sizing: border-box;
+         padding: 16px 0 14px 16px;
+         min-height: 220px;
+         overflow: hidden;
+         transition: .2s ease-out;
+         z-index: 1;
+         top: auto;
+         bottom: auto;
+         height: 175px;
+     }
+
+     &__item {
+         cursor: pointer;
+         position: relative;
+         background-color: #f6f6f6;
+         outline: 1px solid #dbd4e0 !important;
+         height: 53px;
+         white-space: nowrap;
+
+         &--active {
+             .filter__ic {
+                 transform: scale(1, -1);
+             }
+
+             .filter__box {
+                 opacity: 1;
+                 visibility: visible;
+             }
+         }
+     }
+
+     &__bloc {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         padding: 16px 18px 14px 16px;
+     }
+
+     &__txt {
+         font-size: 14px;
+         line-height: 22px;
+         margin-right: 22px;
+     }
+
+     &__ic {
+         flex-shrink: 0;
+         height: 12px;
+         width: 12px;
+         transform: translateY(-1px);
+         transition: .2s ease-out;
+
+         .b-svg {
+             display: block;
+             fill: none;
+             stroke: #27202c;
+             width: 100%;
+             height: 100%;
+             stroke-width: 2px;
+         }
+     }
+ }

@@ -1,5 +1,9 @@
 .journal {
 
+    &__info {
+        max-width: 812px;
+    }
+
     &__bloc {
         position: relative;
         width: 100%;
