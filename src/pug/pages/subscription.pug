@@ -1,0 +1,63 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Главная страница'
+	- var pageClass = 'index-page';
+
+block content
+	.container
+		.wrapper
+			.wrapper__left
+				.subscription__title.title-1 Газета ММ
+				.subscription__info Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				.subscription__box
+					.title-2 Вы можете оформить подписку на почте
+					.subscription__inner
+						.subscription__items
+							.subscription__item Lorem ipsum dolor sit amet, consectetur adipiscing elit, m ipsum dolor sit amet.
+							.subscription__item Lorem ipsum dolor sit amet, consectetur adipiscing elit, m ipsum dolor sit amet.
+							.subscription__item Lorem ipsum dolor sit amet, consectetur adipiscing elit, m ipsum dolor sit amet.
+							.subscription__item Lorem ipsum dolor sit amet, consectetur adipiscing elit, m ipsum dolor sit amet.
+							.subscription__item Lorem ipsum dolor sit amet, consectetur adipiscing elit, m ipsum dolor sit amet.
+							.subscription__item Lorem ipsum dolor sit amet, consectetur adipiscing elit, m ipsum dolor sit amet.
+							.subscription__item Lorem ipsum dolor sit amet, consectetur adipiscing elit, m ipsum dolor sit amet.
+							.subscription__item Lorem ipsum dolor sit amet, consectetur adipiscing elit, m ipsum dolor sit amet.
+							.subscription__item Lorem ipsum dolor sit amet, consectetur adipiscing elit, m ipsum dolor sit amet.
+							.subscription__item.subscription__item--num 112₽/мес.
+							
+			.wrapper__right.wrapper__right--special
+				.news-survey
+					a(href="javascript:void(0);").news-survey__title.title-3 Что вы думаете <br> об обязательном тестировании на коронавирусную инфекцию?
+					form.news-survey__form(method="get")
+						label(for="qu1" class="news-survey__radio") 
+							input(type="radio" id="qu1" name="rdbtn")
+							div.news-survey__text Нужно сделать всем, вдруг кто-то болеет без симптомов
+						label(for="qu2" class="news-survey__radio") 
+							input(type="radio" id="qu2" name="rdbtn")
+							div.news-survey__text Нужно сделать всем, вдруг кто-то болеет без симптомов
+						button(type="submit" class="btn") Голосовать
+				.news-hidden
+					a(href="javascript:void(0);").news-today__block.news-today__block--other
+							img(src="./img/index/p36.jpg" alt="")
+				.news-city
+					a(href="javascript:void(0);").news-city__title.title-2 История города
+						+svg("ar-title")
+					.news-city__items
+						a(href="javascript:void(0);").news-city__item
+							.news-city__pic(style="background-image: url(./img/history/city/hc1.jpg);")
+							.news-city__title.title-3 Газета в рабочей спецовке
+						a(href="javascript:void(0);").news-city__item
+							.news-city__pic(style="background-image: url(./img/index/p32.jpg);")
+							.news-city__title.title-3 Больницы для солдат
+		.news-temp
+					img(src="./img/banner2.jpg" alt="")
+		
+							
+
+					
+
+		
+							
+
+
+block script

@@ -1,0 +1,62 @@
+.subscription {
+    &__info {
+        margin-top: 14px;
+        font-weight: 400;
+        font-size: 16px;
+        letter-spacing: -.2px;
+        line-height: 26px;
+        max-width: 812px;
+    }
+
+    &__box {
+        margin-top: 27px;
+    }
+
+    &__inner {
+        max-width: 905px;
+        margin-top: 20px;
+        padding: 50px 50px 50px 46px;
+        box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.08);
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 742px;
+        margin-left: -78px;
+        margin-top: -52px;
+    }
+
+    &__item {
+        position: relative;
+        width: calc(50% - 78px);
+        margin-left: 78px;
+        padding-left: 24px;
+        margin-top: 52px;
+
+        &:after {
+            position: absolute;
+            content: "";
+            width: 9px;
+            height: 9px;
+            border-radius: 4.5px;
+            background-color: $purple-3;
+            left: 0;
+            top: 10px;
+        }
+
+        &--num {
+            padding-left: 0;
+            font-weight: bold;
+            font-size: 57px;
+            line-height: 66px;
+            letter-spacing: 0.25px;
+            color: $purple-3;
+            font-family: "Times New Roman", sans-serif;
+
+            &:after {
+                content: none;
+            }
+        }
+    }
+}
