@@ -167,13 +167,9 @@ input::-ms-clear {
 }
 
 .title-4 {
-  font-size: 1.75rem;
-  line-height: 2rem;
-
-  @media (max-width:1023px) {
-    font-size: 1.125rem;
-    line-height: 1.25rem;
-  }
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 21px;
 }
 
 .b-svg {
@@ -399,6 +395,7 @@ button {
 }
 
 
+@import "./components/search/search.scss";
 @import "./components/subscription/subscription.scss";
 @import "./components/filter.scss";
 @import "./components/article/article.scss";
