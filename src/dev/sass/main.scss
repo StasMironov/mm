@@ -395,6 +395,43 @@ button {
 }
 
 
+.lg-backdrop {
+  opacity: 0.8 !important;
+}
+
+// .lg-actions {
+//   position: absolute;
+//   max-width: 1031px;
+//   height: 100%;
+//   background-color: red;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   margin: auto;
+// }
+
+// .lg-prev,
+// .lg-next {
+//   outline: 0;
+//   height: 64px;
+//   width: 64px;
+//   border-radius: 32px !important;
+//   opacity: 0.85;
+//   background-color: white !important;
+//   padding: 0 !important;
+//   color: $black !important;
+// }
+
+// .lg-actions .lg-next:hover,
+// .lg-actions .lg-prev:hover {
+//   color: $purple-3 !important;
+// }
+
+
+
+@import "./components/video-gallery.scss";
+@import "./components/video-archive/video-archive.scss";
 @import "./components/search/search.scss";
 @import "./components/subscription/subscription.scss";
 @import "./components/filter.scss";

@@ -3,7 +3,11 @@ jQuery.fn.exists = function () {
     return $(this).length;
 }
 
+
+
 $(() => {
+
+
     let parentEl = '';
 
     function setHeaderHeight(child, parent) {
@@ -25,7 +29,20 @@ $(() => {
         }
     }
 
+
+    // if ($('#video-gallery') && $('.lg').exists) {
+    $('.lg').addClass('.lg--video');
+    //    console.log($('.lg'));
+    //  }
+
     adaptiveArticle('.article__box', '.article__cover');
+    lightGallery(document.getElementById('video-gallery'), {
+        thumbnail: false,
+        background: 'A90707',
+        "selector": ".video-gallery__item"
+    });
+
+
 
     if ($('.filter__item').exists()) {
         $('.filter__box').mCustomScrollbar({
@@ -46,7 +63,7 @@ $(() => {
 
         $(document).on('click', function (event) {
             let target = event.target;
-            console.log(target);
+
             if (!$(target).hasClass('.filter__item')) {
                 $(this).closest('.filter__item').removeClass('filter__item--active');
             }

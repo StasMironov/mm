@@ -1,0 +1,225 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Главная страница'
+	- var pageClass = 'index-page';
+
+block content
+	.container
+		.wrapper
+			.wrapper__left
+				.article
+					.article__title.title-1 ММК — Видеоархив
+					.article__info Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					<form class="filter" action="" method="get" >
+						.filter__item
+							.filter__bloc
+								.filter__txt ММК
+								.filter__ic
+									+svg('ar-f')
+							.filter__box
+								.filter__list
+									<div class="filter__block">
+										<input id="m1" type="radio" name="article" value="" checked>
+										<label for="m1">ММК</label>
+									</div>
+									<div class="filter__block">
+										<input id="m2" type="radio" name="article" value="">
+										<label for="m2">Первая улица</label>
+									</div>
+					</form>
+
+					<form class="article__form article__wrapper" action="" method="get" >
+						.article__inner
+							<div class="article__link article__link--active">
+								<input id="a1" type="radio" name="article" value="">
+								<label for="a1">ММК</label>
+							</div>
+							<div class="article__link">
+								<input id="a2" type="radio" name="article" value="">
+								<label for="a2">Памятники</label>
+							</div>
+							<div class="article__link">
+								<input id="a3" type="radio" name="article" value="">
+								<label for="a3">Первая улица</label>
+							</div>
+							<div class="article__link">
+								<input id="a4" type="radio" name="article" value="">
+								<label for="a4">Ленинский</label>
+							</div>
+							<div class="article__link">
+								<input id="a5" type="radio" name="article" value="">
+								<label for="a5">Орджоникидзевский</label>
+							</div>
+							<div class="article__link">
+								<input id="a6" type="radio" name="article" value="">
+								<label for="a6">ВОВ</label>
+							</div>
+
+							<div class="article__link">
+								<input id="a7" type="radio" name="article" value="">
+								<label for="a7">Городской проспект</label>
+							</div>
+
+							<div class="article__link">
+								<input id="a8" type="radio" name="article" value="">
+								<label for="a8">Память</label>
+							</div>
+
+							<div class="article__link">
+								<input id="a9" type="radio" name="article" value="">
+								<label for="a9">Реальные истории</label>
+							</div>
+
+							<div class="article__link">
+								<input id="a10" type="radio" name="article" value="">
+								<label for="a10">Реальные истории</label>
+							</div>
+
+							<div class="article__link">
+								<input id="a11" type="radio" name="article" value="">
+								<label for="a11">О ком говорят</label>
+							</div>
+
+							<div class="article__link">
+								<input id="a12" type="radio" name="article" value="">
+								<label for="a12">Народная экономика: и жизнь, и кошелек</label>
+							</div>
+
+							<div class="article__link">
+								<input id="a13" type="radio" name="article" value="">
+								<label for="a13">Политика. Власть. Общество</label>
+							</div>
+
+							<div class="article__link">
+								<input id="a14" type="radio" name="article" value="">
+								<label for="a14">Православие</label>
+							</div>
+						</form>
+
+					a(href="javascript:void(0);").btn.btn--video 
+						.btn__txt Просмотреть архив с видео
+						.btn__ic 
+							+svg('polygon')
+					.video-archive
+						#video-gallery.video-gallery
+							.test
+								.video-gallery__wrapper
+									<a href="https://www.youtube.com/watch?v=meBbDqAXago" class="video-gallery__item">
+										.video-gallery__inner
+											<img src="img/video/thumb1.jpg" />
+											.news-archive__cover
+												.news-archive__btn
+												.news-archive__time 22:00
+										.video-gallery__caption Магнитогорский Прометей
+									</a>
+									<a href="https://www.youtube.com/watch?v=meBbDqAXago" class="video-gallery__item">
+										.video-gallery__inner
+											<img src="img/video/thumb1.jpg" />
+											.news-archive__cover
+												.news-archive__btn
+												.news-archive__time 22:00
+										.video-gallery__caption Магнитогорский Прометей
+									</a>
+							
+						
+			.wrapper__right.wrapper__right--special
+				.news-survey
+					a(href="javascript:void(0);").news-survey__title.title-3 Что вы думаете <br> об обязательном тестировании на коронавирусную инфекцию?
+					form.news-survey__form(method="get")
+						label(for="qu1" class="news-survey__radio") 
+							input(type="radio" id="qu1" name="rdbtn")
+							div.news-survey__text Нужно сделать всем, вдруг кто-то болеет без симптомов
+						label(for="qu2" class="news-survey__radio") 
+							input(type="radio" id="qu2" name="rdbtn")
+							div.news-survey__text Нужно сделать всем, вдруг кто-то болеет без симптомов
+						button(type="submit" class="btn") Голосовать
+				.news-hidden
+					a(href="javascript:void(0);").news-today__block.news-today__block--other
+							img(src="./img/index/p36.jpg" alt="")
+				.news-city
+					a(href="javascript:void(0);").news-city__title.title-2 История города
+						+svg("ar-title")
+					.news-city__items
+						a(href="javascript:void(0);").news-city__item
+							.news-city__pic(style="background-image: url(./img/history/city/hc1.jpg);")
+							.news-city__title.title-3 Газета в рабочей спецовке
+						a(href="javascript:void(0);").news-city__item
+							.news-city__pic(style="background-image: url(./img/index/p32.jpg);")
+							.news-city__title.title-3 Больницы для солдат
+						a(href="javascript:void(0);").news-city__item
+							.news-city__pic(style="background-image: url(./img/index/p34.jpg);")
+							.news-city__title.title-3 Маленькая женщина с большим сердцем
+						a(href="javascript:void(0);").news-city__item
+							.news-city__pic(style="background-image: url(./img/index/p33.jpg);")
+							.news-city__title.title-3 Первые секретари
+				.news-most__left.news-most__left--hidden
+						a(href="javascript:void(0);").news-most__title.title-2 Самое читаемое
+							+svg("ar-title")
+						.news-most__items
+							.news-most__item
+								.news-most__lft
+									.news-most__pic
+										+svg('eye')
+									.news-most__count 1211
+								a(href="javascript:void(0);").news-most__rght
+									.news-most__txt <span>На Южном Урале ФСБ</span> задержали автомобиль с восемью коробками одноразовых хирургических перчаток, которые относятся к временно запрещённым для вывоза из России.
+							.news-most__item
+								.news-most__lft
+									.news-most__pic
+										+svg('eye')
+									.news-most__count 1211
+								a(href="javascript:void(0);").news-most__rght
+									.news-most__txt <span>Жители Челябинской области</span>, прибывшие домой из стран с неблагоприятной ситуацией по коронавирусной инфекции, должны самоизолироваться на две недели.
+							.news-most__item
+								.news-most__lft
+									.news-most__pic
+										+svg('eye')
+									.news-most__count 1211
+								a(href="javascript:void(0);").news-most__rght
+									.news-most__txt <span>Специалисты из Уральского</span> федерального округа востребованы не только на родине, но и за рубежом.
+							.news-most__item
+								.news-most__lft
+									.news-most__pic
+										+svg('eye')
+									.news-most__count 1211
+								a(href="javascript:void(0);").news-most__rght
+									.news-most__txt <span>В Краснодаре стартует</span> "финал восьми" Студенческой лиги ВТБ, в который вновь пробились "Стальные сердца".
+							.news-most__item
+								.news-most__lft
+									.news-most__pic
+										+svg('eye')
+									.news-most__count 1211
+								a(href="javascript:void(0);").news-most__rght
+									.news-most__txt <span>Малкин забивает</span>, но "Питтсбург" проигрывает.
+							.news-most__item
+								.news-most__lft
+									.news-most__pic
+										+svg('eye')
+									.news-most__count 1211
+								a(href="javascript:void(0);").news-most__rght
+									.news-most__txt <span>В Краснодаре стартует</span> "финал восьми" Студенческой лиги ВТБ, в который вновь пробились "Стальные сердца".	
+				.news-today
+					a(href="javascript:void(0);").news-today__block
+						img(src="./img/index/p35.jpg" alt="")
+					.news-today__item
+						.news-today__title.title-2 Сегодняшняя газета
+						a(href="javascript:void(0);").btn Посмотреть электронное издание
+		.news-temp
+					img(src="./img/banner2.jpg" alt="")
+		<div style="display:none;" id="video1">
+			<video class="lg-video-object lg-html5" controls preload="none">
+				<source src="videos/video1.mp4" type="video/mp4">
+				Your browser does not support HTML5 video.
+			</video>
+		</div>
+		
+							
+
+					
+
+		
+							
+
+
+block script

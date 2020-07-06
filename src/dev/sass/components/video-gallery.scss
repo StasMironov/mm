@@ -1,0 +1,40 @@
+.video-gallery {
+    &__inner {
+        position: relative;
+
+        &:hover .news-archive__btn:before {
+            width: 105px;
+        }
+
+        &:hover .news-archive__time {
+            color: $purple-3;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -60px;
+        width: 100%;
+    }
+
+    &__caption {
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 30px;
+        letter-spacing: 0.25px;
+        font-family: 'MinionPro', sans-serif;
+        color: $black;
+        margin-top: 16px;
+        cursor: normal;
+    }
+
+    .news-archive__cover {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+}
