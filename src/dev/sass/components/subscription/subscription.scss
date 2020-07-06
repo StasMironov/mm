@@ -17,6 +17,27 @@
         margin-top: 20px;
         padding: 50px 50px 50px 46px;
         box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.08);
+
+        @media(max-width:1235px) {
+            max-width: 812px;
+        }
+
+        @media(max-width:1024px) {
+            display: flex;
+            justify-content: center;
+            max-width: 100%;
+        }
+
+        @media(max-width:768px) {
+            display: flex;
+            justify-content: center;
+            max-width: 100%;
+            padding: 50px 40px;
+        }
+
+        @media(max-width:600px) {
+            padding: 40px 20px;
+        }
     }
 
     &__items {
@@ -25,6 +46,24 @@
         max-width: 742px;
         margin-left: -78px;
         margin-top: -52px;
+
+        @media(max-width:1235px) {
+            margin-left: -50px;
+        }
+
+        @media(max-width:1024px) {
+            margin-top: -30px;
+        }
+
+        @media(max-width:768px) {
+            margin-left: -25px;
+        }
+
+        @media(max-width:600px) {
+            flex-direction: column;
+            margin-left: 0;
+            margin-top: -25px;
+        }
     }
 
     &__item {
@@ -33,6 +72,26 @@
         margin-left: 78px;
         padding-left: 24px;
         margin-top: 52px;
+
+        @media(max-width:1235px) {
+            width: calc(50% - 50px);
+            margin-left: 50px;
+        }
+
+        @media(max-width:1024px) {
+            margin-top: 30px;
+        }
+
+        @media(max-width:768px) {
+            width: calc(50% - 25px);
+            margin-left: 25px;
+        }
+
+        @media(max-width:600px) {
+            width: 100%;
+            margin-left: 0;
+            margin-top: 25px;
+        }
 
         &:after {
             position: absolute;
@@ -53,6 +112,17 @@
             letter-spacing: 0.25px;
             color: $purple-3;
             font-family: "Times New Roman", sans-serif;
+
+
+            @media(max-width:768px) {
+                font-size: 48px;
+                line-height: 57px;
+            }
+
+            @media(max-width:600px) {
+                font-size: 40px;
+                line-height: 49px;
+            }
 
             &:after {
                 content: none;
