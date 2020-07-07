@@ -3,7 +3,7 @@ extends ../layout/main
 block variables
 	- var title = 'Главная страница'
 	- var pageClass = 'index-page';
-
+	- var linkCss = '<link rel="stylesheet" type="text/css" href="css/main.css">';
 block content
 	.container
 		.wrapper
@@ -103,9 +103,27 @@ block content
 							+svg('polygon')
 					.video-archive
 						#video-gallery.video-gallery
-							.test
+							.video-gallery__bloc
 								.video-gallery__wrapper
-									<a href="https://www.youtube.com/watch?v=meBbDqAXago" class="video-gallery__item">
+									<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+										.video-gallery__inner
+											<img src="img/video/thumb1.jpg" />
+											.news-archive__cover
+												.news-archive__btn
+												.news-archive__time 22:00
+										.video-gallery__caption Строительство первой палатки в Магнитогорске
+									</a>
+									<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+										.video-gallery__inner
+											<img src="img/video/thumb2.jpg" />
+											.news-archive__cover
+												.news-archive__btn
+												.news-archive__time 22:00
+										.video-gallery__caption Магнитогорский Прометей
+									</a>
+							.video-gallery__bloc
+								.video-gallery__wrapper
+									<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
 										.video-gallery__inner
 											<img src="img/video/thumb1.jpg" />
 											.news-archive__cover
@@ -113,7 +131,17 @@ block content
 												.news-archive__time 22:00
 										.video-gallery__caption Магнитогорский Прометей
 									</a>
-									<a href="https://www.youtube.com/watch?v=meBbDqAXago" class="video-gallery__item">
+									<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+										.video-gallery__inner
+											<img src="img/video/thumb2.jpg" />
+											.news-archive__cover
+												.news-archive__btn
+												.news-archive__time 22:00
+										.video-gallery__caption Магнитогорский Прометей
+									</a>
+							.video-gallery__bloc
+								.video-gallery__wrapper
+									<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
 										.video-gallery__inner
 											<img src="img/video/thumb1.jpg" />
 											.news-archive__cover
@@ -121,8 +149,48 @@ block content
 												.news-archive__time 22:00
 										.video-gallery__caption Магнитогорский Прометей
 									</a>
-							
-						
+									<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+										.video-gallery__inner
+											<img src="img/video/thumb2.jpg" />
+											.news-archive__cover
+												.news-archive__btn
+												.news-archive__time 22:00
+										.video-gallery__caption Магнитогорский Прометей
+									</a>
+							.video-gallery__bloc
+								.video-gallery__wrapper
+									<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+										.video-gallery__inner
+											<img src="img/video/thumb1.jpg" />
+											.news-archive__cover
+												.news-archive__btn
+												.news-archive__time 22:00
+										.video-gallery__caption Магнитогорский Прометей
+									</a>
+									<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+										.video-gallery__inner
+											<img src="img/video/thumb2.jpg" />
+											.news-archive__cover
+												.news-archive__btn
+												.news-archive__time 22:00
+										.video-gallery__caption Магнитогорский Прометей
+									</a>
+						.edition-rewards__pagination.edition-rewards__pagination--video
+								a(href="javascript:void(0);").edition-rewards__link.edition-rewards__link--prev
+									img(src="./img/icon/ar_pag.png" alt="letter")
+								a(href="javascript:void(0);").edition-rewards__link.edition-rewards__link--active 1
+								a(href="javascript:void(0);").edition-rewards__link 2
+								a(href="javascript:void(0);").edition-rewards__link 3
+								a(href="javascript:void(0);").edition-rewards__link ...
+								a(href="javascript:void(0);").edition-rewards__link 13
+								a(href="javascript:void(0);").edition-rewards__link 14
+								a(href="javascript:void(0);").edition-rewards__link 15
+								a(href="javascript:void(0);").edition-rewards__link.edition-rewards__link--next
+									img(src="./img/icon/ar_pag_next.png" alt="letter")
+				.news-today.news-today--include
+					.news-today__item
+						.news-today__title.title-2 Сегодняшняя газета
+						a(href="javascript:void(0);").btn Посмотреть электронное издание
 			.wrapper__right.wrapper__right--special
 				.news-survey
 					a(href="javascript:void(0);").news-survey__title.title-3 Что вы думаете <br> об обязательном тестировании на коронавирусную инфекцию?

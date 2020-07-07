@@ -15,6 +15,7 @@ $(() => {
         $(parent).css({
             height: height + "px" // приравниванием высоту header'a к высоте абсолютного элемента
         });
+        console.log($(child).height());
     }
 
 
@@ -30,10 +31,11 @@ $(() => {
     }
 
 
-    // if ($('#video-gallery') && $('.lg').exists) {
-    $('.lg').addClass('.lg--video');
-    //    console.log($('.lg'));
-    //  }
+    if ($('#video-gallery').length > 0) {
+        $('head').append('<link rel="stylesheet" type="text/css" href="css/lg-video.css">');
+
+        setHeaderHeight('.lg-item', '.lg-inner');
+    }
 
     adaptiveArticle('.article__box', '.article__cover');
     lightGallery(document.getElementById('video-gallery'), {
