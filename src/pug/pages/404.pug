@@ -1,0 +1,18 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Главная страница'
+	- var pageClass = 'index-page';
+
+block content
+	.absence
+		.absence__container.container
+			.absence__inner
+				.absence__wrapper(style="background-image:url('./img/404/404.png')")
+					.absence__box
+						.absence__num 404
+						.absence__txt Страница не найдена!
+
+		
+
+block script
