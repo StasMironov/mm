@@ -30,11 +30,14 @@ $(() => {
         }
     }
 
+    if ($('.edition-rewards').length > 0) {
+        $('head').append('<link rel="stylesheet" type="text/css" href="css/lightgallery.min.css">');
+    }
+
 
     if ($('#video-gallery').length > 0) {
         $('head').append('<link rel="stylesheet" type="text/css" href="css/lg-video.css">');
-
-        setHeaderHeight('.lg-item', '.lg-inner');
+        // setHeaderHeight('.lg-item', '.lg-inner');
     }
 
     adaptiveArticle('.article__box', '.article__cover');

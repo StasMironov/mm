@@ -8,11 +8,28 @@ block content
 	.absence
 		.absence__container.container
 			.absence__inner
-				.absence__wrapper(style="background-image:url('./img/404/404.png')")
+				.absence__wrapper
+					.absence__pic(style="background-image:url('./img/404/404.png')")
 					.absence__box
 						.absence__num 404
 						.absence__txt Страница не найдена!
-
+						a(href="javascript:void()").btn.btn--blue Вернуться на главную
+				.edition-network.edition-network--absence
+					.edition-network__left
+						.title-2 Следите за газетой и новостями в социальных сетях!
+					.edition-network__right
+						.edition-network__items
+							a(href="javascript:void(0);").edition-network__item.edition-network__item--vk
+								+svg('vk')
+							a(href="javascript:void(0);").edition-network__item.edition-network__item--inst
+								.mf-cover
+									+svg('inst')
+							a(href="javascript:void(0);").edition-network__item.edition-network__item--face
+								+svg('face')
+							a(href="javascript:void(0);").edition-network__item.edition-network__item--ok
+								+svg('ok')
+			.absence__btn 
+				a(href="javascript:void()").btn.btn--blue Вернуться на главную
 		
 
 block script

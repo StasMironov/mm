@@ -43,7 +43,7 @@ body {
   box-sizing: border-box;
 
   @media (max-width:1024px) {
-    padding: 0 15px 30px;
+    padding: 0 15px 0px;
   }
 }
 
@@ -386,6 +386,10 @@ button {
 
 .b-page {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
 }
 
 .temp {
@@ -413,6 +417,7 @@ button {
 @import "./components/archive/archive-filter.scss";
 @import "./components/archive/archive.scss";
 @import "./components/header.scss";
+@import "./components/footer.scss";
 @import "./components/wrapper.scss";
 @import "./components/news/news-basic.scss";
 @import "./components/index/publish.scss";

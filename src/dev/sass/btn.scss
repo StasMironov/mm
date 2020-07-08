@@ -64,4 +64,18 @@
             }
         }
     }
+
+
+    &--blue {
+        background-color: $purple-3;
+        color: white;
+        border-color: $purple-3;
+        max-width: 150px;
+        width: 100%;
+
+        &:hover {
+            background-color: $gray-1;
+            color: $black;
+        }
+    }
 }
