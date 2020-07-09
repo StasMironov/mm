@@ -27,8 +27,10 @@ header.header
                         a(href="javascript:void(0);").header__link Архив
                         a(href="javascript:void(0);").header__link Редакция
                     .header__block
-                    form(class="header__search header__search--laptop" action="" method="get")
-                        input(type="search" placeholder="Ваш запрос")
+                    form(class="header__search header__search--laptop" action="" method="get" )
+                        .header__in
+                            input(type="text" name='search' placeholder="Ваш запрос" required)
+                            button.btn.btn--close
                         button.header__btn
                             +svg('search')
         .header__bottom
@@ -109,3 +111,31 @@ header.header
                         a(href="javascript:void(0);").header__ref Письмо в редакцию
                         a(href="javascript:void(0);").header__ref Педсовет
                         a(href="javascript:void(0);").header__ref Социум
+        .header__menu
+            .container
+                .header__cover
+                    .header__bloc
+                        a(href="javascript:void(0);").header__refer.header__refer--active Фоторепортажи
+                        a(href="javascript:void(0);").header__refer История города
+                        a(href="javascript:void(0);").header__refer Подать объявление
+                        a(href="javascript:void(0);").header__refer Реклама
+                        a(href="javascript:void(0);").header__refer Архив
+                        a(href="javascript:void(0);").header__refer Редакция
+                        a(href="javascript:void(0);").header__refer Все рубрики
+                .header__box.header__box--menu
+                        a(href="javascript:void(0);").header__soc.header__soc--vk
+                            +svg('vk')
+                        a(href="javascript:void(0);").header__soc.header__soc--inst
+                            img(src="./img/icon/inst.png" alt="")
+                        a(href="javascript:void(0);").header__soc.header__soc--face
+                            +svg('face')
+                        a(href="javascript:void(0);").header__soc.header__soc--ok
+                            +svg('ok')
+                .header__partners
+                    a(href="javascript:void(0);").header__partner
+                        img(src="./img/p1.png" alt="")
+                    a(href="javascript:void(0);").header__partner
+                        img(src="./img/p2.png" alt="")
+                    a(href="javascript:void(0);").header__partner
+                        img(src="./img/p3.png" alt="")
+                

@@ -157,13 +157,13 @@
         border-top: none;
         box-sizing: border-box;
         padding: 16px 0 14px 16px;
-        min-height: 220px;
+        min-height: auto;
         overflow: hidden;
         transition: .2s ease-out;
         z-index: 1;
         top: auto;
         bottom: auto;
-        height: 175px;
+        max-height: 175px;
 
         &--active {
             opacity: 1;

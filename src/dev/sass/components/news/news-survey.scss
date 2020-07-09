@@ -5,7 +5,8 @@
 
     &__title {
         display: block;
-        max-width: 300px;
+        letter-spacing: .03px;
+        // max-width: 300px;
 
         @media(max-width: 1235px) {
             font-size: 19px;
@@ -33,8 +34,9 @@
     }
 
     &__radio {
-        display: inline-flex;
-        flex-direction: column;
+        display: block;
+        // display: inline-flex;
+        // flex-direction: column;
 
         &:not(:first-child) {
             margin-top: 10px;
@@ -42,6 +44,10 @@
             @media(max-width: 600px) {
                 margin-top: 8px
             }
+        }
+
+        input {
+            display: none;
         }
     }
 

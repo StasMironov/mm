@@ -16,7 +16,7 @@
 
 @font-face {
     font-family: 'MinionPro';
-    src: local('MinionPro'), url('../fonts/minion_pro/MinionPro-Regular.otf');
+    src: local('MinionPro'), url('../fonts/minion_pro/MinionPro-Regular.woff'), url('../fonts/minion_pro/MinionPro-Regular.otf'), ;
     font-weight: normal;
     font-style: normal;
     font-display: swap;

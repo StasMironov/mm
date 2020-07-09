@@ -1,7 +1,8 @@
+@import "./fonts.scss";
 @import "./normalize.scss";
 @import "./colors.scss";
 @import "./media.scss";
-@import "./fonts.scss";
+
 @import "./libs/libs.scss";
 @import "./btn.scss";
 @import "./helper.scss";
@@ -182,7 +183,7 @@ input::-ms-clear {
   margin-right: 8px;
 
   @media (max-width:600px) {
-    width: 20px;
+    width: 17px;
   }
 
   span {
@@ -208,7 +209,7 @@ input::-ms-clear {
       margin-bottom: 4px;
 
       @media (max-width:600px) {
-        margin-bottom: 3px;
+        margin-bottom: 4px;
       }
     }
   }
@@ -218,6 +219,37 @@ input::-ms-clear {
 
     @media(max-width: 1024px) {
       display: block;
+    }
+  }
+
+  &--active {
+    span {
+      background-color: $purple-3;
+
+      &:nth-child(1) {
+        transform: rotate(45deg) !important;
+        top: 7px;
+        transition: .4s;
+
+        @media(max-width: 600px) {
+          top: 6px;
+        }
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg) !important;
+        top: -7px;
+        transition: .4s;
+
+        @media(max-width: 600px) {
+          top: -6px;
+        }
+      }
+
+      &:nth-child(2) {
+        width: 0;
+      }
+
     }
   }
 }

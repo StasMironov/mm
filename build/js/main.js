@@ -29,6 +29,18 @@ $(function () {
     }
   }
 
+  $('.btn--close').on('click', function (event) {
+    event.preventDefault();
+    $('.header__search--laptop input').val('');
+  });
+
+  if ($('.burger--laptop').exists) {
+    $('.burger--laptop').on('click', function () {
+      $(this).toggleClass('burger--active');
+      $('.header__menu').toggleClass('header__menu--active');
+    });
+  }
+
   if ($('.edition-rewards').length > 0) {
     $('head').append('<link rel="stylesheet" type="text/css" href="css/lightgallery.min.css">');
   }
@@ -415,7 +427,19 @@ $(function () {
     try {
       $('.header__btn').on('click', function (e) {
         e.preventDefault();
-        $('.header__search--laptop').toggleClass('header__search--laptop--active');
+
+        if ($('.header__search--laptop').hasClass('header__search--active')) {
+          if ($('.header__search--laptop input').val() != '') {
+            $('.header__search').submit();
+          } else {
+            $('.header__search--laptop').toggleClass('header__search--active');
+          }
+        } else {
+          $('.header__search--laptop').toggleClass('header__search--active');
+          setTimeout(function () {
+            $('.header__search--laptop input').focus();
+          }, 500);
+        }
       });
     } catch (err) {
       console.log(err);
