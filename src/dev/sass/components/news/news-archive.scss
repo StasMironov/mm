@@ -138,13 +138,7 @@
             margin-right: 0;
         }
 
-        &:hover .news-archive__btn:before {
-            width: 105px;
-        }
 
-        &:hover .news-archive__time {
-            color: $purple-3;
-        }
     }
 
     &__blocks {
@@ -174,6 +168,18 @@
             @media(max-width: 640px) {
                 padding-bottom: 16px;
             }
+        }
+
+        &:hover .news-archive__btn:before {
+            width: 105px;
+        }
+
+        &:hover .news-archive__time {
+            color: $purple-3;
+        }
+
+        &:hover .news-archive__text {
+            color: $purple-3;
         }
     }
 
@@ -263,10 +269,6 @@
             font-weight: bold;
             font-size: 16px;
             line-height: 130%;
-        }
-
-        &:hover {
-            color: $purple-3;
         }
     }
 

@@ -404,7 +404,9 @@ button {
   min-height: 100vh;
 }
 
-.temp {
+.ad {
+  background-color: $gray-1;
+
   @media(max-width: 640px) {
     display: none;
   }

@@ -280,6 +280,11 @@
         letter-spacing: 1px;
         transition: .3s;
 
+        @media(max-width:1024px) {
+            font-size: 14px;
+            line-height: 22px;
+        }
+
         &:hover {
             color: $purple-3;
         }
@@ -290,6 +295,10 @@
 
         &--active {
             color: $purple-3;
+
+            @media(max-width: 1024px) {
+                font-weight: bold;
+            }
         }
     }
 
