@@ -51,12 +51,39 @@
             align-items: flex-start;
         }
 
+
+
         .btn {
             margin: 0 auto;
             margin-top: 20px;
 
+            @media(max-width: 1024px) {
+                margin: 20px 0 0;
+            }
+
             @media(max-width: 600px) {
                 max-width: 100%;
+                margin-top: 24px;
+            }
+        }
+
+        &__cover {
+
+            @media(max-width: 500px) {
+                flex-direction: column;
+            }
+
+            .btn {
+                margin-right: 10px;
+
+                @media(max-width: 600px) {
+                    max-width: 186px;
+                }
+            }
+        }
+
+        &__qty {
+            @media(max-width: 500px) {
                 margin-top: 24px;
             }
         }
@@ -65,10 +92,6 @@
     .news-survey__title {
         @media(max-width: 1024px) {
             max-width: 475px;
-            text-align: center;
-        }
-
-        @media(max-width: 600px) {
             text-align: left;
         }
     }

@@ -65,16 +65,30 @@ block content
 					a(href="javascript:void(0);").news-today__block.news-today__block--other
 							img(src="./img/index/p36.jpg" alt="")
 					.news-survey
-						a(href="javascript:void(0);").news-survey__title.title-3 Что вы думаете об обязательном тестировании на коронавирусную инфекцию?
-						form.news-survey__form(method="get")
-							label(for="q1" class="news-survey__radio") 
-								input(type="radio" id="q1" name="t")
-								div.news-survey__text Нужно сделать всем, вдруг кто-то болеет без симптомов
-							label(for="q2" class="news-survey__radio") 
-								input(type="radio" id="q2" name="t")
-								div.news-survey__text Нужно сделать всем, вдруг кто-то болеет без симптомов
-							button(type="submit" class="btn") Голосовать
-
+						.news-survey__bloc
+							a(href="javascript:void(0);").news-survey__title.title-3 Что вы думаете об обязательном тестировании на коронавирусную инфекцию?
+							form.news-survey__form(method="get")
+								label(for="q1" class="news-survey__radio") 
+									input(type="radio" id="q1" name="t")
+									div.news-survey__text Нужно сделать всем, вдруг кто-то болеет без симптомов
+								label(for="q2" class="news-survey__radio") 
+									input(type="radio" id="q2" name="t")
+									div.news-survey__text Нужно сделать всем, вдруг кто-то болеет без симптомов
+								button(type="submit" class="btn") Голосовать
+						.news-survey__bloc
+							a(href="javascript:void(0);").news-survey__title.title-3 Что вы думаете <br> об обязательном тестировании на коронавирусную инфекцию?
+							form.news-survey__form(method="get")
+								.news-survey__progress
+									<label for="voice">Нужно сделать всем, вдруг кто-то болеет без симптомов 9 (10%)</label>
+									<progress id="voice" max="100" value="10"> 10% </progress>
+								.news-survey__progress
+									<label for="voice">Нет необходимости, можно делать только контактным 16 (50%)</label>
+									<progress id="voice" max="100" value="50"> 50% </progress>
+								.news-survey__cover
+									button(type="submit" class="btn") Голосовать
+									.news-survey__qty
+										.news-survey__txt Всего <br> голосов:
+										.news-survey__count 31 
 				.news-actual
 					.news-actual__wrapper
 						.news-actual__left
@@ -263,110 +277,126 @@ block content
 										.news-most__text Юные инспекторы движения, текст в две строчки.
 								
 			.wrapper__right
-				.news-media
-					img(src="./img/index/p37.jpg" alt="")
-				.news-survey
-					a(href="javascript:void(0);").news-survey__title.title-3 Что вы думаете <br> об обязательном тестировании на коронавирусную инфекцию?
-					form.news-survey__form(method="get")
-						label(for="qu1" class="news-survey__radio") 
-							input(type="radio" id="qu1" name="rdbtn")
-							div.news-survey__text Нужно сделать всем, вдруг кто-то болеет без симптомов
-						label(for="qu2" class="news-survey__radio") 
-							input(type="radio" id="qu2" name="rdbtn")
-							div.news-survey__text Нужно сделать всем, вдруг кто-то болеет без симптомов
-						button(type="submit" class="btn") Голосовать
-				.news-hidden
-					a(href="javascript:void(0);").news-today__block.news-today__block--other
-							img(src="./img/index/p36.jpg" alt="")
-				.news-city
-					a(href="javascript:void(0);").news-city__title.title-2 История города
-						+svg("ar-title")
-					.news-city__items
-						a(href="javascript:void(0);").news-city__item
-							.news-city__pic(style="background-image: url(./img/history/city/hc1.jpg);")
-							.news-city__title.title-3 Газета в рабочей спецовке
-						a(href="javascript:void(0);").news-city__item
-							.news-city__pic(style="background-image: url(./img/index/p32.jpg);")
-							.news-city__title.title-3 Больницы для солдат
-						a(href="javascript:void(0);").news-city__item
-							.news-city__pic(style="background-image: url(./img/index/p34.jpg);")
-							.news-city__title.title-3 Маленькая женщина с большим сердцем
-						a(href="javascript:void(0);").news-city__item
-							.news-city__pic(style="background-image: url(./img/index/p33.jpg);")
-							.news-city__title.title-3 Первые секретари
-				.news-most__left.news-most__left--hidden
-						a(href="javascript:void(0);").news-most__title.title-2 Самое читаемое
-							+svg("ar-title")
-						.news-most__items
-							.news-most__item
-								.news-most__lft
-									.news-most__pic
-										<svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M1.09009 6.09C6.56309 -0.957001 15.4361 -0.957001 20.9091 6.09" stroke="#0E4F95" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-											<path class="fill" d="M14.431 2.31802C16.1884 4.07538 16.1884 6.92462 14.431 8.68198C12.6736 10.4393 9.8244 10.4393 8.06704 8.68198C6.30968 6.92462 6.30968 4.07538 8.06704 2.31802C9.8244 0.56066 12.6736 0.56066 14.431 2.31802" stroke="#0E4F95" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-										</svg>
-									.news-most__count 1211
-								a(href="javascript:void(0);").news-most__rght
-									.news-most__txt <span>На Южном Урале ФСБ</span> задержали автомобиль с восемью коробками одноразовых хирургических перчаток, которые относятся к временно запрещённым для вывоза из России.
-							.news-most__item
-								.news-most__lft
-									.news-most__pic
-										<svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M1.09009 6.09C6.56309 -0.957001 15.4361 -0.957001 20.9091 6.09" stroke="#0E4F95" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-											<path class="fill" d="M14.431 2.31802C16.1884 4.07538 16.1884 6.92462 14.431 8.68198C12.6736 10.4393 9.8244 10.4393 8.06704 8.68198C6.30968 6.92462 6.30968 4.07538 8.06704 2.31802C9.8244 0.56066 12.6736 0.56066 14.431 2.31802" stroke="#0E4F95" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-										</svg>
-									.news-most__count 1211
-								a(href="javascript:void(0);").news-most__rght
-									.news-most__txt <span>Жители Челябинской области</span>, прибывшие домой из стран с неблагоприятной ситуацией по коронавирусной инфекции, должны самоизолироваться на две недели.
-							.news-most__item
-								.news-most__lft
-									.news-most__pic
-										<svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M1.09009 6.09C6.56309 -0.957001 15.4361 -0.957001 20.9091 6.09" stroke="#0E4F95" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-											<path class="fill" d="M14.431 2.31802C16.1884 4.07538 16.1884 6.92462 14.431 8.68198C12.6736 10.4393 9.8244 10.4393 8.06704 8.68198C6.30968 6.92462 6.30968 4.07538 8.06704 2.31802C9.8244 0.56066 12.6736 0.56066 14.431 2.31802" stroke="#0E4F95" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-										</svg>
-									.news-most__count 1211
-								a(href="javascript:void(0);").news-most__rght
-									.news-most__txt <span>Специалисты из Уральского</span> федерального округа востребованы не только на родине, но и за рубежом.
-							.news-most__item
-								.news-most__lft
-									.news-most__pic
-										<svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M1.09009 6.09C6.56309 -0.957001 15.4361 -0.957001 20.9091 6.09" stroke="#0E4F95" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-											<path class="fill" d="M14.431 2.31802C16.1884 4.07538 16.1884 6.92462 14.431 8.68198C12.6736 10.4393 9.8244 10.4393 8.06704 8.68198C6.30968 6.92462 6.30968 4.07538 8.06704 2.31802C9.8244 0.56066 12.6736 0.56066 14.431 2.31802" stroke="#0E4F95" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-										</svg>
-									.news-most__count 1211
-								a(href="javascript:void(0);").news-most__rght
-									.news-most__txt <span>В Краснодаре стартует</span> "финал восьми" Студенческой лиги ВТБ, в который вновь пробились "Стальные сердца".
-							.news-most__item
-								.news-most__lft
-									.news-most__pic
-										<svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M1.09009 6.09C6.56309 -0.957001 15.4361 -0.957001 20.9091 6.09" stroke="#0E4F95" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-											<path class="fill" d="M14.431 2.31802C16.1884 4.07538 16.1884 6.92462 14.431 8.68198C12.6736 10.4393 9.8244 10.4393 8.06704 8.68198C6.30968 6.92462 6.30968 4.07538 8.06704 2.31802C9.8244 0.56066 12.6736 0.56066 14.431 2.31802" stroke="#0E4F95" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-										</svg>
-									.news-most__count 1211
-								a(href="javascript:void(0);").news-most__rght
-									.news-most__txt <span>Малкин забивает</span>, но "Питтсбург" проигрывает.
-							.news-most__item
-								.news-most__lft
-									.news-most__pic
-										<svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M1.09009 6.09C6.56309 -0.957001 15.4361 -0.957001 20.9091 6.09" stroke="#0E4F95" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-											<path class="fill" d="M14.431 2.31802C16.1884 4.07538 16.1884 6.92462 14.431 8.68198C12.6736 10.4393 9.8244 10.4393 8.06704 8.68198C6.30968 6.92462 6.30968 4.07538 8.06704 2.31802C9.8244 0.56066 12.6736 0.56066 14.431 2.31802" stroke="#0E4F95" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-										</svg>
-									.news-most__count 1211
-								a(href="javascript:void(0);").news-most__rght
-									.news-most__txt <span>В Краснодаре стартует</span> "финал восьми" Студенческой лиги ВТБ, в который вновь пробились "Стальные сердца".	
-				.news-today
-					a(href="javascript:void(0);").news-today__block
-						img(src="./img/index/p35.jpg" alt="")
-					.news-today__item
-						.news-today__title.title-2 Сегодняшняя газета
-						a(href="javascript:void(0);").btn Посмотреть электронное издание
+				include ../modules/aside
+				//- .news-media
+				//- 	img(src="./img/index/p37.jpg" alt="")
+				//- .news-survey
+				//- 	.news-survey__bloc
+				//- 		a(href="javascript:void(0);").news-survey__title.title-3 Что вы думаете <br> об обязательном тестировании на коронавирусную инфекцию?
+				//- 		form.news-survey__form(method="get")
+				//- 			label(for="qu1" class="news-survey__radio") 
+				//- 				input(type="radio" id="qu1" name="rdbtn")
+				//- 				div.news-survey__text Нужно сделать всем, вдруг кто-то болеет без симптомов
+				//- 			label(for="qu2" class="news-survey__radio") 
+				//- 				input(type="radio" id="qu2" name="rdbtn")
+				//- 				div.news-survey__text Нужно сделать всем, вдруг кто-то болеет без симптомов
+				//- 			button(type="submit" class="btn") Голосовать
+				//- 	.news-survey__bloc
+				//- 		a(href="javascript:void(0);").news-survey__title.title-3 Что вы думаете <br> об обязательном тестировании на коронавирусную инфекцию?
+				//- 		form.news-survey__form(method="get")
+				//- 			.news-survey__progress
+				//- 				<label for="voice">Нужно сделать всем, вдруг кто-то болеет без симптомов 9 (10%)</label>
+				//- 				<progress id="voice" max="100" value="10"> 10% </progress>
+				//- 			.news-survey__progress
+				//- 				<label for="voice">Нет необходимости, можно делать только контактным 16 (50%)</label>
+				//- 				<progress id="voice" max="100" value="50"> 50% </progress>
+				//- 			.news-survey__cover
+				//- 				button(type="submit" class="btn") Голосовать
+				//- 				.news-survey__qty
+				//- 					.news-survey__txt Всего <br> голосов:
+				//- 					.news-survey__count 31 
+				//- .news-hidden
+				//- 	a(href="javascript:void(0);").news-today__block.news-today__block--other
+				//- 			img(src="./img/index/p36.jpg" alt="")
+				//- .news-city
+				//- 	a(href="javascript:void(0);").news-city__title.title-2 История города
+				//- 		+svg("ar-title")
+				//- 	.news-city__items
+				//- 		a(href="javascript:void(0);").news-city__item
+				//- 			.news-city__pic(style="background-image: url(./img/history/city/hc1.jpg);")
+				//- 			.news-city__title.title-3 Газета в рабочей спецовке
+				//- 		a(href="javascript:void(0);").news-city__item
+				//- 			.news-city__pic(style="background-image: url(./img/index/p32.jpg);")
+				//- 			.news-city__title.title-3 Больницы для солдат
+				//- 		a(href="javascript:void(0);").news-city__item
+				//- 			.news-city__pic(style="background-image: url(./img/index/p34.jpg);")
+				//- 			.news-city__title.title-3 Маленькая женщина с большим сердцем
+				//- 		a(href="javascript:void(0);").news-city__item
+				//- 			.news-city__pic(style="background-image: url(./img/index/p33.jpg);")
+				//- 			.news-city__title.title-3 Первые секретари
+				//- .news-most__left.news-most__left--hidden
+				//- 		a(href="javascript:void(0);").news-most__title.title-2 Самое читаемое
+				//- 			+svg("ar-title")
+				//- 		.news-most__items
+				//- 			.news-most__item
+				//- 				.news-most__lft
+				//- 					.news-most__pic
+				//- 						<svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+				//- 							<path d="M1.09009 6.09C6.56309 -0.957001 15.4361 -0.957001 20.9091 6.09" stroke="#0E4F95" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+				//- 							<path class="fill" d="M14.431 2.31802C16.1884 4.07538 16.1884 6.92462 14.431 8.68198C12.6736 10.4393 9.8244 10.4393 8.06704 8.68198C6.30968 6.92462 6.30968 4.07538 8.06704 2.31802C9.8244 0.56066 12.6736 0.56066 14.431 2.31802" stroke="#0E4F95" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+				//- 						</svg>
+				//- 					.news-most__count 1211
+				//- 				a(href="javascript:void(0);").news-most__rght
+				//- 					.news-most__txt <span>На Южном Урале ФСБ</span> задержали автомобиль с восемью коробками одноразовых хирургических перчаток, которые относятся к временно запрещённым для вывоза из России.
+				//- 			.news-most__item
+				//- 				.news-most__lft
+				//- 					.news-most__pic
+				//- 						<svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+				//- 							<path d="M1.09009 6.09C6.56309 -0.957001 15.4361 -0.957001 20.9091 6.09" stroke="#0E4F95" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+				//- 							<path class="fill" d="M14.431 2.31802C16.1884 4.07538 16.1884 6.92462 14.431 8.68198C12.6736 10.4393 9.8244 10.4393 8.06704 8.68198C6.30968 6.92462 6.30968 4.07538 8.06704 2.31802C9.8244 0.56066 12.6736 0.56066 14.431 2.31802" stroke="#0E4F95" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+				//- 						</svg>
+				//- 					.news-most__count 1211
+				//- 				a(href="javascript:void(0);").news-most__rght
+				//- 					.news-most__txt <span>Жители Челябинской области</span>, прибывшие домой из стран с неблагоприятной ситуацией по коронавирусной инфекции, должны самоизолироваться на две недели.
+				//- 			.news-most__item
+				//- 				.news-most__lft
+				//- 					.news-most__pic
+				//- 						<svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+				//- 							<path d="M1.09009 6.09C6.56309 -0.957001 15.4361 -0.957001 20.9091 6.09" stroke="#0E4F95" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+				//- 							<path class="fill" d="M14.431 2.31802C16.1884 4.07538 16.1884 6.92462 14.431 8.68198C12.6736 10.4393 9.8244 10.4393 8.06704 8.68198C6.30968 6.92462 6.30968 4.07538 8.06704 2.31802C9.8244 0.56066 12.6736 0.56066 14.431 2.31802" stroke="#0E4F95" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+				//- 						</svg>
+				//- 					.news-most__count 1211
+				//- 				a(href="javascript:void(0);").news-most__rght
+				//- 					.news-most__txt <span>Специалисты из Уральского</span> федерального округа востребованы не только на родине, но и за рубежом.
+				//- 			.news-most__item
+				//- 				.news-most__lft
+				//- 					.news-most__pic
+				//- 						<svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+				//- 							<path d="M1.09009 6.09C6.56309 -0.957001 15.4361 -0.957001 20.9091 6.09" stroke="#0E4F95" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+				//- 							<path class="fill" d="M14.431 2.31802C16.1884 4.07538 16.1884 6.92462 14.431 8.68198C12.6736 10.4393 9.8244 10.4393 8.06704 8.68198C6.30968 6.92462 6.30968 4.07538 8.06704 2.31802C9.8244 0.56066 12.6736 0.56066 14.431 2.31802" stroke="#0E4F95" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+				//- 						</svg>
+				//- 					.news-most__count 1211
+				//- 				a(href="javascript:void(0);").news-most__rght
+				//- 					.news-most__txt <span>В Краснодаре стартует</span> "финал восьми" Студенческой лиги ВТБ, в который вновь пробились "Стальные сердца".
+				//- 			.news-most__item
+				//- 				.news-most__lft
+				//- 					.news-most__pic
+				//- 						<svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+				//- 							<path d="M1.09009 6.09C6.56309 -0.957001 15.4361 -0.957001 20.9091 6.09" stroke="#0E4F95" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+				//- 							<path class="fill" d="M14.431 2.31802C16.1884 4.07538 16.1884 6.92462 14.431 8.68198C12.6736 10.4393 9.8244 10.4393 8.06704 8.68198C6.30968 6.92462 6.30968 4.07538 8.06704 2.31802C9.8244 0.56066 12.6736 0.56066 14.431 2.31802" stroke="#0E4F95" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+				//- 						</svg>
+				//- 					.news-most__count 1211
+				//- 				a(href="javascript:void(0);").news-most__rght
+				//- 					.news-most__txt <span>Малкин забивает</span>, но "Питтсбург" проигрывает.
+				//- 			.news-most__item
+				//- 				.news-most__lft
+				//- 					.news-most__pic
+				//- 						<svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+				//- 							<path d="M1.09009 6.09C6.56309 -0.957001 15.4361 -0.957001 20.9091 6.09" stroke="#0E4F95" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+				//- 							<path class="fill" d="M14.431 2.31802C16.1884 4.07538 16.1884 6.92462 14.431 8.68198C12.6736 10.4393 9.8244 10.4393 8.06704 8.68198C6.30968 6.92462 6.30968 4.07538 8.06704 2.31802C9.8244 0.56066 12.6736 0.56066 14.431 2.31802" stroke="#0E4F95" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+				//- 						</svg>
+				//- 					.news-most__count 1211
+				//- 				a(href="javascript:void(0);").news-most__rght
+				//- 					.news-most__txt <span>В Краснодаре стартует</span> "финал восьми" Студенческой лиги ВТБ, в который вновь пробились "Стальные сердца".	
+				//- .news-today
+				//- 	a(href="javascript:void(0);").news-today__block
+				//- 		img(src="./img/index/p35.jpg" alt="")
+				//- 	.news-today__item
+				//- 		.news-today__title.title-2 Сегодняшняя газета
+				//- 		a(href="javascript:void(0);").btn Посмотреть электронное издание
 						
-					a(href="javascript:void(0);").news-today__block.news-today__block--other
-						img(src="./img/index/p36.jpg" alt="")
+				//- 	a(href="javascript:void(0);").news-today__block.news-today__block--other
+				//- 		img(src="./img/index/p36.jpg" alt="")
 		.news-photo
 			a(href="javascript:void(0);").news-photo__title.title-2 Фоторепортажи
 				+svg("ar-title")
