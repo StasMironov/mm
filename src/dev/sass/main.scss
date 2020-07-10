@@ -275,6 +275,8 @@ button {
 
 .gallery {
   max-width: 962px;
+  width: 100%;
+  margin: 0 auto;
   margin-top: 24px;
 
   @media(max-width: 1600px) {
@@ -283,7 +285,6 @@ button {
 
   @media(max-width: 1235px) {
     max-width: 695px;
-    margin: 0 auto;
     margin-top: 24px;
   }
 

@@ -24,14 +24,23 @@
     @media(max-width: 1024px) {
         max-width: 900px;
         padding: 30px 40px;
-        margin: 0 auto;
+
         margin-top: 24px;
+    }
+
+    @media(max-width: 768px) {
+        padding: 28px 20px 20px 20px;
     }
 
     @media(max-width: 600px) {
         flex-direction: column;
-        padding: 28px 37px 20px 19px;
         margin-top: 26px;
+    }
+
+    &__txt {
+        @media(max-width: 600px) {
+            max-width: 345px;
+        }
     }
 
     &__items {
@@ -163,7 +172,13 @@
 
     &__right {
         @media(max-width: 600px) {
+            margin: 0 auto;
             margin-top: 24px;
+        }
+
+        @media(max-width: 500px) {
+            margin-right: auto;
+            margin-left: 0;
         }
     }
 
@@ -192,10 +207,10 @@
         }
 
         @media(max-width: 600px) {
-            max-width: 345px;
             margin-right: 0;
             align-self: flex-start;
             padding-bottom: 26px;
+            width: 100%;
         }
 
         &:after {
@@ -222,8 +237,12 @@
                 content: "";
                 top: auto;
                 left: 0;
-                right: auto;
+                right: 0;
                 width: 89px;
+            }
+
+            @media(max-width: 500px) {
+                right: auto;
             }
         }
     }
@@ -304,6 +323,10 @@
 
     .title-2 {
         padding-right: 0;
+    }
+
+    &--detaile {
+        max-width: 100%;
     }
 
 }

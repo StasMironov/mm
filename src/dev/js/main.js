@@ -44,6 +44,9 @@ $(() => {
         $('head').append('<link rel="stylesheet" type="text/css" href="css/lightgallery.min.css">');
     }
 
+    if ($('.news-detail').length > 0) {
+        $('head').append('<link rel="stylesheet" type="text/css" href="css/lightgallery.min.css">');
+    }
 
     if ($('#video-gallery').length > 0) {
         $('head').append('<link rel="stylesheet" type="text/css" href="css/lg-video.css">');
@@ -687,9 +690,13 @@ $(() => {
                     },
                     769: {
                         spaceBetween: 17,
-                        slidesPerView: 5,
+                        slidesPerView: 6,
                     },
                     1024: {
+                        spaceBetween: 17,
+                        slidesPerView: 6,
+                    },
+                    1025: {
                         spaceBetween: 17,
                         slidesPerView: 5,
                     }

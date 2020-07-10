@@ -6,6 +6,7 @@
 
     @media(max-width: 1024px) {
         margin-top: 24px;
+        max-width: 100%;
     }
 
     @media(max-width: 600px) {
@@ -145,6 +146,13 @@
         box-sizing: content-box;
         width: 100%;
 
+        @media(max-width: 1300px) {
+            max-width: 500px;
+        }
+
+        @media(max-width: 1024px) {
+            max-width: 545px;
+        }
 
         @media(max-width: 600px) {
             padding-right: 0;
@@ -190,14 +198,18 @@
             @media(max-width: 600px) {
                 display: block;
                 margin-top: 30px;
-                padding-bottom: 16px;
-                border-bottom: 1px solid $black;
             }
         }
     }
 
     &__right {
         max-width: 407px;
+        width: 100%;
+
+        @media(max-width: 768px) {
+            max-width: 300px;
+            width: 100%;
+        }
 
         @media(max-width: 600px) {
             display: none;

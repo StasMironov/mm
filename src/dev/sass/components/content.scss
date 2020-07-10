@@ -43,16 +43,18 @@
     & h2 {
         font-size: 25px;
         line-height: 30px;
+        text-align: center;
 
         @media (max-width:1024px) {
             font-size: 25px;
             line-height: 30px;
         }
 
-        @media (max-width:600px) {
+        @media (max-width:640px) {
             padding-right: 17px;
             font-size: 25px;
             line-height: 30px;
+            text-align: left;
         }
     }
 
@@ -90,6 +92,7 @@
 
         @media(max-width: 1024px) {
             height: 270px;
+            max-width: 100%;
         }
 
         @media(max-width: 600px) {
@@ -109,6 +112,9 @@
 
 
     & p {
+        max-width: 737px;
+        margin: 30px auto 0;
+
         & img {
             max-width: 100%;
             height: auto;
@@ -216,6 +222,17 @@
 
         @media(max-width: 1235px) {
             max-width: 100%;
+        }
+
+        h2 {
+            text-align: left;
+        }
+
+        p {
+            max-width: 895px;
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
         }
 
         h2+* {
