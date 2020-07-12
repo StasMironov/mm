@@ -12,6 +12,8 @@
     }
 
     &__title {
+        padding-right: 0;
+
         &:hover {
             color: $purple-3;
         }
