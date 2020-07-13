@@ -105,6 +105,18 @@ $(function () {
           $(this).closest('.filter__item').removeClass('filter__item--active');
         }
       });
+      jQuery(function ($) {
+        $(document).mouseup(function (e) {
+          // событие клика по веб-документу
+          var div = $(".filter__item"); // тут указываем ID элемента
+
+          if (!div.is(e.target) // если клик был не по нашему блоку
+          && div.has(e.target).length === 0) {
+            // и не по его дочерним элементам
+            div.removeClass('filter__item--active'); // скрываем его
+          }
+        });
+      });
     } catch (err) {
       console.log(err);
     }
@@ -468,7 +480,7 @@ $(function () {
 
   if ($('.header__search--laptop').exists) {
     try {
-      $('.header__btn').on('click', function (e) {
+      $('.header__search--laptop').on('click', function (e) {
         e.preventDefault();
 
         if ($('.header__search--laptop').hasClass('header__search--active')) {
