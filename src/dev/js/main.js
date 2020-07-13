@@ -608,7 +608,7 @@ $(() => {
                 }
 
                 cont.insertBefore(galleryWrapper, allEl[a]);
-                galleryWrapper.append(blockThumbs);
+                galleryWrapper.appendChild(blockThumbs);
                 $(galleryBlock).find(swiperWrapper).clone().appendTo(blockThumbs);
             } catch (err) {
                 console.log(err);
@@ -653,13 +653,11 @@ $(() => {
 
     function initGallarySlider(selectorElement) {
         var sliderBlocks = document.querySelectorAll('.' + selectorElement); // Берем все элементы с заданным классом. Каждый элемент будет слайдером. Данные хранятся в NodeList
-
         var sliderBlocksArr = []; // Массив для хранения элементов из NodeList.
 
         for (var _i = 0; _i < sliderBlocks.length; _i++) {
             sliderBlocksArr.push(sliderBlocks[_i]);
         } // Для совместимости с IE11
-
 
         sliderBlocksArr.forEach(function (item, i) {
             // Проходимся по всем слайдерам

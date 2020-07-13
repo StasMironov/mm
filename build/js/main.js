@@ -589,7 +589,7 @@ $(function () {
         }
 
         cont.insertBefore(galleryWrapper, allEl[a]);
-        galleryWrapper.append(blockThumbs);
+        galleryWrapper.appendChild(blockThumbs);
         $(galleryBlock).find(swiperWrapper).clone().appendTo(blockThumbs);
       } catch (err) {
         console.log(err);
