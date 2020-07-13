@@ -319,7 +319,9 @@ $(function () {
     if ($('.archive-filter__item').exists) {
       try {
         if (parent == '.archive-filter__item--year') {
-          parentEl = $(parent).find('.archive-filter__list');
+          console.log(parent);
+          var filterBloc = document.querySelector('.archive-filter__item--year');
+          parentEl = filterBloc.querySelector('.archive-filter__list'); //  parentEl = $(parent).find('.archive-filter__list');
 
           for (var _i5 = atributeForm.currentYear; _i5 >= qty; _i5--) {
             var newEl = document.createElement('div'),
@@ -338,12 +340,14 @@ $(function () {
             inputEl.setAttribute('value', "".concat(_i5));
             inputLabel.setAttribute('for', "y-".concat(_i5));
             inputLabel.textContent = _i5;
-            newEl.append(inputEl);
-            newEl.append(inputLabel);
-            parentEl.append(newEl);
+            newEl.appendChild(inputEl);
+            newEl.appendChild(inputLabel);
+            parentEl.appendChild(newEl);
           }
         } else {
-          parentEl = $(parent).find('.archive-filter__list');
+          var _filterBloc = document.querySelector('.archive-filter__item--day');
+
+          parentEl = _filterBloc.querySelector('.archive-filter__list');
 
           for (var _i6 = qty; _i6 > 0; _i6--) {
             var _newEl = document.createElement('div'),
@@ -370,11 +374,11 @@ $(function () {
 
             _inputLabel.textContent = _i6;
 
-            _newEl.append(_inputEl);
+            _newEl.appendChild(_inputEl);
 
-            _newEl.append(_inputLabel);
+            _newEl.appendChild(_inputLabel);
 
-            parentEl.append(_newEl);
+            parentEl.appendChild(_newEl);
           }
         }
       } catch (err) {

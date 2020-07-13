@@ -336,7 +336,11 @@ $(() => {
         if ($('.archive-filter__item').exists) {
             try {
                 if (parent == '.archive-filter__item--year') {
-                    parentEl = $(parent).find('.archive-filter__list');
+                    console.log(parent);
+                    let filterBloc = document.querySelector('.archive-filter__item--year');
+                    parentEl = filterBloc.querySelector('.archive-filter__list');
+
+                    //  parentEl = $(parent).find('.archive-filter__list');
 
                     for (let i = atributeForm.currentYear; i >= qty; i--) {
                         let newEl = document.createElement('div'),
@@ -356,12 +360,15 @@ $(() => {
                         inputEl.setAttribute('value', `${i}`);
                         inputLabel.setAttribute('for', `y-${i}`);
                         inputLabel.textContent = i;
-                        newEl.append(inputEl);
-                        newEl.append(inputLabel);
-                        parentEl.append(newEl);
+
+                        newEl.appendChild(inputEl);
+                        newEl.appendChild(inputLabel);
+                        parentEl.appendChild(newEl);
                     }
                 } else {
-                    parentEl = $(parent).find('.archive-filter__list');
+
+                    let filterBloc = document.querySelector('.archive-filter__item--day');
+                    parentEl = filterBloc.querySelector('.archive-filter__list');
 
                     for (let i = qty; i > 0; i--) {
                         let newEl = document.createElement('div'),
@@ -382,10 +389,10 @@ $(() => {
 
                         inputLabel.setAttribute('for', `d-${i}`);
                         inputLabel.textContent = i;
-                        newEl.append(inputEl);
-                        newEl.append(inputLabel);
 
-                        parentEl.append(newEl);
+                        newEl.appendChild(inputEl);
+                        newEl.appendChild(inputLabel);
+                        parentEl.appendChild(newEl);
                     }
                 }
             } catch (err) {
