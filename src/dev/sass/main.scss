@@ -32,8 +32,9 @@ body {
   overflow: hidden;
   font-size: 14px;
   line-height: 22px;
-  background-color: #fff;
+  // background-color: #fff;
   word-wrap: break-word;
+  //transition: 0.2s linear;
 }
 
 .container {
@@ -62,7 +63,7 @@ a {
   display: inline;
   color: inherit;
   text-decoration: none;
-  transition: linear 0.3s;
+  transition: .2s ease-out;
 }
 
 .clearfix::after,
@@ -145,6 +146,10 @@ input::-ms-clear {
     stroke-width: 2;
     height: 12px;
     width: 12px;
+
+    @media(max-width: 600px) {
+      top: 0;
+    }
   }
 }
 

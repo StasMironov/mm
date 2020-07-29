@@ -810,4 +810,29 @@ $(function () {
       console.log(err);
     }
   }
+
+  var btn = document.getElementById("theme-button");
+  var link = document.getElementById("theme-link");
+  console.log(link.getAttribute("href"));
+  btn.addEventListener("click", function () {
+    ChangeTheme();
+  });
+
+  function ChangeTheme() {
+    var lightTheme = "css/light.css";
+    var darkTheme = "css/dark.css";
+    var currTheme = link.getAttribute("href");
+    var theme = "";
+    console.log(link.getAttribute("href"));
+
+    if (currTheme == lightTheme) {
+      currTheme = darkTheme;
+      theme = "dark";
+    } else {
+      currTheme = lightTheme;
+      theme = "light";
+    }
+
+    link.setAttribute("href", currTheme); // Save(theme);
+  }
 });

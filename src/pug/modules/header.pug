@@ -46,15 +46,21 @@ header.header
                             a(href="javascript:void(0);").header__link Россия
                             a(href="javascript:void(0);").header__link События
                             a(href="javascript:void(0);").header__link ММК
-                    .header__box
-                        a(href="javascript:void(0);").header__soc.header__soc--vk
-                            +svg('vk')
-                        a(href="javascript:void(0);").header__soc.header__soc--inst
-                            img(src="./img/icon/inst.png" alt="")
-                        a(href="javascript:void(0);").header__soc.header__soc--face
-                            +svg('face')
-                        a(href="javascript:void(0);").header__soc.header__soc--ok
-                            +svg('ok')
+                    //- .header__box
+                    //-     a(href="javascript:void(0);").header__soc.header__soc--vk
+                    //-         +svg('vk')
+                    //-     a(href="javascript:void(0);").header__soc.header__soc--inst
+                    //-         img(src="./img/icon/inst.png" alt="")
+                    //-     a(href="javascript:void(0);").header__soc.header__soc--face
+                    //-         +svg('face')
+                    //-     a(href="javascript:void(0);").header__soc.header__soc--ok
+                    //-         +svg('ok')
+                    
+                    <label class="checkbox header__theme">
+                        <input type="checkbox" id="theme-button" checked/>
+                        <div class="checkbox__text"></div>
+                    </label>
+
                     form(class="header__form" action="" method="get")
                         .header__field
                             input(name="s" placeholder="Поиск" type="search" id="input-search")

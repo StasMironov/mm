@@ -6,6 +6,18 @@
         margin-top: 30px;
     }
 
+    &__soc {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        margin-left: auto;
+
+        @media(max-width: 600px) {
+            margin-left: 0;
+            margin-right: auto;
+        }
+    }
+
     &__cover {
         display: flex;
         margin-left: auto;
@@ -80,7 +92,7 @@
         margin-top: 5px;
         letter-spacing: 0.3px;
 
-        @media(max-width: 992px) {
+        @media(max-width: 1235px) {
             display: none;
         }
     }
@@ -100,12 +112,17 @@
 
         img {
             width: 100%;
+            height: 100%;
         }
     }
 
     &__counters {
         display: flex;
         align-items: center;
+
+        @media(max-width: 600px) {
+            margin-top: 15px;
+        }
     }
 
     &__wrapper {
@@ -138,6 +155,11 @@
 
             @media(max-width: 768px) {
                 margin-top: 43px;
+            }
+
+            @media(max-width: 600px) {
+                flex-direction: column;
+                margin-top: 30px;
             }
         }
 

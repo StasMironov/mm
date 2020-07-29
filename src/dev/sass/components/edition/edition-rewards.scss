@@ -101,14 +101,29 @@
         }
 
         &--next {
+            transform: scale(-1, 1);
+
             &:hover {
-                transform: translateX(5px);
+                transform: scale(-1, 1) translateX(-5px);
             }
         }
 
         &--prev {
             &:hover {
                 transform: translateX(-5px);
+            }
+        }
+
+        .b-svg {
+            width: 32px;
+            height: 6px;
+            stroke: #27202C;
+            transition: .3s;
+        }
+
+        &:hover {
+            .b-svg {
+                stroke: $purple-1;
             }
         }
     }

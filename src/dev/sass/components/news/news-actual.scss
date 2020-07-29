@@ -378,6 +378,7 @@
         line-height: 135%;
         color: $black;
         max-width: 200px;
+        transition: .2s ease-out;
 
         @media(max-width: 640px) {
             max-width: 100%;
@@ -418,6 +419,10 @@
             stroke-width: 2;
             height: 12px;
             width: 12px;
+
+            @media(max-width: 600px) {
+                top: 0;
+            }
         }
     }
 
