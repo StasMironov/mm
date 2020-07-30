@@ -3,9 +3,9 @@
 //===== Function check element ==========//
 jQuery.fn.exists = function () {
   return $(this).length;
-};
+}; // $('.fancybox').fancybox();
 
-$('.fancybox').fancybox();
+
 $(function () {
   var parentEl = '';
 
