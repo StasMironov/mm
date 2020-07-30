@@ -11,7 +11,7 @@ block content
 				.news-basic
 					.news-basic__wrapper
 						.news-basic__left
-							a(href="javascript:void(0);").news-basic__img(style="background-image: url(./img/index/p1.jpg);")
+							a(href="javascript:void(0);" style="background-image:url('./img/index/p1.jpg')").news-basic__img
 						.news-basic__right
 							a(href="javascript:void(0);").news-basic__article Область
 							a(href="javascript:void(0);").news-basic__cover
@@ -448,22 +448,33 @@ block content
 									a(href="javascript:void(0);").news-slider__article Социум
 									a(href="javascript:void(0);").news-slider__cover
 										.news-slider__title.title-3 Память Магнитки
-										.news-slider__txt В городе появилась новая общественная организация. Геннадий Васильев более тридцати лет жизни посвятил историческим исследованиям. Недавно закончил двенадцатый том "Книги памяти" со списками репрессированных и рассказом о времени, в котором они жили.
+										.news-slider__txt В городе появилась новая общественная организация. Геннадий Васильев более тридцати лет жизни посвятил историческим исследованиям. Недавно закончил двенадцатый том "Книги памяти" со списками репрессированных и рассказом о времени, в котором они жили. В городе появилась новая общественная организация. Геннадий Васильев более тридцати лет жизни посвятил историческим исследованиям. Недавно закончил двенадцатый том "Книги памяти" со списками репрессированных и рассказом о времени, в котором они жили. В городе появилась новая общественная организация. Геннадий Васильев более тридцати лет жизни посвятил историческим исследованиям. Недавно закончил двенадцатый том "Книги памяти" со списками репрессированных и рассказом о времени, в котором они жили.
+									.news-slider__func
+										.news-slider__pagination
+											.news-slider__arrow.news-slider__arrow--prev
+												+svg("ar-title")
+											.news-slider__arrow.news-slider__arrow--next
+												+svg("ar-title")
+										.publish
+											.publish__wrapper
+												.publish__date 19 марта
+												a(href="javascript:void(0);").publish__person Фантасмогорьев Фантасмогорь
 								.swiper-slide 
-									a(href="javascript:void(0);").news-slider__article Социум
+									a(href="javascript:void(0);").news-slider__article Социум2
 									a(href="javascript:void(0);").news-slider__cover
 										.news-slider__title.title-3 Память Магнитки 2
 										.news-slider__txt В городе появилась новая общественная организация. 
-					.news-slider__func
-						.news-slider__pagination
-							.news-slider__arrow.news-slider__arrow--prev
-								+svg("ar-title")
-							.news-slider__arrow.news-slider__arrow--next
-								+svg("ar-title")
-						.publish
-							.publish__wrapper
-								.publish__date 19 марта
-								a(href="javascript:void(0);").publish__person Фантасмогорьев Фантасмогорь
+									.news-slider__func
+										.news-slider__pagination
+											.news-slider__arrow.news-slider__arrow--prev
+												+svg("ar-title")
+											.news-slider__arrow.news-slider__arrow--next
+												+svg("ar-title")
+										.publish
+											.publish__wrapper
+												.publish__date 20 марта
+												a(href="javascript:void(0);").publish__person Иванов Иван
+					
 		.news-archive
 			.news-archive__wrapper
 				.news-archive__left

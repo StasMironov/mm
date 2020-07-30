@@ -98,10 +98,11 @@
             display: flex;
             justify-content: flex-end;
             max-width: 100%;
-            padding: 30px 81px 30px 16px;
+            padding: 30px 16px 30px 16px;
             height: 100%;
             top: auto;
             background: transparent;
+            width: 100%;
         }
 
 
@@ -109,6 +110,17 @@
 
     &__thumbs {
         overflow: hidden;
+        height: 100%;
+
+        .swiper-slide {
+            display: flex;
+            flex-direction: column;
+
+            @media(max-width: 920px) {
+                max-width: 100%;
+                width: 100% !important;
+            }
+        }
 
         .swiper-wrapper {
             min-height: 210px;
@@ -142,7 +154,7 @@
         margin-top: 37px;
 
         @media(max-width: 920px) {
-            margin-top: 0;
+            margin-top: auto;
         }
 
         &:hover .title-3 {
@@ -176,7 +188,7 @@
             right: 0;
             margin: auto;
             justify-content: space-between;
-            padding: 0 16px;
+            padding: 0;
         }
     }
 
@@ -196,7 +208,6 @@
             right: 0;
             margin: auto;
             justify-content: space-between;
-            padding: 0 16px;
         }
     }
 

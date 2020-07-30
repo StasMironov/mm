@@ -295,6 +295,8 @@ $(() => {
     truncateText('.news-photo__info', 115);
     truncateText('.author-articles__txt', 72);
     truncateText('.search__text', 72);
+    truncateText('.search__text', 72);
+    truncateText('.news-slider__txt', 250);
 
     //===========Accordion=============
 
@@ -835,7 +837,7 @@ $(() => {
 
             let newsThumbs = new Swiper('.news-slider__thumbs', {
                 spaceBetween: 10,
-                autoHeight: true,
+                // autoHeight: true,
                 effect: "fade",
                 touchRatio: 0,
                 navigation: {
