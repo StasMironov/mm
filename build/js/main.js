@@ -30,6 +30,25 @@ $(function () {
     }
   }
 
+  if ($(".archive-filter__item--month-alternative input").exists()) {
+    try {
+      $(".archive-filter__item--month-alternative input").change(function () {
+        if (this.checked) {
+          var month = parseInt($(this).val()) - 1;
+          var days = [31, 29, 31, 30, 31, 30, 31, 30, 31, 30, 31, 30];
+
+          if (parseInt($('.archive-filter__item--day-alternative').find('.archive-filter__txt').text()) > days[month]) {
+            $('.archive-filter__item--day-alternative input[checked="checked"]').removeAttr('checked');
+            $('.archive-filter__item--day-alternative input[value="' + days[month] + '"]').first().attr('checked', 'checked');
+            $('.archive-filter__item--day-alternative').find('.archive-filter__txt').text(days[month]);
+          }
+        }
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   if ($('.btn--close').exists) {
     try {
       $('.btn--close').on('click', function (event) {
