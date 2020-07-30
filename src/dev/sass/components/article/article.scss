@@ -65,7 +65,7 @@
         letter-spacing: 0.6px;
         margin-top: 24px;
         transition: .3s;
-
+        margin-top: 20px;
         cursor: pointer;
 
         &:not(:first-child) {
@@ -89,9 +89,9 @@
             display: block;
             width: 100%;
             cursor: pointer;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            // white-space: nowrap;
+            // overflow: hidden;
+            // text-overflow: ellipsis;
             transition: .3s;
 
             &:hover {

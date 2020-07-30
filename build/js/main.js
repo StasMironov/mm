@@ -813,17 +813,30 @@ $(function () {
 
   var btn = document.getElementById("theme-button");
   var link = document.getElementById("theme-link");
-  console.log(link.getAttribute("href"));
+  var themeDefault = "";
   btn.addEventListener("click", function () {
-    ChangeTheme();
+    var theme = ChangeTheme();
+    sessionStorage.setItem('theme', theme);
   });
 
+  if (sessionStorage.getItem('theme') !== null) {
+    $('#theme-link').attr('href', sessionStorage.getItem('theme'));
+
+    if (sessionStorage.getItem('theme') == themeDefault) {
+      $('.header .checkbox input').prop('checked', true);
+    } else {
+      $('.header .checkbox input').prop('checked', false);
+    }
+  } else {
+    $('#theme-link').attr('href', themeDefault);
+    $('.header .checkbox input').prop('checked', true);
+  }
+
   function ChangeTheme() {
-    var lightTheme = "css/light.css";
+    var lightTheme = themeDefault;
     var darkTheme = "css/dark.css";
     var currTheme = link.getAttribute("href");
     var theme = "";
-    console.log(link.getAttribute("href"));
 
     if (currTheme == lightTheme) {
       currTheme = darkTheme;
@@ -833,6 +846,7 @@ $(function () {
       theme = "light";
     }
 
-    link.setAttribute("href", currTheme); // Save(theme);
+    link.setAttribute("href", currTheme);
+    return currTheme;
   }
 });

@@ -837,21 +837,31 @@ $(() => {
 
     var btn = document.getElementById("theme-button");
     var link = document.getElementById("theme-link");
-
-    console.log(link.getAttribute("href"));
+    var themeDefault = "";
 
     btn.addEventListener("click", function () {
-        ChangeTheme();
+        let theme = ChangeTheme();
+        sessionStorage.setItem('theme', theme)
     });
 
+    if (sessionStorage.getItem('theme') !== null) {
+        $('#theme-link').attr('href', sessionStorage.getItem('theme'));
+        if (sessionStorage.getItem('theme') == themeDefault) {
+            $('.header .checkbox input').prop('checked', true);
+        } else {
+            $('.header .checkbox input').prop('checked', false);
+        }
+    } else {
+        $('#theme-link').attr('href', themeDefault);
+        $('.header .checkbox input').prop('checked', true);
+    }
+
     function ChangeTheme() {
-        let lightTheme = "css/light.css";
+        let lightTheme = themeDefault;
         let darkTheme = "css/dark.css";
 
         var currTheme = link.getAttribute("href");
         var theme = "";
-
-        console.log(link.getAttribute("href"));
 
         if (currTheme == lightTheme) {
             currTheme = darkTheme;
@@ -862,7 +872,6 @@ $(() => {
         }
 
         link.setAttribute("href", currTheme);
-
-        // Save(theme);
+        return currTheme;
     }
 });

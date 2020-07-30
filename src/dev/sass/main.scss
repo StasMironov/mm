@@ -32,9 +32,14 @@ body {
   overflow: hidden;
   font-size: 14px;
   line-height: 22px;
-  // background-color: #fff;
+  background-color: #fff;
   word-wrap: break-word;
   //transition: 0.2s linear;
+}
+
+body,
+html {
+  transition: background-color 0.2s linear;
 }
 
 .container {
@@ -445,6 +450,7 @@ button {
 .ad {
   display: block;
   background-color: $gray-1;
+  transition: background-color 0.2s linear;
 
   @media(max-width: 640px) {
     display: none;

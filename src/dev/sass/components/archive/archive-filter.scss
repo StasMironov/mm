@@ -125,6 +125,7 @@
         line-height: 22px;
         margin-right: 22px;
 
+
         @media(max-width: 640px) {
             margin-right: 16px;
         }
@@ -370,6 +371,7 @@
             .archive-filter__txt {
                 white-space: nowrap;
                 overflow: hidden;
+                text-overflow: ellipsis;
             }
         }
 

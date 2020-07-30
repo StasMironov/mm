@@ -92,7 +92,7 @@
     &__inner {
         min-height: 185px;
         background-color: white;
-        // transition: 0.2s ease;
+        transition: background-color 0.2s linear;
 
         @media(max-width: 1024px) {
             min-height: 147px;
