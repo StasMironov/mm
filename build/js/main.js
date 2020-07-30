@@ -5,6 +5,7 @@ jQuery.fn.exists = function () {
   return $(this).length;
 };
 
+$('.fancybox').fancybox();
 $(function () {
   var parentEl = '';
 
@@ -811,42 +812,44 @@ $(function () {
     }
   }
 
-  var btn = document.getElementById("theme-button");
-  var link = document.getElementById("theme-link");
-  var themeDefault = "";
-  btn.addEventListener("click", function () {
-    var theme = ChangeTheme();
-    sessionStorage.setItem('theme', theme);
-  });
+  if ($('#theme-button').exists()) {
+    var ChangeTheme = function ChangeTheme() {
+      var lightTheme = themeDefault;
+      var darkTheme = "/local/templates/magmetall/css/dark.css ";
+      var currTheme = link.getAttribute("href");
+      var theme = "";
 
-  if (sessionStorage.getItem('theme') !== null) {
-    $('#theme-link').attr('href', sessionStorage.getItem('theme'));
+      if (currTheme == lightTheme) {
+        currTheme = darkTheme;
+        theme = "dark";
+      } else {
+        currTheme = lightTheme;
+        theme = "light";
+      }
 
-    if (sessionStorage.getItem('theme') == themeDefault) {
+      link.setAttribute("href", currTheme);
+      return currTheme;
+    };
+
+    var btn = document.getElementById("theme-button");
+    var link = document.getElementById("theme-link");
+    var themeDefault = "";
+    btn.addEventListener("click", function () {
+      var theme = ChangeTheme();
+      sessionStorage.setItem('theme', theme);
+    });
+
+    if (sessionStorage.getItem('theme') !== null) {
+      $('#theme-link').attr('href', sessionStorage.getItem('theme'));
+
+      if (sessionStorage.getItem('theme') == themeDefault) {
+        $('.header .checkbox input').prop('checked', true);
+      } else {
+        $('.header .checkbox input').prop('checked', false);
+      }
+    } else {
+      $('#theme-link').attr('href', themeDefault);
       $('.header .checkbox input').prop('checked', true);
-    } else {
-      $('.header .checkbox input').prop('checked', false);
     }
-  } else {
-    $('#theme-link').attr('href', themeDefault);
-    $('.header .checkbox input').prop('checked', true);
-  }
-
-  function ChangeTheme() {
-    var lightTheme = themeDefault;
-    var darkTheme = "css/dark.css";
-    var currTheme = link.getAttribute("href");
-    var theme = "";
-
-    if (currTheme == lightTheme) {
-      currTheme = darkTheme;
-      theme = "dark";
-    } else {
-      currTheme = lightTheme;
-      theme = "light";
-    }
-
-    link.setAttribute("href", currTheme);
-    return currTheme;
   }
 });
