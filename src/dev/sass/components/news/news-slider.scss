@@ -165,6 +165,14 @@
 
         @media(max-width: 920px) {
             margin-top: auto;
+            position: absolute;
+            bottom: -30px;
+            padding: 16px 25px;
+            left: 0;
+            right: 0;
+            width: calc(100% + 32px);
+            margin-left: -16px;
+            background-color: rgba(0, 0, 0, .4);
         }
 
         &:hover .title-3 {
