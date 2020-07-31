@@ -114,16 +114,18 @@
             }
         }
 
-        .b-svg {
-            width: 32px;
-            height: 6px;
-            stroke: #27202C;
+        svg {
             transition: .3s;
+
+            path {
+                transition: .3s;
+                fill: $black;
+            }
         }
 
         &:hover {
-            .b-svg {
-                stroke: $purple-1;
+            path {
+                fill: $purple-1;
             }
         }
     }
