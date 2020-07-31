@@ -147,6 +147,12 @@
                 opacity: 1;
             }
         }
+
+        &:hover {
+            .author-articles__title {
+                color: $purple-3;
+            }
+        }
     }
 
     &__pic {

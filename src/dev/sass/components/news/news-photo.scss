@@ -163,6 +163,12 @@
                 opacity: 1;
             }
         }
+
+        &:hover {
+            .news-photo__title {
+                color: $purple-3;
+            }
+        }
     }
 
     &__pic {

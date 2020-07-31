@@ -12,6 +12,14 @@
         padding-bottom: 16px;
     }
 
+    &__item {
+        &:hover {
+            .news-set__title {
+                color: $purple-3;
+            }
+        }
+    }
+
     &__wrapper {
         display: flex;
 
@@ -151,6 +159,12 @@
                 &:hover .news-set__pic {
                     &:after {
                         opacity: 1;
+                    }
+                }
+
+                &:hover {
+                    .news-set__title {
+                        color: $purple-3;
                     }
                 }
             }

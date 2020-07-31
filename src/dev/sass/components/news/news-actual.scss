@@ -114,6 +114,12 @@
                 opacity: 1;
             }
         }
+
+        &:hover {
+            .news-actual__article {
+                color: $purple-3;
+            }
+        }
     }
 
     &__wrapper {
