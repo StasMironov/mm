@@ -112,6 +112,16 @@
         overflow: hidden;
         height: 100%;
 
+        @media(max-width: 920px) {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px 16px;
+
+        }
+
         .swiper-slide {
             display: flex;
             flex-direction: column;

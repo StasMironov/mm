@@ -839,13 +839,21 @@ $(() => {
                 spaceBetween: 10,
                 // autoHeight: true,
                 effect: "fade",
-                touchRatio: 0,
+                //touchRatio: 0,
                 navigation: {
                     nextEl: '.news-slider__arrow--next',
                     prevEl: '.news-slider__arrow--prev',
                 },
                 fadeEffect: {
                     crossFade: true
+                },
+                breakpoints: {
+                    920: {
+                        touchRatio: 1,
+                    },
+                    921: {
+                        touchRatio: 0,
+                    }
                 }
             });
 
