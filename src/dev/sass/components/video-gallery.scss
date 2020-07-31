@@ -7,13 +7,13 @@
             height: 220px;
         }
 
-        @media(max-width: 768px) {
-            height: 200px;
-        }
+        // @media(max-width: 768px) {
+        //     height: 200px;
+        // }
 
-        @media(max-width: 600px) {
-            height: 148px;
-        }
+        // @media(max-width: 600px) {
+        //     height: 148px;
+        // }
 
         &:hover .news-archive__btn:before {
             width: 140px;

@@ -95,8 +95,8 @@
             max-width: 100%;
         }
 
-        @media(max-width: 600px) {
-            height: 184px;
+        @media(max-width: 640px) {
+            height: 220px;
             margin-top: 30px;
         }
     }
@@ -267,9 +267,9 @@
                     height: 220px;
                 }
 
-                @media(max-width: 600px) {
-                    height: 184px;
-                }
+                // @media(max-width: 600px) {
+                //     height: 184px;
+                // }
 
                 ~.article__cover {
                     display: flex;
