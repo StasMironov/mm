@@ -888,8 +888,8 @@ $(() => {
 
         function ChangeTheme() {
             let lightTheme = themeDefault;
-            //let darkTheme = "/local/templates/magmetall/css/dark.css ";
-            let darkTheme = "css/dark.css ";
+            let darkTheme = "/local/templates/magmetall/css/dark.css ";
+            // let darkTheme = "css/dark.css ";
 
             var currTheme = link.getAttribute("href");
             var theme = "";
