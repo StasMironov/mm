@@ -124,8 +124,8 @@
                     &:after {
                         position: absolute;
                         content: "";
-                        height: 217px;
-                        width: 2px;
+                        height: 100%;
+                        width: 1px;
                         background-color: $gray-3;
                         left: 0;
                         margin: auto;
@@ -179,7 +179,13 @@
                 }
             }
 
+            .news-set__cover {
+                margin-bottom: 16px;
+            }
+
             .news-set__content {
+                display: flex;
+                flex-direction: column;
                 width: calc(100% - 120px - 18px);
 
                 @media(max-width: 1600px) {
@@ -201,7 +207,7 @@
             }
 
             .publish {
-                margin-top: 16px;
+                margin-top: auto;
 
                 @media(max-width: 1024px) {
                     margin-top: 12px;

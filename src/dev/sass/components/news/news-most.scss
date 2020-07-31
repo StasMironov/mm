@@ -97,10 +97,21 @@
     &__rght {
         padding-bottom: 11px;
         border-bottom: 1px solid $gray-3;
+        width: 100%;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: .45px;
+        padding-top: 4px;
 
         @media(max-width: 600px) {
             padding-bottom: 0px;
             border-bottom: none;
+        }
+
+        span {
+            color: $purple-3;
         }
     }
 
@@ -167,7 +178,7 @@
         &:after {
             position: absolute;
             content: "";
-            height: 495px;
+            height: 100%;
             width: 1px;
             background-color: #d7d7d7;
             right: 0;

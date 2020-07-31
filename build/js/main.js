@@ -843,8 +843,9 @@ $(function () {
 
   if ($('#theme-button').exists()) {
     var ChangeTheme = function ChangeTheme() {
-      var lightTheme = themeDefault;
-      var darkTheme = "/local/templates/magmetall/css/dark.css ";
+      var lightTheme = themeDefault; //let darkTheme = "/local/templates/magmetall/css/dark.css ";
+
+      var darkTheme = "css/dark.css ";
       var currTheme = link.getAttribute("href");
       var theme = "";
 
