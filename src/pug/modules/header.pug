@@ -32,12 +32,18 @@ header.header
                             span
                             span
                         .header__article Все рубрики
-                    .header__nav
-                        a(href="javascript:void(0);").header__link Фоторепортажи
-                        a(href="javascript:void(0);").header__link История города
-                        a(href="javascript:void(0);").header__link Подать объявление
-                        a(href="javascript:void(0);").header__link Архив
-                        a(href="javascript:void(0);").header__link Редакция
+                    .header__wrp
+                        .header__nav
+                            a(href="javascript:void(0);").header__link Фоторепортажи
+                            a(href="javascript:void(0);").header__link История города
+                            a(href="javascript:void(0);").header__link Подать объявление
+                            a(href="javascript:void(0);").header__link Архив
+                            a(href="javascript:void(0);").header__link Редакция
+                        form.header__switch
+                            <label class="checkbox header__theme">
+                                <input type="checkbox" class="theme-button" checked/>
+                                <div class="checkbox__text"></div>
+                            </label>
                     .header__block
                     form(class="header__search header__search--laptop" action="" method="get" )
                         .header__in
@@ -58,21 +64,6 @@ header.header
                             a(href="javascript:void(0);").header__link Россия
                             a(href="javascript:void(0);").header__link События
                             a(href="javascript:void(0);").header__link ММК
-                    //- .header__box
-                    //-     a(href="javascript:void(0);").header__soc.header__soc--vk
-                    //-         +svg('vk')
-                    //-     a(href="javascript:void(0);").header__soc.header__soc--inst
-                    //-         img(src="./img/icon/inst.png" alt="")
-                    //-     a(href="javascript:void(0);").header__soc.header__soc--face
-                    //-         +svg('face')
-                    //-     a(href="javascript:void(0);").header__soc.header__soc--ok
-                    //-         +svg('ok')
-                    form
-                        <label class="checkbox header__theme">
-                            <input type="checkbox" id="theme-button" checked/>
-                            <div class="checkbox__text"></div>
-                        </label>
-
                     form(class="header__form" action="" method="get")
                         .header__field
                             input(name="s" placeholder="Поиск" type="search" id="input-search")
@@ -140,15 +131,7 @@ header.header
                         a(href="javascript:void(0);").header__refer Архив
                         a(href="javascript:void(0);").header__refer Редакция
                         a(href="javascript:void(0);").header__refer Все рубрики
-                .header__box.header__box--menu
-                        a(href="javascript:void(0);").header__soc.header__soc--vk
-                            +svg('vk')
-                        a(href="javascript:void(0);").header__soc.header__soc--inst
-                            img(src="./img/icon/inst.png" alt="")
-                        a(href="javascript:void(0);").header__soc.header__soc--face
-                            +svg('face')
-                        a(href="javascript:void(0);").header__soc.header__soc--ok
-                            +svg('ok')
+                
                 .header__partners
                     a(href="javascript:void(0);").header__partner
                         img(src="./img/p1.png" alt="")
@@ -156,4 +139,21 @@ header.header
                         img(src="./img/p2.png" alt="")
                     a(href="javascript:void(0);").header__partner
                         img(src="./img/p3.png" alt="")
+            .header__unique
+                .header__container
+                    .header__specific
+                        .header__box
+                            a(href="javascript:void(0);").header__soc.header__soc--vk
+                                +svg('vk')
+                            a(href="javascript:void(0);").header__soc.header__soc--inst
+                                img(src="./img/icon/inst.png" alt="")
+                            a(href="javascript:void(0);").header__soc.header__soc--face
+                                +svg('face')
+                            a(href="javascript:void(0);").header__soc.header__soc--ok
+                                +svg('ok')
+                        form.header__switch.header__switch--laptop
+                            <label class="checkbox header__theme">
+                                <input type="checkbox" class="theme-button" checked/>
+                                <div class="checkbox__text"></div>
+                            </label>
                 

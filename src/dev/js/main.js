@@ -864,15 +864,24 @@ $(() => {
         }
     }
 
-    if ($('#theme-button').exists()) {
-        var btn = document.getElementById("theme-button");
+    if ($('.theme-button').exists()) {
+        var btn = document.querySelectorAll(".theme-button");
         var link = document.getElementById("theme-link");
         var themeDefault = "";
 
-        btn.addEventListener("click", function () {
-            let theme = ChangeTheme();
-            sessionStorage.setItem('theme', theme)
-        });
+        console.log(btn);
+
+        for (let i = 0; i < btn.length; i++) {
+            btn[i].addEventListener("click", function () {
+                let theme = ChangeTheme();
+                sessionStorage.setItem('theme', theme)
+            });
+        }
+
+        // btn.addEventListener("click", function () {
+        //     let theme = ChangeTheme();
+        //     sessionStorage.setItem('theme', theme)
+        // });
 
         if (sessionStorage.getItem('theme') !== null) {
             $('#theme-link').attr('href', sessionStorage.getItem('theme'));
@@ -888,8 +897,8 @@ $(() => {
 
         function ChangeTheme() {
             let lightTheme = themeDefault;
-            let darkTheme = "/local/templates/magmetall/css/dark.css ";
-            // let darkTheme = "css/dark.css ";
+            //let darkTheme = "/local/templates/magmetall/css/dark.css ";
+            let darkTheme = "css/dark.css ";
 
             var currTheme = link.getAttribute("href");
             var theme = "";

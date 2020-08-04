@@ -20,7 +20,8 @@
 
     &__cover {
         display: flex;
-        margin-left: auto;
+        margin-left: 0;
+        width: 100%;
 
         @media(max-width: 1235px) {
             flex-grow: 1;
@@ -48,7 +49,7 @@
         border-top: 1px solid $gray-3;
 
         @media(max-width: 500px) {
-            border-top: none;
+            margin-top: 15px;
         }
 
         .footer__container {
@@ -89,7 +90,7 @@
     }
 
     &__note {
-        margin-top: 5px;
+        margin-top: 0;
         letter-spacing: 0.3px;
 
         @media(max-width: 1235px) {
@@ -127,6 +128,7 @@
 
     &__wrapper {
         display: flex;
+        margin-left: auto;
 
         @media(max-width: 1235px) {
             margin-left: 30px;
@@ -224,19 +226,18 @@
         flex-wrap: wrap;
         margin-right: 84px;
         max-width: 675px;
-        align-self: flex-start;
 
-        @media(max-width: 1400px) {
-            margin-right: 55px;
-        }
+        // @media(max-width: 1400px) {
+        //     margin-right: 55px;
+        // }
 
-        @media(max-width: 1300px) {
-            margin-right: 50px;
-        }
+        // @media(max-width: 1300px) {
+        //     margin-right: 50px;
+        // }
 
-        @media(max-width: 1235px) {
-            margin: 0 auto;
-        }
+        // @media(max-width: 1235px) {
+        //     margin: 0 auto;
+        // }
 
         @media(max-width: 1024px) {
             margin: initial;
@@ -312,18 +313,13 @@
         display: block;
         height: 67px;
         width: 223px;
-        margin-right: 115px;
+        min-width: 223px;
+        margin-right: 40px;
 
-        @media(max-width: 1400px) {
-            margin-right: 75px;
-        }
-
-        @media(max-width: 1300px) {
-            margin-right: 55px;
-        }
 
         @media(max-width: 1235px) {
             width: 190px;
+            min-width: 190px;
             margin-right: 20px;
         }
 
@@ -331,6 +327,7 @@
             margin-right: 0;
             height: 50px;
             width: 165px;
+            min-width: 165px;
             display: block;
         }
 

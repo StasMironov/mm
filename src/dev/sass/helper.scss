@@ -50,6 +50,21 @@
         }
     }
 
+    .checkbox__text:before {
+        width: 41px !important;
+        height: 22px !important;
+    }
+
+    .checkbox__text:after {
+        width: 16px !important;
+        height: 16px !important;
+        left: 2px !important;
+    }
+
+    .checkbox input:checked+.checkbox__text:after {
+        left: 20px !important;
+    }
+
     .header__form button {
         width: 32px;
     }

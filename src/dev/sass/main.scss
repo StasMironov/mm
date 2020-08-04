@@ -241,7 +241,7 @@ input::-ms-clear {
         top: 7px;
         transition: .4s;
 
-        @media(max-width: 600px) {
+        @media(max-width: 1024px) {
           top: 6px;
         }
       }
@@ -251,7 +251,7 @@ input::-ms-clear {
         top: -7px;
         transition: .4s;
 
-        @media(max-width: 600px) {
+        @media(max-width: 1024px) {
           top: -6px;
         }
       }
@@ -472,6 +472,29 @@ button {
   height: 30px;
 }
 
+
+
+
+//=============== Test ==================//@extend
+.test-pic {
+  position: relative;
+
+  &:after {
+    display: block;
+    content: '';
+    /* 16:9 aspect ratio */
+    padding-bottom: 56.25%;
+  }
+
+  img {
+    /* Image should match parent box size */
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
 
 
 

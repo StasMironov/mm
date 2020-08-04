@@ -17,6 +17,16 @@
         }
     }
 
+    &__wrp {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+
+        @media(max-width: 1024px) {
+            display: none;
+        }
+    }
+
     &__article {
         font-size: 14px;
         line-height: 20px;
@@ -134,7 +144,7 @@
     &__func {
         display: flex;
         align-items: center;
-        margin-right: 167px;
+        margin-right: 25px;
         cursor: pointer;
 
         @media(max-width: 1600px) {
@@ -409,6 +419,23 @@
         }
     }
 
+    &__switch {
+        @media(max-width: 1024px) {
+            display: none;
+        }
+
+        &--laptop {
+            @media(max-width: 1024px) {
+                display: block;
+                margin-top: 0;
+            }
+        }
+    }
+
+    &__cover {
+        display: flex;
+    }
+
     &__top {
         .container {
             padding: 28px 20px 20px;
@@ -424,8 +451,11 @@
         }
 
         .header__nav {
-            @media(max-width: 1600px) {
-                margin-left: auto;
+            margin-left: auto;
+            margin-right: 38px;
+
+            @media(max-width: 1235px) {
+                margin-right: 17px;
             }
 
             @media(max-width: 1024px) {
@@ -494,12 +524,12 @@
 
             @media(max-width: 1024px) {
                 overflow: auto;
-                margin-right: 40px;
+                margin-right: 0;
             }
 
-            @media(max-width: 600px) {
-                margin-right: 30px;
-            }
+            // @media(max-width: 600px) {
+            //     margin-right: 30px;
+            // }
         }
 
         .header__box {
@@ -626,8 +656,11 @@
 
     &__menu {
         position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         width: 100%;
-        min-height: 100vh;
+        min-height: calc(100vh - 90px);
         background-color: #fff;
         z-index: 200;
         opacity: 0;
@@ -636,7 +669,8 @@
 
         .container {
             overflow: auto;
-            height: 100vh;
+            margin: 0;
+            // height: 100vh;
         }
 
         &--active {
@@ -645,12 +679,18 @@
         }
     }
 
+    &__specific {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
     &__bloc {
         display: flex;
         flex-direction: column;
 
         @media(max-width: 1024px) {
-            margin-left: -40px;
+            margin-left: -30px;
             display: flex;
             flex-wrap: wrap;
             max-width: 750px;
@@ -671,6 +711,15 @@
         }
     }
 
+    &__unique {
+        padding: 25px 15px;
+        border-top: 1px solid $gray-1;
+
+        @media(max-width: 600px) {
+            padding: 15px;
+        }
+    }
+
     &__refer {
         display: block;
         font-weight: normal;
@@ -679,8 +728,8 @@
         margin-top: 24px;
 
         @media(max-width: 1024px) {
-            width: calc(25% - 40px);
-            margin-left: 40px;
+            width: calc(25% - 30px);
+            margin-left: 30px;
         }
 
         @media(max-width: 768px) {
@@ -716,7 +765,6 @@
         display: block;
         height: 18px;
         margin-left: auto;
-        margin-right: 19px;
         width: 49px;
 
         @media(max-width: 1024px) {
@@ -731,7 +779,7 @@
         position: absolute;
         z-index: -1;
         opacity: 0;
-        margin: 10px 0 0 20px;
+        height: auto;
     }
 
     .checkbox__text {
@@ -758,6 +806,7 @@
         @media(max-width: 1024px) {
             width: 41px;
             height: 22px;
+
             // background-position: 85% 50%;
         }
     }

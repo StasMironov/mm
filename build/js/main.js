@@ -841,45 +841,59 @@ $(function () {
     }
   }
 
-  if ($('#theme-button').exists()) {
-    var ChangeTheme = function ChangeTheme() {
-      var lightTheme = themeDefault;
-      var darkTheme = "/local/templates/magmetall/css/dark.css "; // let darkTheme = "css/dark.css ";
+  if ($('.theme-button').exists()) {
+    var btn;
+    var link;
+    var themeDefault;
 
-      var currTheme = link.getAttribute("href");
-      var theme = "";
+    (function () {
+      var ChangeTheme = function ChangeTheme() {
+        var lightTheme = themeDefault; //let darkTheme = "/local/templates/magmetall/css/dark.css ";
 
-      if (currTheme == lightTheme) {
-        currTheme = darkTheme;
-        theme = "dark";
+        var darkTheme = "css/dark.css ";
+        var currTheme = link.getAttribute("href");
+        var theme = "";
+
+        if (currTheme == lightTheme) {
+          currTheme = darkTheme;
+          theme = "dark";
+        } else {
+          currTheme = lightTheme;
+          theme = "light";
+        }
+
+        link.setAttribute("href", currTheme);
+        return currTheme;
+      };
+
+      btn = document.querySelectorAll(".theme-button");
+      link = document.getElementById("theme-link");
+      themeDefault = "";
+      console.log(btn);
+
+      for (var _i7 = 0; _i7 < btn.length; _i7++) {
+        btn[_i7].addEventListener("click", function () {
+          var theme = ChangeTheme();
+          sessionStorage.setItem('theme', theme);
+        });
+      } // btn.addEventListener("click", function () {
+      //     let theme = ChangeTheme();
+      //     sessionStorage.setItem('theme', theme)
+      // });
+
+
+      if (sessionStorage.getItem('theme') !== null) {
+        $('#theme-link').attr('href', sessionStorage.getItem('theme'));
+
+        if (sessionStorage.getItem('theme') == themeDefault) {
+          $('.header .checkbox input').prop('checked', true);
+        } else {
+          $('.header .checkbox input').prop('checked', false);
+        }
       } else {
-        currTheme = lightTheme;
-        theme = "light";
-      }
-
-      link.setAttribute("href", currTheme);
-      return currTheme;
-    };
-
-    var btn = document.getElementById("theme-button");
-    var link = document.getElementById("theme-link");
-    var themeDefault = "";
-    btn.addEventListener("click", function () {
-      var theme = ChangeTheme();
-      sessionStorage.setItem('theme', theme);
-    });
-
-    if (sessionStorage.getItem('theme') !== null) {
-      $('#theme-link').attr('href', sessionStorage.getItem('theme'));
-
-      if (sessionStorage.getItem('theme') == themeDefault) {
+        $('#theme-link').attr('href', themeDefault);
         $('.header .checkbox input').prop('checked', true);
-      } else {
-        $('.header .checkbox input').prop('checked', false);
       }
-    } else {
-      $('#theme-link').attr('href', themeDefault);
-      $('.header .checkbox input').prop('checked', true);
-    }
+    })();
   }
 });
