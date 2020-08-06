@@ -3,8 +3,19 @@
 //===== Function check element ==========//
 jQuery.fn.exists = function () {
   return $(this).length;
-}; // $('.fancybox').fancybox();
+};
 
+if ($(".content--ad").exists()) {
+  try {
+    if ($(".content--ad").children().length === 0) {
+      $(".content--ad").addClass('mf-empty');
+    } else {
+      $(".content--ad").removeClass('mf-empty');
+    }
+  } catch (err) {
+    console.log(err);
+  }
+}
 
 $(function () {
   var parentEl = '';
@@ -848,9 +859,9 @@ $(function () {
 
     (function () {
       var ChangeTheme = function ChangeTheme() {
-        var lightTheme = themeDefault; //let darkTheme = "/local/templates/magmetall/css/dark.css ";
+        var lightTheme = themeDefault;
+        var darkTheme = "/local/templates/magmetall/css/dark.css "; //let darkTheme = "css/dark.css ";
 
-        var darkTheme = "css/dark.css ";
         var currTheme = link.getAttribute("href");
         var theme = "";
 

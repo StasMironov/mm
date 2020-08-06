@@ -2,7 +2,20 @@
 jQuery.fn.exists = function () {
     return $(this).length;
 }
-// $('.fancybox').fancybox();
+
+
+if ($(".content--ad").exists()) {
+    try {
+        if ($(".content--ad").children().length === 0) {
+            $(".content--ad").addClass('mf-empty');
+        } else {
+            $(".content--ad").removeClass('mf-empty');
+        }
+    } catch (err) {
+        console.log(err);
+    }
+}
+
 $(() => {
 
     let parentEl = '';
@@ -25,6 +38,8 @@ $(() => {
             });
         }
     }
+
+
 
     if ($(".archive-filter__item--month-alternative input").exists()) {
         try {
