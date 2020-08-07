@@ -55,16 +55,15 @@
         }
     }
 
-    // .checkbox__text:before {
-    //     width: 41px !important;
-    //     height: 22px !important;
-    // }
 
-    // .checkbox__text:after {
-    //     width: 16px !important;
-    //     height: 16px !important;
-    //     left: 2px !important;
-    // }
+
+    .checkbox__text:before {
+        top: -3px !important;
+    }
+
+    .checkbox__text:after {
+        top: 0 !important;
+    }
 
     // .checkbox input:checked+.checkbox__text:after {
     //     left: 20px !important;
@@ -122,10 +121,8 @@
                 &:nth-child(2) {
                     width: 0;
                 }
-
             }
         }
-
     }
 
     .burger {
@@ -134,8 +131,6 @@
         span {
             height: 2px;
         }
-
-
     }
 }
 
