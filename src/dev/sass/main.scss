@@ -137,7 +137,9 @@ input::-ms-clear {
   // }
 
   &:hover .b-svg {
-    stroke: $purple-3
+    stroke: $purple-3;
+    right: 0;
+    opacity: 1;
   }
 
   .b-svg {
@@ -151,6 +153,9 @@ input::-ms-clear {
     stroke-width: 2;
     height: 12px;
     width: 12px;
+    right: 5px;
+    opacity: 0;
+    transition: .3s;
 
     @media(max-width: 600px) {
       top: 0;
