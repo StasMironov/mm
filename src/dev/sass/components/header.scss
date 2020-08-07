@@ -28,8 +28,10 @@
     }
 
     &__article {
-        font-size: 14px;
-        line-height: 20px;
+        // font-size: 14px;
+        // line-height: 20px;
+        font-size: 16px;
+        line-height: 22px;
     }
 
     &__in {
@@ -136,8 +138,13 @@
 
     &__nav {
         .header__link {
-            font-size: 14px;
-            line-height: 20px;
+            font-size: 16px;
+            line-height: 22px;
+
+            @media(max-width:1235px) {
+                font-size: 14px;
+                line-height: 22px;
+            }
         }
     }
 
@@ -183,14 +190,22 @@
 
                     &:nth-child(1) {
                         transform: rotate(45deg) !important;
-                        top: 6px;
+                        top: 8px;
                         transition: .4s;
+
+                        @media (max-width:1235px) {
+                            top: 6px;
+                        }
                     }
 
                     &:nth-child(3) {
                         transform: rotate(-45deg) !important;
-                        top: -6px;
+                        top: -8px;
                         transition: .4s;
+
+                        @media (max-width:1235px) {
+                            top: -6px;
+                        }
                     }
 
                     &:nth-child(2) {
@@ -205,7 +220,7 @@
     &__form {
         position: relative;
         width: 204px;
-        margin-left: 0;
+        margin-left: auto;
         background: #A3D0C3;
 
         @media(max-width: 1024px) {
@@ -335,7 +350,7 @@
         }
 
         &:not(:last-child) {
-            margin-right: 53px;
+            margin-right: 32px;
         }
 
         &--active {
@@ -354,7 +369,7 @@
         margin-right: 47px;
 
         @media(max-width: 1235px) {
-            width: 190px;
+            width: 170px;
             margin-right: 20px;
         }
 
@@ -495,7 +510,7 @@
 
         .header__link {
             &:not(:last-child) {
-                margin-right: 36px;
+                margin-right: 35px;
 
                 @media(max-width: 1600px) {
                     margin-right: 29px;
@@ -660,7 +675,7 @@
         flex-direction: column;
         justify-content: space-between;
         width: 100%;
-        min-height: calc(100vh - 90px);
+        min-height: calc(100vh - 100px);
         background-color: #fff;
         z-index: 200;
         opacity: 0;

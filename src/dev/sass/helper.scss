@@ -40,8 +40,13 @@
     }
 
     .header__logo {
-        height: 55px;
-        width: 100px;
+        height: 38px;
+        width: 128px;
+        margin-right: 40px;
+
+        @media (max-width: 1024px) {
+            margin-right: 0;
+        }
 
         @media (max-width: 600px) {
             // height: 50px;
@@ -50,23 +55,87 @@
         }
     }
 
-    .checkbox__text:before {
-        width: 41px !important;
-        height: 22px !important;
-    }
+    // .checkbox__text:before {
+    //     width: 41px !important;
+    //     height: 22px !important;
+    // }
 
-    .checkbox__text:after {
-        width: 16px !important;
-        height: 16px !important;
-        left: 2px !important;
-    }
+    // .checkbox__text:after {
+    //     width: 16px !important;
+    //     height: 16px !important;
+    //     left: 2px !important;
+    // }
 
-    .checkbox input:checked+.checkbox__text:after {
-        left: 20px !important;
-    }
+    // .checkbox input:checked+.checkbox__text:after {
+    //     left: 20px !important;
+    // }
+
+    // .checkbox {
+    //     width: 40px !important;
+    // }
 
     .header__form button {
-        width: 32px;
+        width: 40px;
+    }
+
+    .header__article,
+    .header__link {
+        font-size: 14px !important;
+        line-height: 19px !important;
+    }
+
+    .header__bottom {
+        padding-top: 5px !important;
+    }
+
+    .header__bottom .header__link:not(:last-child) {
+        margin-right: 37px;
+    }
+
+    .header__func--active {
+        color: $purple-3;
+
+        .burger {
+            span {
+                background-color: $purple-3;
+
+                &:nth-child(1) {
+                    transform: rotate(45deg) !important;
+                    top: 7px;
+                    transition: .4s;
+
+                    @media (max-width:1235px) {
+                        top: 6px;
+                    }
+                }
+
+                &:nth-child(3) {
+                    transform: rotate(-45deg) !important;
+                    top: -7px;
+                    transition: .4s;
+
+                    @media (max-width:1235px) {
+                        top: -6px;
+                    }
+                }
+
+                &:nth-child(2) {
+                    width: 0;
+                }
+
+            }
+        }
+
+    }
+
+    .burger {
+        width: 22px;
+
+        span {
+            height: 2px;
+        }
+
+
     }
 }
 

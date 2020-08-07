@@ -199,12 +199,12 @@ input::-ms-clear {
   span {
     position: relative;
     display: block;
-    height: 2px;
+    height: 3px;
     width: 100%;
     background-color: black;
     transition: .3s;
 
-    @media (max-width:600px) {
+    @media (max-width:1235px) {
       height: 2px;
     }
 
@@ -216,9 +216,9 @@ input::-ms-clear {
     }
 
     &:not(:last-child) {
-      margin-bottom: 4px;
+      margin-bottom: 5px;
 
-      @media (max-width:600px) {
+      @media (max-width:1235px) {
         margin-bottom: 4px;
       }
     }
@@ -465,12 +465,12 @@ button {
 
 .header__inner.mf-fixed .header__field,
 .header__inner.mf-fixed input {
-  height: 28px;
+  height: 39px;
 }
 
-.header__inner.mf-fixed .header__logo {
-  height: 30px;
-}
+// .header__inner.mf-fixed .header__logo {
+//   height: 30px;
+// }
 
 
 
