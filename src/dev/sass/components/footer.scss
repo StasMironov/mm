@@ -415,6 +415,14 @@
         // &:last-child {
         //     margin-top: 9px;
         // }
+
+        &--hidden {
+            display: none;
+
+            @media(max-width: 992px) {
+                display: block;
+            }
+        }
     }
 
     &__logo {
