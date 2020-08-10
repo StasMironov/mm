@@ -732,6 +732,7 @@
 
         @media(max-width: 600px) {
             padding: 15px;
+            padding-bottom: 70px;
         }
     }
 
@@ -816,7 +817,7 @@
         transition: .2s;
         background-image: url(../img/icon/light.svg);
         background-repeat: no-repeat;
-        background-position: 82% 50%;
+        background-position: 85% 50%;
 
         @media(max-width: 1024px) {
             width: 41px;
