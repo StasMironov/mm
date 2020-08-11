@@ -538,8 +538,20 @@
             }
 
             @media(max-width: 1024px) {
-                overflow: auto;
+                width: 100%;
                 margin-right: 0;
+            }
+
+            .mCS-my-theme.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+                background-color: transparent;
+            }
+
+            .mCS-my-theme.mCSB_scrollTools .mCSB_draggerRail {
+                background-color: transparent;
+            }
+
+            .mCSB_horizontal.mCSB_inside>.mCSB_container {
+                margin-bottom: 0;
             }
 
             // @media(max-width: 600px) {
@@ -675,7 +687,7 @@
         flex-direction: column;
         justify-content: space-between;
         width: 100%;
-        min-height: calc(100vh - 100px);
+        min-height: calc(100vh - 85px);
         background-color: #fff;
         z-index: 200;
         opacity: 0;

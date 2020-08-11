@@ -465,8 +465,8 @@ button {
 
 .header__inner.mf-fixed .header__top .container,
 .header__inner.mf-fixed .header__bottom .container {
-  padding-bottom: 10px !important;
-  padding-top: 10px !important;
+  // padding-bottom: 10px !important;
+  // padding-top: 10px !important;
 }
 
 .header__inner.mf-fixed .header__field,
@@ -502,7 +502,14 @@ button {
   }
 }
 
+.mcs-horizontal-example {
+  overflow-x: auto;
+  white-space: nowrap;
+}
 
+.mcs-horizontal-example .item {
+  display: inline-block;
+}
 
 
 @import "./components/404/absence.scss";

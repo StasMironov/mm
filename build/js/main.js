@@ -113,6 +113,27 @@ $(function () {
     "selector": ".video-gallery__item"
   });
 
+  if ($('.header__bottom .header__nav').exists) {
+    // const breakpoint = window.matchMedia('(max-width:1024px)');
+    // 
+    $(function () {
+      var csObj = new Object();
+      csObj.axis = "x";
+      csObj.theme = "my-theme";
+      csObj.advanced = {
+        autoExpandHorizontalScroll: true
+      };
+      csObj.scrollButtons = {
+        scrollType: "pixels",
+        scrollAmount: 300
+      };
+      csObj.mouseWheel = {
+        invert: true
+      };
+      $(".header__bottom .header__nav").mCustomScrollbar(csObj);
+    });
+  }
+
   if ($('.filter__item').exists()) {
     try {
       $('.filter__box').mCustomScrollbar({
