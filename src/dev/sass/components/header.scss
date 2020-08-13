@@ -667,7 +667,7 @@
     }
 
     &__items {
-        display: flex;
+        display: inline-flex;
         max-width: 850px;
         justify-content: space-between;
     }
@@ -675,11 +675,15 @@
     &__item {
         display: flex;
         flex-direction: column;
-        max-width: 255px;
+        max-width: initial;
 
-        // &:not(:last-child) {
-        //     margin-right: 140px;
-        // }
+        &:not(:last-child) {
+            margin-right: 140px;
+
+            @media(max-width: 768px) {
+                margin-right: 95px;
+            }
+        }
     }
 
     &__ref {

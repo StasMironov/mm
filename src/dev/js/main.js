@@ -3,6 +3,41 @@ jQuery.fn.exists = function () {
     return $(this).length;
 }
 
+function createLightGallery(bloc) {
+    if (['video-gallery'].indexOf(bloc) !== -1) {
+        // alert('777');
+        lightGallery(document.getElementById(bloc), {
+            thumbnail: false,
+            background: 'A90707',
+            "selector": ".video-gallery__item"
+        });
+    } else {
+        lightGallery(document.getElementById(bloc));
+    }
+
+}
+
+function checkGallery(bloc) {
+    if ($('#' + bloc).length > 0) {
+        try {
+            let block = document.getElementById(bloc);
+            if (window.lgData[block.getAttribute('lg-uid')]) {
+                window.lgData[block.getAttribute('lg-uid')].destroy(true);
+                createLightGallery(bloc);
+            } else {
+                createLightGallery(bloc);
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    }
+}
+
+BX.addCustomEvent('onAjaxSuccess', function () {
+    checkGallery('lightgallery');
+    checkGallery('video-gallery');
+    journalSlider();
+});
 
 if ($(".content--ad").exists()) {
     try {
@@ -17,6 +52,9 @@ if ($(".content--ad").exists()) {
 }
 
 $(() => {
+    journalSlider();
+    createLightGallery('lightgallery');
+    createLightGallery('video-gallery');
 
     let parentEl = '';
 
@@ -108,11 +146,7 @@ $(() => {
 
     adaptiveArticle('.article__box', '.article__cover');
 
-    lightGallery(document.getElementById('video-gallery'), {
-        thumbnail: false,
-        background: 'A90707',
-        "selector": ".video-gallery__item"
-    });
+
 
     if ($('.header__bottom .header__nav').exists) {
         // const breakpoint = window.matchMedia('(max-width:1024px)');
@@ -174,6 +208,80 @@ $(() => {
             });
         } catch (err) {
             console.log(err);
+        }
+    }
+
+    function journalSlider() {
+        if ($('.journal__items').exists) {
+            try {
+                const breakpoint = window.matchMedia('(min-width:501px)');
+                let mySwiper;
+
+                const breakpointChecker = function () {
+                    if (breakpoint.matches === true) {
+
+                        if ($('.journal__inner').exists()) {
+                            setHeaderHeight('.journal__inner', '.journal__cover');
+                            $(window).on('resize load', function () {
+                                setHeaderHeight('.journal__inner', '.journal__cover');
+                            });
+                        }
+                        return enableSwiper();
+                    } else if (breakpoint.matches === false) {
+                        if (mySwiper !== undefined) mySwiper.destroy(true, true);
+                        return;
+                    }
+                };
+
+                function enableSwiper() {
+                    $('.journal__items').each(function () {
+                        mySwiper = new Swiper('.' + $(this).data("id"), {
+                            slidesPerView: 4,
+                            spaceBetween: 18,
+                            stopOnLastSlide: false,
+                            disableOnInteraction: true,
+                            touchRatio: 0,
+                            breakpoints: {
+
+                                500: {
+                                    spaceBetween: 15,
+                                    slidesPerView: 3,
+                                },
+                                600: {
+                                    spaceBetween: 15,
+                                    slidesPerView: 3,
+                                },
+                                601: {
+                                    spaceBetween: 15,
+                                    slidesPerView: 4,
+                                },
+                                769: {
+                                    spaceBetween: 15,
+                                    slidesPerView: 5,
+                                },
+                                1024: {
+                                    spaceBetween: 15,
+                                    slidesPerView: 5,
+                                },
+                                1025: {
+                                    slidesPerView: 4,
+                                    spaceBetween: 18,
+                                }
+                            },
+                            navigation: {
+                                nextEl: '.journal__arrow.journal__arrow--next',
+                                prevEl: '.journal__arrow.journal__arrow--prev',
+                            },
+                        });
+                    });
+                }
+
+                breakpoint.addListener(breakpointChecker);
+                breakpointChecker();
+
+            } catch (err) {
+                console.log(err);
+            }
         }
     }
 
@@ -521,7 +629,9 @@ $(() => {
                             $(this).on('click', function () {
                                 $(txt).text($(this).text());
                                 $('.archive-filter__item--day').find('.archive-filter__block').remove();
-                                $(this).find('input').attr('currentYear', atributeForm.currentYear).closest('.archive-filter__block').siblings().find('input').removeAttr('currentyear');
+                                $(this).find('input').attr({
+                                    'currentYear': atributeForm.currentYear,
+                                }).closest('.archive-filter__block').siblings().find('input').removeAttr('currentyear').removeAttr('checked');
                                 checkEl();
                             });
                         });
@@ -830,7 +940,7 @@ $(() => {
 
     //========================================//
 
-    lightGallery(document.getElementById('lightgallery'));
+    // lightGallery(document.getElementById('lightgallery'));
 
     if ($("#input-search").exists) {
         try {
