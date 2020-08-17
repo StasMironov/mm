@@ -221,7 +221,6 @@
         position: relative;
         width: 204px;
         margin-left: auto;
-        background: #A3D0C3;
 
         @media(max-width: 1024px) {
             display: none
@@ -709,7 +708,9 @@
         flex-direction: column;
         justify-content: space-between;
         width: 100%;
-        min-height: calc(100vh - 85px);
+        height: 100vh;
+        height: calc((var(--vh, 1vh) * 100) - 80px);
+        //min-height: 100vh;
         background-color: #fff;
         z-index: 200;
         opacity: 0;
@@ -763,10 +764,11 @@
     &__unique {
         padding: 25px 15px;
         border-top: 1px solid $gray-1;
+        padding-bottom: 65px;
 
         @media(max-width: 600px) {
             padding: 15px;
-            padding-bottom: 70px;
+            // padding-bottom: 95px;
         }
     }
 
@@ -852,6 +854,7 @@
         background-image: url(../img/icon/light.svg);
         background-repeat: no-repeat;
         background-position: 85% 50%;
+        background-size: auto;
 
         @media(max-width: 1024px) {
             width: 41px;
@@ -886,6 +889,7 @@
         background-image: url(../img/icon/dark.svg);
         background-repeat: no-repeat;
         background-position: 15% 50%;
+        background-size: initial;
     }
 
     .checkbox input:checked+.checkbox__text:after {

@@ -110,6 +110,10 @@
     &__cover {
         position: relative;
         width: 100%;
+
+        @media(max-width: 500px) {
+            height: auto !important;
+        }
     }
 
     &__info {

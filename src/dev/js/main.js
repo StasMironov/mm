@@ -51,6 +51,17 @@ if ($(".content--ad").exists()) {
     }
 }
 
+$(window).on('load resize', () => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+
+$(document).on("click tap", () => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+
+
 $(() => {
     journalSlider();
     createLightGallery('lightgallery');

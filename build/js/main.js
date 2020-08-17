@@ -53,6 +53,14 @@ if ($(".content--ad").exists()) {
   }
 }
 
+$(window).on('load resize', function () {
+  var vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', "".concat(vh, "px"));
+});
+$(document).on("click tap", function () {
+  var vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', "".concat(vh, "px"));
+});
 $(function () {
   journalSlider();
   createLightGallery('lightgallery');
