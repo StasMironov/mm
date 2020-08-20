@@ -511,6 +511,50 @@ button {
   display: inline-block;
 }
 
+.showBtn {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+#btnUp {
+  display: inline-block;
+  background-color: $purple-3;
+  width: 38px;
+  height: 38px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 40px;
+  right: 58px;
+  transition: background-color .3s, opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+
+
+  &:hover {
+    cursor: pointer;
+    background-color: $gray-7;
+
+    & svg path {
+      stroke: $purple-3;
+    }
+  }
+
+  path {
+    transition: .3s;
+    stroke: $gray-1;
+  }
+
+  @media (max-width: 1023px) {
+    right: 20px;
+  }
+}
+
 
 @import "./components/404/absence.scss";
 @import "./components/agreement/agreement.scss";

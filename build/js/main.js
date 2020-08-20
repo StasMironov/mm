@@ -3,11 +3,155 @@
 //===== Function check element ==========//
 jQuery.fn.exists = function () {
   return $(this).length;
-};
+}; // BX.ready(function () {
+//     BX.addCustomEvent('onAjaxSuccess', function () {
+//         checkGallery('lightgallery');
+//         checkGallery('video-gallery');
+//         journalSlider();
+//         articleSlider();
+//     });
+// });
+
+
+var btn = $('#btnUp');
+$(window).scroll(function () {
+  if ($(window).scrollTop() > 300) {
+    btn.addClass('showBtn');
+  } else {
+    btn.removeClass('showBtn');
+  }
+});
+btn.on('click', function (e) {
+  e.preventDefault();
+  $('html, body').animate({
+    scrollTop: 0
+  }, '300');
+});
+
+function articleSlider() {
+  if ($('.author-articles__grid--slider').exists) {
+    try {
+      var breakpoint = window.matchMedia('(min-width:600px)');
+      var mySwiper;
+
+      var breakpointChecker = function breakpointChecker() {
+        if (breakpoint.matches === true) {
+          if (mySwiper !== undefined) mySwiper.destroy(true, true);
+          return;
+        } else if (breakpoint.matches === false) {
+          return enableSwiper();
+        }
+      };
+
+      var enableSwiper = function enableSwiper() {
+        mySwiper = new Swiper('.author-articles__grid--slider', {
+          slidesPerView: 'auto',
+          spaceBetween: 16,
+          loop: true,
+          autoplay: true,
+          delay: 3000,
+          stopOnLastSlide: false,
+          disableOnInteraction: true
+        });
+      };
+
+      breakpoint.addListener(breakpointChecker);
+      breakpointChecker();
+    } catch (err) {
+      console.log(err);
+    }
+  }
+}
+
+function setHeaderHeight(child, parent) {
+  var height = $(child).height();
+  $(parent).css({
+    height: height + "px" // приравниванием высоту header'a к высоте абсолютного элемента
+
+  });
+}
+
+function journalSlider() {
+  if ($('.journal__items').exists) {
+    try {
+      var enableSwiper = function enableSwiper() {
+        $('.journal__items').each(function () {
+          mySwiper = new Swiper('.' + $(this).data("id"), {
+            slidesPerView: 4,
+            spaceBetween: 18,
+            stopOnLastSlide: false,
+            disableOnInteraction: true,
+            touchRatio: 0,
+            breakpoints: {
+              500: {
+                spaceBetween: 15,
+                slidesPerView: 3
+              },
+              600: {
+                spaceBetween: 15,
+                slidesPerView: 3
+              },
+              601: {
+                spaceBetween: 15,
+                slidesPerView: 4
+              },
+              769: {
+                spaceBetween: 15,
+                slidesPerView: 5
+              },
+              1024: {
+                spaceBetween: 15,
+                slidesPerView: 5
+              },
+              1025: {
+                slidesPerView: 4,
+                spaceBetween: 18
+              }
+            },
+            navigation: {
+              nextEl: '.journal__arrow.journal__arrow--next',
+              prevEl: '.journal__arrow.journal__arrow--prev'
+            }
+          });
+        });
+      };
+
+      var breakpoint = window.matchMedia('(min-width:501px)');
+      var mySwiper;
+
+      var breakpointChecker = function breakpointChecker() {
+        if (breakpoint.matches === true) {
+          if ($('.journal__inner').exists()) {
+            setHeaderHeight('.journal__inner', '.journal__cover');
+            $(window).on('resize load', function () {
+              setHeaderHeight('.journal__inner', '.journal__cover');
+            });
+          }
+
+          return enableSwiper();
+        } else if (breakpoint.matches === false) {
+          if (mySwiper !== undefined) mySwiper.destroy(true, true);
+          return;
+        }
+      };
+
+      breakpoint.addListener(breakpointChecker);
+      breakpointChecker();
+    } catch (err) {
+      console.log(err);
+    }
+  }
+}
 
 function createLightGallery(bloc) {
-  if (['video-gallery'].indexOf(bloc) !== -1) {
-    // alert('777');
+  if (['archiveVideo'].indexOf(bloc) !== -1) {
+    lightGallery(document.getElementById(bloc), {
+      thumbnail: false,
+      background: 'A90707',
+      "selector": ".news-archive__block"
+    });
+    console.log('777');
+  } else if (['video-gallery'].indexOf(bloc) !== -1) {
     lightGallery(document.getElementById(bloc), {
       thumbnail: false,
       background: 'A90707',
@@ -35,12 +179,6 @@ function checkGallery(bloc) {
   }
 }
 
-BX.addCustomEvent('onAjaxSuccess', function () {
-  checkGallery('lightgallery');
-  checkGallery('video-gallery');
-  journalSlider();
-});
-
 if ($(".content--ad").exists()) {
   try {
     if ($(".content--ad").children().length === 0) {
@@ -53,6 +191,10 @@ if ($(".content--ad").exists()) {
   }
 }
 
+$(window).on('load', function () {
+  var vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', "".concat(vh, "px"));
+});
 $(window).on('load resize', function () {
   var vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', "".concat(vh, "px"));
@@ -63,18 +205,11 @@ $(document).on("click tap", function () {
 });
 $(function () {
   journalSlider();
+  articleSlider();
+  createLightGallery('archiveVideo');
   createLightGallery('lightgallery');
   createLightGallery('video-gallery');
   var parentEl = '';
-
-  function setHeaderHeight(child, parent) {
-    var height = $(child).height();
-    $(parent).css({
-      height: height + "px" // приравниванием высоту header'a к высоте абсолютного элемента
-
-    });
-    console.log($(child).height());
-  }
 
   function adaptiveArticle(container, text) {
     if ($(container).exists()) {
@@ -123,6 +258,12 @@ $(function () {
       $('.burger--laptop').on('click', function () {
         $(this).toggleClass('burger--active');
         $('.header__menu').toggleClass('header__menu--active');
+
+        if ($('.burger--laptop').hasClass('burger--active')) {
+          $("html").css("overflow", "hidden");
+        } else {
+          $("html").css("overflow", "auto");
+        }
       });
     } catch (err) {
       console.log(err);
@@ -214,149 +355,72 @@ $(function () {
     } catch (err) {
       console.log(err);
     }
-  }
+  } // if ($('.journal__items').exists) {
+  //     try {
+  //         const breakpoint = window.matchMedia('(min-width:501px)');
+  //         let mySwiper;
+  //         const breakpointChecker = function () {
+  //             if (breakpoint.matches === true) {
+  //                 if ($('.journal__inner').exists()) {
+  //                     setHeaderHeight('.journal__inner', '.journal__cover');
+  //                     $(window).on('resize load', function () {
+  //                         setHeaderHeight('.journal__inner', '.journal__cover');
+  //                     });
+  //                 }
+  //                 return enableSwiper();
+  //             } else if (breakpoint.matches === false) {
+  //                 if (mySwiper !== undefined) mySwiper.destroy(true, true);
+  //                 return;
+  //             }
+  //         };
+  //         function enableSwiper() {
+  //             $('.journal__items').each(function () {
+  //                 mySwiper = new Swiper('.' + $(this).data("id"), {
+  //                     slidesPerView: 4,
+  //                     spaceBetween: 18,
+  //                     stopOnLastSlide: false,
+  //                     disableOnInteraction: true,
+  //                     touchRatio: 0,
+  //                     breakpoints: {
+  //                         500: {
+  //                             spaceBetween: 15,
+  //                             slidesPerView: 3,
+  //                         },
+  //                         600: {
+  //                             spaceBetween: 15,
+  //                             slidesPerView: 3,
+  //                         },
+  //                         601: {
+  //                             spaceBetween: 15,
+  //                             slidesPerView: 4,
+  //                         },
+  //                         769: {
+  //                             spaceBetween: 15,
+  //                             slidesPerView: 5,
+  //                         },
+  //                         1024: {
+  //                             spaceBetween: 15,
+  //                             slidesPerView: 5,
+  //                         },
+  //                         1025: {
+  //                             slidesPerView: 4,
+  //                             spaceBetween: 18,
+  //                         }
+  //                     },
+  //                     navigation: {
+  //                         nextEl: '.journal__arrow.journal__arrow--next',
+  //                         prevEl: '.journal__arrow.journal__arrow--prev',
+  //                     },
+  //                 });
+  //             });
+  //         }
+  //         breakpoint.addListener(breakpointChecker);
+  //         breakpointChecker();
+  //     } catch (err) {
+  //         console.log(err);
+  //     }
+  // }
 
-  function journalSlider() {
-    if ($('.journal__items').exists) {
-      try {
-        var enableSwiper = function enableSwiper() {
-          $('.journal__items').each(function () {
-            mySwiper = new Swiper('.' + $(this).data("id"), {
-              slidesPerView: 4,
-              spaceBetween: 18,
-              stopOnLastSlide: false,
-              disableOnInteraction: true,
-              touchRatio: 0,
-              breakpoints: {
-                500: {
-                  spaceBetween: 15,
-                  slidesPerView: 3
-                },
-                600: {
-                  spaceBetween: 15,
-                  slidesPerView: 3
-                },
-                601: {
-                  spaceBetween: 15,
-                  slidesPerView: 4
-                },
-                769: {
-                  spaceBetween: 15,
-                  slidesPerView: 5
-                },
-                1024: {
-                  spaceBetween: 15,
-                  slidesPerView: 5
-                },
-                1025: {
-                  slidesPerView: 4,
-                  spaceBetween: 18
-                }
-              },
-              navigation: {
-                nextEl: '.journal__arrow.journal__arrow--next',
-                prevEl: '.journal__arrow.journal__arrow--prev'
-              }
-            });
-          });
-        };
-
-        var breakpoint = window.matchMedia('(min-width:501px)');
-        var mySwiper;
-
-        var breakpointChecker = function breakpointChecker() {
-          if (breakpoint.matches === true) {
-            if ($('.journal__inner').exists()) {
-              setHeaderHeight('.journal__inner', '.journal__cover');
-              $(window).on('resize load', function () {
-                setHeaderHeight('.journal__inner', '.journal__cover');
-              });
-            }
-
-            return enableSwiper();
-          } else if (breakpoint.matches === false) {
-            if (mySwiper !== undefined) mySwiper.destroy(true, true);
-            return;
-          }
-        };
-
-        breakpoint.addListener(breakpointChecker);
-        breakpointChecker();
-      } catch (err) {
-        console.log(err);
-      }
-    }
-  }
-
-  if ($('.journal__items').exists) {
-    try {
-      var enableSwiper = function enableSwiper() {
-        $('.journal__items').each(function () {
-          mySwiper = new Swiper('.' + $(this).data("id"), {
-            slidesPerView: 4,
-            spaceBetween: 18,
-            stopOnLastSlide: false,
-            disableOnInteraction: true,
-            touchRatio: 0,
-            breakpoints: {
-              500: {
-                spaceBetween: 15,
-                slidesPerView: 3
-              },
-              600: {
-                spaceBetween: 15,
-                slidesPerView: 3
-              },
-              601: {
-                spaceBetween: 15,
-                slidesPerView: 4
-              },
-              769: {
-                spaceBetween: 15,
-                slidesPerView: 5
-              },
-              1024: {
-                spaceBetween: 15,
-                slidesPerView: 5
-              },
-              1025: {
-                slidesPerView: 4,
-                spaceBetween: 18
-              }
-            },
-            navigation: {
-              nextEl: '.journal__arrow.journal__arrow--next',
-              prevEl: '.journal__arrow.journal__arrow--prev'
-            }
-          });
-        });
-      };
-
-      var breakpoint = window.matchMedia('(min-width:501px)');
-      var mySwiper;
-
-      var breakpointChecker = function breakpointChecker() {
-        if (breakpoint.matches === true) {
-          if ($('.journal__inner').exists()) {
-            setHeaderHeight('.journal__inner', '.journal__cover');
-            $(window).on('resize load', function () {
-              setHeaderHeight('.journal__inner', '.journal__cover');
-            });
-          }
-
-          return enableSwiper();
-        } else if (breakpoint.matches === false) {
-          if (mySwiper !== undefined) mySwiper.destroy(true, true);
-          return;
-        }
-      };
-
-      breakpoint.addListener(breakpointChecker);
-      breakpointChecker();
-    } catch (err) {
-      console.log(err);
-    }
-  }
 
   function adaptiveBloc(container, item, bloc, picture) {
     if ($(container).exists()) {
@@ -499,7 +563,6 @@ $(function () {
     if ($('.archive-filter__item').exists) {
       try {
         if (parent == '.archive-filter__item--year') {
-          console.log(parent);
           var filterBloc = document.querySelector('.archive-filter__item--year');
           parentEl = filterBloc.querySelector('.archive-filter__list'); //  parentEl = $(parent).find('.archive-filter__list');
 
@@ -699,41 +762,6 @@ $(function () {
         $('.header__func').toggleClass('header__func--active');
         $('.header__section').toggleClass('header__section--active');
       });
-    } catch (err) {
-      console.log(err);
-    }
-  }
-
-  if ($('.author-articles__grid--slider').exists) {
-    try {
-      var _breakpoint = window.matchMedia('(min-width:600px)');
-
-      var _mySwiper;
-
-      var _breakpointChecker = function _breakpointChecker() {
-        if (_breakpoint.matches === true) {
-          if (_mySwiper !== undefined) _mySwiper.destroy(true, true);
-          return;
-        } else if (_breakpoint.matches === false) {
-          return _enableSwiper();
-        }
-      };
-
-      var _enableSwiper = function _enableSwiper() {
-        _mySwiper = new Swiper('.author-articles__grid--slider', {
-          slidesPerView: 'auto',
-          spaceBetween: 16,
-          loop: true,
-          autoplay: true,
-          delay: 3000,
-          stopOnLastSlide: false,
-          disableOnInteraction: true
-        });
-      };
-
-      _breakpoint.addListener(_breakpointChecker);
-
-      _breakpointChecker();
     } catch (err) {
       console.log(err);
     }
@@ -995,9 +1023,9 @@ $(function () {
 
     (function () {
       var ChangeTheme = function ChangeTheme() {
-        var lightTheme = themeDefault;
-        var darkTheme = "/local/templates/magmetall/css/dark.css "; //let darkTheme = "css/dark.css ";
+        var lightTheme = themeDefault; //let darkTheme = "/local/templates/magmetall/css/dark.css ";
 
+        var darkTheme = "css/dark.css ";
         var currTheme = link.getAttribute("href");
         var theme = "";
 

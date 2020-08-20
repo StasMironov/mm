@@ -3,299 +3,75 @@ jQuery.fn.exists = function () {
     return $(this).length;
 }
 
-function createLightGallery(bloc) {
-    if (['video-gallery'].indexOf(bloc) !== -1) {
-        // alert('777');
-        lightGallery(document.getElementById(bloc), {
-            thumbnail: false,
-            background: 'A90707',
-            "selector": ".video-gallery__item"
-        });
+// BX.ready(function () {
+//     BX.addCustomEvent('onAjaxSuccess', function () {
+//         checkGallery('lightgallery');
+//         checkGallery('video-gallery');
+//         journalSlider();
+//         articleSlider();
+//     });
+// });
+
+var btn = $('#btnUp');
+
+$(window).scroll(function () {
+    if ($(window).scrollTop() > 300) {
+        btn.addClass('showBtn');
     } else {
-        lightGallery(document.getElementById(bloc));
+        btn.removeClass('showBtn');
     }
+});
 
-}
+btn.on('click', function (e) {
+    e.preventDefault();
+    $('html, body').animate({
+        scrollTop: 0
+    }, '300');
+});
 
-function checkGallery(bloc) {
-    if ($('#' + bloc).length > 0) {
+function articleSlider() {
+    if ($('.author-articles__grid--slider').exists) {
         try {
-            let block = document.getElementById(bloc);
-            if (window.lgData[block.getAttribute('lg-uid')]) {
-                window.lgData[block.getAttribute('lg-uid')].destroy(true);
-                createLightGallery(bloc);
-            } else {
-                createLightGallery(bloc);
-            }
-        } catch (err) {
-            console.log(err);
-        }
-    }
-}
+            const breakpoint = window.matchMedia('(min-width:600px)');
+            let mySwiper;
 
-BX.addCustomEvent('onAjaxSuccess', function () {
-    checkGallery('lightgallery');
-    checkGallery('video-gallery');
-    journalSlider();
-});
-
-if ($(".content--ad").exists()) {
-    try {
-        if ($(".content--ad").children().length === 0) {
-            $(".content--ad").addClass('mf-empty');
-        } else {
-            $(".content--ad").removeClass('mf-empty');
-        }
-    } catch (err) {
-        console.log(err);
-    }
-}
-
-$(window).on('load resize', () => {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-});
-
-$(document).on("click tap", () => {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-});
-
-
-$(() => {
-    journalSlider();
-    createLightGallery('lightgallery');
-    createLightGallery('video-gallery');
-
-    let parentEl = '';
-
-    function setHeaderHeight(child, parent) {
-        var height = $(child).height();
-        $(parent).css({
-            height: height + "px" // приравниванием высоту header'a к высоте абсолютного элемента
-        });
-        console.log($(child).height());
-    }
-
-    function adaptiveArticle(container, text) {
-        if ($(container).exists()) {
-            $(container).each(function () {
-                let temp = $(this).find(text);
-                if (!temp.length > 0) {
-                    $(this).addClass('article__box--full');
+            const breakpointChecker = function () {
+                if (breakpoint.matches === true) {
+                    if (mySwiper !== undefined) mySwiper.destroy(true, true);
+                    return;
+                } else if (breakpoint.matches === false) {
+                    return enableSwiper();
                 }
-            });
-        }
-    }
-
-
-
-    if ($(".archive-filter__item--month-alternative input").exists()) {
-        try {
-            $(".archive-filter__item--month-alternative input").change(function () {
-                if (this.checked) {
-                    let month = parseInt($(this).val()) - 1;
-                    let days = [31, 29, 31, 30, 31, 30, 31, 30, 31, 30, 31, 30];
-
-                    if (parseInt($('.archive-filter__item--day-alternative').find('.archive-filter__txt').text()) > days[month]) {
-                        $('.archive-filter__item--day-alternative input[checked="checked"]').removeAttr('checked');
-                        $('.archive-filter__item--day-alternative input[value="' + days[month] + '"]').first().attr('checked', 'checked');
-                        $('.archive-filter__item--day-alternative').find('.archive-filter__txt').text(days[month]);
-                    }
-                }
-            });
-        } catch (err) {
-            console.log(err);
-        }
-    }
-
-    if ($('.btn--close').exists) {
-        try {
-            $('.btn--close').on('click', function (event) {
-                event.preventDefault();
-                $('.header__search--laptop input').val('');
-            });
-        } catch (err) {
-            console.log(err);
-        }
-    }
-
-    if ($('.burger--laptop').exists) {
-        try {
-            $('.burger--laptop').on('click', function () {
-                $(this).toggleClass('burger--active');
-                $('.header__menu').toggleClass('header__menu--active');
-            });
-        } catch (err) {
-            console.log(err);
-        }
-    }
-
-    if ($('.edition-rewards').length > 0) {
-        try {
-            $('head').append('<link rel="stylesheet" type="text/css" href="css/lightgallery.min.css">');
-        } catch (err) {
-            console.log(err);
-        }
-    }
-
-    if ($('.news-detail').length > 0) {
-        try {
-            $('head').append('<link rel="stylesheet" type="text/css" href="css/lightgallery.min.css">');
-        } catch (err) {
-            console.log(err);
-        }
-    }
-
-    if ($('#video-gallery').length > 0) {
-        try {
-            $('head').append('<link rel="stylesheet" type="text/css" href="css/lg-video.css">');
-        } catch (err) {
-            console.log(err);
-        }
-    }
-
-    adaptiveArticle('.article__box', '.article__cover');
-
-
-
-    if ($('.header__bottom .header__nav').exists) {
-        // const breakpoint = window.matchMedia('(max-width:1024px)');
-        // 
-
-        $(function () {
-            var csObj = new Object();
-            csObj.axis = "x";
-            csObj.theme = "my-theme";
-            csObj.advanced = {
-                autoExpandHorizontalScroll: true
             };
-            csObj.scrollButtons = {
-                scrollType: "pixels",
-                scrollAmount: 300
-            };
-            csObj.mouseWheel = {
-                invert: true
-            };
-            $(".header__bottom .header__nav").mCustomScrollbar(csObj);
-        });
-    }
 
-    if ($('.filter__item').exists()) {
-        try {
-            $('.filter__box').mCustomScrollbar({
-                theme: "dark",
-                mouseWheelPixels: 90
-            });
-            $('.filter__bloc').on('click', function () {
-                $('.filter__item').toggleClass('filter__item--active');
-            });
-
-            $('.filter__block').each(function () {
-                $(this).on('click', function () {
-                    let temp = $(this).find('label').text();
-                    $('.filter__txt').text(temp);
-                    $(this).closest('.filter__item').removeClass('filter__item--active');
+            const enableSwiper = function () {
+                mySwiper = new Swiper('.author-articles__grid--slider', {
+                    slidesPerView: 'auto',
+                    spaceBetween: 16,
+                    loop: true,
+                    autoplay: true,
+                    delay: 3000,
+                    stopOnLastSlide: false,
+                    disableOnInteraction: true,
                 });
-            });
+            };
 
-            $(document).on('click', function (event) {
-                let target = event.target;
-
-                if (!$(target).hasClass('.filter__item')) {
-                    $(this).closest('.filter__item').removeClass('filter__item--active');
-                }
-            });
-
-            jQuery(function ($) {
-                $(document).mouseup(function (e) { // событие клика по веб-документу
-                    var div = $(".filter__item"); // тут указываем ID элемента
-                    if (!div.is(e.target) // если клик был не по нашему блоку
-                        &&
-                        div.has(e.target).length === 0) { // и не по его дочерним элементам
-                        div.removeClass('filter__item--active') // скрываем его
-                    }
-                });
-            });
+            breakpoint.addListener(breakpointChecker);
+            breakpointChecker();
         } catch (err) {
             console.log(err);
         }
     }
+}
 
-    function journalSlider() {
-        if ($('.journal__items').exists) {
-            try {
-                const breakpoint = window.matchMedia('(min-width:501px)');
-                let mySwiper;
+function setHeaderHeight(child, parent) {
+    var height = $(child).height();
+    $(parent).css({
+        height: height + "px" // приравниванием высоту header'a к высоте абсолютного элемента
+    });
+}
 
-                const breakpointChecker = function () {
-                    if (breakpoint.matches === true) {
-
-                        if ($('.journal__inner').exists()) {
-                            setHeaderHeight('.journal__inner', '.journal__cover');
-                            $(window).on('resize load', function () {
-                                setHeaderHeight('.journal__inner', '.journal__cover');
-                            });
-                        }
-                        return enableSwiper();
-                    } else if (breakpoint.matches === false) {
-                        if (mySwiper !== undefined) mySwiper.destroy(true, true);
-                        return;
-                    }
-                };
-
-                function enableSwiper() {
-                    $('.journal__items').each(function () {
-                        mySwiper = new Swiper('.' + $(this).data("id"), {
-                            slidesPerView: 4,
-                            spaceBetween: 18,
-                            stopOnLastSlide: false,
-                            disableOnInteraction: true,
-                            touchRatio: 0,
-                            breakpoints: {
-
-                                500: {
-                                    spaceBetween: 15,
-                                    slidesPerView: 3,
-                                },
-                                600: {
-                                    spaceBetween: 15,
-                                    slidesPerView: 3,
-                                },
-                                601: {
-                                    spaceBetween: 15,
-                                    slidesPerView: 4,
-                                },
-                                769: {
-                                    spaceBetween: 15,
-                                    slidesPerView: 5,
-                                },
-                                1024: {
-                                    spaceBetween: 15,
-                                    slidesPerView: 5,
-                                },
-                                1025: {
-                                    slidesPerView: 4,
-                                    spaceBetween: 18,
-                                }
-                            },
-                            navigation: {
-                                nextEl: '.journal__arrow.journal__arrow--next',
-                                prevEl: '.journal__arrow.journal__arrow--prev',
-                            },
-                        });
-                    });
-                }
-
-                breakpoint.addListener(breakpointChecker);
-                breakpointChecker();
-
-            } catch (err) {
-                console.log(err);
-            }
-        }
-    }
-
+function journalSlider() {
     if ($('.journal__items').exists) {
         try {
             const breakpoint = window.matchMedia('(min-width:501px)');
@@ -367,6 +143,299 @@ $(() => {
             console.log(err);
         }
     }
+}
+
+function createLightGallery(bloc) {
+    if (['archiveVideo'].indexOf(bloc) !== -1) {
+        lightGallery(document.getElementById(bloc), {
+            thumbnail: false,
+            background: 'A90707',
+            "selector": ".news-archive__block"
+        });
+        console.log('777');
+    } else if (['video-gallery'].indexOf(bloc) !== -1) {
+        lightGallery(document.getElementById(bloc), {
+            thumbnail: false,
+            background: 'A90707',
+            "selector": ".video-gallery__item"
+        });
+    } else {
+        lightGallery(document.getElementById(bloc));
+    }
+}
+
+function checkGallery(bloc) {
+    if ($('#' + bloc).length > 0) {
+        try {
+            let block = document.getElementById(bloc);
+            if (window.lgData[block.getAttribute('lg-uid')]) {
+                window.lgData[block.getAttribute('lg-uid')].destroy(true);
+                createLightGallery(bloc);
+            } else {
+                createLightGallery(bloc);
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    }
+}
+
+if ($(".content--ad").exists()) {
+    try {
+        if ($(".content--ad").children().length === 0) {
+            $(".content--ad").addClass('mf-empty');
+        } else {
+            $(".content--ad").removeClass('mf-empty');
+        }
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+$(window).on('load', () => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+
+$(window).on('load resize', () => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+
+$(document).on("click tap", () => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+
+
+$(() => {
+    journalSlider();
+    articleSlider();
+    createLightGallery('archiveVideo');
+    createLightGallery('lightgallery');
+    createLightGallery('video-gallery');
+
+    let parentEl = '';
+
+    function adaptiveArticle(container, text) {
+        if ($(container).exists()) {
+            $(container).each(function () {
+                let temp = $(this).find(text);
+                if (!temp.length > 0) {
+                    $(this).addClass('article__box--full');
+                }
+            });
+        }
+    }
+
+    if ($(".archive-filter__item--month-alternative input").exists()) {
+        try {
+            $(".archive-filter__item--month-alternative input").change(function () {
+                if (this.checked) {
+                    let month = parseInt($(this).val()) - 1;
+                    let days = [31, 29, 31, 30, 31, 30, 31, 30, 31, 30, 31, 30];
+
+                    if (parseInt($('.archive-filter__item--day-alternative').find('.archive-filter__txt').text()) > days[month]) {
+                        $('.archive-filter__item--day-alternative input[checked="checked"]').removeAttr('checked');
+                        $('.archive-filter__item--day-alternative input[value="' + days[month] + '"]').first().attr('checked', 'checked');
+                        $('.archive-filter__item--day-alternative').find('.archive-filter__txt').text(days[month]);
+                    }
+                }
+            });
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+    if ($('.btn--close').exists) {
+        try {
+            $('.btn--close').on('click', function (event) {
+                event.preventDefault();
+                $('.header__search--laptop input').val('');
+            });
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+    if ($('.burger--laptop').exists) {
+        try {
+            $('.burger--laptop').on('click', function () {
+                $(this).toggleClass('burger--active');
+                $('.header__menu').toggleClass('header__menu--active');
+
+                if ($('.burger--laptop').hasClass('burger--active')) {
+                    $("html").css("overflow", "hidden");
+                } else {
+                    $("html").css("overflow", "auto");
+                }
+
+            });
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+    if ($('.edition-rewards').length > 0) {
+        try {
+            $('head').append('<link rel="stylesheet" type="text/css" href="css/lightgallery.min.css">');
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+    if ($('.news-detail').length > 0) {
+        try {
+            $('head').append('<link rel="stylesheet" type="text/css" href="css/lightgallery.min.css">');
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+    if ($('#video-gallery').length > 0) {
+        try {
+            $('head').append('<link rel="stylesheet" type="text/css" href="css/lg-video.css">');
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+    adaptiveArticle('.article__box', '.article__cover');
+
+    if ($('.header__bottom .header__nav').exists) {
+        // const breakpoint = window.matchMedia('(max-width:1024px)');
+        // 
+
+        $(function () {
+            var csObj = new Object();
+            csObj.axis = "x";
+            csObj.theme = "my-theme";
+            csObj.advanced = {
+                autoExpandHorizontalScroll: true
+            };
+            csObj.scrollButtons = {
+                scrollType: "pixels",
+                scrollAmount: 300
+            };
+            csObj.mouseWheel = {
+                invert: true
+            };
+            $(".header__bottom .header__nav").mCustomScrollbar(csObj);
+        });
+    }
+
+    if ($('.filter__item').exists()) {
+        try {
+            $('.filter__box').mCustomScrollbar({
+                theme: "dark",
+                mouseWheelPixels: 90
+            });
+            $('.filter__bloc').on('click', function () {
+                $('.filter__item').toggleClass('filter__item--active');
+            });
+
+            $('.filter__block').each(function () {
+                $(this).on('click', function () {
+                    let temp = $(this).find('label').text();
+                    $('.filter__txt').text(temp);
+                    $(this).closest('.filter__item').removeClass('filter__item--active');
+                });
+            });
+
+            $(document).on('click', function (event) {
+                let target = event.target;
+
+                if (!$(target).hasClass('.filter__item')) {
+                    $(this).closest('.filter__item').removeClass('filter__item--active');
+                }
+            });
+
+            jQuery(function ($) {
+                $(document).mouseup(function (e) { // событие клика по веб-документу
+                    var div = $(".filter__item"); // тут указываем ID элемента
+                    if (!div.is(e.target) // если клик был не по нашему блоку
+                        &&
+                        div.has(e.target).length === 0) { // и не по его дочерним элементам
+                        div.removeClass('filter__item--active') // скрываем его
+                    }
+                });
+            });
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+    // if ($('.journal__items').exists) {
+    //     try {
+    //         const breakpoint = window.matchMedia('(min-width:501px)');
+    //         let mySwiper;
+
+    //         const breakpointChecker = function () {
+    //             if (breakpoint.matches === true) {
+
+    //                 if ($('.journal__inner').exists()) {
+    //                     setHeaderHeight('.journal__inner', '.journal__cover');
+    //                     $(window).on('resize load', function () {
+    //                         setHeaderHeight('.journal__inner', '.journal__cover');
+    //                     });
+    //                 }
+    //                 return enableSwiper();
+    //             } else if (breakpoint.matches === false) {
+    //                 if (mySwiper !== undefined) mySwiper.destroy(true, true);
+    //                 return;
+    //             }
+    //         };
+
+    //         function enableSwiper() {
+    //             $('.journal__items').each(function () {
+    //                 mySwiper = new Swiper('.' + $(this).data("id"), {
+    //                     slidesPerView: 4,
+    //                     spaceBetween: 18,
+    //                     stopOnLastSlide: false,
+    //                     disableOnInteraction: true,
+    //                     touchRatio: 0,
+    //                     breakpoints: {
+
+    //                         500: {
+    //                             spaceBetween: 15,
+    //                             slidesPerView: 3,
+    //                         },
+    //                         600: {
+    //                             spaceBetween: 15,
+    //                             slidesPerView: 3,
+    //                         },
+    //                         601: {
+    //                             spaceBetween: 15,
+    //                             slidesPerView: 4,
+    //                         },
+    //                         769: {
+    //                             spaceBetween: 15,
+    //                             slidesPerView: 5,
+    //                         },
+    //                         1024: {
+    //                             spaceBetween: 15,
+    //                             slidesPerView: 5,
+    //                         },
+    //                         1025: {
+    //                             slidesPerView: 4,
+    //                             spaceBetween: 18,
+    //                         }
+    //                     },
+    //                     navigation: {
+    //                         nextEl: '.journal__arrow.journal__arrow--next',
+    //                         prevEl: '.journal__arrow.journal__arrow--prev',
+    //                     },
+    //                 });
+    //             });
+    //         }
+
+    //         breakpoint.addListener(breakpointChecker);
+    //         breakpointChecker();
+
+    //     } catch (err) {
+    //         console.log(err);
+    //     }
+    // }
 
     function adaptiveBloc(container, item, bloc, picture) {
         if ($(container).exists()) {
@@ -524,7 +593,6 @@ $(() => {
         if ($('.archive-filter__item').exists) {
             try {
                 if (parent == '.archive-filter__item--year') {
-                    console.log(parent);
                     let filterBloc = document.querySelector('.archive-filter__item--year');
                     parentEl = filterBloc.querySelector('.archive-filter__list');
 
@@ -725,39 +793,6 @@ $(() => {
                 $('.header__func').toggleClass('header__func--active');
                 $('.header__section').toggleClass('header__section--active');
             });
-        } catch (err) {
-            console.log(err);
-        }
-    }
-
-    if ($('.author-articles__grid--slider').exists) {
-        try {
-            const breakpoint = window.matchMedia('(min-width:600px)');
-            let mySwiper;
-
-            const breakpointChecker = function () {
-                if (breakpoint.matches === true) {
-                    if (mySwiper !== undefined) mySwiper.destroy(true, true);
-                    return;
-                } else if (breakpoint.matches === false) {
-                    return enableSwiper();
-                }
-            };
-
-            const enableSwiper = function () {
-                mySwiper = new Swiper('.author-articles__grid--slider', {
-                    slidesPerView: 'auto',
-                    spaceBetween: 16,
-                    loop: true,
-                    autoplay: true,
-                    delay: 3000,
-                    stopOnLastSlide: false,
-                    disableOnInteraction: true,
-                });
-            };
-
-            breakpoint.addListener(breakpointChecker);
-            breakpointChecker();
         } catch (err) {
             console.log(err);
         }
@@ -1055,8 +1090,8 @@ $(() => {
 
         function ChangeTheme() {
             let lightTheme = themeDefault;
-            let darkTheme = "/local/templates/magmetall/css/dark.css ";
-            //let darkTheme = "css/dark.css ";
+            //let darkTheme = "/local/templates/magmetall/css/dark.css ";
+            let darkTheme = "css/dark.css ";
 
             var currTheme = link.getAttribute("href");
             var theme = "";
