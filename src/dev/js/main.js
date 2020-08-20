@@ -3,31 +3,33 @@ jQuery.fn.exists = function () {
     return $(this).length;
 }
 
-// BX.ready(function () {
-//     BX.addCustomEvent('onAjaxSuccess', function () {
-//         checkGallery('lightgallery');
-//         checkGallery('video-gallery');
-//         journalSlider();
-//         articleSlider();
-//     });
-// });
-
-var btn = $('#btnUp');
-
-$(window).scroll(function () {
-    if ($(window).scrollTop() > 300) {
-        btn.addClass('showBtn');
-    } else {
-        btn.removeClass('showBtn');
-    }
+BX.ready(function () {
+    BX.addCustomEvent('onAjaxSuccess', function () {
+        checkGallery('lightgallery');
+        checkGallery('video-gallery');
+        journalSlider();
+        articleSlider();
+    });
 });
 
-btn.on('click', function (e) {
-    e.preventDefault();
-    $('html, body').animate({
-        scrollTop: 0
-    }, '300');
-});
+
+if ($('#btnUp').exists()) {
+    var btn = $('#btnUp');
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > 300) {
+            btn.addClass('showBtn');
+        } else {
+            btn.removeClass('showBtn');
+        }
+    });
+
+    btn.on('click', function (e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: 0
+        }, '300');
+    });
+}
 
 function articleSlider() {
     if ($('.author-articles__grid--slider').exists) {
@@ -1090,8 +1092,8 @@ $(() => {
 
         function ChangeTheme() {
             let lightTheme = themeDefault;
-            //let darkTheme = "/local/templates/magmetall/css/dark.css ";
-            let darkTheme = "css/dark.css ";
+            let darkTheme = "/local/templates/magmetall/css/dark.css ";
+            //let darkTheme = "css/dark.css ";
 
             var currTheme = link.getAttribute("href");
             var theme = "";
