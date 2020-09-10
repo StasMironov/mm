@@ -1093,7 +1093,7 @@ $(() => {
         function ChangeTheme() {
             let lightTheme = themeDefault;
             let darkTheme = "/local/templates/magmetall/css/dark.css ";
-            //let darkTheme = "css/dark.css ";
+            // let darkTheme = "css/dark.css ";
 
             var currTheme = link.getAttribute("href");
             var theme = "";
@@ -1108,6 +1108,73 @@ $(() => {
 
             link.setAttribute("href", currTheme);
             return currTheme;
+        }
+    }
+
+    if ($('.edition-slider').exists()) {
+        try {
+            let editionSlider = new Swiper('.edition-slider', {
+                spaceBetween: 18,
+                slidesPerView: 6,
+                slidesPerColumn: 2,
+                slidesPerColumnFill: 'row',
+                navigation: {
+                    nextEl: '.edition-slider__arr--next',
+                    prevEl: '.edition-slider__arr--prev',
+                },
+                touchRatio: 0,
+                pagination: {
+                    el: '.edition-slider__pag',
+                    clickable: true,
+                    renderBullet: function (index, className) {
+                        return '<span class="' + className + '">' + (index + 1) + '</span>';
+                    },
+                },
+                breakpoints: {
+                    1920: {
+                        spaceBetween: 18,
+                        slidesPerView: 6,
+                    },
+                    769: {
+                        spaceBetween: 18,
+                        slidesPerView: 6
+                    },
+                    768: {
+                        spaceBetween: 15,
+                        slidesPerView: 5,
+                        touchRatio: 1,
+                    },
+                    621: {
+                        spaceBetween: 15,
+                        slidesPerView: 5,
+                        touchRatio: 0,
+                    },
+                    620: {
+                        spaceBetween: 10,
+                        slidesPerView: 4,
+                        touchRatio: 1,
+                    },
+                    501: {
+                        spaceBetween: 10,
+                        slidesPerView: 3,
+                        touchRatio: 1,
+                    },
+                    321: {
+                        spaceBetween: 10,
+                        touchRatio: 1,
+                    },
+                    320: {
+                        spaceBetween: 10,
+                        slidesPerView: 2,
+                        touchRatio: 1,
+                    }
+                }
+                // watchSlidesVisibility: true,
+                // effect: "fade",
+            });
+        }
+        catch (err) {
+            console.log(err);
         }
     }
 });

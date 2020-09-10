@@ -555,7 +555,21 @@ button {
   }
 }
 
+.edition-rewards__link--prev svg,
+.edition-rewards__link--next svg {
+  position: absolute;
+  right: 100%;
+}
 
+.edition-rewards__link--prev,
+.edition-rewards__link--next {
+  width: 0;
+  overflow: visible;
+  padding: 0
+}
+
+
+@import "./components/edition/edition-slider.scss";
 @import "./components/404/absence.scss";
 @import "./components/agreement/agreement.scss";
 @import "./components/video-gallery.scss";

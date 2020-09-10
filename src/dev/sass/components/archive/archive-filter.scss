@@ -57,6 +57,10 @@
                 border: 1px solid $black;
                 color: $black;
             }
+
+            @media(max-width:640px) {
+                margin-top: 10px;
+            }
         }
 
         // &:nth-child(1) {
@@ -73,8 +77,6 @@
         //     max-width: 93px;
         //     width: 100%;
         // }
-
-        &:nth-child(4) {}
 
         &:not(:last-child) {
             margin-right: 16px;
@@ -198,7 +200,7 @@
         cursor: pointer;
 
         &:not(:first-child) {
-            margin-top: 20px;
+            margin-top: 12px;
         }
 
         input {

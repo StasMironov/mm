@@ -25,6 +25,10 @@
 
     &__date {
         margin-right: 23px;
+
+        @media(max-width: 600px) {
+            white-space: nowrap;
+        }
     }
 
     &__person {
@@ -34,6 +38,8 @@
 
         @media(max-width: 600px) {
             padding-left: 0;
+            letter-spacing: 0.1px;
+            white-space: nowrap;
         }
 
 

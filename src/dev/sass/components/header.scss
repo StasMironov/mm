@@ -543,6 +543,8 @@
 
             .mCS-my-theme.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
                 background-color: transparent;
+                margin: auto;
+                height: 100%;
             }
 
             .mCS-my-theme.mCSB_scrollTools .mCSB_draggerRail {
@@ -558,11 +560,25 @@
             }
 
             .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_draggerRail {
+                height: 100%;
                 margin: 0;
             }
 
+
+
+
+            .mCSB_container_wrapper,
+            .mCSB_scrollTools.mCSB_scrollTools_horizontal {
+                top: 0;
+            }
+
+            .mCSB_container_wrapper,
+            .mCSB_scrollTools.mCSB_scrollTools_horizontal {
+                height: 100%;
+            }
+
             .mCSB_scrollTools .mCSB_draggerContainer {
-                height: 0;
+                height: 100%;
                 top: auto;
             }
 
@@ -754,6 +770,7 @@
             display: flex;
             flex-wrap: wrap;
             max-width: 750px;
+            width: 100%;
             flex-direction: row;
         }
 

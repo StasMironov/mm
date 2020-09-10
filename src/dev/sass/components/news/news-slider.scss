@@ -129,6 +129,7 @@
             @media(max-width: 920px) {
                 max-width: 100%;
                 width: 100% !important;
+                transform: none !important;
             }
         }
 
@@ -137,6 +138,7 @@
 
             @media(max-width: 920px) {
                 min-height: auto;
+
             }
         }
     }
@@ -177,6 +179,10 @@
 
         &:hover .title-3 {
             color: $purple-1;
+
+            @media(max-width: 920px) {
+                color: white !important;
+            }
         }
     }
 

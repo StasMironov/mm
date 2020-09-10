@@ -39,6 +39,8 @@
             align-items: center;
             margin-top: 24px;
             padding-bottom: 24px;
+            padding-top: 0;
+            border-top: none;
         }
 
         @media(max-width: 640px) {
