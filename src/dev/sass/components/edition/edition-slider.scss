@@ -42,6 +42,7 @@
 
     &__arr {
         transition: .3s linear;
+        cursor: pointer;
 
         &--next {
             &:hover {

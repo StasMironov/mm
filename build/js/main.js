@@ -1081,6 +1081,8 @@ $(function () {
         slidesPerView: 6,
         slidesPerColumn: 2,
         slidesPerColumnFill: 'row',
+        //  slidesPerGroupSkip: 12,
+        slidesPerGroup: 6,
         navigation: {
           nextEl: '.edition-slider__arr--next',
           prevEl: '.edition-slider__arr--prev'
@@ -1103,26 +1105,33 @@ $(function () {
           },
           768: {
             spaceBetween: 15,
-            slidesPerView: 5
+            slidesPerView: 5,
+            slidesPerGroup: 5
           },
           621: {
             spaceBetween: 15,
-            slidesPerView: 5
+            slidesPerView: 5,
+            slidesPerGroup: 5
           },
           620: {
             spaceBetween: 10,
-            slidesPerView: 4
+            slidesPerView: 4,
+            slidesPerGroup: 4
           },
           501: {
             spaceBetween: 10,
-            slidesPerView: 3
+            slidesPerView: 3,
+            slidesPerGroup: 3
           },
           321: {
-            spaceBetween: 10
+            spaceBetween: 10,
+            slidesPerGroup: 3,
+            slidesPerView: 2
           },
           320: {
             spaceBetween: 10,
-            slidesPerView: 2
+            slidesPerView: 2,
+            slidesPerGroup: 2
           }
         } // watchSlidesVisibility: true,
         // effect: "fade",
