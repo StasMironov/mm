@@ -3,14 +3,14 @@ jQuery.fn.exists = function () {
     return $(this).length;
 }
 
-BX.ready(function () {
-    BX.addCustomEvent('onAjaxSuccess', function () {
-        checkGallery('lightgallery');
-        checkGallery('video-gallery');
-        journalSlider();
-        articleSlider();
-    });
-});
+// BX.ready(function () {
+//     BX.addCustomEvent('onAjaxSuccess', function () {
+//         checkGallery('lightgallery');
+//         checkGallery('video-gallery');
+//         journalSlider();
+//         articleSlider();
+//     });
+// });
 
 
 if ($('#btnUp').exists()) {
@@ -1092,8 +1092,8 @@ $(() => {
 
         function ChangeTheme() {
             let lightTheme = themeDefault;
-            let darkTheme = "/local/templates/magmetall/css/dark.css ";
-            // let darkTheme = "css/dark.css ";
+            // let darkTheme = "/local/templates/magmetall/css/dark.css ";
+            let darkTheme = "css/dark.css ";
 
             var currTheme = link.getAttribute("href");
             var theme = "";
@@ -1122,7 +1122,6 @@ $(() => {
                     nextEl: '.edition-slider__arr--next',
                     prevEl: '.edition-slider__arr--prev',
                 },
-                touchRatio: 0,
                 pagination: {
                     el: '.edition-slider__pag',
                     clickable: true,
@@ -1142,31 +1141,25 @@ $(() => {
                     768: {
                         spaceBetween: 15,
                         slidesPerView: 5,
-                        touchRatio: 1,
                     },
                     621: {
                         spaceBetween: 15,
                         slidesPerView: 5,
-                        touchRatio: 0,
                     },
                     620: {
                         spaceBetween: 10,
                         slidesPerView: 4,
-                        touchRatio: 1,
                     },
                     501: {
                         spaceBetween: 10,
-                        slidesPerView: 3,
-                        touchRatio: 1,
+                        slidesPerView: 3
                     },
                     321: {
                         spaceBetween: 10,
-                        touchRatio: 1,
                     },
                     320: {
                         spaceBetween: 10,
                         slidesPerView: 2,
-                        touchRatio: 1,
                     }
                 }
                 // watchSlidesVisibility: true,
