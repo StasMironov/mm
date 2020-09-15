@@ -249,6 +249,7 @@ $(function () {
       $('.btn--close').on('click', function (event) {
         event.preventDefault();
         $('.header__search--laptop input').val('');
+        $('.header__search--laptop').removeClass('header__search--active');
       });
     } catch (err) {
       console.log(err);
@@ -715,20 +716,22 @@ $(function () {
 
   if ($('.header__search--laptop').exists) {
     try {
-      $('.header__search--laptop').on('click', function (e) {
+      var preventDefault = function preventDefault(e) {
         e.preventDefault();
+      };
+
+      $('.header__btn').on('click', function () {
+        $('.header__search--laptop').addClass('header__search--active');
 
         if ($('.header__search--laptop').hasClass('header__search--active')) {
-          if ($('.header__search--laptop input').val() != '') {
-            $('.header__search').submit();
-          } else {
-            $('.header__search--laptop').toggleClass('header__search--active');
-          }
-        } else {
-          $('.header__search--laptop').toggleClass('header__search--active');
           setTimeout(function () {
             $('.header__search--laptop input').focus();
           }, 500);
+          $('.header__search--laptop').bind("submit", preventDefault);
+        }
+
+        if ($('.header__search--laptop input').val() != '') {
+          $('.header__search--laptop').unbind("submit", preventDefault);
         }
       });
     } catch (err) {

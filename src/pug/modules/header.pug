@@ -46,9 +46,9 @@ header.header
                             </label>
                     .header__block
                     form(class="header__search header__search--laptop" action="" method="get" )
+                        button.btn.btn--close
                         .header__in
-                            input(type="text" name='search' placeholder="Ваш запрос" required)
-                            button.btn.btn--close
+                            input(type="text" name='search' placeholder="Ваш запрос" autocomplete="off")
                         button.header__btn
                             +svg('search')
         .header__bottom
