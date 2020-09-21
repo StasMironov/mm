@@ -525,7 +525,9 @@ $(() => {
     truncateText('.search__text', 72);
     truncateText('.search__text', 72);
     truncateText('.news-slider__txt', 250);
-
+    truncateText('.news-slider__txt', 250);
+    //27
+    truncateText('.publish__txt', 27);
     //===========Accordion=============
 
     if ($('.archive-filter__panel').exists()) {
@@ -1095,8 +1097,8 @@ $(() => {
 
         function ChangeTheme() {
             let lightTheme = themeDefault;
-            let darkTheme = "/local/templates/magmetall/css/dark.css ";
-            // let darkTheme = "css/dark.css ";
+            //let darkTheme = "/local/templates/magmetall/css/dark.css ";
+            let darkTheme = "css/dark.css ";
 
             var currTheme = link.getAttribute("href");
             var theme = "";

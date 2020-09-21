@@ -507,7 +507,10 @@ $(function () {
   truncateText('.author-articles__txt', 72);
   truncateText('.search__text', 72);
   truncateText('.search__text', 72);
-  truncateText('.news-slider__txt', 250); //===========Accordion=============
+  truncateText('.news-slider__txt', 250);
+  truncateText('.news-slider__txt', 250); //27
+
+  truncateText('.publish__txt', 27); //===========Accordion=============
 
   if ($('.archive-filter__panel').exists()) {
     try {
@@ -1028,9 +1031,9 @@ $(function () {
 
     (function () {
       var ChangeTheme = function ChangeTheme() {
-        var lightTheme = themeDefault;
-        var darkTheme = "/local/templates/magmetall/css/dark.css "; // let darkTheme = "css/dark.css ";
+        var lightTheme = themeDefault; //let darkTheme = "/local/templates/magmetall/css/dark.css ";
 
+        var darkTheme = "css/dark.css ";
         var currTheme = link.getAttribute("href");
         var theme = "";
 

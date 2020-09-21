@@ -29,6 +29,7 @@
 
     &__date {
         margin-right: 23px;
+        transition: .2s ease-out;
 
         @media(max-width: 600px) {
             white-space: nowrap;
@@ -52,6 +53,10 @@
             padding-left: 0;
             letter-spacing: 0.1px;
             white-space: nowrap;
+        }
+
+        .b-svg {
+            transition: .2s ease-out;
         }
 
 
