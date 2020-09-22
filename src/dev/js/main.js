@@ -12,6 +12,137 @@ jQuery.fn.exists = function () {
 //     });
 // });
 
+if ($('.news-archive__slider').exists()) {
+    let authorSlider = new Swiper('.news-archive__slider', {
+        spaceBetween: 40,
+        slidesPerView: 3,
+        slidesPerColumn: 2,
+        slidesPerColumnFill: 'row',
+        //  slidesPerGroupSkip: 12,
+        slidesPerGroup: 3,
+        navigation: {
+            nextEl: '.edition-slider__arr--next',
+            prevEl: '.edition-slider__arr--prev',
+        },
+        pagination: {
+            el: '.news-archive__pag',
+            clickable: true,
+            // renderBullet: function (index, className) {
+            //     return '<span class="' + className + '">' + (index + 1) + '</span>';
+            // },
+        },
+        breakpoints: {
+            1920: {
+                spaceBetween: 40,
+                slidesPerView: 3,
+            },
+            1025: {
+                spaceBetween: 40,
+                slidesPerView: 3,
+            },
+            1024: {
+                spaceBetween: 40,
+                slidesPerView: 3,
+                slidesPerGroup: 3,
+            },
+            993: {
+                spaceBetween: 40,
+                slidesPerView: 3,
+                slidesPerGroup: 3,
+            },
+            992: {
+                spaceBetween: 30,
+                slidesPerView: 2,
+                slidesPerGroup: 2,
+            },
+            769: {
+                spaceBetween: 30,
+                slidesPerView: 2,
+                slidesPerGroup: 2,
+            },
+            768: {
+                spaceBetween: 20,
+                slidesPerView: 2,
+                slidesPerGroup: 2,
+            },
+            641: {
+                spaceBetween: 20,
+                slidesPerView: 2,
+                slidesPerGroup: 2,
+            },
+            640: {
+                spaceBetween: 15,
+                slidesPerView: 3,
+                slidesPerGroup: 3,
+            },
+            321: {
+                spaceBetween: 20,
+                slidesPerView: 3,
+                slidesPerGroup: 3,
+            },
+            320: {
+                spaceBetween: 40,
+                slidesPerView: 2,
+                slidesPerGroup: 2,
+            }
+        }
+        // watchSlidesVisibility: true,
+        // effect: "fade",
+    });
+}
+
+if ($('.theme-button').exists()) {
+    var btn = document.querySelectorAll(".theme-button");
+    var link = document.getElementById("theme-link");
+    var themeDefault = "";
+
+    console.log(btn);
+
+    for (let i = 0; i < btn.length; i++) {
+        btn[i].addEventListener("click", function () {
+            let theme = ChangeTheme();
+            sessionStorage.setItem('theme', theme)
+        });
+    }
+
+    // btn.addEventListener("click", function () {
+    //     let theme = ChangeTheme();
+    //     sessionStorage.setItem('theme', theme)
+    // });
+
+    if (sessionStorage.getItem('theme') !== null) {
+        $('#theme-link').attr('href', sessionStorage.getItem('theme'));
+        if (sessionStorage.getItem('theme') == themeDefault) {
+            $('.header .checkbox input').prop('checked', true);
+        } else {
+            $('.header .checkbox input').prop('checked', false);
+        }
+    } else {
+        $('#theme-link').attr('href', themeDefault);
+        $('.header .checkbox input').prop('checked', true);
+    }
+
+    function ChangeTheme() {
+        let lightTheme = themeDefault;
+        //let darkTheme = "/local/templates/magmetall/css/dark.css ";
+        let darkTheme = "css/dark.css ";
+
+        var currTheme = link.getAttribute("href");
+        var theme = "";
+
+        if (currTheme == lightTheme) {
+            currTheme = darkTheme;
+            theme = "dark";
+        } else {
+            currTheme = lightTheme;
+            theme = "light";
+        }
+
+        link.setAttribute("href", currTheme);
+        return currTheme;
+    }
+}
+
 
 if ($('#btnUp').exists()) {
     var btn = $('#btnUp');
@@ -1063,57 +1194,7 @@ $(() => {
         }
     }
 
-    if ($('.theme-button').exists()) {
-        var btn = document.querySelectorAll(".theme-button");
-        var link = document.getElementById("theme-link");
-        var themeDefault = "";
 
-        console.log(btn);
-
-        for (let i = 0; i < btn.length; i++) {
-            btn[i].addEventListener("click", function () {
-                let theme = ChangeTheme();
-                sessionStorage.setItem('theme', theme)
-            });
-        }
-
-        // btn.addEventListener("click", function () {
-        //     let theme = ChangeTheme();
-        //     sessionStorage.setItem('theme', theme)
-        // });
-
-        if (sessionStorage.getItem('theme') !== null) {
-            $('#theme-link').attr('href', sessionStorage.getItem('theme'));
-            if (sessionStorage.getItem('theme') == themeDefault) {
-                $('.header .checkbox input').prop('checked', true);
-            } else {
-                $('.header .checkbox input').prop('checked', false);
-            }
-        } else {
-            $('#theme-link').attr('href', themeDefault);
-            $('.header .checkbox input').prop('checked', true);
-        }
-
-        function ChangeTheme() {
-            let lightTheme = themeDefault;
-            let darkTheme = "/local/templates/magmetall/css/dark.css ";
-            //let darkTheme = "css/dark.css ";
-
-            var currTheme = link.getAttribute("href");
-            var theme = "";
-
-            if (currTheme == lightTheme) {
-                currTheme = darkTheme;
-                theme = "dark";
-            } else {
-                currTheme = lightTheme;
-                theme = "light";
-            }
-
-            link.setAttribute("href", currTheme);
-            return currTheme;
-        }
-    }
 
     if ($('.edition-slider').exists()) {
         try {

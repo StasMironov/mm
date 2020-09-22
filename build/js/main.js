@@ -13,6 +13,141 @@ jQuery.fn.exists = function () {
 // });
 
 
+if ($('.news-archive__slider').exists()) {
+  var authorSlider = new Swiper('.news-archive__slider', {
+    spaceBetween: 40,
+    slidesPerView: 3,
+    slidesPerColumn: 2,
+    slidesPerColumnFill: 'row',
+    //  slidesPerGroupSkip: 12,
+    slidesPerGroup: 3,
+    navigation: {
+      nextEl: '.edition-slider__arr--next',
+      prevEl: '.edition-slider__arr--prev'
+    },
+    pagination: {
+      el: '.news-archive__pag',
+      clickable: true // renderBullet: function (index, className) {
+      //     return '<span class="' + className + '">' + (index + 1) + '</span>';
+      // },
+
+    },
+    breakpoints: {
+      1920: {
+        spaceBetween: 40,
+        slidesPerView: 3
+      },
+      1025: {
+        spaceBetween: 40,
+        slidesPerView: 3
+      },
+      1024: {
+        spaceBetween: 40,
+        slidesPerView: 3,
+        slidesPerGroup: 3
+      },
+      993: {
+        spaceBetween: 40,
+        slidesPerView: 3,
+        slidesPerGroup: 3
+      },
+      992: {
+        spaceBetween: 30,
+        slidesPerView: 2,
+        slidesPerGroup: 2
+      },
+      769: {
+        spaceBetween: 30,
+        slidesPerView: 2,
+        slidesPerGroup: 2
+      },
+      768: {
+        spaceBetween: 20,
+        slidesPerView: 2,
+        slidesPerGroup: 2
+      },
+      641: {
+        spaceBetween: 20,
+        slidesPerView: 2,
+        slidesPerGroup: 2
+      },
+      640: {
+        spaceBetween: 15,
+        slidesPerView: 3,
+        slidesPerGroup: 3
+      },
+      321: {
+        spaceBetween: 20,
+        slidesPerView: 3,
+        slidesPerGroup: 3
+      },
+      320: {
+        spaceBetween: 40,
+        slidesPerView: 2,
+        slidesPerGroup: 2
+      }
+    } // watchSlidesVisibility: true,
+    // effect: "fade",
+
+  });
+}
+
+if ($('.theme-button').exists()) {
+  var btn;
+  var link;
+  var themeDefault;
+
+  (function () {
+    var ChangeTheme = function ChangeTheme() {
+      var lightTheme = themeDefault; //let darkTheme = "/local/templates/magmetall/css/dark.css ";
+
+      var darkTheme = "css/dark.css ";
+      var currTheme = link.getAttribute("href");
+      var theme = "";
+
+      if (currTheme == lightTheme) {
+        currTheme = darkTheme;
+        theme = "dark";
+      } else {
+        currTheme = lightTheme;
+        theme = "light";
+      }
+
+      link.setAttribute("href", currTheme);
+      return currTheme;
+    };
+
+    btn = document.querySelectorAll(".theme-button");
+    link = document.getElementById("theme-link");
+    themeDefault = "";
+    console.log(btn);
+
+    for (var i = 0; i < btn.length; i++) {
+      btn[i].addEventListener("click", function () {
+        var theme = ChangeTheme();
+        sessionStorage.setItem('theme', theme);
+      });
+    } // btn.addEventListener("click", function () {
+    //     let theme = ChangeTheme();
+    //     sessionStorage.setItem('theme', theme)
+    // });
+
+
+    if (sessionStorage.getItem('theme') !== null) {
+      $('#theme-link').attr('href', sessionStorage.getItem('theme'));
+
+      if (sessionStorage.getItem('theme') == themeDefault) {
+        $('.header .checkbox input').prop('checked', true);
+      } else {
+        $('.header .checkbox input').prop('checked', false);
+      }
+    } else {
+      $('#theme-link').attr('href', themeDefault);
+      $('.header .checkbox input').prop('checked', true);
+    }
+  })();
+}
+
 if ($('#btnUp').exists()) {
   var btn = $('#btnUp');
   $(window).scroll(function () {
@@ -508,8 +643,7 @@ $(function () {
   truncateText('.search__text', 72);
   truncateText('.search__text', 72);
   truncateText('.news-slider__txt', 250);
-  truncateText('.news-slider__txt', 250); //27
-
+  truncateText('.news-slider__txt', 250);
   truncateText('.publish__txt', 27); //===========Accordion=============
 
   if ($('.archive-filter__panel').exists()) {
@@ -1022,62 +1156,6 @@ $(function () {
     } catch (err) {
       console.log(err);
     }
-  }
-
-  if ($('.theme-button').exists()) {
-    var btn;
-    var link;
-    var themeDefault;
-
-    (function () {
-      var ChangeTheme = function ChangeTheme() {
-        var lightTheme = themeDefault; //let darkTheme = "/local/templates/magmetall/css/dark.css ";
-
-        var darkTheme = "css/dark.css ";
-        var currTheme = link.getAttribute("href");
-        var theme = "";
-
-        if (currTheme == lightTheme) {
-          currTheme = darkTheme;
-          theme = "dark";
-        } else {
-          currTheme = lightTheme;
-          theme = "light";
-        }
-
-        link.setAttribute("href", currTheme);
-        return currTheme;
-      };
-
-      btn = document.querySelectorAll(".theme-button");
-      link = document.getElementById("theme-link");
-      themeDefault = "";
-      console.log(btn);
-
-      for (var _i7 = 0; _i7 < btn.length; _i7++) {
-        btn[_i7].addEventListener("click", function () {
-          var theme = ChangeTheme();
-          sessionStorage.setItem('theme', theme);
-        });
-      } // btn.addEventListener("click", function () {
-      //     let theme = ChangeTheme();
-      //     sessionStorage.setItem('theme', theme)
-      // });
-
-
-      if (sessionStorage.getItem('theme') !== null) {
-        $('#theme-link').attr('href', sessionStorage.getItem('theme'));
-
-        if (sessionStorage.getItem('theme') == themeDefault) {
-          $('.header .checkbox input').prop('checked', true);
-        } else {
-          $('.header .checkbox input').prop('checked', false);
-        }
-      } else {
-        $('#theme-link').attr('href', themeDefault);
-        $('.header .checkbox input').prop('checked', true);
-      }
-    })();
   }
 
   if ($('.edition-slider').exists()) {

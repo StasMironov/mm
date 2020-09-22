@@ -11,6 +11,21 @@
         }
     }
 
+    &__pag {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    &__authors {
+        margin-top: 37px;
+    }
+
+    &__slider {
+        overflow: hidden;
+    }
+
     &__wrapper {
         display: flex;
 
@@ -84,16 +99,26 @@
 
         @media(max-width: 1235px) {
             max-width: 715px;
+            width: 100%;
+        }
+
+        @media(max-width: 1120px) {
+            max-width: 610px;
         }
 
         @media(max-width: 1024px) {
-            max-width: 370px;
+            max-width: 550px;
             margin-right: 30px;
+        }
+
+        @media(max-width: 930px) {
+            max-width: 375px;
         }
 
         @media(max-width: 768px) {
             padding-right: 20px;
             margin-right: 20px;
+            max-width: 283px;
         }
 
         @media(max-width: 640px) {
@@ -277,36 +302,38 @@
     }
 
     &__photo {
-        height: 206px;
-        width: 206px;
-        margin-right: 18px;
+        // height: 206px;
+        // width: 206px;
+        // margin-right: 18px;
         position: relative;
-        min-width: 206px;
-        max-width: 206px;
+        // min-width: 206px;
+        // max-width: 206px;
 
         @media(max-width: 1235px) {
-            min-width: 154px;
-            max-width: 154px;
-            width: 154px;
+            // min-width: 154px;
+            // max-width: 154px;
+            // width: 154px;
         }
 
         @media(max-width: 1024px) {
             height: 150px;
-            min-width: 100%;
+            // min-width: 100%;
             margin-right: 0;
-            margin-bottom: 16px;
+            //margin-bottom: 16px;
         }
 
         @media(max-width: 768px) {
             width: 100%;
+            height: 125px;
         }
 
         @media(max-width: 640px) {
-            height: 165px;
+            height: 150px;
         }
 
         @media(max-width: 600px) {
             margin-bottom: 10px;
+            height: 140px;
         }
 
         &:after {
@@ -336,7 +363,7 @@
     }
 
     &__job {
-        margin-top: 10px;
+        margin-top: 5px;
 
         @media(max-width: 1024px) {
             margin-top: auto;
@@ -351,7 +378,8 @@
     &__name {
         display: block;
         line-height: 25px;
-        max-width: 180px;
+        // max-width: 180px;
+        margin-top: 10px;
 
         @media(max-width: 1024px) {
             margin-bottom: 8px;
