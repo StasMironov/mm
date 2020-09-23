@@ -15,11 +15,11 @@ jQuery.fn.exists = function () {
 if ($('.news-archive__slider').exists()) {
     let authorSlider = new Swiper('.news-archive__slider', {
         spaceBetween: 40,
-        slidesPerView: 3,
+        slidesPerView: 4,
         slidesPerColumn: 2,
         slidesPerColumnFill: 'row',
         //  slidesPerGroupSkip: 12,
-        slidesPerGroup: 3,
+        slidesPerGroup: 4,
         navigation: {
             nextEl: '.edition-slider__arr--next',
             prevEl: '.edition-slider__arr--prev',
@@ -34,11 +34,11 @@ if ($('.news-archive__slider').exists()) {
         breakpoints: {
             1920: {
                 spaceBetween: 40,
-                slidesPerView: 3,
+                slidesPerView: 4,
             },
             1025: {
                 spaceBetween: 40,
-                slidesPerView: 3,
+                slidesPerView: 4,
             },
             1024: {
                 spaceBetween: 40,
@@ -72,16 +72,21 @@ if ($('.news-archive__slider').exists()) {
             },
             640: {
                 spaceBetween: 15,
-                slidesPerView: 3,
-                slidesPerGroup: 3,
+                slidesPerView: 4,
+                slidesPerGroup: 4,
             },
-            321: {
+            501: {
                 spaceBetween: 20,
-                slidesPerView: 3,
-                slidesPerGroup: 3,
+                slidesPerView: 4,
+                slidesPerGroup: 4,
+            },
+            500: {
+                spaceBetween: 20,
+                slidesPerView: 2,
+                slidesPerGroup: 2,
             },
             320: {
-                spaceBetween: 40,
+                spaceBetween: 20,
                 slidesPerView: 2,
                 slidesPerGroup: 2,
             }
@@ -101,14 +106,11 @@ if ($('.theme-button').exists()) {
     for (let i = 0; i < btn.length; i++) {
         btn[i].addEventListener("click", function () {
             let theme = ChangeTheme();
-            sessionStorage.setItem('theme', theme)
+            sessionStorage.setItem('theme', theme);
+
+            Save(theme);
         });
     }
-
-    // btn.addEventListener("click", function () {
-    //     let theme = ChangeTheme();
-    //     sessionStorage.setItem('theme', theme)
-    // });
 
     if (sessionStorage.getItem('theme') !== null) {
         $('#theme-link').attr('href', sessionStorage.getItem('theme'));
@@ -122,10 +124,17 @@ if ($('.theme-button').exists()) {
         $('.header .checkbox input').prop('checked', true);
     }
 
+    function Save(theme) {
+        console.log(theme);
+        var Request = new XMLHttpRequest();
+        Request.open("GET", "/local/templates/magmetall/themes.php?theme=" + theme, true);
+        Request.send();
+    }
+
     function ChangeTheme() {
-        let lightTheme = themeDefault;
-        //let darkTheme = "/local/templates/magmetall/css/dark.css ";
-        let darkTheme = "css/dark.css ";
+        let lightTheme = '';
+        let darkTheme = "/local/templates/magmetall/css/dark.css ";
+        //let darkTheme = "css/dark.css ";
 
         var currTheme = link.getAttribute("href");
         var theme = "";
@@ -945,6 +954,8 @@ $(() => {
                 var galleryWrapper = document.createElement('div');
                 var swiperWrapper = document.createElement('div');
                 var cont = allEl[a].parentNode;
+
+
                 $(galleryBlock).attr('class', 'gallery__top');
                 $(galleryBlock).addClass('gallery__main' + a);
                 $(galleryWrapper).attr('class', 'gallery');
@@ -1043,9 +1054,12 @@ $(() => {
                 }
 
                 wrapper.classList.add('gallery-item'); // Задаем класс обертки/слайда
+                //wrapper.style.backgroundImage = `url(${item.getAttribute('src')})`
 
                 wrapper.classList.add('swiper-slide');
+                // 
                 item.parentNode.replaceChild(wrapper, item); // Заменяем старое изображение без обертки, на обертку/слайд с внутренним изображением
+
             });
             item.setAttribute('id', 'slide' + i); // Задаем уникальный id для каждого слайдера
 
@@ -1060,6 +1074,29 @@ $(() => {
     initGallarySlider('gallery__thumbs'); // Запускаем функцию и передаем ей название класса для слайдера
 
     var qtySlide = $('.gallery__thumbs').find('.swiper-slide');
+
+    showImg('.gallery');
+
+    function showImg(bloc, type) {
+        $(bloc).find('.swiper-slide').each(function () {
+            // console.log($(this));
+            $(this).append("<canvas class='gallery__img-bg'></canvas>");
+
+            let canvas = $(this).find('canvas')[0];
+            console.log($(this))
+            let ctx = canvas.getContext("2d");
+
+            let img = new Image();
+            img.src = $(this).find('img').attr('src');
+
+            img.onload = function () {
+                var s = Math.max(canvas.width / img.width, canvas.height / img.height);
+                ctx.filter = 'blur(7px)';
+                ctx.scale(s, s);
+                ctx.drawImage(img, 0, 0);
+            }
+        });
+    }
 
     $(document).ready(function () {
         for (var q = 0; q < allEl.length; q++) {
@@ -1120,6 +1157,8 @@ $(() => {
             }
         });
     }
+
+
 
     //========================================//
 

@@ -95,12 +95,15 @@
     }
 
     &__item {
-        width: calc(33.333% - 24px);
+        flex: 1 1 0;
+        width: 0;
+        // width: calc(33.333% - 24px);
         margin-left: 24px;
         padding-left: 24px;
         border-left: 1px solid $gray-3;
 
         @media(max-width: 1235px) {
+            flex: auto;
             width: calc(33.333% - 15px);
             margin-left: 15px;
             padding-left: 15px;
@@ -134,8 +137,8 @@
         }
 
         &--block {
-            max-width: 384px;
-            width: 100%;
+            // max-width: 384px;
+            // width: 100%;
             padding-left: 0;
             border-left: none;
             margin-left: 0;
