@@ -104,7 +104,6 @@ if ($('.theme-button').exists()) {
 
   (function () {
     var Save = function Save(theme) {
-      console.log(theme);
       var Request = new XMLHttpRequest();
       Request.open("GET", "/local/templates/magmetall/themes.php?theme=" + theme, true);
       Request.send();
@@ -132,7 +131,6 @@ if ($('.theme-button').exists()) {
     btn = document.querySelectorAll(".theme-button");
     link = document.getElementById("theme-link");
     themeDefault = "";
-    console.log(btn);
 
     for (var i = 0; i < btn.length; i++) {
       btn[i].addEventListener("click", function () {
