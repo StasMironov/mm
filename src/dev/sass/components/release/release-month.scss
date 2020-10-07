@@ -1,0 +1,46 @@
+.release-month {
+    margin-top: 40px;
+
+    &__items {
+        display: flex;
+        margin-top: 16px;
+    }
+
+    &__item {
+        //@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,900,800,700,600,500,300,200,100);
+        position: relative;
+        font-family: "Open Sans", sans-serif;
+        transition: font-weight .2s linear;
+        width: initial;
+        cursor: pointer;
+        transition: .2s;
+
+        &:hover {
+            //font-weight: 700;
+            color: $purple-3;
+            text-shadow: 0 0 .65px #333, 0 0 .65px #333;
+        }
+
+        &:not(:first-child) {
+            padding-left: 6px;
+            margin-left: 6px;
+
+            &::before {
+                position: absolute;
+                content: "";
+                height: 12px;
+                width: 1px;
+                background-color: $gray-3;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                margin: auto;
+            }
+        }
+
+        &--active {
+            text-shadow: 0 0 .65px #333, 0 0 .65px #333;
+            color: $purple-3;
+        }
+    }
+}

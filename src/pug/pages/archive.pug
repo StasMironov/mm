@@ -13,85 +13,23 @@ block content
 					.archive__bloc
 						.archive__info Как было показано выше, литургическая драма возможна. Социальная психология искусства, по определению, монотонно дает художественный идеал. Художественное восприятие выстраивает комплекс агрессивности. Богатство мировой литературы от Платона до Ортеги-и-Гассета свидетельствует о том, что художественная ментальность вызывает драматизм. 
 						.archive__info Синтаксис искусства готично начинает первоначальный канон биографии. Возрождение многопланово вызывает суггестивный миракль. Трагедия использует первоначальный сангвиник. Добавлю, что интенция многопланово имеет синхронический подход. Ролевое поведение готично трансформирует фактографический архетип. 
-						.archive-filter
-							<form class="archive-filter__items" action="" method="get" data-filter='{"min":"2000","year":"YEAR","day":"DAY","currentYear":"2013", "currentDay":"23"}'>
-								.archive-filter__item.archive-filter__item--year
-									.archive-filter__bloc
-										.archive-filter__txt 1935
-										.archive-filter__ic
-											<svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M1 5L5.24264 9.24264L9.48528 5" stroke="#27202C" stroke-width="2"/>
-											</svg>
-									.archive-filter__box
-										.archive-filter__list
-								.archive-filter__item.archive-filter__item--month
-									.archive-filter__bloc
-										.archive-filter__txt Декабрь
-										.archive-filter__ic
-											<svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M1 5L5.24264 9.24264L9.48528 5" stroke="#27202C" stroke-width="2"/>
-											</svg>
-									.archive-filter__box
-										.archive-filter__list
-											<div class="archive-filter__block">
-												<input id="m1" type="radio" name="check2[]" value="01">
-												<label for="m1">Декабрь</label>
-											</div>
-											<div class="archive-filter__block">
-												<input id="m2" type="radio" name="check2[]" value="Январь">
-												<label for="m2">Январь</label>
-											</div>
-											<div class="archive-filter__block">
-												<input id="m3" type="radio" name="check2[]" value="Февраль" checked="checked">
-												<label for="m3">Февраль</label>
-											</div>
-											<div class="archive-filter__block">
-												<input id="m4" type="radio" name="check2[]" value="Март">
-												<label for="m4">Март</label>
-											</div>
-											<div class="archive-filter__block">
-												<input id="m5" type="radio" name="check2[]" value="Апрель">
-												<label for="m5">Апрель</label>
-											</div>
-											<div class="archive-filter__block">
-												<input id="m6" type="radio" name="check2[]" value="Май">
-												<label for="m6">Май</label>
-											</div>
-											<div class="archive-filter__block">
-												<input id="m7" type="radio" name="check2[]" value="Июнь">
-												<label for="m7">Июнь</label>
-											</div>
-											<div class="archive-filter__block">
-												<input id="m8" type="radio" name="check2[]" value="Июль">
-												<label for="m8">Июль</label>
-											</div>
-											<div class="archive-filter__block">
-												<input id="m9" type="radio" name="check2[]" value="Август">
-												<label for="m9">Август</label>
-											</div>
-											<div class="archive-filter__block">
-												<input id="m10" type="radio" name="check2[]" value="Сентябрь">
-												<label for="m10">Сентябрь</label>
-											</div>
-											<div class="archive-filter__block">
-												<input id="m11" type="radio" name="check2[]" value="Октябрь">
-												<label for="m11">Октябрь</label>
-											</div>
-											<div class="archive-filter__block">
-												<input id="m12" type="radio" name="check2[]" value="Ноябрь">
-												<label for="m12">Ноябрь</label>
-											</div>
-								.archive-filter__item.archive-filter__item--day
-									.archive-filter__bloc
-										.archive-filter__txt 31
-										.archive-filter__ic
-											<svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M1 5L5.24264 9.24264L9.48528 5" stroke="#27202C" stroke-width="2"/>
-											</svg>
-									.archive-filter__box
-										.archive-filter__list
-								button(type="submit").archive-filter__item.archive-filter__item--btn Найти
-							</form>
+						
+						.release
+							.release-year
+								.release-year__title.title-2 Год выпуска газеты:
+								.release-year__items(data-filter='{"dateStart":"1935", "dateEnd":"2020"}')
+								input(type="hidden" value="" name="release-year" class="res-year")
+							.release-month
+								.release-month__title.title-2 Месяц выпуска газеты:
+								.release-month__items(data-filter='{"month":["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]}')
+								input(type="hidden" value="" name="release-month" class="res-month")
+						
+						.release-datepicker
+							.release-datepicker__title.title-2 День выпуска газеты - <span>20 Апреля 1944г.</span>
+							.release-datepicker__position
+							input(type="hidden" value="" name="release-date" class="release-date")
+
+
 						.archive-filter__wrp
 							.archive-filter__panel
 								.archive-filter__text Все полосы одним файлом PDF: 

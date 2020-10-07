@@ -1,0 +1,76 @@
+.release-year {
+    margin-top: 14px;
+    max-width: 757px;
+    width: 100%;
+
+    &__item {
+        position: relative;
+        // display: inline-block;
+        cursor: pointer;
+        transition: font-weight .2s linear;
+        font-family: "Open Sans", sans-serif;
+        margin-top: 7px;
+        min-width: 43px;
+        padding-left: 4px;
+        margin-left: 4px;
+
+        &:hover {
+            text-shadow: 0 0 .65px #333, 0 0 .65px #333;
+            color: $purple-3;
+        }
+
+
+        &::before {
+            position: absolute;
+            content: "";
+            height: 100%;
+            width: 1px;
+            background-color: $gray-3;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            pointer-events: none;
+        }
+
+        // &:not(:first-child) {
+        //     padding-left: 6px;
+        //     margin-left: 2px;
+
+        //     &::before {
+        //         position: absolute;
+        //         content: "";
+        //         height: 100%;
+        //         width: 1px;
+        //         background-color: $gray-3;
+        //         left: 0;
+        //         top: 0;
+        //         bottom: 0;
+        //         margin: auto;
+        //         pointer-events: none;
+        //     }
+        // }
+
+        &:nth-child(16n + 1) {
+            padding-left: 0px;
+            margin-left: 0px;
+
+            &::before {
+                content: none;
+            }
+        }
+
+        &--active {
+            text-shadow: 0 0 .65px #333, 0 0 .65px #333;
+            color: $purple-3;
+        }
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        min-width: 43px;
+        margin-top: 8px;
+        // margin-left: -10px;
+    }
+}

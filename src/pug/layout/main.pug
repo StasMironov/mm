@@ -12,9 +12,15 @@ html(lang="ru-RU")
 		meta(name="viewport" content="width=device-width,initial-scale=1")
 		meta(name="viewport" content="width=device-width, user-scalable=no")
 		meta(name="keywords" content="")
+		
 		link(rel="stylesheet" type='text/css' href="css/main.css")
 		<link rel="stylesheet" type="text/css" href="css/light.css" id="theme-link">
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 		
+		
+		
+	
+		//- link(rel="stylesheet", href="js/main-min.js")
 		<!--[if lt IE 9]>
 		
 		script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
@@ -26,7 +32,7 @@ html(lang="ru-RU")
 		//- 	document.createElement('aside');
 		//- 	document.createElement('footer');
 		<![endif]-->
-	body
+	body(data-theme="")
 		.b-page
 			include ../modules/header
 			block content
@@ -34,8 +40,10 @@ html(lang="ru-RU")
 		
 		script(src="js/libs-min.js")
 		script(src="js/main-min.js")
+		<script src="https://cdn.jsdelivr.net/npm/zebra_pin@2.0.0/dist/zebra_pin.min.js"></script>
+		script(src="js/zebra_datepicker.min.js")
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		script(src="js/clamp.min.js")
 		script(src="js/lg-video.js")
-		//script(src="js/lg-thumbnail.min.js")
 		
 		block script

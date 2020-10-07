@@ -96,57 +96,51 @@ if ($('.news-archive__slider').exists()) {
     });
 }
 
+
+
 if ($('.theme-button').exists()) {
-    var btn = document.querySelectorAll(".theme-button");
-    var link = document.getElementById("theme-link");
-    var themeDefault = "";
+    const currentTheme = localStorage.getItem("theme");
+    const mainElement = document.querySelector("body");
+    const toggleSwitch = document.querySelectorAll(".theme-button");
 
-    for (let i = 0; i < btn.length; i++) {
-        btn[i].addEventListener("click", function () {
-            let theme = ChangeTheme();
-            sessionStorage.setItem('theme', theme);
+    if (currentTheme) {
+        mainElement.setAttribute("data-theme", currentTheme);
 
-            Save(theme);
-        });
-    }
-
-    if (sessionStorage.getItem('theme') !== null) {
-        $('#theme-link').attr('href', sessionStorage.getItem('theme'));
-        if (sessionStorage.getItem('theme') == themeDefault) {
-            $('.header .checkbox input').prop('checked', true);
-        } else {
-            $('.header .checkbox input').prop('checked', false);
+        if (currentTheme === "dark") {
+            toggleSwitch.forEach(item => {
+                item.checked = false;
+            });
         }
-    } else {
-        $('#theme-link').attr('href', themeDefault);
-        $('.header .checkbox input').prop('checked', true);
     }
 
-    function Save(theme) {
-        var Request = new XMLHttpRequest();
-        Request.open("GET", "/local/templates/magmetall/themes.php?theme=" + theme, true);
-        Request.send();
-    }
-
-    function ChangeTheme() {
-        let lightTheme = '';
-        let darkTheme = "/local/templates/magmetall/css/dark.css ";
-        //let darkTheme = "css/dark.css ";
-
-        var currTheme = link.getAttribute("href");
-        var theme = "";
-
-        if (currTheme == lightTheme) {
-            currTheme = darkTheme;
-            theme = "dark";
+    function switchTheme(e) {
+        console.log(e.target.checked);
+        if (!e.target.checked) {
+            mainElement.setAttribute("data-theme", "dark");
+            localStorage.setItem("theme", "dark");
+            toggleSwitch.forEach(item => {
+                item.checked = false;
+            });
         } else {
-            currTheme = lightTheme;
-            theme = "light";
+            mainElement.setAttribute("data-theme", "light");
+            localStorage.setItem("theme", "light");
+            toggleSwitch.forEach(item => {
+                item.checked = true;
+            });
         }
-
-        link.setAttribute("href", currTheme);
-        return currTheme;
     }
+
+
+
+
+    console.log(toggleSwitch);
+    toggleSwitch.forEach(item => {
+        item.addEventListener("click", switchTheme, false);
+
+    });
+    // toggleSwitch.addEventListener("change", switchTheme, false);
+
+
 }
 
 
@@ -1080,7 +1074,6 @@ $(() => {
             $(this).append("<canvas class='gallery__img-bg'></canvas>");
 
             let canvas = $(this).find('canvas')[0];
-            console.log($(this))
             let ctx = canvas.getContext("2d");
 
             let img = new Image();
@@ -1090,7 +1083,7 @@ $(() => {
                 var s = Math.max(canvas.width / img.width, canvas.height / img.height);
                 ctx.filter = 'blur(7px)';
                 ctx.scale(s, s);
-                ctx.drawImage(img, 0, 0);
+                ctx.drawImage(img, 0, -100);
             }
         });
     }
@@ -1300,4 +1293,112 @@ $(() => {
             console.log(err);
         }
     }
+
+    if ($('.release-year__items').exists()) {
+        let dataFilter = $('.release-year__items').data('filter');
+        let dateStart = dataFilter.dateStart;
+        let dateEnd = dataFilter.dateEnd;
+
+        for (let i = dateStart; i <= dateEnd; i++) {
+            $('.release-year__items').append(`<a href="javascript:void(0);" class="release-year__item">${i}</a>`)
+            if (i == dateStart) {
+                $('.release-year__item').addClass('release-year__item--active');
+                $('.res-year').val($('.release-year__item').text());
+            }
+        }
+
+        if ($('.release-year__item').exists()) {
+            $('.release-year__item').each(function () {
+                $(this).on('click', function () {
+                    let text = $(this).text();
+                    $(this).addClass('release-year__item--active')
+                        .siblings()
+                        .removeClass('release-year__item--active');
+                    $('.res-year').val(text);
+                });
+            })
+        }
+    }
+
+    if ($('.release-month__items').exists()) {
+        let dataFilter = $('.release-month__items').data('filter');
+        let month = dataFilter.month;
+
+        month.forEach(function (element, i) {
+            $('.release-month__items').append(`<a href="javascript:void(0);" class="release-month__item">${element}</div>`);
+            if (i == 0) {
+                $('.release-month__item').addClass('release-month__item--active');
+                $('.res-month').val($('.release-month__items').text());
+            }
+        });
+
+
+        if ($('.release-month__item').exists()) {
+            $('.release-month__item').each(function () {
+                $(this).on('click', function () {
+                    let text = $(this).text();
+                    $(this).addClass('release-month__item--active')
+                        .siblings()
+                        .removeClass('release-month__item--active');
+                    $('.res-month').val(text);
+                });
+            })
+        }
+
+    }
+
+    if ($('.release-datepicker__position').exists()) {
+        $.datepicker.regional['ru'] = {
+            closeText: 'Закрыть',
+            prevText: 'Предыдущий',
+            nextText: 'Следующий',
+            currentText: 'Сегодня',
+            monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+            monthNamesShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
+            dayNames: ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'],
+            dayNamesShort: ['вск', 'пнд', 'втр', 'срд', 'чтв', 'птн', 'сбт'],
+            dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+            weekHeader: 'Не',
+            dateFormat: 'dd.mm.yy',
+            firstDay: 1,
+            isRTL: false,
+            showMonthAfterYear: false,
+            yearSuffix: ''
+        };
+        $.datepicker.setDefaults($.datepicker.regional['ru']);
+
+        $('.release-datepicker__position').datepicker({
+            dateFormat: "yy-mm-dd",
+            inline: true,
+
+            onSelect: function (dateText, inst) {
+                var date = $(this).datepicker({ dateFormat: "d M,y" }).val();
+                $('.release-date').val(date);
+                location.href = "/archive?date=" + dateText; // /news?date=2014-02-22
+            },
+        });
+
+        $('.release-date').val($('.release-datepicker__position').datepicker({ dateFormat: 'dd-mm-yy' }).val());
+
+        const breakpoint = window.matchMedia('(min-width:1236px)');
+
+        if (!breakpoint.matches === true) {
+            $('.release-month__items').mCustomScrollbar({
+                theme: "dark",
+                mouseWheelPixels: 90,
+                axis: "x"
+            });
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
 });
