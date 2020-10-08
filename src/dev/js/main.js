@@ -1148,8 +1148,6 @@ $(() => {
         });
     }
 
-
-
     //========================================//
 
     // lightGallery(document.getElementById('lightgallery'));
@@ -1222,8 +1220,6 @@ $(() => {
             console.log(err);
         }
     }
-
-
 
     if ($('.edition-slider').exists()) {
         try {
@@ -1332,7 +1328,6 @@ $(() => {
             }
         });
 
-
         if ($('.release-month__item').exists()) {
             $('.release-month__item').each(function () {
                 $(this).on('click', function () {
@@ -1344,7 +1339,6 @@ $(() => {
                 });
             })
         }
-
     }
 
     if ($('.release-datepicker__position').exists()) {
@@ -1366,7 +1360,6 @@ $(() => {
             yearSuffix: ''
         };
         $.datepicker.setDefaults($.datepicker.regional['ru']);
-
 
         $('.release-datepicker__position').datepicker({
             dateFormat: "yy-mm-dd",
@@ -1390,16 +1383,5 @@ $(() => {
                 axis: "x"
             });
         }
-
     }
-
-
-
-
-
-
-
-
-
-
 });
