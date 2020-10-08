@@ -1665,6 +1665,56 @@ button {
       }
     }
   }
+
+  .release-year {
+    &__item {
+
+      &--active,
+      &:hover {
+        color: #6AA1FB;
+      }
+    }
+  }
+
+  .release-month {
+    &__item {
+
+      &--active,
+      &:hover {
+        color: #6AA1FB;
+      }
+    }
+  }
+
+  .mCS-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background-color: #6AA1FB;
+  }
+
+
+  .release-datepicker__title span {
+    color: #6AA1FB !important;
+  }
+
+  .release-datepicker .ui-button.ui-state-active:hover,
+  .release-datepicker .ui-button:active,
+  .release-datepicker .ui-state-active,
+  .release-datepicker .ui-widget-content .ui-state-active,
+  .release-datepicker .ui-widget-header .ui-state-active,
+  .release-datepicker a.ui-button:active {
+    background-color: #6AA1FB;
+  }
+
+  .ui-datepicker table {
+    td {
+      &:hover {
+        background-color: #6AA1FB;
+      }
+
+      a:hover {
+        background-color: #6AA1FB !important;
+      }
+    }
+  }
 }
 
 #ui-datepicker-div {
