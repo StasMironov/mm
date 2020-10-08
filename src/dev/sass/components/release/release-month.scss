@@ -4,6 +4,15 @@
     &__items {
         display: flex;
         margin-top: 16px;
+
+        @media(max-width: 1235px) {
+            display: block;
+            max-width: 705px;
+        }
+
+        @media(max-width: 1070px) {
+            max-width: 680px;
+        }
     }
 
     &__item {
@@ -14,6 +23,7 @@
         width: initial;
         cursor: pointer;
         transition: .2s;
+        display: block;
 
         &:hover {
             //font-weight: 700;
@@ -42,5 +52,13 @@
             text-shadow: 0 0 .65px #333, 0 0 .65px #333;
             color: $purple-3;
         }
+    }
+
+    .mCSB_container {
+        display: flex;
+    }
+
+    .mCSB_horizontal.mCSB_inside>.mCSB_container {
+        margin-bottom: 15px;
     }
 }

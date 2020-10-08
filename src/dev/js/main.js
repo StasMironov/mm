@@ -1367,6 +1367,7 @@ $(() => {
         };
         $.datepicker.setDefaults($.datepicker.regional['ru']);
 
+
         $('.release-datepicker__position').datepicker({
             dateFormat: "yy-mm-dd",
             inline: true,

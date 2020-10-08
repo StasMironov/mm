@@ -3,6 +3,10 @@
 
     &__title span {
         color: $purple-3;
+
+        @media(max-width: 500px) {
+            display: block;
+        }
     }
 
     &__position {
