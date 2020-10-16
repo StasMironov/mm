@@ -14,7 +14,7 @@
 
     &__cover {
         display: block;
-        margin-top: 15px;
+        margin-top: 12px;
 
         @media(max-width: 1235px) {
             margin-top: 8px;
@@ -44,13 +44,14 @@
         font-family: "MinionPro", sans-serif;
         letter-spacing: 1px;
         transition: .2s ease-out;
+        letter-spacing: 0.7px;
     }
 
     &__txt {
         font-style: normal;
         font-weight: normal;
-        font-size: 14px;
-        line-height: 22px;
+        font-size: 16px;
+        line-height: 25px;
         margin-top: 8px;
         max-width: 275px;
         transition: .2s ease-out;
@@ -73,12 +74,14 @@
         display: flex;
         margin-top: 26px;
 
+
+
         @media(max-width: 1300px) {
             margin-top: 24px;
         }
 
-        &:hover .news-actual__text {
-            color: $purple-1;
+        &:hover .news-actual__date:before {
+            background-color: $purple-3;
         }
 
         &--banner {
@@ -116,7 +119,7 @@
         }
 
         &:hover {
-            .news-actual__article {
+            .news-actual__date {
                 color: $purple-3;
             }
         }
@@ -259,7 +262,7 @@
     }
 
     &__items {
-        margin-top: 27px;
+        margin-top: 22px;
     }
 
     &__category {
@@ -352,7 +355,8 @@
         line-height: 22px;
         color: $red;
         padding-left: 16px;
-        margin-bottom: 15px;
+        transition: .2s ease-out;
+        // margin-bottom: 15px;
 
         &:before {
             position: absolute;
@@ -365,6 +369,7 @@
             bottom: 0;
             margin: auto;
             border-radius: 5px;
+            transition: .2s ease-out;
         }
 
         @media(max-width: 1300px) {

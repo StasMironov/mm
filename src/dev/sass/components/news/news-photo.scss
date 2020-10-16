@@ -41,11 +41,11 @@
     }
 
     &__info {
-        margin-top: 8px;
+        margin-top: 4px;
         font-style: normal;
         font-weight: normal;
-        font-size: 14px;
-        line-height: 160%;
+        font-size: 16px;
+        line-height: 22px;
         letter-spacing: 1px;
     }
 
@@ -69,7 +69,7 @@
 
     &__wrapper {
         display: flex;
-        margin-top: 24px;
+        margin-top: 21px;
 
         @media(max-width: 1235px) {
             margin-left: -15px;

@@ -127,6 +127,10 @@
             @media(max-width: 600px) {
                 margin-right: 20px;
             }
+
+            &:hover {
+                color: $gray-8;
+            }
         }
     }
 
@@ -168,6 +172,8 @@
                 &__person {
                     margin-top: 0;
                 }
+
+
             }
         }
     }

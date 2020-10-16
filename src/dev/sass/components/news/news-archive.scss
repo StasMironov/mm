@@ -164,6 +164,8 @@
         margin-right: 16px;
         padding: 0 48px 20px 8px;
         cursor: pointer;
+        background-size: cover;
+        background-repeat: no-repeat;
 
         @media(max-width: 600px) {
             margin-right: 10px;

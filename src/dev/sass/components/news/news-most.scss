@@ -228,12 +228,12 @@
 
         .news-most__items {
             padding: 0;
-            margin-top: 26px;
+            margin-top: 21px;
         }
 
         .news-most__item {
             &:not(:first-child) {
-                margin-top: 24px;
+                margin-top: 28px;
 
                 @media(max-width: 1235px) {
                     margin-top: 20px;

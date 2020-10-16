@@ -148,6 +148,7 @@
         .header__link {
             font-size: 16px;
             line-height: 22px;
+            letter-spacing: 0;
 
             @media(max-width:1235px) {
                 font-size: 14px;
@@ -518,7 +519,7 @@
 
         .header__link {
             &:not(:last-child) {
-                margin-right: 35px;
+                margin-right: 41px;
 
                 @media(max-width: 1600px) {
                     margin-right: 29px;

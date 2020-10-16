@@ -100,6 +100,7 @@ input::-ms-clear {
   font-size: 35px;
   line-height: 42px;
   transition: .2s ease-out;
+  letter-spacing: -.5px;
 
   @media (max-width:1024px) {
     font-size: 30px;
@@ -753,7 +754,11 @@ button {
 
     &__item {
       &:hover {
-        & .news-actual__text {
+        & .news-actual__date:before {
+          background-color: #6AA1FB;
+        }
+
+        & .news-actual__date {
           color: #6AA1FB;
         }
 

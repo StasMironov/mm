@@ -85,7 +85,7 @@
         bottom: 0;
         margin: auto;
         background-color: $gray-1;
-        padding: 53px 37px 52px 51px;
+        padding: 37px 37px 43px 43px;
         z-index: 1;
 
         @media(max-width: 1024px) {
@@ -163,7 +163,7 @@
 
     &__cover {
         display: block;
-        margin-top: 37px;
+        margin-top: 27px;
 
         @media(max-width: 920px) {
             margin-top: auto;
@@ -189,9 +189,9 @@
     &__txt {
         font-style: normal;
         font-weight: normal;
-        font-size: 14px;
-        line-height: 160%;
-        margin-top: 8px;
+        font-size: 16px;
+        line-height: 26px;
+        margin-top: 11px;
 
         @media(max-width: 920px) {
             display: none;
