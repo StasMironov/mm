@@ -5,6 +5,18 @@
         margin-top: 24px;
     }
 
+    &__author {
+        @media(max-width: 1024px) {
+            font-size: 14px;
+            line-height: 22px;
+        }
+
+        @media(max-width: 600px) {
+            font-size: 12px;
+            line-height: 20px;
+        }
+    }
+
     &__num,
     &__author {
         display: block;
@@ -26,6 +38,16 @@
 
     &__num {
         margin-right: 22px;
+
+        @media(max-width: 1024px) {
+            font-size: 14px;
+            line-height: 22px;
+        }
+
+        @media(max-width: 600px) {
+            font-size: 12px;
+            line-height: 20px;
+        }
     }
 
     &__box {
@@ -35,6 +57,9 @@
     }
 
     &__date {
+        font-size: 14px;
+        line-height: 22px;
+
         @media(max-width: 1235px) {
             display: none;
         }
@@ -206,6 +231,8 @@
     &__name {
         margin-right: 16px;
         color: $purple-3;
+        font-size: 14px;
+        line-height: 22px;
     }
 
     &__cover {
@@ -225,6 +252,11 @@
 
     &__txt {
         margin-top: 8px;
+
+        @media(max-width: 1024px) {
+            font-size: 14px;
+            line-height: 22px;
+        }
     }
 
     &__title {

@@ -53,13 +53,8 @@
         cursor: normal;
 
         @media(max-width: 1024px) {
-            font-size: 18px;
-            line-height: 23px;
-        }
-
-        @media(max-width: 600px) {
             font-size: 16px;
-            line-height: 21px;
+            line-height: 20px;
         }
     }
 

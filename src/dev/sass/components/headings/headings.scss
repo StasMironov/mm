@@ -25,9 +25,14 @@
 
     &__link {
         font-weight: normal;
-        font-size: 14px;
-        line-height: 39px;
+        font-size: 16px;
+        line-height: 41px;
         transition: .3s;
+
+        @media(max-width: 1235px) {
+            font-size: 14px;
+            line-height: 39px;
+        }
 
         &:hover {
             color: $purple-3;

@@ -274,6 +274,11 @@
         line-height: 18px;
         color: white;
         z-index: 1;
+
+        @media(max-width: 1024px) {
+            font-size: 14px;
+            line-height: 20px;
+        }
     }
 
     &__content {

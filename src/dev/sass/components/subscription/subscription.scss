@@ -6,6 +6,11 @@
         letter-spacing: -.2px;
         line-height: 26px;
         max-width: 812px;
+
+        @media(max-width: 1024px) {
+            font-size: 14px;
+            line-height: 22px;
+        }
     }
 
     &__box {
@@ -80,6 +85,8 @@
 
         @media(max-width:1024px) {
             margin-top: 30px;
+            font-size: 14px;
+            line-height: 22px;
         }
 
         @media(max-width:768px) {
@@ -113,6 +120,10 @@
             color: $purple-3;
             font-family: "Times New Roman", sans-serif;
 
+            @media(max-width:1024px) {
+                font-size: 55px;
+                line-height: 64px;
+            }
 
             @media(max-width:768px) {
                 font-size: 48px;

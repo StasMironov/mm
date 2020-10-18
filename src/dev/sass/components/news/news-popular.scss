@@ -224,16 +224,25 @@
 
     &__text {
         max-width: 100%;
+
+        @media(max-width: 1024px) {
+            font-size: 14px;
+            line-height: 20px;
+        }
     }
 
     &__name {
         color: $purple-3;
         margin-right: 24px;
         letter-spacing: .5px;
+        font-size: 14px;
+        line-height: 22px;
     }
 
     &__num {
         color: $purple-3;
+        font-size: 14px;
+        line-height: 22px;
     }
 
     &__bloc {
