@@ -1,5 +1,12 @@
 .advertising {
 
+    &__li {
+        @media(max-width: 1024px) {
+            font-size: 14px;
+            line-height: 24px;
+        }
+    }
+
     &__group {
         @media(max-width: 1235px) {
             display: flex;
@@ -32,11 +39,21 @@
 
     &__word {
         margin-top: 10px;
+
+        @media(max-width: 1024px) {
+            font-size: 14px;
+            line-height: 24px;
+        }
     }
 
     &__note {
         margin-top: 16px;
         font-style: italic;
+
+        @media(max-width: 1024px) {
+            font-size: 14px;
+            line-height: 24px;
+        }
 
         @media(max-width: 600px) {
             margin-top: 0;
@@ -121,12 +138,22 @@
         font-size: 16px;
         line-height: 26px;
         font-family: 'PT_Sans', sans-serif;
+
+        @media(max-width: 1024px) {
+            font-size: 14px;
+            line-height: 24px;
+        }
     }
 
     &__clause {
         font-size: 16px;
         line-height: 26px;
         font-family: 'PT_Sans', sans-serif;
+
+        @media(max-width: 1024px) {
+            font-size: 14px;
+            line-height: 24px;
+        }
     }
 
     &__right {
@@ -364,12 +391,25 @@
     }
 
     &__info {
+
+        @media(max-width: 1024px) {
+            font-size: 14px;
+            line-height: 22px;
+        }
+
         &:not(:first-child) {
             margin-top: 24px;
 
             @media(max-width: 640px) {
                 margin-top: 21px;
             }
+        }
+    }
+
+    &__text {
+        @media(max-width: 1024px) {
+            font-size: 14px;
+            line-height: 22px;
         }
     }
 
@@ -474,15 +514,17 @@
         line-height: 26px;
         font-family: 'PT_Sans', sans-serif;
 
+        @media(max-width: 1024px) {
+            font-size: 14px;
+            line-height: 24px;
+        }
+
         @media(max-width: 768px) {
             margin-top: 8px;
             max-width: 600px;
         }
 
-        @media(max-width: 600px) {
-            font-size: 16px;
-            line-height: 23px;
-        }
+
     }
 
     &__cover {

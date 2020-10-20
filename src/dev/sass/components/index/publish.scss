@@ -12,7 +12,7 @@
     @media(max-width: 1024px) {
         margin-top: 16px;
         font-size: 12px;
-        line-height: 19px;
+        line-height: 16px;
     }
 
     @media(max-width: 640px) {
@@ -94,6 +94,10 @@
         width: 14px;
         height: 14px;
         margin-right: 9px;
+
+        @media(max-width: 1024px) {
+            display: none;
+        }
 
         .b-svg {
             width: 100%;

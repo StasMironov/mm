@@ -1,6 +1,10 @@
 .archive-news {
     max-width: 980px;
-    margin-top: 32px;
+    margin-top: 53px;
+
+    @media(max-width: 1024px) {
+        margin-top: 32px;
+    }
 
     &__header {
         padding-right: 0;
@@ -381,5 +385,9 @@
                 }
             }
         }
+    }
+
+    .news-popular__bloc {
+        margin-top: 26px;
     }
 }

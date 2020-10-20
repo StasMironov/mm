@@ -25,6 +25,11 @@
         transition: .2s;
         display: block;
 
+        @media(max-width: 1024px) {
+            font-size: 14px;
+            line-height: 22px;
+        }
+
         &:hover {
             //font-weight: 700;
             color: $purple-3;

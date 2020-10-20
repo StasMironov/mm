@@ -224,6 +224,7 @@
 
     &__text {
         max-width: 100%;
+        line-height: 26px;
 
         @media(max-width: 1024px) {
             font-size: 14px;

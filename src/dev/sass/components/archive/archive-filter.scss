@@ -291,6 +291,11 @@
             cursor: pointer;
             margin-right: 8px;
 
+            @media(max-width: 1024px) {
+                font-size: 14px;
+                line-height: 22px;
+            }
+
             @media(max-width: 640px) {
                 margin-right: 13px;
             }
@@ -300,6 +305,11 @@
             color: $purple-3;
             transition: .2s ease-out;
             margin-right: 5px;
+
+            @media(max-width: 1024px) {
+                font-size: 14px;
+                line-height: 22px;
+            }
 
             &:hover {
                 color: $black;
@@ -318,7 +328,7 @@
     }
 
     &__content {
-        padding-top: 19px;
+        padding-top: 9px;
     }
 
     &__unit {

@@ -33,10 +33,15 @@
         cursor: pointer;
         transition: font-weight .2s linear;
         font-family: "Open Sans", sans-serif;
-        margin-top: 7px;
+        margin-top: 9px;
         min-width: 43px;
         padding-left: 4px;
         margin-left: 4px;
+
+        @media(max-width: 1024px) {
+            font-size: 14px;
+            line-height: 22px;
+        }
 
         &:hover {
             text-shadow: 0 0 .65px #333, 0 0 .65px #333;

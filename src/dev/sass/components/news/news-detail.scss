@@ -55,6 +55,11 @@
         margin-right: 22px;
         color: $purple-3;
 
+        @media(max-width: 1024px) {
+            font-size: 12px;
+            line-height: 20px;
+        }
+
         @media(max-width: 600px) {
             display: none;
         }
@@ -63,6 +68,11 @@
     &__author {
         position: relative;
         padding-left: 22px;
+
+        @media(max-width: 1024px) {
+            font-size: 12px;
+            line-height: 20px;
+        }
 
         @media(max-width: 600px) {
             padding-left: 0;
@@ -88,6 +98,11 @@
 
     &__date {
         margin-right: 28px;
+
+        @media(max-width: 1024px) {
+            font-size: 12px;
+            line-height: 20px;
+        }
 
         @media(max-width: 600px) {
             margin-right: 16px;
@@ -123,13 +138,15 @@
 
         @media(max-width: 1024px) {
             max-width: 100%;
-            font-size: 14px;
-            line-height: 22px;
+            font-size: 16px;
+            line-height: 24px;
             margin-top: 30px;
         }
 
         @media(max-width: 600px) {
             margin-top: 7px;
+            font-size: 14px;
+            line-height: 22px;
         }
     }
 

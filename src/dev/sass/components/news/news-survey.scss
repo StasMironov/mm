@@ -61,6 +61,13 @@
         }
     }
 
+    &__count {
+        @media(max-width: 1024px) {
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+
     &__qty {
         display: flex;
         align-items: flex-end;
@@ -69,6 +76,11 @@
 
     &__txt {
         margin-right: 8px;
+
+        @media(max-width: 1024px) {
+            font-size: 14px;
+            line-height: 20px;
+        }
     }
 
     &__progress {
@@ -78,6 +90,11 @@
 
         label {
             display: block;
+
+            @media(max-width: 1024px) {
+                font-size: 14px;
+                line-height: 24px;
+            }
         }
 
         progress {

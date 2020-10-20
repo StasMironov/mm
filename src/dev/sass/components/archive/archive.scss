@@ -2,7 +2,7 @@
     &__bloc {
         max-width: 878px;
         width: 100%;
-        margin-top: 20px;
+        margin-top: 15px;
 
         @media(max-width: 640px) {
             margin-top: 8px;
@@ -14,6 +14,13 @@
     }
 
     &__info {
+        line-height: 26px;
+
+        @media(max-width: 1024px) {
+            font-size: 14px;
+            line-height: 22px;
+        }
+
         &:not(:first-child) {
             margin-top: 20px;
         }

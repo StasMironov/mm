@@ -14,7 +14,7 @@ jQuery.fn.exists = function () {
 
 if ($('.news-archive__slider').exists()) {
     let authorSlider = new Swiper('.news-archive__slider', {
-        spaceBetween: 40,
+        spaceBetween: 51,
         slidesPerView: 4,
         slidesPerColumn: 2,
         slidesPerColumnFill: 'row',
@@ -33,6 +33,14 @@ if ($('.news-archive__slider').exists()) {
         },
         breakpoints: {
             1920: {
+                spaceBetween: 51,
+                slidesPerView: 4,
+            },
+            1301: {
+                spaceBetween: 51,
+                slidesPerView: 4,
+            },
+            1300: {
                 spaceBetween: 40,
                 slidesPerView: 4,
             },
@@ -41,16 +49,16 @@ if ($('.news-archive__slider').exists()) {
                 slidesPerView: 4,
             },
             1024: {
-                spaceBetween: 40,
+                spaceBetween: 30,
                 slidesPerView: 3,
                 slidesPerGroup: 3,
             },
-            993: {
-                spaceBetween: 40,
+            861: {
+                spaceBetween: 30,
                 slidesPerView: 3,
                 slidesPerGroup: 3,
             },
-            992: {
+            860: {
                 spaceBetween: 30,
                 slidesPerView: 2,
                 slidesPerGroup: 2,
