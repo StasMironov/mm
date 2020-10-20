@@ -33,6 +33,22 @@
             }
         }
 
+        &--hidden {
+            display: none;
+
+            @media(max-width: 1024px) {
+                display: block;
+            }
+
+            .news-survey {
+                @media(max-width: 1024px) {
+                    border-bottom: none;
+                    padding-bottom: 0;
+                    margin-top: 0;
+                }
+            }
+        }
+
 
         &--set {
             padding-bottom: 30px;
@@ -244,6 +260,14 @@
         }
 
         &--basic {
+            margin-top: 30px;
+
+
+            @media(max-width: 1024px) {
+                margin-top: 25px;
+                padding-bottom: 24px;
+                border-bottom: 1px solid #d7d7d7;
+            }
 
             .news-set__cover {
                 margin-top: 23px;

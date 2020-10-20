@@ -5,6 +5,7 @@
 
     @media(max-width: 1024px) {
         margin-top: 24px;
+        padding-bottom: 24px;
     }
 
     &__grid {
@@ -12,21 +13,21 @@
         height: 515px;
 
         @media(max-width: 1024px) {
-            height: 450px;
+            height: 227px;
         }
 
-        @media(max-width: 920px) {
-            height: 370px;
-        }
+        // @media(max-width: 920px) {
+        //     height: 370px;
+        // }
 
 
-        @media(max-width: 768px) {
-            height: 300px;
-        }
+        // @media(max-width: 768px) {
+        //     height: 300px;
+        // }
 
-        @media(max-width: 768px) {
-            height: 235px;
-        }
+        // @media(max-width: 768px) {
+        //     height: 235px;
+        // }
 
         .swiper-slide,
         .swiper-wrapper {
@@ -39,6 +40,10 @@
         max-width: 966px;
         height: 100%;
         overflow: hidden;
+
+        @media(max-width: 1024px) {
+            max-width: 100%;
+        }
 
         &:hover .swiper-slide:after {
             opacity: 1;
@@ -94,7 +99,7 @@
             padding: 30px 30px 40px 51px;
         }
 
-        @media(max-width: 920px) {
+        @media(max-width: 1024px) {
             display: flex;
             justify-content: flex-end;
             max-width: 100%;
@@ -112,7 +117,7 @@
         overflow: hidden;
         height: 100%;
 
-        @media(max-width: 920px) {
+        @media(max-width: 1024px) {
             position: absolute;
             top: 0;
             bottom: 0;
@@ -126,7 +131,7 @@
             display: flex;
             flex-direction: column;
 
-            @media(max-width: 920px) {
+            @media(max-width: 1024px) {
                 max-width: 100%;
                 width: 100% !important;
                 transform: none !important;
@@ -136,7 +141,7 @@
         .swiper-wrapper {
             min-height: 210px;
 
-            @media(max-width: 920px) {
+            @media(max-width: 1024px) {
                 min-height: auto;
 
             }
@@ -152,7 +157,7 @@
             line-height: 26px;
         }
 
-        @media(max-width: 920px) {
+        @media(max-width: 1024px) {
             color: white
         }
 
@@ -169,7 +174,7 @@
         line-height: 22px;
         color: $purple-3;
 
-        @media(max-width: 920px) {
+        @media(max-width: 1024px) {
             display: none;
         }
     }
@@ -178,7 +183,7 @@
         display: block;
         margin-top: 27px;
 
-        @media(max-width: 920px) {
+        @media(max-width: 1024px) {
             margin-top: auto;
             position: absolute;
             bottom: -30px;
@@ -193,7 +198,7 @@
         &:hover .title-3 {
             color: $purple-1;
 
-            @media(max-width: 920px) {
+            @media(max-width: 1024px) {
                 color: white !important;
             }
         }
@@ -211,7 +216,7 @@
             line-height: 22px;
         }
 
-        @media(max-width: 920px) {
+        @media(max-width: 1024px) {
             display: none;
         }
     }
@@ -221,7 +226,7 @@
         align-items: center;
         margin-top: auto;
 
-        @media(max-width: 920px) {
+        @media(max-width: 1024px) {
             position: absolute;
             max-width: 100%;
             top: 0;
@@ -241,7 +246,7 @@
         height: 10px;
         margin-right: 20px;
 
-        @media(max-width: 920px) {
+        @media(max-width: 1024px) {
             position: absolute;
             max-width: 100%;
             top: 0;
@@ -283,7 +288,7 @@
             stroke-width: 2;
 
 
-            @media(max-width: 920px) {
+            @media(max-width: 1024px) {
                 height: 20px;
                 width: 20px;
                 stroke: white;
@@ -294,7 +299,7 @@
     .publish {
         margin-top: 0;
 
-        @media(max-width: 920px) {
+        @media(max-width: 1024px) {
             display: none;
         }
     }

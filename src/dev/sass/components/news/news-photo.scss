@@ -7,6 +7,10 @@
         padding-bottom: 24px;
     }
 
+    @media(max-width: 1024px) {
+        margin-top: 24px;
+    }
+
     @media(max-width: 600px) {
         padding-bottom: 16px;
     }
@@ -79,7 +83,7 @@
 
         @media(max-width: 1024px) {
             flex-wrap: wrap;
-            margin-top: 10px;
+            margin-top: 1px;
             margin-left: -20px;
         }
 
@@ -199,7 +203,7 @@
         }
 
         @media(max-width: 1024px) {
-            height: 200px;
+            height: 220px;
         }
 
         @media(max-width: 640px) {
