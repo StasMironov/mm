@@ -148,15 +148,15 @@
         }
 
         &:not(:last-child) {
-            @media(max-width: 640px) {
-                padding-bottom: 16px;
+            @media(max-width: 600px) {
+                padding-bottom: 20px;
                 border-bottom: 1px solid $gray-3;
             }
         }
 
         &:not(:first-child) {
             @media(max-width: 640px) {
-                margin-top: 30px;
+                margin-top: 20px;
             }
         }
 
@@ -238,16 +238,31 @@
         letter-spacing: .5px;
         font-size: 14px;
         line-height: 22px;
+
+        @media(max-width: 1024px) {
+            font-size: 12px;
+            line-height: 20px;
+        }
+
     }
 
     &__num {
         color: $purple-3;
         font-size: 14px;
         line-height: 22px;
+
+        @media(max-width: 1024px) {
+            font-size: 12px;
+            line-height: 20px;
+        }
     }
 
     &__bloc {
         margin-top: 30px;
+
+        @media(max-width: 1024px) {
+            margin-top: 20px;
+        }
 
         &:first-child {
             .news-popular__item {
@@ -264,11 +279,15 @@
         }
 
         &:not(:last-child) {
-            padding-bottom: 24px;
+            padding-bottom: 30px;
             border-bottom: 1px solid #d7d7d7;
 
-            @media(max-width: 640px) {
-                padding-bottom: 16px;
+            @media(max-width: 1024px) {
+                padding-bottom: 24px;
+            }
+
+            @media(max-width: 600px) {
+                padding-bottom: 20px;
             }
         }
 
@@ -382,6 +401,10 @@
                         padding-left: 0;
                         padding-bottom: 16px;
                         border-bottom: 1px solid #d7d7d7;
+                    }
+
+                    @media(max-width: 600px) {
+                        padding-bottom: 20px;
                     }
                 }
 
@@ -555,6 +578,10 @@
 
         .news-popular__text {
             height: 100%;
+
+            @media(max-width: 1024px) {
+                line-height: 23px;
+            }
         }
 
         .news-popular__cover {

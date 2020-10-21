@@ -1,7 +1,7 @@
 .edition-rewards {
     margin-top: 30px;
     padding-bottom: 24px;
-    border-bottom: 1px solid $black;
+    border-bottom: 1px solid $gray-3;
     transition: .3s;
 
     @media(max-width: 640px) {
@@ -81,7 +81,7 @@
     &__pagination {
         justify-content: center;
         display: flex;
-        margin-top: 48px;
+        margin-top: 40px;
 
         @media(max-width: 640px) {
             margin-top: 24px;

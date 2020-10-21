@@ -1,5 +1,5 @@
 .news-detail {
-    max-width: 926px;
+    max-width: 968px;
     width: 100%;
 
     @media(max-width: 1024px) {
@@ -40,6 +40,8 @@
     }
 
     &__info {
+        display: flex;
+        align-items: center;
         font-style: normal;
         font-weight: normal;
         font-size: 14px;
@@ -48,6 +50,27 @@
         @media(max-width: 600px) {
             order: 1;
             margin-top: 12px;
+        }
+    }
+
+    &__pic {
+        height: 17px;
+        width: 17px;
+        margin-right: 8px;
+        margin-top: 2px;
+
+        @media(max-width: 1024px) {
+            height: 15px;
+            width: 15px;
+            margin-right: 6px;
+        }
+
+        .b-svg {
+            width: 100%;
+            height: 100%;
+            fill: transparent;
+            stroke: #848484;
+            transition: .5s;
         }
     }
 
@@ -67,7 +90,8 @@
 
     &__author {
         position: relative;
-        padding-left: 22px;
+
+        display: flex;
 
         @media(max-width: 1024px) {
             font-size: 12px;
@@ -78,26 +102,19 @@
             padding-left: 0;
         }
 
-        &:before {
-            position: absolute;
-            content: "";
-            background-repeat: no-repeat;
-            left: 0;
-            bottom: 0;
-            top: 0;
-            margin: auto;
-            background-image: url(../img/icon/user2.png);
-            width: 14px;
-            height: 14px;
 
-            @media(max-width: 600px) {
-                content: none;
+        &:hover {
+            color: #34558b;
+
+            .b-svg {
+                fill: #34558b;
+                stroke: #34558b;
             }
         }
     }
 
     &__date {
-        margin-right: 28px;
+        margin-right: 25px;
 
         @media(max-width: 1024px) {
             font-size: 12px;
@@ -110,7 +127,11 @@
     }
 
     &__title {
-        margin-top: 24px;
+        margin-top: 53px;
+
+        @media(max-width: 1024px) {
+            margin-top: 40px;
+        }
 
         @media(max-width: 600px) {
             margin-top: 7px;
@@ -122,24 +143,24 @@
         flex-direction: column;
 
         @media(max-width: 600px) {
-            padding-bottom: 16px;
+            padding-bottom: 20px;
             border-bottom: 1px solid $gray-3;
         }
     }
 
     &__txt {
-        max-width: 736px;
+        max-width: 800px;
         width: 100%;
         font-style: normal;
         font-weight: normal;
-        font-size: 18px;
-        line-height: 29px;
-        margin-top: 40px;
+        font-size: 16px;
+        line-height: 27px;
+        margin-top: 17px;
 
         @media(max-width: 1024px) {
             max-width: 100%;
-            font-size: 16px;
-            line-height: 24px;
+            font-size: 14px;
+            line-height: 22px;
             margin-top: 30px;
         }
 
@@ -244,34 +265,20 @@
         }
     }
 
-    &__note {
-        font-style: italic;
-        font-weight: normal;
-        font-size: 18px;
-        line-height: 29px;
-        margin-top: 0 !important;
 
-        @media(max-width: 1024px) {
-            font-size: 16px;
-            line-height: 26px;
-        }
-
-        @media(max-width: 600px) {
-            font-size: 14px;
-            line-height: 22px;
-        }
-    }
 
     &__creator {
         font-style: normal;
         font-weight: normal;
-        font-size: 14px;
+        font-size: 14px !important;
         line-height: 22px;
         color: $purple-3;
         margin-top: 16px;
 
         @media(max-width: 1024px) {
-            margin-top: 10px;
+            margin-top: 10px !important;
+            font-size: 12px !important;
+            line-height: 20px;
         }
     }
 
@@ -324,6 +331,28 @@
             @media(max-width: 600px) {
                 max-width: 100%;
                 margin-right: 0;
+            }
+        }
+    }
+
+    &__quote {
+        margin-top: 50px !important;
+
+        .news-detail__note {
+            font-style: italic;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 29px;
+            margin-top: 0 !important;
+
+            @media(max-width: 1024px) {
+                font-size: 14px;
+                line-height: 24px;
+            }
+
+            @media(max-width: 600px) {
+                font-size: 14px;
+                line-height: 22px;
             }
         }
     }

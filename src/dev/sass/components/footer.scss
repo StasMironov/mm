@@ -311,11 +311,14 @@
             max-width: 235px;
         }
 
+        @media(max-width: 600px) {
+            margin-top: 34px;
+        }
+
         @media(max-width: 540px) {
             flex-wrap: nowrap;
             justify-content: space-between;
             max-width: 356px;
-            margin-top: 25px;
         }
 
         // @media(max-width: 1400px) {

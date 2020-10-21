@@ -224,6 +224,11 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+
+            @media(max-width: 1024px) {
+                font-size: 14px;
+                line-height: 20px;
+            }
         }
     }
 
@@ -361,6 +366,12 @@
         }
 
         .archive-filter__item--btn {
+
+            @media(max-width: 1024px) {
+                font-size: 14px;
+                line-height: 20px;
+            }
+
             @media(max-width: 640px) {
                 margin-top: 10px;
             }

@@ -19,7 +19,10 @@ block content
 								.news-detail__info
 									a(href="javascript:void(0);").news-detail__caption Кушайте на здоровье
 									a(href="javascript:void(0);").news-detail__date 19 марта
-									a(href="javascript:void(0);").news-detail__author Ольга Балабанова 
+									a(href="javascript:void(0);").news-detail__author 
+										.news-detail__pic
+											+svg('user')
+										div Ольга Балабанова 
 								a(href="javascript:void(0);").news-detail__header Кушайте на здоровье
 								.news-detail__title.title-1 Техника для обучения
 								.news-detail__txt Председателем совета директоров ПАО "ММК" Виктором Рашниковым принято решение об оказании помощи учреждениям социальной сферы - школам, детским садам, интернатам.
@@ -126,6 +129,10 @@ block content
 				.news-temp
 					img(src="./img/banner2.jpg" alt="")
 			.wrapper__right.wrapper__right--special
+				.news-today
+					.news-today__item
+						.news-today__title.title-2 Сегодняшняя газета
+						a(href="javascript:void(0);").btn Посмотреть электронное издание
 				.news-survey
 					a(href="javascript:void(0);").news-survey__title.title-3 Что вы думаете <br> об обязательном тестировании на коронавирусную инфекцию?
 					form.news-survey__form(method="get")
@@ -155,12 +162,11 @@ block content
 						a(href="javascript:void(0);").news-city__item
 							.news-city__pic(style="background-image: url(./img/index/p33.jpg);")
 							.news-city__title.title-3 Первые секретари
-				.news-today
+				.news-today.news-today--aside
 					a(href="javascript:void(0);").news-today__block
 						img(src="./img/index/p35.jpg" alt="")
-					.news-today__item
-						.news-today__title.title-2 Сегодняшняя газета
-						a(href="javascript:void(0);").btn Посмотреть электронное издание
+					a(href="javascript:void(0);").news-today__block.news-today__block--other
+						img(src="./img/index/p36.jpg" alt="")
 		
 							
 

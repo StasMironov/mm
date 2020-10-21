@@ -23,7 +23,8 @@
         @media(max-width: 1235px) {
             display: flex;
             margin-top: 12PX;
-            flex-direction: column;
+            // flex-direction: column;
+            font-size: 14px;
         }
 
         @media(max-width: 1024px) {
@@ -44,6 +45,10 @@
         @media(max-width: 768px) {
             margin-top: 24px;
         }
+
+        @media(max-width: 600px) {
+            margin-top: 11px;
+        }
     }
 
     &__date {
@@ -60,6 +65,10 @@
         &:not(:last-child) {
             padding-bottom: 29px;
             border-bottom: 1px solid $gray-3;
+
+            @media(max-width: 1024px) {
+                padding-bottom: 24px;
+            }
 
             @media(max-width: 600px) {
                 border: none;
@@ -106,9 +115,14 @@
             margin-left: -40px;
         }
 
+        @media(max-width: 1024px) {
+            margin-top: 20px;
+        }
+
         @media(max-width: 600px) {
             flex-wrap: wrap;
             margin-left: 0;
+            margin-top: 18px;
         }
     }
 
@@ -138,13 +152,13 @@
             width: 100%;
             margin-left: 0;
             padding-left: 0;
-            padding-bottom: 16px;
+            padding-bottom: 18px;
             border-bottom: 1px solid $gray-3;
         }
 
         &:not(:first-child) {
             @media(max-width: 600px) {
-                margin-top: 32px;
+                margin-top: 20px;
             }
         }
 
@@ -184,11 +198,21 @@
             margin-right: 15px;
         }
 
+        @media(max-width: 1100px) {
+            display: none;
+        }
+
         @media(max-width: 768px) {
             max-width: 100%;
             min-width: initial;
             height: 192px;
         }
+
+        @media(max-width: 600px) {
+            height: 161px;
+            display: block;
+        }
+
 
         &:after {
             position: absolute;
@@ -275,14 +299,15 @@
     &--news {
         padding-bottom: 0 !important;
         border-bottom: none !important;
+        margin-top: 50px;
 
         @media(max-width: 1024px) {
-            border-top: 1px solid #27202c;
-            padding-top: 16px;
+            border-top: 1px solid #D7D7D7;
+            padding-top: 20px;
         }
 
         padding-bottom: 20px;
-        border-bottom: 1px solid #27202c;
+        border-bottom: 1px solid #D7D7D7;
 
         &__wrapper {
             padding-bottom: 0px;
@@ -322,6 +347,8 @@
         }
 
         &__pic {
+
+
             @media(max-width: 600px) {
                 height: 134px;
             }

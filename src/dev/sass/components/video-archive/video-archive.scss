@@ -40,19 +40,19 @@
                 width: calc(50% - 15px);
                 margin-left: 15px;
                 padding-left: 15px;
+                padding-bottom: 18px;
             }
 
             @media(max-width: 500px) {
                 margin-left: 0;
                 padding-left: 0;
                 width: 100%;
-                padding-bottom: 16px;
                 border-bottom: 1px solid $gray-3;
             }
 
             &:not(:first-child) {
-                @media(max-width: 500px) {
-                    margin-top: 24px;
+                @media(max-width: 600px) {
+                    margin-top: 20px;
                 }
             }
 
