@@ -1728,6 +1728,9 @@ button {
   position: relative !important;
 }
 
+
+
+@import "./components/archive/archive-table.scss";
 @import "./components/release/release-datepicker.scss";
 @import "./components/release/release-month.scss";
 @import "./components/release/release-year.scss";

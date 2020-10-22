@@ -19,7 +19,6 @@ if ($('.news-archive__slider').exists()) {
     slidesPerView: 4,
     slidesPerColumn: 2,
     slidesPerColumnFill: 'row',
-    //  slidesPerGroupSkip: 12,
     slidesPerGroup: 4,
     navigation: {
       nextEl: '.edition-slider__arr--next',
@@ -27,10 +26,7 @@ if ($('.news-archive__slider').exists()) {
     },
     pagination: {
       el: '.news-archive__pag',
-      clickable: true // renderBullet: function (index, className) {
-      //     return '<span class="' + className + '">' + (index + 1) + '</span>';
-      // },
-
+      clickable: true
     },
     breakpoints: {
       1920: {
@@ -99,16 +95,12 @@ if ($('.news-archive__slider').exists()) {
         slidesPerView: 2,
         slidesPerGroup: 2
       }
-    } // watchSlidesVisibility: true,
-    // effect: "fade",
-
+    }
   });
 }
 
 if ($('.theme-button').exists()) {
   var switchTheme = function switchTheme(e) {
-    console.log(e.target.checked);
-
     if (!e.target.checked) {
       mainElement.setAttribute("data-theme", "dark");
       localStorage.setItem("theme", "dark");
@@ -138,10 +130,9 @@ if ($('.theme-button').exists()) {
     }
   }
 
-  console.log(toggleSwitch);
   toggleSwitch.forEach(function (item) {
     item.addEventListener("click", switchTheme, false);
-  }); // toggleSwitch.addEventListener("change", switchTheme, false);
+  });
 }
 
 if ($('#btnUp').exists()) {
@@ -283,7 +274,6 @@ function createLightGallery(bloc) {
       background: 'A90707',
       "selector": ".news-archive__block"
     });
-    console.log('777');
   } else if (['video-gallery'].indexOf(bloc) !== -1) {
     lightGallery(document.getElementById(bloc), {
       thumbnail: false,
@@ -431,8 +421,6 @@ $(function () {
   adaptiveArticle('.article__box', '.article__cover');
 
   if ($('.header__bottom .header__nav').exists) {
-    // const breakpoint = window.matchMedia('(max-width:1024px)');
-    // 
     $(function () {
       var csObj = new Object();
       csObj.axis = "x";
@@ -489,72 +477,7 @@ $(function () {
     } catch (err) {
       console.log(err);
     }
-  } // if ($('.journal__items').exists) {
-  //     try {
-  //         const breakpoint = window.matchMedia('(min-width:501px)');
-  //         let mySwiper;
-  //         const breakpointChecker = function () {
-  //             if (breakpoint.matches === true) {
-  //                 if ($('.journal__inner').exists()) {
-  //                     setHeaderHeight('.journal__inner', '.journal__cover');
-  //                     $(window).on('resize load', function () {
-  //                         setHeaderHeight('.journal__inner', '.journal__cover');
-  //                     });
-  //                 }
-  //                 return enableSwiper();
-  //             } else if (breakpoint.matches === false) {
-  //                 if (mySwiper !== undefined) mySwiper.destroy(true, true);
-  //                 return;
-  //             }
-  //         };
-  //         function enableSwiper() {
-  //             $('.journal__items').each(function () {
-  //                 mySwiper = new Swiper('.' + $(this).data("id"), {
-  //                     slidesPerView: 4,
-  //                     spaceBetween: 18,
-  //                     stopOnLastSlide: false,
-  //                     disableOnInteraction: true,
-  //                     touchRatio: 0,
-  //                     breakpoints: {
-  //                         500: {
-  //                             spaceBetween: 15,
-  //                             slidesPerView: 3,
-  //                         },
-  //                         600: {
-  //                             spaceBetween: 15,
-  //                             slidesPerView: 3,
-  //                         },
-  //                         601: {
-  //                             spaceBetween: 15,
-  //                             slidesPerView: 4,
-  //                         },
-  //                         769: {
-  //                             spaceBetween: 15,
-  //                             slidesPerView: 5,
-  //                         },
-  //                         1024: {
-  //                             spaceBetween: 15,
-  //                             slidesPerView: 5,
-  //                         },
-  //                         1025: {
-  //                             slidesPerView: 4,
-  //                             spaceBetween: 18,
-  //                         }
-  //                     },
-  //                     navigation: {
-  //                         nextEl: '.journal__arrow.journal__arrow--next',
-  //                         prevEl: '.journal__arrow.journal__arrow--prev',
-  //                     },
-  //                 });
-  //             });
-  //         }
-  //         breakpoint.addListener(breakpointChecker);
-  //         breakpointChecker();
-  //     } catch (err) {
-  //         console.log(err);
-  //     }
-  // }
-
+  }
 
   function adaptiveBloc(container, item, bloc, picture) {
     if ($(container).exists()) {
@@ -587,7 +510,7 @@ $(function () {
 
   adaptiveBloc('.news-popular__items', '.news-popular__item', '.news-popular__bloc', '.news-popular__pic');
   $(document).on('click', function (event) {
-    if ($('.archive-filter__item').exists) {
+    if ($('.archive-filter__item').exists()) {
       try {
         var $targetBloc = $(event.target).closest('.archive-filter__bloc');
         var $targetScroll = $(event.target).closest('.mCSB_dragger');
@@ -605,7 +528,39 @@ $(function () {
         console.log(err);
       }
     }
-  }); //===========Truncate text=============
+
+    if ($('.release-month__bloc').exists()) {
+      try {
+        var _$targetBloc = $(event.target).closest('.release-month__btn');
+
+        var _$targetScroll = $(event.target).closest('.mCSB_dragger');
+
+        var _$temp = '';
+
+        if (!_$targetBloc.length) {
+          _$temp = $('.release-month__bloc--active');
+          $('.release-month__bloc--active').removeClass('release-month__bloc--active');
+        }
+
+        if (_$targetScroll.length) {
+          _$temp.addClass('release-month__bloc--active');
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  });
+
+  if ($('.release-month__bloc').exists()) {
+    try {
+      $('.release-month__btn').on('click', function () {
+        $('.release-month__bloc').toggleClass('release-month__bloc--active');
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  } //===========Truncate text=============
+
 
   function truncateText(bloc, qty) {
     if (bloc.length > 0) {
@@ -1012,10 +967,8 @@ $(function () {
         }
 
         wrapper.classList.add('gallery-item'); // Задаем класс обертки/слайда
-        //wrapper.style.backgroundImage = `url(${item.getAttribute('src')})`
 
-        wrapper.classList.add('swiper-slide'); // 
-
+        wrapper.classList.add('swiper-slide');
         item.parentNode.replaceChild(wrapper, item); // Заменяем старое изображение без обертки, на обертку/слайд с внутренним изображением
       });
       item.setAttribute('id', 'slide' + i); // Задаем уникальный id для каждого слайдера
@@ -1035,7 +988,6 @@ $(function () {
 
   function showImg(bloc, type) {
     $(bloc).find('.swiper-slide').each(function () {
-      // console.log($(this));
       $(this).append("<canvas class='gallery__img-bg'></canvas>");
       var canvas = $(this).find('canvas')[0];
       var ctx = canvas.getContext("2d");
@@ -1109,7 +1061,6 @@ $(function () {
       }
     });
   } //========================================//
-  // lightGallery(document.getElementById('lightgallery'));
 
 
   if ($("#input-search").exists) {
@@ -1183,7 +1134,6 @@ $(function () {
         slidesPerView: 6,
         slidesPerColumn: 2,
         slidesPerColumnFill: 'row',
-        //  slidesPerGroupSkip: 12,
         slidesPerGroup: 6,
         navigation: {
           nextEl: '.edition-slider__arr--next',
@@ -1235,9 +1185,7 @@ $(function () {
             slidesPerView: 2,
             slidesPerGroup: 2
           }
-        } // watchSlidesVisibility: true,
-        // effect: "fade",
-
+        }
       });
     } catch (err) {
       console.log(err);
@@ -1288,51 +1236,20 @@ $(function () {
           var text = $(this).text();
           $(this).addClass('release-month__item--active').siblings().removeClass('release-month__item--active');
           $('.res-month').val(text);
+          var monthInfo = $(this).text();
+          $('.release-month__txt').text(monthInfo);
         });
       });
     }
   }
 
-  if ($('.release-datepicker__position').exists()) {
-    $.datepicker.regional['ru'] = {
-      closeText: 'Закрыть',
-      prevText: 'Предыдущий',
-      nextText: 'Следующий',
-      currentText: 'Сегодня',
-      monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-      monthNamesShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
-      dayNames: ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'],
-      dayNamesShort: ['вск', 'пнд', 'втр', 'срд', 'чтв', 'птн', 'сбт'],
-      dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-      weekHeader: 'Не',
-      dateFormat: 'dd.mm.yy',
-      firstDay: 1,
-      isRTL: false,
-      showMonthAfterYear: false,
-      yearSuffix: ''
-    };
-    $.datepicker.setDefaults($.datepicker.regional['ru']);
-    $('.release-datepicker__position').datepicker({
-      dateFormat: "yy-mm-dd",
-      inline: true,
-      onSelect: function onSelect(dateText, inst) {
-        var date = $(this).datepicker({
-          dateFormat: "d M,y"
-        }).val();
-        $('.release-date').val(date);
-        location.href = "/archive?date=" + dateText; // /news?date=2014-02-22
-      }
-    });
-    $('.release-date').val($('.release-datepicker__position').datepicker({
-      dateFormat: 'dd-mm-yy'
-    }).val());
-    var breakpoint = window.matchMedia('(min-width:1236px)');
+  if ($('.release-month__items').exists()) {
+    var breakpoint = window.matchMedia('(min-width:769px)');
 
     if (!breakpoint.matches === true) {
       $('.release-month__items').mCustomScrollbar({
         theme: "dark",
-        mouseWheelPixels: 90,
-        axis: "x"
+        mouseWheelPixels: 90
       });
     }
   }
