@@ -1193,21 +1193,13 @@ $(function () {
   }
 
   if ($('.release-year__items').exists()) {
-    var dataFilter = $('.release-year__items').data('filter');
-    var dateStart = dataFilter.dateStart;
-    var dateEnd = dataFilter.dateEnd;
-
-    for (var _i7 = dateStart; _i7 <= dateEnd; _i7++) {
-      $('.release-year__items').append("<a href=\"javascript:void(0);\" class=\"release-year__item\">".concat(_i7, "</a>"));
-
-      if (_i7 == dateStart) {
-        $('.release-year__item').addClass('release-year__item--active');
-        $('.res-year').val($('.release-year__item').text());
-      }
-    }
-
     if ($('.release-year__item').exists()) {
-      $('.release-year__item').each(function () {
+      $('.release-year__item').each(function (index) {
+        if (index == 0) {
+          $(this).addClass('release-year__item--active');
+          $('.res-year').val($(this).text());
+        }
+
         $(this).on('click', function () {
           var text = $(this).text();
           $(this).addClass('release-year__item--active').siblings().removeClass('release-year__item--active');
@@ -1218,20 +1210,13 @@ $(function () {
   }
 
   if ($('.release-month__items').exists()) {
-    var _dataFilter = $('.release-month__items').data('filter');
-
-    var month = _dataFilter.month;
-    month.forEach(function (element, i) {
-      $('.release-month__items').append("<a href=\"javascript:void(0);\" class=\"release-month__item\">".concat(element, "</div>"));
-
-      if (i == 0) {
-        $('.release-month__item').addClass('release-month__item--active');
-        $('.res-month').val($('.release-month__items').text());
-      }
-    });
-
     if ($('.release-month__item').exists()) {
-      $('.release-month__item').each(function () {
+      $('.release-month__item').each(function (index) {
+        if (index == 0) {
+          $(this).addClass('release-month__item--active');
+          $('.res-month').val($(this).text());
+        }
+
         $(this).on('click', function () {
           var text = $(this).text();
           $(this).addClass('release-month__item--active').siblings().removeClass('release-month__item--active');

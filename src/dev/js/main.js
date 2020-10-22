@@ -1227,20 +1227,12 @@ $(() => {
     }
 
     if ($('.release-year__items').exists()) {
-        let dataFilter = $('.release-year__items').data('filter');
-        let dateStart = dataFilter.dateStart;
-        let dateEnd = dataFilter.dateEnd;
-
-        for (let i = dateStart; i <= dateEnd; i++) {
-            $('.release-year__items').append(`<a href="javascript:void(0);" class="release-year__item">${i}</a>`)
-            if (i == dateStart) {
-                $('.release-year__item').addClass('release-year__item--active');
-                $('.res-year').val($('.release-year__item').text());
-            }
-        }
-
         if ($('.release-year__item').exists()) {
-            $('.release-year__item').each(function () {
+            $('.release-year__item').each(function (index) {
+                if (index == 0) {
+                    $(this).addClass('release-year__item--active');
+                    $('.res-year').val($(this).text());
+                }
                 $(this).on('click', function () {
                     let text = $(this).text();
                     $(this).addClass('release-year__item--active')
@@ -1253,19 +1245,12 @@ $(() => {
     }
 
     if ($('.release-month__items').exists()) {
-        let dataFilter = $('.release-month__items').data('filter');
-        let month = dataFilter.month;
-
-        month.forEach(function (element, i) {
-            $('.release-month__items').append(`<a href="javascript:void(0);" class="release-month__item">${element}</div>`);
-            if (i == 0) {
-                $('.release-month__item').addClass('release-month__item--active');
-                $('.res-month').val($('.release-month__items').text());
-            }
-        });
-
         if ($('.release-month__item').exists()) {
-            $('.release-month__item').each(function () {
+            $('.release-month__item').each(function (index) {
+                if (index == 0) {
+                    $(this).addClass('release-month__item--active');
+                    $('.res-month').val($(this).text());
+                }
                 $(this).on('click', function () {
                     let text = $(this).text();
                     $(this).addClass('release-month__item--active')
