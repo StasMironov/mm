@@ -592,6 +592,20 @@ button {
   color: #d7d7d7;
   transition: none;
 
+  .archive-table {
+    td a {
+      color: $gray-3;
+    }
+
+    .selected {
+      outline: 2px solid #6AA1FB !important;
+
+      &:hover {
+        background-color: #6AA1FB;
+      }
+    }
+  }
+
   .article {
     &__link {
       color: #d7d7d7;
@@ -875,7 +889,13 @@ button {
         color: #27202C;
       }
 
+      & .publish__date {
+        color: #27202C;
+      }
+
       & .publish__person {
+        color: #27202C;
+
         & .b-svg {
           stroke: #27202C;
         }
@@ -1122,6 +1142,10 @@ button {
 
     &__text {
       color: #d7d7d7;
+    }
+
+    &__job {
+      color: #6AA1FB;
     }
   }
 
@@ -1477,8 +1501,14 @@ button {
 
   .news-detail {
     &__author {
-      &:before {
-        background-image: url(../img/icon/user-light.png);
+
+      &:hover {
+        color: #6AA1FB;
+
+        .b-svg {
+          fill: #6AA1FB;
+          stroke: #6AA1FB;
+        }
       }
     }
 
@@ -1586,6 +1616,7 @@ button {
   .publish {
     &__person {
       transition: .2s ease-out;
+      color: $gray-3;
 
       &:hover {
         color: #6AA1FB;
@@ -1609,6 +1640,8 @@ button {
     }
 
     &__date {
+      color: $gray-3;
+
       &:hover {
         color: #6AA1FB;
       }
