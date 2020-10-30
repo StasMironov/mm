@@ -13,6 +13,24 @@ jQuery.fn.exists = function () {
 // });
 
 
+var projectFunc = {
+  ObjAd: function ObjAd(element, place) {
+    if ($(element).exists()) {
+      $(element).each(function (index) {
+        var adObj = $(this).html();
+        var out = adObj;
+        $(place).html(out);
+        $(this).remove();
+      });
+    }
+  }
+};
+var breakpoint = window.matchMedia('(max-width:1024px)');
+
+if (breakpoint.matches === true) {
+  projectFunc.ObjAd("#aside", "#include");
+}
+
 if ($('.news-archive__slider').exists()) {
   var authorSlider = new Swiper('.news-archive__slider', {
     spaceBetween: 51,
@@ -155,14 +173,15 @@ if ($('#btnUp').exists()) {
 function articleSlider() {
   if ($('.author-articles__grid--slider').exists) {
     try {
-      var breakpoint = window.matchMedia('(min-width:600px)');
+      var _breakpoint = window.matchMedia('(min-width:600px)');
+
       var mySwiper;
 
       var breakpointChecker = function breakpointChecker() {
-        if (breakpoint.matches === true) {
+        if (_breakpoint.matches === true) {
           if (mySwiper !== undefined) mySwiper.destroy(true, true);
           return;
-        } else if (breakpoint.matches === false) {
+        } else if (_breakpoint.matches === false) {
           return enableSwiper();
         }
       };
@@ -179,7 +198,8 @@ function articleSlider() {
         });
       };
 
-      breakpoint.addListener(breakpointChecker);
+      _breakpoint.addListener(breakpointChecker);
+
       breakpointChecker();
     } catch (err) {
       console.log(err);
@@ -240,11 +260,12 @@ function journalSlider() {
         });
       };
 
-      var breakpoint = window.matchMedia('(min-width:501px)');
+      var _breakpoint2 = window.matchMedia('(min-width:501px)');
+
       var mySwiper;
 
       var breakpointChecker = function breakpointChecker() {
-        if (breakpoint.matches === true) {
+        if (_breakpoint2.matches === true) {
           if ($('.journal__inner').exists()) {
             setHeaderHeight('.journal__inner', '.journal__cover');
             $(window).on('resize load', function () {
@@ -253,13 +274,14 @@ function journalSlider() {
           }
 
           return enableSwiper();
-        } else if (breakpoint.matches === false) {
+        } else if (_breakpoint2.matches === false) {
           if (mySwiper !== undefined) mySwiper.destroy(true, true);
           return;
         }
       };
 
-      breakpoint.addListener(breakpointChecker);
+      _breakpoint2.addListener(breakpointChecker);
+
       breakpointChecker();
     } catch (err) {
       console.log(err);
@@ -1229,9 +1251,9 @@ $(function () {
   }
 
   if ($('.release-month__items').exists()) {
-    var breakpoint = window.matchMedia('(min-width:769px)');
+    var _breakpoint3 = window.matchMedia('(min-width:769px)');
 
-    if (!breakpoint.matches === true) {
+    if (!_breakpoint3.matches === true) {
       $('.release-month__items').mCustomScrollbar({
         theme: "dark",
         mouseWheelPixels: 90
