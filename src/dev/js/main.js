@@ -13,7 +13,7 @@ jQuery.fn.exists = function () {
 // });
 
 const projectFunc = {
-    ObjAd: function (element, place) {
+    objAd: function (element, place) {
         if ($(element).exists()) {
             $(element).each(function (index) {
                 let adObj = $(this).html();
@@ -22,13 +22,39 @@ const projectFunc = {
                 $(this).remove();
             });
         }
+    },
+
+    objReturn: function (element, place) {
+        if ($(element).exists()) {
+            var t = '';
+            t = $(element).html();
+            return $(element);
+        }
     }
 }
 
-let breakpoint = window.matchMedia('(max-width:1024px)');
-if (breakpoint.matches === true) {
-    projectFunc.ObjAd("#aside", "#include");
-}
+let tempQuestion = projectFunc.objReturn("#aside");
+var сteatedQuestion = false;
+
+$(window).on('resize load', function () {
+    if ($(this).width() <= 1024) {
+        projectFunc.objAd("#aside", "#include");
+        сteatedQuestion = false;
+    } else {
+        if (!сteatedQuestion) {
+            $(tempQuestion).insertAfter('.news-today');
+            $("#include").children().remove();
+            сteatedQuestion = true;
+        }
+    }
+});
+
+// let breakpoint = window.matchMedia('(max-width:1024px)');
+// if (breakpoint.matches === true) {
+
+
+
+// }
 
 
 if ($('.news-archive__slider').exists()) {

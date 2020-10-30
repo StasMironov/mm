@@ -14,7 +14,7 @@ jQuery.fn.exists = function () {
 
 
 var projectFunc = {
-  ObjAd: function ObjAd(element, place) {
+  objAd: function objAd(element, place) {
     if ($(element).exists()) {
       $(element).each(function (index) {
         var adObj = $(this).html();
@@ -23,13 +23,31 @@ var projectFunc = {
         $(this).remove();
       });
     }
+  },
+  objReturn: function objReturn(element, place) {
+    if ($(element).exists()) {
+      var t = '';
+      t = $(element).html();
+      return $(element);
+    }
   }
 };
-var breakpoint = window.matchMedia('(max-width:1024px)');
-
-if (breakpoint.matches === true) {
-  projectFunc.ObjAd("#aside", "#include");
-}
+var tempQuestion = projectFunc.objReturn("#aside");
+var сteatedQuestion = false;
+$(window).on('resize load', function () {
+  if ($(this).width() <= 1024) {
+    projectFunc.objAd("#aside", "#include");
+    сteatedQuestion = false;
+  } else {
+    if (!сteatedQuestion) {
+      $(tempQuestion).insertAfter('.news-today');
+      $("#include").children().remove();
+      сteatedQuestion = true;
+    }
+  }
+}); // let breakpoint = window.matchMedia('(max-width:1024px)');
+// if (breakpoint.matches === true) {
+// }
 
 if ($('.news-archive__slider').exists()) {
   var authorSlider = new Swiper('.news-archive__slider', {
@@ -173,15 +191,14 @@ if ($('#btnUp').exists()) {
 function articleSlider() {
   if ($('.author-articles__grid--slider').exists) {
     try {
-      var _breakpoint = window.matchMedia('(min-width:600px)');
-
+      var breakpoint = window.matchMedia('(min-width:600px)');
       var mySwiper;
 
       var breakpointChecker = function breakpointChecker() {
-        if (_breakpoint.matches === true) {
+        if (breakpoint.matches === true) {
           if (mySwiper !== undefined) mySwiper.destroy(true, true);
           return;
-        } else if (_breakpoint.matches === false) {
+        } else if (breakpoint.matches === false) {
           return enableSwiper();
         }
       };
@@ -198,8 +215,7 @@ function articleSlider() {
         });
       };
 
-      _breakpoint.addListener(breakpointChecker);
-
+      breakpoint.addListener(breakpointChecker);
       breakpointChecker();
     } catch (err) {
       console.log(err);
@@ -260,12 +276,11 @@ function journalSlider() {
         });
       };
 
-      var _breakpoint2 = window.matchMedia('(min-width:501px)');
-
+      var breakpoint = window.matchMedia('(min-width:501px)');
       var mySwiper;
 
       var breakpointChecker = function breakpointChecker() {
-        if (_breakpoint2.matches === true) {
+        if (breakpoint.matches === true) {
           if ($('.journal__inner').exists()) {
             setHeaderHeight('.journal__inner', '.journal__cover');
             $(window).on('resize load', function () {
@@ -274,14 +289,13 @@ function journalSlider() {
           }
 
           return enableSwiper();
-        } else if (_breakpoint2.matches === false) {
+        } else if (breakpoint.matches === false) {
           if (mySwiper !== undefined) mySwiper.destroy(true, true);
           return;
         }
       };
 
-      _breakpoint2.addListener(breakpointChecker);
-
+      breakpoint.addListener(breakpointChecker);
       breakpointChecker();
     } catch (err) {
       console.log(err);
@@ -1251,9 +1265,9 @@ $(function () {
   }
 
   if ($('.release-month__items').exists()) {
-    var _breakpoint3 = window.matchMedia('(min-width:769px)');
+    var breakpoint = window.matchMedia('(min-width:769px)');
 
-    if (!_breakpoint3.matches === true) {
+    if (!breakpoint.matches === true) {
       $('.release-month__items').mCustomScrollbar({
         theme: "dark",
         mouseWheelPixels: 90
