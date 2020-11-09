@@ -617,6 +617,7 @@ button {
       }
 
       &--active {
+        text-shadow: 0 0 0.65px #6AA1FB, 0 0 0.65px #6AA1FB;
         color: #6AA1FB;
       }
 
@@ -714,6 +715,7 @@ button {
 
       &--active,
       &:hover {
+        text-shadow: 0 0 0.65px#6AA1FB, 0 0 0.65px #6AA1FB;
         color: #6AA1FB;
       }
     }
@@ -820,6 +822,12 @@ button {
         @media(max-width: 640px) {
           border-bottom: 1px solid #f6f6f6;
         }
+      }
+    }
+
+    &__lft {
+      &:hover+.news-actual__rgh .news-actual__article {
+        color: #6AA1FB;
       }
     }
   }

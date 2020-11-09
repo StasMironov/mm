@@ -34,7 +34,7 @@ const projectFunc = {
 }
 
 let tempQuestion = projectFunc.objReturn("#aside");
-var сteatedQuestion = false;
+let сteatedQuestion = false;
 
 $(window).on('resize load', function () {
     if ($(this).width() <= 1024) {

@@ -362,11 +362,11 @@
         }
 
         &--active {
-            color: $purple-3;
-            font-weight: 600;
+            text-shadow: 0 0 0.65px #34558b, 0 0 0.65px #34558b;
+            color: #34558b;
 
             @media(max-width: 1024px) {
-                font-weight: bold;
+                // font-weight: bold;
             }
         }
     }
