@@ -440,6 +440,13 @@
     &__name {
         display: block;
         line-height: 25px;
+        font-family: "MinionPro", sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 26px;
+        transition: .2s ease-out;
+
 
         @media(max-width: 1024px) {
             margin-bottom: 0px;
