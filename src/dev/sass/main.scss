@@ -475,9 +475,26 @@ button {
   display: block;
   background-color: $gray-1;
   transition: background-color 0.2s linear;
+  height: 123px;
 
   @media(max-width: 640px) {
     display: none;
+  }
+
+  a {
+    display: block;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @media(max-width: 768px) {
+      background-image: url('../img/banner/banner-tablet.jpg') !important;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
   }
 }
 
