@@ -475,7 +475,7 @@ button {
   display: block;
   background-color: $gray-1;
   transition: background-color 0.2s linear;
-  height: 123px;
+  // height: 123px;
 
   @media(max-width: 640px) {
     display: none;
@@ -1784,6 +1784,66 @@ button {
 #ui-datepicker-div {
   display: block !important;
   position: relative !important;
+}
+
+
+.ad-banner-image-tablet,
+.ad-banner-image-mobile {
+  display: none;
+}
+
+.ad-banner-image-default {
+  @media(max-width: 1024px) {
+    display: none;
+  }
+}
+
+.ad-banner-image-tablet {
+  @media(max-width: 1024px) {
+    display: block;
+  }
+
+  @media(max-width: 375px) {
+    display: none;
+  }
+}
+
+.ad-banner-image-mobile {
+  @media(max-width: 375px) {
+    display: block;
+  }
+}
+
+
+.bgi {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.banner {
+  width: 100%;
+  padding-top: 6.42%;
+
+  @media(max-width: 1024px) {
+    padding-top: 12%
+  }
+
+  &--footer {
+    padding-top: 9.27%;
+
+    @media(max-width: 1024px) {
+      padding-top: 12%;
+    }
+
+    @media(max-width: 375px) {
+      padding-top: 60%;
+    }
+  }
+
+  &--basic {
+    padding-top: 17.78%;
+  }
 }
 
 

@@ -1,6 +1,6 @@
 .news-temp {
     display: block;
-    height: 123px;
+    // height: 123px;
     margin-top: 60px;
     background-size: cover;
 
@@ -9,19 +9,19 @@
         // height: 170px;
     }
 
-    @media(max-width: 1024px) {
-        background-image: url('../img/banner/banner-tablet2.jpg') !important;
-    }
+    // @media(max-width: 1024px) {
+    //     background-image: url('../img/banner/banner-tablet2.jpg') !important;
+    // }
 
-    @media(max-width: 600px) {
-        height: 135px;
-        // margin-top: 29px;
-    }
+    // @media(max-width: 600px) {
+    //     height: 135px;
+    //     // margin-top: 29px;
+    // }
 
-    @media(max-width: 320px) {
-        background-image: url('../img/banner/banner-mobile2.jpg') !important;
-        height: 206px;
-    }
+    // @media(max-width: 320px) {
+    //     background-image: url('../img/banner/banner-mobile2.jpg') !important;
+    //     height: 206px;
+    // }
 
     // img {
     //     height: 100%;

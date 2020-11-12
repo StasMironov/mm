@@ -1,11 +1,10 @@
 include ../mixins
 .ad
-    a(href="javascript:void(0);" style="background-image: url('./img/banner/banner.jpg')")
-                    //- img(src="./img/banner.png" alt="")
-    //- .container
-    //-     .content.content--ad
-    //-         a(href="javascript:void(0);")
-    //-             img(src="./img/banner.png" alt="")
+    .content.content--ad
+        a(href="javascript:void(0);")
+            .ad-banner-image-default.bgi.banner(style="background-image: url('./img/banner/banner.jpg')")
+            .ad-banner-image-tablet.bgi.banner(style="background-image: url('./img/banner/banner-tablet.jpg')")
+            .ad-banner-image-mobile.bgi.banner(style="background-image: url('./img/banner/banner-mobile.jpg')")
             //- h1 Заголовок 1
             //- h2 Заголовок 2
             //- h3 Заголовок 3

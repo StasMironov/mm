@@ -402,22 +402,22 @@
     }
 
     &--ad {
-        padding: 30px 0 20px;
+        height: 100%;
+        // padding: 30px 0 20px;
 
         a {
             img {
                 margin-top: 0;
+                height: auto;
             }
         }
 
         img {
-            max-height: 156px;
             height: auto;
-            max-width: 1328px;
+            max-width: 100%;
             object-fit: cover;
         }
 
-        div,
         ul,
         ol,
         img,
@@ -431,6 +431,10 @@
         h4 {
             text-align: center;
             margin-top: 25px;
+        }
+
+        div {
+            margin-top: 0;
         }
     }
 
