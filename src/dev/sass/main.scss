@@ -1788,11 +1788,13 @@ button {
 
 
 .ad-banner-image-tablet,
-.ad-banner-image-mobile {
+.ad-banner-image-tablet-768,
+.ad-banner-image-mobile-375,
+.ad-banner-image-mobile-320 {
   display: none;
 }
 
-.ad-banner-image-default {
+.ad-banner-image-desktop {
   @media(max-width: 1024px) {
     display: none;
   }
@@ -1803,13 +1805,33 @@ button {
     display: block;
   }
 
+  @media(max-width: 768px) {
+    display: none;
+  }
+}
+
+.ad-banner-image-tablet-768 {
+  @media(max-width: 768px) {
+    display: block;
+  }
+
   @media(max-width: 375px) {
     display: none;
   }
 }
 
-.ad-banner-image-mobile {
+.ad-banner-image-mobile-375 {
   @media(max-width: 375px) {
+    display: block;
+  }
+
+  @media(max-width: 320px) {
+    display: none;
+  }
+}
+
+.ad-banner-image-mobile-320 {
+  @media(max-width: 320px) {
     display: block;
   }
 }
@@ -1843,6 +1865,48 @@ button {
 
   &--basic {
     padding-top: 17.78%;
+  }
+}
+
+.news-banner {
+  @media(max-width: 500px) {
+    margin-top: 24px;
+  }
+
+  &__block {
+    display: block;
+    max-width: 318px;
+
+    @media(max-width: 1024px) {
+      display: none;
+    }
+
+    @media(max-width: 500px) {
+      display: block;
+      margin: 0 auto;
+    }
+
+    @media(max-width: 375px) {
+      width: calc(100% + 30px);
+      margin-left: -15px;
+      max-width: initial;
+    }
+
+    &--other {
+      margin-top: 32px;
+    }
+
+    .banner {
+      padding-top: 66.67%;
+
+      @media(max-width: 375px) {
+        padding-top: 36%;
+      }
+
+      @media(max-width: 320px) {
+        padding-top: 48.45%;
+      }
+    }
   }
 }
 

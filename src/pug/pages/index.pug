@@ -204,9 +204,15 @@ block content
 														+svg('user')
 													.publish__txt Фантасмогорьев Фантасмогорь
 								a(href="javascript:void(0);").news-actual__item.news-actual__item--banner
-									.ad-banner-image-default.bgi.banner.banner--basic(style="background-image: url('./img/banner/banner3.jpg')")
-									.ad-banner-image-tablet.bgi.banner.banner--basic(style="background-image: url('./img/banner/banner3.jpg')")
-									.ad-banner-image-mobile.bgi.banner.banner--basic(style="background-image: url('./img/banner/banner-mobile3.jpg')")
+									.ad-banner-image-desktop.bgi.banner(style="background-image: url(./img/special/banner3.jpg);")
+									.ad-banner-image-tablet.bgi.banner(style="background-image: url('./img/special/banner3.jpg')")
+									.ad-banner-image-tablet-768.bgi.banner(style="background-image: url('./img/special/banner3.jpg')")
+									.ad-banner-image-mobile-375.bgi.banner(style="background-image: url('./img/special/banner-mobile3-375.jpg')")
+									.ad-banner-image-mobile-320.bgi.banner(style="background-image: url('./img/special/banner-mobile3-320.jpg')")
+
+									//- .ad-banner-image-default.bgi.banner.banner--basic(style="background-image: url('./img/banner/banner3.jpg')")
+									//- .ad-banner-image-tablet.bgi.banner.banner--basic(style="background-image: url('./img/banner/banner3.jpg')")
+									//- .ad-banner-image-mobile.bgi.banner.banner--basic(style="background-image: url('./img/banner/banner-mobile3.jpg')")
 								
 				.news-most
 					.news-most__wrapper
@@ -638,11 +644,7 @@ block content
 									.news-archive__time 22:00
 							.news-archive__rght
 								.news-archive__text Строительство первой палатки в Магнитогорске
-		a(href="javascript:void(0);").news-temp
-			.ad-banner-image-default.bgi.banner.banner--footer(style="background-image: url('./img/banner/banner2.jpg')")
-			.ad-banner-image-tablet.bgi.banner.banner--footer(style="background-image: url('./img/banner/banner-tablet2.jpg')")
-			.ad-banner-image-mobile.bgi.banner.banner--footer(style="background-image: url('./img/banner/banner-mobile2.jpg')")
-							
+		include ../modules/news-temp
 							
 							
 

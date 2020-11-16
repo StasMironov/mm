@@ -105,28 +105,14 @@
         &--banner {
             display: block;
             border-bottom: none;
-            height: 123px;
             max-width: 565px;
-
-            @media(max-width: 1300px) {
-                height: 100px;
-                max-width: 466px;
-            }
-
-            @media(max-width: 640px) {
-                max-width: 100%;
-            }
 
             @media(max-width: 600px) {
                 display: none;
             }
 
-
-
-            img {
-                height: 100%;
-                width: 100%;
-                object-fit: contain;
+            .banner {
+                padding-top: 17.78%;
             }
         }
 

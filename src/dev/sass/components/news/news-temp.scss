@@ -6,7 +6,8 @@
 
     @media(max-width: 1024px) {
         margin-top: 24px;
-        // height: 170px;
+        width: calc(100% + 30px);
+        margin-left: -15px;
     }
 
     // @media(max-width: 1024px) {
@@ -31,5 +32,45 @@
 
     &--discount {
         margin-top: 30px;
+    }
+
+    .banner {
+        padding-top: 9.27%;
+
+        @media(max-width: 1024px) {
+            padding-top: 12.013%;
+        }
+
+        @media(max-width: 768px) {
+            padding-top: 16.1%;
+        }
+
+        @media(max-width: 375px) {
+            padding-top: 36%;
+        }
+
+        @media(max-width: 320px) {
+            padding-top: 42.19%;
+        }
+
+        .ad-banner-image-tablet {
+            @media(max-width: 1024px) {
+                display: block;
+            }
+
+            @media(max-width: 768px) {
+                display: none;
+            }
+        }
+
+        .ad-banner-image-tablet-768 {
+            @media(max-width: 768px) {
+                display: block;
+            }
+
+            @media(max-width: 375px) {
+                display: none;
+            }
+        }
     }
 }
