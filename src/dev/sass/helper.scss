@@ -28,28 +28,60 @@
     min-height: auto !important;
 
     .container {
-        padding: 15px 20px 15px !important;
-
-        @media (max-width: 1024px) {
-            padding: 15px 15px 15px !important;
-        }
+        padding: 14px 20px 9px !important;
 
         @media (max-width: 640px) {
             padding: 5px 15px 5px !important;
         }
     }
 
+    .header__top {
+        & .container {
+            @media(max-width: 1024px) {
+                padding: 10px 15px 8px !important;
+            }
+        }
+    }
+
+    .header__bottom {
+        & .container {
+            padding: 6px 20px 5px !important;
+
+            @media(max-width: 1024px) {
+                padding: 9px 15px 10px !important;
+            }
+        }
+
+        .header__link {
+            &:not(:last-child) {
+                margin-right: 34px;
+
+                @media(max-width: 1235px) {
+                    margin-right: 15px;
+                }
+
+                @media(max-width: 1024px) {
+                    margin-right: 24px;
+                }
+            }
+        }
+    }
+
     .header__logo {
-        height: 38px;
-        width: 128px;
-        margin-right: 40px;
+        height: 45px;
+        width: 161px;
+        margin-right: 31px;
+        margin-left: -8px;
 
         @media (max-width: 1024px) {
             margin-right: 0;
+            margin-left: 0;
+            height: 34px;
+            width: 111px;
         }
 
-        @media (max-width: 600px) {
-            // height: 50px;
+        @media (max-width: 640px) {
+            height: 28px;
             width: 33.333%;
             // max-width: 165px;
         }
@@ -79,8 +111,13 @@
 
     .header__article,
     .header__link {
-        font-size: 14px !important;
-        line-height: 19px !important;
+        font-size: 16px !important;
+        line-height: 16px !important;
+
+        @media(max-width: 1235px) {
+            font-size: 14px !important;
+            line-height: 22px !important;
+        }
     }
 
     // .header__bottom .header__link:not(:last-child) {
@@ -122,10 +159,18 @@
     }
 
     .burger {
-        width: 22px;
+        width: 25px;
+
+        @media(max-width: 640px) {
+            width: 18px;
+        }
 
         span {
-            height: 2px;
+            height: 3px;
+
+            @media(max-width: 640px) {
+                height: 2px;
+            }
         }
     }
 }
