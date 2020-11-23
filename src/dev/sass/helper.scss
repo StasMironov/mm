@@ -38,6 +38,10 @@
     .header__top {
         & .container {
             @media(max-width: 1024px) {
+                padding: 10px 40px 8px !important;
+            }
+
+            @media(max-width: 768px) {
                 padding: 10px 15px 8px !important;
             }
         }
@@ -48,21 +52,25 @@
             padding: 6px 20px 5px !important;
 
             @media(max-width: 1024px) {
-                padding: 9px 15px 10px !important;
+                padding: 9px 40px 10px !important;
+            }
+
+            @media(max-width: 768px) {
+                padding: 10px 15px 8px !important;
             }
         }
 
         .header__link {
             &:not(:last-child) {
-                margin-right: 34px;
+                // margin-right: 34px;
 
-                @media(max-width: 1235px) {
-                    margin-right: 15px;
-                }
+                // @media(max-width: 1235px) {
+                //     margin-right: 15px;
+                // }
 
-                @media(max-width: 1024px) {
-                    margin-right: 24px;
-                }
+                // @media(max-width: 1024px) {
+                //     margin-right: 24px;
+                // }
             }
         }
     }
@@ -133,21 +141,21 @@
 
                 &:nth-child(1) {
                     transform: rotate(45deg) !important;
-                    top: 7px;
+                    top: 8px;
                     transition: .4s;
 
                     @media (max-width:1235px) {
-                        top: 6px;
+                        top: 7px;
                     }
                 }
 
                 &:nth-child(3) {
                     transform: rotate(-45deg) !important;
-                    top: -7px;
+                    top: -8px;
                     transition: .4s;
 
                     @media (max-width:1235px) {
-                        top: -6px;
+                        top: -7px;
                     }
                 }
 
@@ -171,6 +179,31 @@
             @media(max-width: 640px) {
                 height: 2px;
             }
+        }
+
+        &.burger--active {
+            span {
+                &:nth-child(1) {
+                    @media(max-width: 1024px) {
+                        top: 7px;
+                    }
+
+                    @media(max-width: 640px) {
+                        top: 6px;
+                    }
+                }
+
+                &:nth-child(3) {
+                    @media(max-width: 1024px) {
+                        top: -7px;
+                    }
+
+                    @media(max-width: 640px) {
+                        top: -6px;
+                    }
+                }
+            }
+
         }
     }
 }

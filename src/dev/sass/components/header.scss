@@ -476,6 +476,10 @@
             padding: 23px 20px 18px;
 
             @media (max-width:1024px) {
+                padding: 14px 40px;
+            }
+
+            @media (max-width:768px) {
                 padding: 14px 15px;
             }
 
@@ -644,6 +648,10 @@
             transition: .3s ease;
 
             @media(max-width: 1024px) {
+                padding: 13px 40px 12px;
+            }
+
+            @media(max-width: 768px) {
                 padding: 13px 15px 12px;
             }
 
@@ -729,7 +737,7 @@
         max-width: initial;
 
         &:not(:last-child) {
-            margin-right: 140px;
+            margin-right: 75px;
 
             @media(max-width: 768px) {
                 margin-right: 95px;
@@ -740,10 +748,11 @@
     &__ref {
         font-style: normal;
         font-weight: normal;
-        font-size: 14px;
+        font-size: 16px;
         line-height: 39px;
-        color: black;
+        color: $black;
         transition: .3s;
+        white-space: nowrap;
 
         &:hover {
             color: $purple-3;
