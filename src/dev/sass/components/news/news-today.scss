@@ -65,15 +65,15 @@
 
     &__title {
         padding: 0;
-        text-align: center;
+        text-align: left;
+
+        @media(max-width: 1024px) {
+            text-align: center;
+        }
 
         @media(max-width: 600px) {
             font-size: 22px;
             text-align: left;
-        }
-
-        &:hover {
-            color: initial;
         }
     }
 

@@ -1564,7 +1564,19 @@ button {
   }
 
   .news-detail {
+
+    &__pic {
+      .b-svg {
+        stroke: #d7d7d7;
+      }
+    }
+
+    &__date {
+      color: #d7d7d7;
+    }
+
     &__author {
+      color: #d7d7d7;
 
       &:hover {
         color: #6AA1FB;

@@ -1082,6 +1082,19 @@ $(function () {
         }
       });
     }
+
+    if ($('.content p').exists()) {
+      if (!$('.gallery').exists()) {
+        $('.content p').css({
+          "max-width": '900px',
+          'margin-left': 0
+        });
+        $('.content h2').css({
+          "text-align": 'left',
+          'margin-top': '25px'
+        });
+      }
+    }
   });
 
   for (var v = 0; v < allEl.length; v++) {

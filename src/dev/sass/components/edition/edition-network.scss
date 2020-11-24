@@ -328,6 +328,10 @@
     &--detaile {
         max-width: 100%;
         margin-top: 66px;
+
+        @media(max-width: 600px) {
+            margin-top: 35px;
+        }
     }
 
 }

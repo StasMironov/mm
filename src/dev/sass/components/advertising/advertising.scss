@@ -81,7 +81,7 @@
 
 
             &:nth-child(1) {
-                max-width: 260px;
+                max-width: 280px;
                 margin-right: 64px;
 
                 @media(max-width: 1300px) {
@@ -96,7 +96,7 @@
 
             &:nth-child(2) {
                 max-width: 278px;
-                margin-right: 40px;
+                margin-right: 64px;
 
                 @media(max-width: 1235px) {
                     max-width: 100%;
@@ -137,7 +137,6 @@
         font-weight: normal;
         font-size: 16px;
         line-height: 26px;
-        font-family: 'PT_Sans', sans-serif;
 
         @media(max-width: 1024px) {
             font-size: 14px;
@@ -148,7 +147,6 @@
     &__clause {
         font-size: 16px;
         line-height: 26px;
-        font-family: 'PT_Sans', sans-serif;
 
         @media(max-width: 1024px) {
             font-size: 14px;
@@ -173,7 +171,7 @@
     }
 
     &__left {
-        max-width: 488px;
+        max-width: 442px;
         width: 100%;
         margin-right: 72px;
 
@@ -190,7 +188,7 @@
     &__grid {
         display: flex;
         justify-content: space-between;
-        max-width: 852px;
+        max-width: 746px;
         width: 100%;
 
         @media(max-width: 600px) {
@@ -199,7 +197,7 @@
 
         .adversting__unity {
             &:first-child {
-                max-width: 336px;
+                max-width: 290px;
                 width: 100%;
                 margin-right: 30px;
 
@@ -224,13 +222,21 @@
 
             .advertising__header {
                 margin-bottom: 8px;
+                max-width: 200px;
             }
 
             .advertising__clause {
                 font-family: 'OpenSans', sans-serif;
-                font-size: 14px;
-                line-height: 22px;
+                font-size: 16px;
+                line-height: 24px;
+
+                @media(max-width: 1024px) {
+                    font-size: 14px;
+                    line-height: 22px;
+                }
             }
+
+
         }
     }
 
@@ -273,20 +279,36 @@
 
             .advertising__clause {
                 font-family: 'OpenSans', sans-serif;
-                font-size: 14px;
-                line-height: 22px;
+                font-size: 16px;
+                line-height: 24px;
+
+                @media(max-width: 1024px) {
+                    font-size: 14px;
+                    line-height: 22px;
+                }
             }
         }
     }
 
     &__box {
         margin-top: 30px;
-        padding-bottom: 21px;
+        padding-bottom: 27px;
         border-bottom: 1px solid $gray-3;
 
         @media(max-width: 768px) {
             margin-top: 25px;
         }
+
+        @media(max-width: 600px) {
+            padding-bottom: 20px;
+        }
+
+        &+.advertising__box {
+            .advertising__left {
+                max-width: 500px;
+            }
+        }
+
 
         &--discount {
             .adversting__unity {
@@ -299,12 +321,14 @@
                 }
 
                 &:first-child {
-                    max-width: 336px;
+                    max-width: 360px;
                 }
             }
 
             .advertising__wrp {
                 flex-direction: row;
+                justify-content: space-between;
+                max-width: 920px;
 
                 @media(max-width: 600px) {
                     flex-direction: column;
@@ -319,9 +343,16 @@
         }
 
         &--ad {
+
+            .adversting__unity {
+                &:first-child {
+                    max-width: 484px;
+                }
+            }
+
             .advertising__module {
                 &:not(:first-child) {
-                    margin-top: 14px;
+                    margin-top: 27px;
 
                     @media(max-width: 600px) {
                         margin-top: 22px;
@@ -367,8 +398,16 @@
             }
 
             .advertising__wrp {
+                justify-content: space-between;
+                max-width: 917px;
+
                 .adversting__unity {
                     &:last-child {
+
+                        .advertising__clause {
+                            margin-top: 37px;
+                        }
+
                         @media(max-width: 768px) {
                             margin-top: 25px;
                         }
@@ -421,7 +460,7 @@
         }
 
         .advertising__text {
-            margin-top: 8px;
+            margin-top: 15px;
         }
     }
 
@@ -437,12 +476,31 @@
         @media(max-width: 768px) {
             margin-top: 25px;
         }
+
+        &:nth-child(2) {
+            margin-top: 30px;
+
+            .advertising__header {
+                max-width: 160px;
+            }
+
+            .advertising__item {
+                &:nth-child(1) {
+                    max-width: 265px;
+                    margin-right: 10px;
+                }
+
+                &:nth-child(2) {
+                    max-width: 245px;
+                }
+            }
+        }
     }
 
     &__items {
         display: flex;
         justify-content: space-between;
-        max-width: 896px;
+        max-width: 870px;
         width: 100%;
 
         @media(max-width: 768px) {
@@ -473,8 +531,9 @@
         }
 
         &:nth-child(1) {
-            max-width: 320px;
+            max-width: 288px;
             width: 100%;
+            margin-right: 54px;
 
             @media(max-width: 768px) {
                 max-width: 100%;
@@ -482,7 +541,7 @@
         }
 
         &:nth-child(2) {
-            max-width: 216px;
+            max-width: 315px;
             width: 100%;
 
             @media(max-width: 768px) {
@@ -509,10 +568,9 @@
     }
 
     &__txt {
-        margin-top: 13px;
+        margin-top: 11px;
         font-size: 16px;
         line-height: 26px;
-        font-family: 'PT_Sans', sans-serif;
 
         @media(max-width: 1024px) {
             font-size: 14px;

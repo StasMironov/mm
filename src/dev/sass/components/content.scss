@@ -32,6 +32,7 @@
 
         @media(max-width: 1024px) {
             margin-top: 20px;
+            text-align: left;
         }
     }
 
@@ -42,6 +43,7 @@
         @media (max-width:1024px) {
             font-size: 30px;
             line-height: 36px;
+            text-align: left;
         }
     }
 
@@ -53,6 +55,7 @@
         @media (max-width:1024px) {
             font-size: 25px;
             line-height: 30px;
+            text-align: left;
         }
 
         @media (max-width:640px) {
@@ -70,6 +73,7 @@
         @media (max-width:1024px) {
             font-size: 22px;
             line-height: 26px;
+            text-align: left;
         }
 
         @media (max-width:600px) {
@@ -82,9 +86,10 @@
         font-size: 18px;
         line-height: 24px;
 
-        @media (max-width:1023px) {
+        @media (max-width:1024px) {
             font-size: 1.125rem;
             line-height: 1.25rem;
+            text-align: left;
         }
     }
 
@@ -119,6 +124,10 @@
         h4 {
             margin-top: 58px;
 
+            @media(max-width: 1024px) {
+                margin-top: 25px;
+            }
+
             @media(max-width: 600px) {
                 margin-top: 35px;
             }
@@ -138,6 +147,12 @@
     & p {
         max-width: 737px;
         margin: 15px auto 0;
+
+        @media(max-width: 1024px) {
+            max-width: 900px;
+            text-align: left;
+            margin-left: 0;
+        }
 
         & img {
             max-width: 100%;
@@ -268,7 +283,7 @@
         }
 
         p {
-            max-width: 895px;
+            max-width: 900px;
             width: 100%;
             margin-left: 0;
             margin-right: 0;
@@ -437,5 +452,7 @@
             margin-top: 0;
         }
     }
+
+
 
 }

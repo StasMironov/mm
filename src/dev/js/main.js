@@ -12,6 +12,8 @@ jQuery.fn.exists = function () {
 //     });
 // });
 
+
+
 const projectFunc = {
     objAd: function (element, place) {
         if ($(element).exists()) {
@@ -376,12 +378,15 @@ $(document).on("click tap", () => {
 });
 
 
+
 $(() => {
     journalSlider();
     articleSlider();
     createLightGallery('archiveVideo');
     createLightGallery('lightgallery');
     createLightGallery('video-gallery');
+
+
 
     let parentEl = '';
 
@@ -1075,6 +1080,7 @@ $(() => {
     }
 
     $(document).ready(function () {
+
         for (var q = 0; q < allEl.length; q++) {
             var idEl = '.gallery__thumbs' + q;
             var galleryThumbs = new Swiper('.gallery__btn' + q, {
@@ -1117,6 +1123,20 @@ $(() => {
                     prevEl: '.b-arrow--prev'
                 },
             });
+        }
+
+        if ($('.content p').exists()) {
+            if (!$('.gallery').exists()) {
+                $('.content p').css({
+                    "max-width": '900px',
+                    'margin-left': 0
+                });
+
+                $('.content h2').css({
+                    "text-align": 'left',
+                    'margin-top': '25px'
+                });
+            }
         }
     });
 

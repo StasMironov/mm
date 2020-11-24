@@ -8,11 +8,15 @@
 
     &__content {
         margin-top: 42px;
-        margin-bottom: 58px;
+        margin-bottom: 25px;
 
         @media(max-width: 640px) {
             margin-top: 20px;
             margin-bottom: initial;
+        }
+
+        &~.content h2 {
+            margin-top: 58px;
         }
     }
 
@@ -90,7 +94,7 @@
 
     &__author {
         position: relative;
-
+        color: $gray-8;
         display: flex;
 
         @media(max-width: 1024px) {
@@ -114,6 +118,7 @@
     }
 
     &__date {
+        color: $gray-8;
         margin-right: 25px;
 
         @media(max-width: 1024px) {
@@ -337,6 +342,10 @@
 
     &__quote {
         margin-top: 50px !important;
+
+        @media(max-width: 1024px) {
+            margin-top: 40px !important;
+        }
 
         .news-detail__note {
             font-style: italic;
