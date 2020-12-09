@@ -81,6 +81,14 @@
         }
     }
 
+    .active {
+        background-color: $purple-3 !important;
+
+        a {
+            color: white !important;
+        }
+    }
+
     .selected {
         outline: 2px solid $purple-3 !important;
         outline-offset: -1px;
