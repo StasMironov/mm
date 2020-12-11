@@ -107,6 +107,10 @@
             border-bottom: none;
             max-width: 565px;
 
+            @media(max-width: 1024px) {
+                max-width: 100%;
+            }
+
             @media(max-width: 600px) {
                 display: none;
             }
