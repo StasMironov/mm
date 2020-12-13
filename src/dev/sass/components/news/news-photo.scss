@@ -92,8 +92,11 @@
         }
 
         @media(max-width: 600px) {
-            margin-left: 0;
             margin-top: 19px;
+        }
+
+        @media(max-width: 500px) {
+            margin-left: 0;
         }
     }
 

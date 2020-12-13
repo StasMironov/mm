@@ -1290,43 +1290,43 @@ $(() => {
         }
     }
 
-    if ($('.release-year__items').exists()) {
-        if ($('.release-year__item').exists()) {
-            $('.release-year__item').each(function (index) {
-                if (index == 0) {
-                    $(this).addClass('release-year__item--active');
-                    $('.res-year').val($(this).text());
-                }
-                $(this).on('click', function () {
-                    let text = $(this).text();
-                    $(this).addClass('release-year__item--active')
-                        .siblings()
-                        .removeClass('release-year__item--active');
-                    $('.res-year').val(text);
-                });
-            })
-        }
-    }
+    // if ($('.release-year__items').exists()) {
+    //     if ($('.release-year__item').exists()) {
+    //         $('.release-year__item').each(function (index) {
+    //             if (index == 0) {
+    //                 $(this).addClass('release-year__item--active');
+    //                 $('.res-year').val($(this).text());
+    //             }
+    //             $(this).on('click', function () {
+    //                 let text = $(this).text();
+    //                 $(this).addClass('release-year__item--active')
+    //                     .siblings()
+    //                     .removeClass('release-year__item--active');
+    //                 $('.res-year').val(text);
+    //             });
+    //         })
+    //     }
+    // }
 
-    if ($('.release-month__items').exists()) {
-        if ($('.release-month__item').exists()) {
-            $('.release-month__item').each(function (index) {
-                if (index == 0) {
-                    $(this).addClass('release-month__item--active');
-                    $('.res-month').val($(this).text());
-                }
-                $(this).on('click', function () {
-                    let text = $(this).text();
-                    $(this).addClass('release-month__item--active')
-                        .siblings()
-                        .removeClass('release-month__item--active');
-                    $('.res-month').val(text);
-                    const monthInfo = $(this).text();
-                    $('.release-month__txt').text(monthInfo);
-                });
-            })
-        }
-    }
+    // if ($('.release-month__items').exists()) {
+    //     if ($('.release-month__item').exists()) {
+    //         $('.release-month__item').each(function (index) {
+    //             if (index == 0) {
+    //                 $(this).addClass('release-month__item--active');
+    //                 $('.res-month').val($(this).text());
+    //             }
+    //             $(this).on('click', function () {
+    //                 let text = $(this).text();
+    //                 $(this).addClass('release-month__item--active')
+    //                     .siblings()
+    //                     .removeClass('release-month__item--active');
+    //                 $('.res-month').val(text);
+    //                 const monthInfo = $(this).text();
+    //                 $('.release-month__txt').text(monthInfo);
+    //             });
+    //         })
+    //     }
+    // }
 
     if ($('.release-month__items').exists()) {
         const breakpoint = window.matchMedia('(min-width:769px)');
