@@ -423,7 +423,7 @@ $(() => {
     if ($('.btn--close').exists) {
         try {
             $('.btn--close').on('click', function (event) {
-                // event.preventDefault();
+                event.preventDefault();
                 $('.header__search--laptop input').val('');
                 $('.header__search--laptop').removeClass('header__search--active');
             });

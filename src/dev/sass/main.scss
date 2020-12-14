@@ -542,6 +542,10 @@ button {
 .header__inner.mf-fixed .header__field,
 .header__inner.mf-fixed input {
   height: 39px;
+
+  @media(max-width: 640px) {
+    height: 28px;
+  }
 }
 
 // .header__inner.mf-fixed .header__logo {
