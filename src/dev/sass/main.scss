@@ -1902,6 +1902,10 @@ button {
     padding-top: 12%
   }
 
+  @media(max-width: 768px) {
+    padding-top: 16%
+  }
+
   &--footer {
     padding-top: 9.27%;
 
