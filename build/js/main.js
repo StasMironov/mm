@@ -1287,4 +1287,12 @@ $(function () {
       });
     }
   }
+
+  if ($('.header__search--laptop').exists()) {
+    document.querySelector('.header__search--laptop').addEventListener('keydown', function (e) {
+      if (e.keyCode == 13) {
+        this.submit();
+      }
+    });
+  }
 });
