@@ -446,13 +446,13 @@
 
     &__title {
         position: relative;
-        padding-right: 30px;
-        max-width: 207px;
+        display: inline-block;
+        //padding-right: 30px;
+        // max-width: 207px;
 
         @media(max-width: 1024px) {
             padding-right: 16px;
         }
-
 
         &:hover .b-svg {
             stroke: $purple-3;
