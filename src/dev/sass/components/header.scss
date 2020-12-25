@@ -1,10 +1,10 @@
 .header {
     position: relative;
     z-index: 200;
-    min-height: 185px;
+    min-height: 150px;
 
     @media(max-width: 1024px) {
-        min-height: 147px;
+        min-height: 125px;
     }
 
     @media(max-width: 640px) {
@@ -119,12 +119,12 @@
 
 
     &__inner {
-        min-height: 185px;
+        min-height: 150px;
         background-color: $header;
         transition: background-color 0.2s linear;
 
         @media(max-width: 1024px) {
-            min-height: 147px;
+            min-height: 125px;
         }
 
         @media(max-width: 640px) {
