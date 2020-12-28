@@ -1929,6 +1929,13 @@ button {
 }
 
 .news-banner {
+
+  @media(max-width: 1024px){
+    display: flex;
+    flex-direction: column;
+    order: -1;
+  }
+
   @media(max-width: 500px) {
     margin-top: 24px;
   }
@@ -1938,33 +1945,44 @@ button {
     max-width: 318px;
 
     @media(max-width: 1024px) {
-      display: none;
+      max-width: 100%;
     }
 
     @media(max-width: 500px) {
       display: block;
-      margin: 0 auto;
     }
 
     @media(max-width: 375px) {
-      width: calc(100% + 30px);
-      margin-left: -15px;
+      width: 100%;
       max-width: initial;
     }
 
     &--other {
       margin-top: 32px;
+
+      
+      @media(max-width: 1024px) {
+        display: none;
+      }
     }
 
     .banner {
       padding-top: 66.67%;
 
+      @media(max-width: 1024px) {
+        padding-top: 12.8%;
+      }
+
+      @media(max-width: 768px) {
+        padding-top: 16.7%;
+      }
+
       @media(max-width: 375px) {
-        padding-top: 36%;
+        padding-top: 60%;
       }
 
       @media(max-width: 320px) {
-        padding-top: 48.45%;
+        padding-top: 71%;
       }
     }
   }
