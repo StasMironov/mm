@@ -514,7 +514,7 @@ button {
   // height: 123px;
 
   @media(max-width: 640px) {
-    display: none;
+   // display: none;
   }
 
   a {
@@ -530,6 +530,16 @@ button {
     img {
       height: 100%;
       width: 100%;
+    }
+  }
+
+  .banner {
+    @media(max-width: 400px) {
+      padding-top: 33%;
+    }
+
+    @media(max-width: 320px) {
+      padding-top: 39%;
     }
   }
 }
