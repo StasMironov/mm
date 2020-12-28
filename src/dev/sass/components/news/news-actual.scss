@@ -267,7 +267,7 @@
         }
 
         .news-actual__items {
-            margin-top: 28px;
+            margin-top: 19px;
 
             @media(max-width: 1024px) {
                 margin-top: 20px;
@@ -449,6 +449,11 @@
         display: inline-block;
         //padding-right: 30px;
         // max-width: 207px;
+
+        h3,
+        h4 {
+            font-size: inherit;
+        }
 
         @media(max-width: 1024px) {
             padding-right: 16px;

@@ -142,6 +142,10 @@
             font-size: 14px;
             line-height: 24px;
         }
+
+        &:not(:first-child) {
+            margin-top: 25px;
+        }
     }
 
     &__clause {
@@ -163,11 +167,11 @@
             margin-top: 25px;
         }
 
-        .advertising__par {
-            &:not(:first-child) {
-                margin-top: 25px;
-            }
-        }
+        // .advertising__par {
+        //     &:not(:first-child) {
+        //         margin-top: 25px;
+        //     }
+        // }
     }
 
     &__left {
