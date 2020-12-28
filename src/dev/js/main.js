@@ -652,7 +652,7 @@ $(() => {
     truncateText('.search__text', 72);
     truncateText('.news-slider__txt', 250);
     truncateText('.news-slider__txt', 250);
-    truncateText('.publish__txt', 27);
+    truncateText('.publish__txt', 15);
     //===========Accordion=============
 
     if ($('.archive-filter__panel').exists()) {

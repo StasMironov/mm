@@ -2,6 +2,10 @@
     display: flex;
     margin-top: 56px;
 
+    &--index {
+        margin-top: 32px;
+    }
+
     @media(max-width: 1024px) {
         flex-direction: column;
         margin-top: 30px;
