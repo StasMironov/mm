@@ -31,21 +31,21 @@ var projectFunc = {
       return $(element);
     }
   }
-};
-var tempQuestion = projectFunc.objReturn("#aside");
-var сteatedQuestion = false;
-$(window).on('resize load', function () {
-  if ($(this).width() <= 1024) {
-    projectFunc.objAd("#aside", "#include");
-    сteatedQuestion = false;
-  } else {
-    if (!сteatedQuestion) {
-      $(tempQuestion).insertAfter('.news-today');
-      $("#include").children().remove();
-      сteatedQuestion = true;
-    }
-  }
-}); // let breakpoint = window.matchMedia('(max-width:1024px)');
+}; // let tempQuestion = projectFunc.objReturn("#aside");
+// let сteatedQuestion = false;
+// $(window).on('resize load', function () {
+//     if ($(this).width() <= 1024) {
+//         projectFunc.objAd("#aside", "#include");
+//         сteatedQuestion = false;
+//     } else {
+//         if (!сteatedQuestion) {
+//             $(tempQuestion).insertAfter('.news-today');
+//             $("#include").children().remove();
+//             сteatedQuestion = true;
+//         }
+//     }
+// });
+// let breakpoint = window.matchMedia('(max-width:1024px)');
 // if (breakpoint.matches === true) {
 // }
 
