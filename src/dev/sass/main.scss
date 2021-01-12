@@ -514,7 +514,7 @@ button {
   // height: 123px;
 
   @media(max-width: 640px) {
-   // display: none;
+    // display: none;
   }
 
   a {
@@ -674,6 +674,10 @@ button {
       &:hover {
         background-color: #6AA1FB;
       }
+    }
+
+    .active {
+      background-color: #6AA1FB !important;
     }
   }
 
@@ -1940,7 +1944,7 @@ button {
 
 .news-banner {
 
-  @media(max-width: 1024px){
+  @media(max-width: 1024px) {
     display: flex;
     flex-direction: column;
     order: -1;
@@ -1970,7 +1974,7 @@ button {
     &--other {
       margin-top: 32px;
 
-      
+
       @media(max-width: 1024px) {
         display: none;
       }
