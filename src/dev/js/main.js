@@ -477,7 +477,6 @@ $(() => {
     adaptiveArticle('.article__box', '.article__cover');
 
     if ($('.header__bottom .header__nav').exists) {
-
         $(function () {
             var csObj = new Object();
             csObj.axis = "x";
@@ -1344,5 +1343,70 @@ $(() => {
                 this.submit();
             }
         })
+    }
+
+
+
+    if ($('.js-banner-slider').exists()) {
+        try {
+
+            setTimeout(() => {
+                $('.js-banner-slider').css('opacity', 1);
+            }, 500);
+
+            let settings = {
+                spaceBetween: 18,
+                slidesPerView: 4,
+                slidesPerColumn: 1,
+                direction: 'vertical',
+                autoHeight: true,
+                touchRatio: 0,
+                fadeEffect: {
+                    crossFade: true
+                },
+                autoplay: {
+                    delay: 5000,
+                },
+
+                breakpoints: {
+                    320: {
+                        spaceBetween: 18,
+                        slidesPerView: 1,
+                        slidesPerColumn: 1,
+                        direction: 'horizontal',
+                        effect: "fade",
+                        loop: true,
+                        touchRatio: 1,
+
+                    },
+                    1025: {
+                        spaceBetween: 18,
+                        slidesPerView: 4,
+                        slidesPerColumn: 1,
+                    },
+                    1920: {
+                        spaceBetween: 18,
+                        slidesPerView: 4,
+                        slidesPerColumn: 1,
+                        direction: 'vertical',
+                    }
+                }
+            }
+
+            let bannerSlider;
+            bannerSlider = new Swiper('.js-banner-slider', settings);
+
+            $(window).on('resize load', function () {
+                bannerSlider.destroy();
+                bannerSlider = new Swiper('.js-banner-slider', settings);
+                setTimeout(() => {
+                    $('.js-banner-slider').css('opacity', 1);
+                }, 500);
+            }
+            );
+        }
+        catch (err) {
+            console.log(err);
+        }
     }
 });

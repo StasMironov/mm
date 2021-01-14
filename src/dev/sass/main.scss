@@ -1942,12 +1942,19 @@ button {
   }
 }
 
+.js-banner-slider {
+  opacity: 0;
+}
+
 .news-banner {
+  margin-top: 27px;
+  transition: .3s ease-in;
 
   @media(max-width: 1024px) {
     display: flex;
     flex-direction: column;
     order: -1;
+    overflow: hidden;
   }
 
   @media(max-width: 500px) {
@@ -1957,6 +1964,7 @@ button {
   &__block {
     display: block;
     max-width: 318px;
+    height: auto !important;
 
     @media(max-width: 1024px) {
       max-width: 100%;
@@ -1972,11 +1980,11 @@ button {
     }
 
     &--other {
-      margin-top: 32px;
+      // margin-top: 32px;
 
 
       @media(max-width: 1024px) {
-        display: none;
+        //display: none;
       }
     }
 
