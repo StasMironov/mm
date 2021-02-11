@@ -534,7 +534,7 @@ button {
   }
 
   .banner {
-    @media(max-width: 400px) {
+    @media(max-width: 375px) {
       padding-top: 33%;
     }
 
@@ -1922,7 +1922,7 @@ button {
   }
 
   @media(max-width: 768px) {
-    padding-top: 16%
+    padding-top: 12%
   }
 
   &--footer {
