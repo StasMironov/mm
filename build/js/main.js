@@ -1304,45 +1304,6 @@ $(function () {
 
   if ($('.js-banner-slider').exists()) {
     try {
-      setTimeout(function () {
-        $('.js-banner-slider').css('opacity', 1);
-      }, 500);
-      var settings = {
-        spaceBetween: 18,
-        slidesPerView: 4,
-        slidesPerColumn: 1,
-        direction: 'vertical',
-        autoHeight: true,
-        touchRatio: 0,
-        fadeEffect: {
-          crossFade: true
-        },
-        autoplay: {
-          delay: 5000
-        },
-        breakpoints: {
-          320: {
-            spaceBetween: 18,
-            slidesPerView: 1,
-            slidesPerColumn: 1,
-            direction: 'horizontal',
-            effect: "fade",
-            loop: true,
-            touchRatio: 1
-          },
-          1025: {
-            spaceBetween: 18,
-            slidesPerView: 4,
-            slidesPerColumn: 1
-          },
-          1920: {
-            spaceBetween: 18,
-            slidesPerView: 4,
-            slidesPerColumn: 1,
-            direction: 'vertical'
-          }
-        }
-      };
       $(window).on('resize load', function () {
         if ($(this).width() <= 1024) {
           var temp = document.querySelector('.js-banner-slider');
