@@ -87,7 +87,7 @@
 
 
         &:not(:first-child) {
-            margin-top: 38px;
+            margin-top: 26px;
 
             @media(max-width: 1300px) {
                 margin-top: 25px;
@@ -105,18 +105,36 @@
         &--banner {
             display: block;
             border-bottom: none;
-            max-width: 499px;
+            //max-width: 499px;
 
             @media(max-width: 1024px) {
                 max-width: 100%;
             }
 
             @media(max-width: 600px) {
-                display: none;
+                // display: none;
             }
 
             .banner {
-                padding-top: 17.78%;
+                padding-top: 17.2%;
+
+                @media(max-width: 1024px) {
+                    padding-top: 24.636%;
+                }
+
+                @media(max-width: 375px) {
+                    padding-top: 49.278%;
+                }
+            }
+
+            .ad-banner-image-tablet {
+                @media(max-width: 768px) {
+                    display: block;
+                }
+
+                @media(max-width: 375px) {
+                    display: none;
+                }
             }
         }
 
@@ -143,7 +161,7 @@
 
     &__left {
         max-width: 322px;
-        padding-right: 62px;
+        padding-right: 50px;
         margin-right: 50px;
         border-right: 1px solid $gray-3;
         box-sizing: content-box;
@@ -208,7 +226,8 @@
     }
 
     &__right {
-        max-width: 550px;
+        //max-width: 550px;
+        flex: 1;
 
         @media(max-width: 1235px) {
             max-width: initial;
@@ -276,7 +295,7 @@
     }
 
     &__pic {
-        width: 94px;
+        width: 156px;
         height: 94px;
         margin-right: 18px;
 

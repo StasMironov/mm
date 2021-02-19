@@ -534,13 +534,21 @@ button {
   }
 
   .banner {
-    @media(max-width: 375px) {
-      padding-top: 33%;
+    @media(max-width: 1024px) {
+      padding-top: 12%
     }
 
-    @media(max-width: 320px) {
-      padding-top: 39%;
+    @media(max-width: 768px) {
+      padding-top: 16.02%;
     }
+
+    @media(max-width: 375px) {
+      padding-top: 32.8%;
+    }
+
+    // @media(max-width: 320px) {
+    //   padding-top: 39%;
+    // }
   }
 }
 
@@ -1896,7 +1904,7 @@ button {
   }
 
   @media(max-width: 320px) {
-    display: none;
+    // display: none;
   }
 }
 
@@ -1916,14 +1924,6 @@ button {
 .banner {
   width: 100%;
   padding-top: 6.42%;
-
-  @media(max-width: 1024px) {
-    padding-top: 12%
-  }
-
-  @media(max-width: 768px) {
-    padding-top: 12%
-  }
 
   &--footer {
     padding-top: 9.27%;
@@ -1947,18 +1947,36 @@ button {
 }
 
 .news-banner {
-  margin-top: 27px;
+  margin-top: 32px;
   transition: .3s ease-in;
 
   @media(max-width: 1024px) {
     display: flex;
     flex-direction: column;
-    order: -1;
     overflow: hidden;
+    margin-top: 25px;
   }
 
   @media(max-width: 500px) {
     margin-top: 24px;
+  }
+
+  &__cover {
+    @media(max-width: 1024px) {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: -20px;
+      margin-top: -20px;
+    }
+
+    @media(max-width: 768px) {
+      margin-left: -16px;
+    }
+
+    @media(max-width: 375px) {
+      margin-top: -9px;
+      margin-left: -9px;
+    }
   }
 
   &__block {
@@ -1966,17 +1984,40 @@ button {
     max-width: 318px;
     height: auto !important;
 
-    @media(max-width: 1024px) {
-      max-width: 100%;
+    &:not(:first-child) {
+      margin-top: 32px;
+
+      @media(max-width: 1024px) {
+        margin-top: 20px;
+      }
+
+      @media(max-width: 768px) {
+        margin-top: 16px;
+      }
+
+      @media(max-width: 375px) {
+        margin-top: 9px;
+      }
     }
 
-    @media(max-width: 500px) {
-      display: block;
+    @media(max-width: 1024px) {
+      width: calc(50% - 20px);
+      max-width: initial;
+      margin-left: 20px;
+      margin-top: 20px;
+    }
+
+    @media(max-width: 768px) {
+      width: calc(50% - 16px);
+      max-width: initial;
+      margin-left: 16px;
+      margin-top: 16px;
     }
 
     @media(max-width: 375px) {
-      width: 100%;
-      max-width: initial;
+      margin-left: 9px;
+      margin-top: 9px;
+      width: calc(50% - 9px);
     }
 
     &--other {
@@ -1992,19 +2033,25 @@ button {
       padding-top: 66.67%;
 
       @media(max-width: 1024px) {
-        padding-top: 12.8%;
+        padding-top: 48.704%;
       }
 
       @media(max-width: 768px) {
-        padding-top: 16.7%;
+        padding-top: 48.489%;
       }
 
       @media(max-width: 375px) {
-        padding-top: 60%;
+        padding-top: 63%;
+      }
+    }
+
+    .ad-banner-image-tablet {
+      @media(max-width: 768px) {
+        display: block;
       }
 
-      @media(max-width: 320px) {
-        padding-top: 71%;
+      @media(max-width: 375px) {
+        display: none;
       }
     }
   }

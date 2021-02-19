@@ -19,8 +19,7 @@ const projectFunc = {
         if ($(element).exists()) {
             $(element).each(function (index) {
                 let adObj = $(this).html();
-                let out = adObj;
-                $(place).html(out);
+                $(place).append(adObj);
                 $(this).remove();
             });
         }
@@ -652,6 +651,18 @@ $(() => {
     truncateText('.news-slider__txt', 250);
     truncateText('.news-slider__txt', 250);
     truncateText('.publish__txt', 15);
+
+
+
+    $(window).on('resize load', function () {
+        if ($(this).width() <= 640) {
+            truncateText('.news-actual__text', 1000);
+        }
+        else {
+            truncateText('.news-actual__text', 55);
+        }
+    });
+
     //===========Accordion=============
 
     if ($('.archive-filter__panel').exists()) {
@@ -1350,6 +1361,8 @@ $(() => {
     if ($('.js-banner-slider').exists()) {
         try {
 
+
+
             setTimeout(() => {
                 $('.js-banner-slider').css('opacity', 1);
             }, 500);
@@ -1393,15 +1406,23 @@ $(() => {
                 }
             }
 
-            let bannerSlider;
-            bannerSlider = new Swiper('.js-banner-slider', settings);
 
             $(window).on('resize load', function () {
-                bannerSlider.destroy();
-                bannerSlider = new Swiper('.js-banner-slider', settings);
-                setTimeout(() => {
-                    $('.js-banner-slider').css('opacity', 1);
-                }, 500);
+                if ($(this).width() <= 1024) {
+                    let temp = document.querySelector('.js-banner-slider')
+                    let tempCopy = document.querySelector('.js-banner-slider').cloneNode(true);
+                    let parentEl = document.querySelector('.news-city');
+                    let сreated = false;
+
+                    if ($(this).width() <= 1024) {
+
+                        if (!сreated) {
+                            $(temp).remove();
+                            $(tempCopy).insertAfter('.news-city');
+                            сreated = true;
+                        }
+                    }
+                }
             }
             );
         }
