@@ -1355,33 +1355,4 @@ $(() => {
             }
         })
     }
-
-
-
-    if ($('.js-banner-slider').exists()) {
-        try {
-
-            $(window).on('resize load', function () {
-                if ($(this).width() <= 1024) {
-                    let temp = document.querySelector('.js-banner-slider')
-                    let tempCopy = document.querySelector('.js-banner-slider').cloneNode(true);
-                    let parentEl = document.querySelector('.news-city');
-                    let сreated = false;
-
-                    if ($(this).width() <= 1024) {
-
-                        if (!сreated) {
-                            $(temp).remove();
-                            $(tempCopy).insertAfter('.news-city');
-                            сreated = true;
-                        }
-                    }
-                }
-            }
-            );
-        }
-        catch (err) {
-            console.log(err);
-        }
-    }
 });

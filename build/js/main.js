@@ -1301,29 +1301,4 @@ $(function () {
       }
     });
   }
-
-  if ($('.js-banner-slider').exists()) {
-    try {
-      $(window).on('resize load', function () {
-        if ($(this).width() <= 1024) {
-          var temp = document.querySelector('.js-banner-slider');
-          var tempCopy = document.querySelector('.js-banner-slider').cloneNode(true);
-
-          var _parentEl = document.querySelector('.news-city');
-
-          var сreated = false;
-
-          if ($(this).width() <= 1024) {
-            if (!сreated) {
-              $(temp).remove();
-              $(tempCopy).insertAfter('.news-city');
-              сreated = true;
-            }
-          }
-        }
-      });
-    } catch (err) {
-      console.log(err);
-    }
-  }
 });
