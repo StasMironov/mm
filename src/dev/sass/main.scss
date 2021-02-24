@@ -1481,8 +1481,12 @@ button {
     }
 
     &__ic {
-      .b-svg {
-        fill: #6AA1FB;
+      svg path {
+        stroke: #6AA1FB;
+      }
+
+      .fill {
+        fill: transparent;
       }
     }
 
@@ -1494,6 +1498,10 @@ button {
       &:hover {
         & .news-popular__header {
           color: #6AA1FB;
+        }
+
+        & .news-popular__ic .fill {
+          fill: #6AA1FB;
         }
       }
     }
