@@ -1341,4 +1341,32 @@ $(() => {
             }
         })
     }
+
+    if ($('.entry').exists()) {
+        let slides = '',
+            outInfo = '',
+            dataItem = '';
+
+        dataItem = document.querySelectorAll('.entry__item');
+
+        dataItem.forEach(element => {
+            outInfo = '';
+            dataItem = element.getAttribute('data-slide');
+            dataItem = JSON.parse(dataItem);
+
+            slides = dataItem.slides;
+
+            if (slides.length > 0) {
+                slides.forEach(element => {
+                    outInfo += `<div class="entry__bloc"><img src= "./img/article/${element}" /><canvas class="entry"></div>`;
+                });
+
+                if (slides.length >= 3) {
+                    element.querySelector('.entry__wrapper').classList.add('entry__wrapper--direction');
+                }
+            }
+
+            element.querySelector('.entry__wrapper').innerHTML = outInfo;
+        });
+    }
 });

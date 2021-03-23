@@ -1,0 +1,110 @@
+.entry {
+    display: flex;
+    flex-direction: column;
+    margin-top: 27px;
+
+    &__item {
+        border: 1px solid $gray-3;
+        padding: 25px;
+
+        margin-top: 25px;
+    }
+
+    &__items {
+        margin-top: -25px;
+    }
+
+    &__date {
+        font-size: 12px;
+        line-height: 12px;
+        display: inline-block;
+        padding: 0.5em .583em;
+        background-color: $purple-3;
+        color: white;
+    }
+
+    &__title {
+        margin-top: 10px;
+    }
+
+    &__text {
+        margin-top: 3px;
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    &__bloc {
+        background-color: red;
+        flex: 1;
+        height: 100%;
+
+        &:not(:last-child) {
+            margin-right: 14px;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        height: 400px;
+        background-color: gray;
+        margin-top: 13px;
+
+        &--direction {
+            flex-direction: column;
+
+            .entry {
+                &__bloc {
+                    margin-top: 14px;
+                    height: 193px;
+                    flex: initial;
+                    margin-top: 0;
+                    margin-right: 0;
+
+                    &:nth-child(1) {
+                        height: 100%;
+                        margin-right: 12px;
+                        width: calc(100% - 300px - 14px);
+                    }
+
+                    &:nth-child(2),
+                    &:nth-child(3) {
+                        max-width: 300px;
+                        width: 100%;
+                        margin-left: auto;
+                    }
+
+                    &:nth-child(2) {
+                        margin-bottom: 14px;
+                    }
+
+                }
+            }
+        }
+    }
+
+    &__tag {
+        font-size: 12px;
+        padding: .5em .583em;
+        background-color: $gray-9;
+        padding: 0.0416em 0.7em;
+
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+    }
+
+
+
+
+}
