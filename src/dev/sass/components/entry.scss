@@ -10,6 +10,18 @@
         margin-top: 25px;
     }
 
+    &__canvas {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        transition: .4s;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+
     &__items {
         margin-top: -25px;
     }
@@ -38,18 +50,53 @@
     }
 
     &__bloc {
-        background-color: red;
+        position: relative;
         flex: 1;
         height: 100%;
+        cursor: pointer;
 
         &:not(:last-child) {
             margin-right: 14px;
         }
 
         img {
+            position: relative;
             height: 100%;
             width: 100%;
             object-fit: contain;
+            z-index: 1;
+        }
+
+        &--special {
+            &:before {
+                position: absolute;
+                content: '';
+                width: 100%;
+                height: 100%;
+                background-color: $purple-3;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                opacity: 0.66;
+                z-index: 2;
+            }
+
+            span {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 16px;
+                color: white;
+                z-index: 2;
+            }
         }
     }
 
@@ -57,7 +104,6 @@
         display: flex;
         flex-wrap: wrap;
         height: 400px;
-        background-color: gray;
         margin-top: 13px;
 
         &--direction {
@@ -70,6 +116,7 @@
                     flex: initial;
                     margin-top: 0;
                     margin-right: 0;
+                    cursor: pointer;
 
                     &:nth-child(1) {
                         height: 100%;
@@ -105,6 +152,96 @@
     }
 
 
+    .js-slider {
+        position: relative;
+        padding-bottom: 30px;
 
+        @media(max-width: 882px) {
+            padding-bottom: 0;
+        }
+
+        img {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            -o-object-fit: contain;
+            object-fit: contain;
+            z-index: 1;
+        }
+
+        canvas {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            transition: .4s;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        .pagination {
+            position: absolute;
+            font-size: 12px;
+            line-height: 12px;
+            bottom: 0;
+            color: $gray-8;
+            font-weight: 600;
+
+            @media(max-width:882px) {
+                display: none;
+            }
+
+            span {
+                color: $black;
+                margin-right: 6px;
+                font-weight: 400;
+            }
+        }
+
+        .arrow {
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: calc(100% - 31px);
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 1;
+
+            &__link {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 95px;
+                cursor: pointer;
+                transition: .3s;
+
+                &:hover {
+                    svg {
+                        opacity: 1;
+                    }
+                }
+
+                svg {
+                    transition: .3s;
+                    opacity: .5;
+                }
+
+                &--prev {
+                    transform: scale(-1, -1);
+                }
+
+                &.swiper-button-disabled,
+                &.swiper-button-disabled {
+                    opacity: 0;
+                }
+            }
+
+        }
+    }
 
 }

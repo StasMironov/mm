@@ -18,8 +18,8 @@ const projectFunc = {
     objAd: function (element, place) {
         if ($(element).exists()) {
             $(element).each(function (index) {
-                let adObj = $(this).html();
-                $(place).append(adObj);
+                let adObj = $(this).clone();
+                $(place).append($(adObj));
                 $(this).remove();
             });
         }
@@ -27,10 +27,25 @@ const projectFunc = {
 
     objReturn: function (element, place) {
         if ($(element).exists()) {
-            var t = '';
-            t = $(element).html();
-            return $(element);
+            // let t = '';
+            // // t = $(element).html();
+            // return $(element);
+
+            // $(place).append($(element))
         }
+    },
+    getScrollbarWidth: function () {
+        let div, width = projectFunc.getScrollbarWidth.width;
+        if (width === undefined) {
+            div = document.createElement('div');
+            div.innerHTML = '<div style="width:50px;height:50px;position:absolute;left:-50px;top:-50px;overflow:auto;"><div style="width:1px;height:100px;"></div></div>';
+            div = div.firstChild;
+            document.body.appendChild(div);
+
+            width = projectFunc.getScrollbarWidth.width = div.offsetWidth - div.clientWidth;
+            document.body.removeChild(div);
+        }
+        return width;
     }
 }
 
@@ -127,6 +142,7 @@ if ($('.news-archive__slider').exists()) {
     $(window).on('resize load', function () {
         authorSlider.destroy();
         authorSlider = new Swiper('.news-archive__slider', settings);
+
     });
 }
 
@@ -360,6 +376,11 @@ $(window).on('load resize', () => {
 $(document).on("click tap", () => {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+
+window.addEventListener('load', () => {
+    let locked = document.querySelector('html');
+    locked.style.setProperty('--wScroll', projectFunc.getScrollbarWidth() + 'px');
 });
 
 
@@ -1342,31 +1363,337 @@ $(() => {
         })
     }
 
+    function declOfNum(n, text_forms) {
+        n = Math.abs(n) % 100; var n1 = n % 10;
+        if (n > 10 && n < 20) { return text_forms[2]; }
+        if (n1 > 1 && n1 < 5) { return text_forms[1]; }
+        if (n1 == 1) { return text_forms[0]; }
+        return text_forms[2];
+    }
+
+    const createCanvasImg = (canvas, parentElement) => {
+        try {
+            $(canvas).each((_, canva) => {
+                let ctx = canva.getContext("2d");
+                let img = new Image();
+
+                img.src = $(parentElement).find('img').attr('src');
+                img.onload = function () {
+                    var s = Math.max(canva.width / img.width, canva.height / img.height);
+                    ctx.filter = 'blur(7px)';
+                    ctx.scale(s, s);
+                    ctx.drawImage(img, 0, -100);
+                }
+            });
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
+
+    const getJson = (element) => {
+        let dataJson = element.getAttribute('data-slide');
+        dataJson = JSON.parse(dataJson);
+        return dataJson.slides;
+    }
+
+
     if ($('.entry').exists()) {
         let slides = '',
             outInfo = '',
-            dataItem = '';
+            dataItem = '',
+            count = 0,
+            slideCurrentCount = 0,
+            blocInfo = '',
+            infoCount = '',
+            popup = '',
+            slider = '';
 
         dataItem = document.querySelectorAll('.entry__item');
 
         dataItem.forEach(element => {
             outInfo = '';
-            dataItem = element.getAttribute('data-slide');
-            dataItem = JSON.parse(dataItem);
-
-            slides = dataItem.slides;
+            slides = getJson(element);
 
             if (slides.length > 0) {
-                slides.forEach(element => {
-                    outInfo += `<div class="entry__bloc"><img src= "./img/article/${element}" /><canvas class="entry"></div>`;
+                slides.forEach((element, index) => {
+                    if (index < 3) {
+                        outInfo += `<div class="entry__bloc"><img src= "${element}" /><canvas class="entry__canvas"></div>`;
+                        slideCurrentCount = index;
+                    }
                 });
+
+                element.querySelector('.entry__wrapper').innerHTML = outInfo;
 
                 if (slides.length >= 3) {
                     element.querySelector('.entry__wrapper').classList.add('entry__wrapper--direction');
+                    count = slides.length - (slideCurrentCount + 1);
+                    blocInfo = element.querySelectorAll('.entry__bloc');
+                    blocInfo = blocInfo[blocInfo.length - 1];
+                    blocInfo.classList.add('entry__bloc--special')
+                    infoCount = document.createElement('span');
+                    infoCount.textContent = `+ ${count} ${declOfNum(count, ['фотография', 'фотографии', 'фотографий'])} `;
+                    blocInfo.appendChild(infoCount);
+                }
+
+                createCanvasImg($(element).find('canvas'), element);
+
+                let blocItem = element.querySelectorAll('.entry__bloc');
+
+                blocItem.forEach((bloc, _) => {
+                    bloc.addEventListener('click', () => {
+                        slider = new SliderGallery($(element).find('.js-slider'), getJson(element), $(element).find('.swiper-wrapper')[0]);
+                        slider.createSlider;
+                        popup = $(element).find('.js-entry-popup');
+                        showOverlay(true, popup);
+                    });
+                })
+
+                if ($(element).find('.js-overlay').exists()) {
+                    $(element).find('.js-overlay').on('click', (e) => {
+                        if (e.target.className.indexOf('js-overlay') != -1) {
+                            slider.dstroySlider;
+                            popup = $(element).find('.js-entry-popup');
+                            showOverlay(false, popup);
+                        }
+                    });
+                }
+
+                if ($(element).find('.js-close-form').exists()) {
+                    $(element).find('.js-close-form').on('click', () => {
+                        showOverlay(false, popup);
+                    });
                 }
             }
-
-            element.querySelector('.entry__wrapper').innerHTML = outInfo;
         });
+    }
+
+    if ($('.js-scroll').exists()) {
+        Scrollbar.init(document.querySelector('.js-scroll'), {
+            damping: 0.05,
+            alwaysShowTracks: true
+        });
+    }
+
+
+    $(window).on('resize load', function () {
+        if ($(this).width() <= 1024) {
+            if ($('.js-out-cloud').exists()) {
+                projectFunc.objAd('.js-out-cloud', '.js-in-cloud');
+            }
+
+            if ($('.js-cloud-btn').exists()) {
+                $('.js-cloud-btn').on('click', function () {
+                    $('.cloud__wrp').toggleClass('active');
+                })
+            }
+
+        }
+        else {
+            if ($('.js-out-cloud').exists()) {
+                projectFunc.objAd('.js-out-cloud', '.wrapper__right');
+            }
+        }
+
+        if ($(this).width() <= 882) {
+            if ($('.js-out-date').exists()) {
+                console.log('777');
+                projectFunc.objAd('.js-out-date', '.js-in-date');
+            }
+        }
+        else {
+
+            if ($('.js-out-date').exists()) {
+                projectFunc.objAd('.js-out-date', '.popup__header');
+            }
+        }
+    });
+
+
+
+    const lockedDOM = (status) => {
+        if (status) {
+            $('html').css('overflow', 'hidden');
+        }
+        else {
+            $('html').css('overflow', 'auto');
+        }
+    }
+
+    const stateObject = (status, popup) => {
+        if (status == 'start') {
+            formShow(popup, true);
+        }
+        else {
+            formShow(popup, false);
+        }
+    }
+
+    const showOverlay = (status, popup) => {
+        if ($('.js-overlay').exists()) {
+            const overlayEl = $(popup).parent('.js-overlay')
+            const showOvTl = new TimelineMax({
+                reversed: true,
+                paused: true,
+                defaults: { duration: 0.6 },
+                onStart: lockedDOM,
+                onStartParams: [status, false],
+                onComplete: stateObject,
+                onCompleteParams: ['start', popup]
+            });
+
+            const hideOvTl = new TimelineMax({
+                reversed: true,
+                paused: true,
+                defaults: { duration: 0.3 },
+                onStart: stateObject,
+                onStartParams: ['end', popup],
+                onComplete: lockedDOM,
+                onCompleteParams: [status, true]
+            });
+
+            showOvTl
+                .to(
+                    overlayEl,
+                    {
+                        autoAlpha: 1,
+                        ease: "power2.out"
+                    }
+                )
+
+            hideOvTl
+                .to(
+                    overlayEl,
+                    {
+                        autoAlpha: 0,
+                        ease: "power2.out"
+                    },
+                    '+=0.6'
+                )
+
+            if (status) {
+                showOvTl.reverse();
+                showOvTl.play();
+            }
+            else {
+                hideOvTl.reverse();
+                hideOvTl.play();
+            }
+        }
+    }
+
+    const formShow = (element, status) => {
+        if ($(element).exists()) {
+            const formShowTl = new TimelineMax({
+                reversed: true,
+                paused: true,
+                defaults: { duration: 0.4 }
+            });
+
+            const formHideTl = new TimelineMax({
+                reversed: true,
+                paused: true,
+                defaults: { duration: 0.4 }
+            });
+
+            formHideTl
+                .to(
+                    element,
+                    {
+                        yPercent: -110,
+                        autoAlpha: 0,
+                    }
+                )
+            formShowTl
+                .set(
+                    element,
+                    {
+                        yPercent: -100
+                    }
+                )
+                .to(
+                    element,
+                    {
+                        yPercent: 0,
+                        autoAlpha: 1,
+                        ease: "power2.out"
+                    }
+                )
+
+            if (status) {
+                formHideTl.reverse();
+                formShowTl.play();
+            }
+            else {
+                formShowTl.reverse();
+                formHideTl.play();
+            }
+        }
+    }
+    class SliderGallery {
+        constructor(name, slides, place) {
+            this.name = name;
+            this.slides = slides;
+            this.place = place;
+            this.slider = '';
+        }
+
+        get createSlider() {
+            const slidesList = this.slides;
+            let slide = '',
+                canvas = '',
+                pagination = '';
+
+            if (slidesList.length > 0) {
+                let pagEl = $(this.name).find('.pagination');
+                let arrowNext = $(this.name).find('.arrow__link--next');
+                let arrowPrev = $(this.name).find('.arrow__link--prev');
+
+
+                slidesList.forEach((element, index) => {
+                    slide += `<div class="swiper-slide"><img src="${element}" alt="" /><canvas></canvas></div>`
+                });
+
+                this.place.innerHTML = slide;
+
+                console.log(this.place);
+
+
+
+
+                let $slides = $(this.place).find('.swiper-slide');
+
+                $slides.each((index, element) => {
+                    canvas = $(element).find('canvas');
+                    createCanvasImg(canvas, element);
+                });
+
+
+                this.slider = new Swiper(this.name, {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    navigation: {
+                        nextEl: arrowNext,
+                        prevEl: arrowPrev,
+                    },
+                    pagination: {
+                        el: pagEl,
+                        type: "custom",
+                        renderCustom: function (swiper, current, total) {
+                            let i = current ? current : 0;
+                            return `<span>${declOfNum(i, ['Фотография', 'Фотографии', 'Фотографий'])}</span> ${("" + i).slice(-2)} из ${("" + total).slice(-2)}`;
+                        }
+                    },
+                });
+            }
+        }
+
+        get dstroySlider() {
+            this.slider.destroy(true, true);
+
+            setTimeout(() => {
+                this.place.innerHTML = '';
+            }, 500);
+        }
     }
 });
