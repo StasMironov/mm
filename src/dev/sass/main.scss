@@ -52,7 +52,8 @@ html {
 .container {
   width: 100%;
   max-width: 1367px;
-  margin: auto;
+  margin: 0 auto;
+  margin-bottom: auto;
   padding: 0 20px 0px;
   box-sizing: border-box;
 
@@ -2129,3 +2130,4 @@ button {
 @import "./components/popup.scss";
 @import "./components/tags.scss";
 @import "./components/cloud.scss";
+@import "./components/include.scss";

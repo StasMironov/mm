@@ -9,7 +9,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 //===== Function check element ==========//
 jQuery.fn.exists = function () {
   return $(this).length;
-}; // BX.ready(function () {
+};
+
+if ($('#gallerybanner').exists()) {
+  $('head').append('<link rel="stylesheet" type="text/css" href="css/lightgallery.min.css">');
+  lightGallery(document.getElementById('gallerybanner'), {
+    selector: '.include__link'
+  });
+}
+
+lightGallery(document.getElementById('gallerybanner'), {
+  thumbnail: false,
+  background: 'A90707',
+  "selector": '.include__link'
+}); // BX.ready(function () {
 //     BX.addCustomEvent('onAjaxSuccess', function () {
 //         checkGallery('lightgallery');
 //         checkGallery('video-gallery');
@@ -17,7 +30,6 @@ jQuery.fn.exists = function () {
 //         articleSlider();
 //     });
 // });
-
 
 var projectFunc = {
   objAd: function objAd(element, place) {
@@ -1386,6 +1398,9 @@ $(function () {
 
         if (slides.length >= 3) {
           element.querySelector('.entry__wrapper').classList.add('entry__wrapper--direction');
+        }
+
+        if (slides.length > 3) {
           count = slides.length - (slideCurrentCount + 1);
           blocInfo = element.querySelectorAll('.entry__bloc');
           blocInfo = blocInfo[blocInfo.length - 1];
@@ -1421,6 +1436,18 @@ $(function () {
             showOverlay(false, popup);
           });
         }
+
+        $(window).on('resize load', function () {
+          if ($(this).width() <= 882) {
+            if ($(element).find('.js-out-date').exists()) {
+              projectFunc.objAd($(element).find('.js-out-date'), $(element).find('.js-in-date'));
+            }
+          } else {
+            if ($(element).find('.js-out-date').exists()) {
+              projectFunc.objAd($(element).find('.js-out-date'), $(element).find('.popup__header'));
+            }
+          }
+        });
       }
     });
   }
@@ -1441,22 +1468,19 @@ $(function () {
       if ($('.js-cloud-btn').exists()) {
         $('.js-cloud-btn').on('click', function () {
           $('.cloud__wrp').toggleClass('active');
+          this.classList.toggle('is-open');
+          var content = this.nextElementSibling;
+
+          if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+          }
         });
       }
     } else {
       if ($('.js-out-cloud').exists()) {
         projectFunc.objAd('.js-out-cloud', '.wrapper__right');
-      }
-    }
-
-    if ($(this).width() <= 882) {
-      if ($('.js-out-date').exists()) {
-        console.log('777');
-        projectFunc.objAd('.js-out-date', '.js-in-date');
-      }
-    } else {
-      if ($('.js-out-date').exists()) {
-        projectFunc.objAd('.js-out-date', '.popup__header');
       }
     }
   });
@@ -1625,4 +1649,58 @@ $(function () {
 
     return SliderGallery;
   }();
+
+  if ($('.include__unit').exists()) {
+    (function () {
+      var unitEl = document.querySelectorAll('.include__unit');
+      var wrapper = document.querySelector('.include__layer');
+      var svgGroup = wrapper.querySelectorAll('svg g');
+      var rect = ''; // svgGroup.forEach((element, index) => {
+      //     element.addEventListener('mouseenter', function () {
+      //         console.log(element.dataset.area);
+      //         rect = element.querySelectorAll('rect');
+      //         for (let i = 0; i < rect.length; i++) {
+      //             rect[i].classList.add('test');
+      //         }
+      //     });
+      // })
+
+      var _loop = function _loop(_i7) {
+        unitEl[_i7].addEventListener('mouseenter', function () {
+          for (var _j = 0; _j < svgGroup.length; _j++) {
+            if (_i7 == _j) {
+              rect = svgGroup[_j].querySelectorAll('rect');
+              console.log(rect);
+            }
+          }
+        });
+      };
+
+      for (var _i7 = 0; _i7 < unitEl.length; _i7++) {
+        _loop(_i7);
+      }
+
+      var _loop2 = function _loop2(_i8) {
+        svgGroup[_i8].addEventListener('mouseenter', function () {
+          rect = svgGroup[_i8].querySelectorAll('rect');
+
+          for (var _j2 = 0; _j2 < rect.length; _j2++) {
+            rect[_j2].classList.add('test');
+          }
+        });
+
+        svgGroup[_i8].addEventListener('mouseleave', function () {
+          rect = svgGroup[_i8].querySelectorAll('rect');
+
+          for (var _j3 = 0; _j3 < rect.length; _j3++) {
+            rect[_j3].classList.remove('test');
+          }
+        });
+      };
+
+      for (var _i8 = 0; _i8 < svgGroup.length; _i8++) {
+        _loop2(_i8);
+      }
+    })();
+  }
 });

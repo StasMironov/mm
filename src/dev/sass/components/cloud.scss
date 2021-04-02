@@ -11,6 +11,18 @@
         flex-direction: column;
     }
 
+    &__inner {
+
+        // max-height: 0;
+        // overflow: hidden;
+        transition: max-height .4s ease-in-out;
+        background-color: #fff;
+
+        @media(max-width: 1024px) {
+            padding: 20px 0;
+        }
+    }
+
     &__panel {
         margin-top: 20px;
         transition: .2s ease-out;
@@ -18,12 +30,10 @@
         @media(max-width: 1024px) {
             width: calc(200% + 10px);
             margin-top: 0;
-            padding: 20px 19px 20px 17px;
-            border: 1px solid $gray-3;
-
-            opacity: 0;
-            visibility: hidden;
-            display: none;
+            padding: 0px 19px 0px 17px;
+            border: 1px solid transparent;
+            max-height: 0;
+            overflow: hidden;
         }
 
         @media(max-width: 500px) {
@@ -106,9 +116,7 @@
         }
 
         .cloud__panel {
-            opacity: 1;
-            display: block;
-            visibility: visible;
+            border-color: $gray-3;
         }
     }
 }
