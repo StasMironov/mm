@@ -1687,11 +1687,6 @@ $(() => {
 
                 this.place.innerHTML = slide;
 
-                console.log(this.place);
-
-
-
-
                 let $slides = $(this.place).find('.swiper-slide');
 
                 $slides.each((index, element) => {
