@@ -962,6 +962,10 @@ $(function () {
         cont.insertBefore(galleryWrapper, allEl[a]);
         galleryWrapper.appendChild(blockThumbs);
         $(galleryBlock).find(swiperWrapper).clone().appendTo(blockThumbs);
+
+        if ($(blockThumbs).children('.swiper-wrapper').children().length == 1) {
+          $(blockThumbs).css('display', 'none');
+        }
       } catch (err) {
         console.log(err);
       }
@@ -990,11 +994,17 @@ $(function () {
 
       if (allEl[a] == allEl[allEl.length - 1]) {
         if (result) {
+          setTimeout(function () {
+            $('.news-detail__item').css('opacity', '1');
+          }, 500);
           createGallery();
         }
       }
     } else {
       if (result) {
+        setTimeout(function () {
+          $('.news-detail__item').css('opacity', '1');
+        }, 500);
         createGallery();
       }
 
@@ -1113,6 +1123,10 @@ $(function () {
           prevEl: '.b-arrow--prev'
         }
       });
+
+      if ($('.gallery').exists()) {
+        $('.news-detail__item').css('min-height', $('.gallery').height() + 15 + 'px');
+      }
     }
 
     if ($('.content p').exists()) {
@@ -1611,7 +1625,6 @@ $(function () {
             slide += "<div class=\"swiper-slide\"><img src=\"".concat(element, "\" alt=\"\" /><canvas></canvas></div>");
           });
           this.place.innerHTML = slide;
-          console.log(this.place);
           var $slides = $(this.place).find('.swiper-slide');
           $slides.each(function (index, element) {
             canvas = $(element).find('canvas');
