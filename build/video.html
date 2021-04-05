@@ -14,13 +14,6 @@
   </head>
   <body data-theme="">
     <div class="b-page">
-      <div class="ad">
-        <div class="content content--ad"><a href="javascript:void(0);">
-            <div class="ad-banner-image-desktop bgi banner" style="background-image: url(./img/special/banner.jpg);"></div>
-            <div class="ad-banner-image-tablet bgi banner" style="background-image: url('./img/special/banner-tablet.jpg')"></div>
-            <div class="ad-banner-image-tablet-768 bgi banner" style="background-image: url('./img/special/banner-tablet-768.jpg')"></div>
-            <div class="ad-banner-image-mobile-375 bgi banner" style="background-image: url('./img/special/banner-mobile-375.jpg')"></div></a></div>
-      </div>
       <header class="header">
         <div class="header__inner">
           <div class="header__top">
@@ -344,13 +337,18 @@
                       <svg class="b-svg svg-logo ">
                         <use xlink:href="svg/symbol/sprite.svg#logo"></use>
                       </svg></a>
-              <div class="footer__items">
+              <!--меню в три колонки-->
+              <div class="footer__items footer__items--cols3">
                 <div class="footer__bloc"><a class="footer__item footer__item--active" href="javascript:void(0);">Главная</a><a class="footer__item" href="javascript:void(0);">Архив</a><a class="footer__item" href="javascript:void(0);">Рубрики</a></div>
-                <div class="footer__bloc"><a class="footer__item" href="javascript:void(0);">Фоторепортажи</a><a class="footer__item" href="javascript:void(0);">Редакция</a><a class="footer__item" href="javascript:void(0);">Реклама</a></div>
-                <div class="footer__bloc"><a class="footer__item" href="javascript:void(0);">История города</a><a class="footer__item" href="javascript:void(0);">Поиск</a><a class="footer__item" href="javascript:void(0);">Бригада</a><a class="footer__item footer__item--hide" href="javascript:void(0);">Нашли ошибку?</a></div>
-                <div class="footer__bloc footer__bloc--hidden"><a class="footer__item" href="javascript:void(0);">Нашли ошибку?</a><a class="footer__partner" href="javascript:void(0);"><img src="./img/p1.png" alt=""></a></div>
+                <div class="footer__bloc"><a class="footer__item" href="javascript:void(0);">Фоторепортажи</a><a class="footer__item" href="javascript:void(0);">Редакция</a><a class="footer__item" href="javascript:void(0);">Реклама и объявления</a></div>
+                <div class="footer__bloc"><a class="footer__item" href="javascript:void(0);">История города</a><a class="footer__item" href="javascript:void(0);">Бригада</a><a class="footer__item" href="javascript:void(0);">Видеоархив</a></div>
               </div>
-              <div class="footer__wrapper"><a class="footer__partner footer__partner--hide" href="javascript:void(0);"><img src="./img/p1.png" alt=""></a>
+              <!--меню в две колонки для мобильных-->
+              <div class="footer__items footer__items--cols2">
+                <div class="footer__bloc"><a class="footer__item footer__item--active" href="javascript:void(0);">Главная</a><a class="footer__item" href="javascript:void(0);">Архив</a><a class="footer__item" href="javascript:void(0);">Рубрики</a><a class="footer__item" href="javascript:void(0);">Фоторепортажи</a><a class="footer__item" href="javascript:void(0);">Редакция</a></div>
+                <div class="footer__bloc"><a class="footer__item" href="javascript:void(0);">Реклама и объявления</a><a class="footer__item" href="javascript:void(0);">Бригада</a><a class="footer__item" href="javascript:void(0);">История города</a><a class="footer__item" href="javascript:void(0);">Видеоархив</a></div>
+              </div>
+              <div class="footer__wrapper">
                 <div class="footer__soc">
                   <div class="header__box"><a class="header__soc header__soc--vk" href="javascript:void(0);">
                             <svg class="b-svg svg-vk ">
@@ -363,6 +361,7 @@
                               <use xlink:href="svg/symbol/sprite.svg#ok"></use>
                             </svg></a></div>
                 </div>
+                <div class="header__box"><a class="footer__partner" href="javascript:void(0);"><img src="./img/p1.png" alt=""></a></div>
               </div>
             </div>
           </div>

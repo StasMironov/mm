@@ -552,28 +552,6 @@ button {
   }
 }
 
-.header__inner.mf-fixed .header__top .container,
-.header__inner.mf-fixed .header__bottom .container {
-  // padding-bottom: 10px !important;
-  // padding-top: 10px !important;
-}
-
-.header__inner.mf-fixed .header__field,
-.header__inner.mf-fixed input {
-  height: 39px;
-
-  @media(max-width: 640px) {
-    height: 28px;
-  }
-}
-
-// .header__inner.mf-fixed .header__logo {
-//   height: 30px;
-// }
-
-
-
-
 //=============== Test ==================//@extend
 .test-pic {
   position: relative;
