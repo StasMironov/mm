@@ -1731,53 +1731,81 @@ $(() => {
 
     if ($('.include__unit').exists()) {
         let unitEl = document.querySelectorAll('.include__unit');
+        let decorEl = document.querySelectorAll('.include__decor');
         let wrapper = document.querySelector('.include__layer');
         let svgGroup = wrapper.querySelectorAll('svg g');
+        let arrowEl = '';
         let rect = '';
 
 
-
-        // svgGroup.forEach((element, index) => {
-        //     element.addEventListener('mouseenter', function () {
-        //         console.log(element.dataset.area);
-        //         rect = element.querySelectorAll('rect');
-
-        //         for (let i = 0; i < rect.length; i++) {
-        //             rect[i].classList.add('test');
-        //         }
-        //     });
-        // })
-
         for (let i = 0; i < unitEl.length; i++) {
+
             unitEl[i].addEventListener('mouseenter', function () {
+
+                decorEl[i].querySelector('svg').classList.add('mf-bg');
+
                 for (let j = 0; j < svgGroup.length; j++) {
-                    if (i == j) {
+
+                    if (i == svgGroup[j].dataset.area) {
                         rect = svgGroup[j].querySelectorAll('rect');
-                        console.log(rect);
+
+                        for (let k = 0; k < rect.length; k++) {
+                            rect[k].classList.add('mf-bg');
+                        }
                     }
                 }
+
+            });
+
+            unitEl[i].addEventListener('mouseleave', function () {
+
+                decorEl[i].querySelector('svg').classList.remove('mf-bg');
+
+                for (let j = 0; j < svgGroup.length; j++) {
+                    if (i == svgGroup[j].dataset.area) {
+                        rect = svgGroup[j].querySelectorAll('rect');
+
+                        for (let k = 0; k < rect.length; k++) {
+                            rect[k].classList.remove('mf-bg');
+                        }
+                    }
+                }
+
             });
         }
 
         for (let i = 0; i < svgGroup.length; i++) {
+
             svgGroup[i].addEventListener('mouseenter', function () {
+                arrowEl = decorEl[svgGroup[i].dataset.area].querySelectorAll('svg');
+
+                for (let k = 0; k < arrowEl.length; k++) {
+                    arrowEl[k].classList.add('mf-bg');
+                }
+
                 rect = svgGroup[i].querySelectorAll('rect');
 
                 for (let j = 0; j < rect.length; j++) {
-                    rect[j].classList.add('test');
+                    rect[j].classList.add('mf-bg');
                 }
             });
 
             svgGroup[i].addEventListener('mouseleave', function () {
+
+                decorEl[i].querySelector('svg').classList.remove('mf-bg');
+                arrowEl = decorEl[svgGroup[i].dataset.area].querySelectorAll('svg');
+
+                for (let k = 0; k < arrowEl.length; k++) {
+                    arrowEl[k].classList.remove('mf-bg');
+                }
+
                 rect = svgGroup[i].querySelectorAll('rect');
 
                 for (let j = 0; j < rect.length; j++) {
-                    rect[j].classList.remove('test');
+                    rect[j].classList.remove('mf-bg');
                 }
             });
         }
-
-
     }
 
 });

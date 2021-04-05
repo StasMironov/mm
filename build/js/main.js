@@ -1653,24 +1653,37 @@ $(function () {
   if ($('.include__unit').exists()) {
     (function () {
       var unitEl = document.querySelectorAll('.include__unit');
+      var decorEl = document.querySelectorAll('.include__decor');
       var wrapper = document.querySelector('.include__layer');
       var svgGroup = wrapper.querySelectorAll('svg g');
-      var rect = ''; // svgGroup.forEach((element, index) => {
-      //     element.addEventListener('mouseenter', function () {
-      //         console.log(element.dataset.area);
-      //         rect = element.querySelectorAll('rect');
-      //         for (let i = 0; i < rect.length; i++) {
-      //             rect[i].classList.add('test');
-      //         }
-      //     });
-      // })
+      var arrowEl = '';
+      var rect = '';
 
       var _loop = function _loop(_i7) {
         unitEl[_i7].addEventListener('mouseenter', function () {
+          decorEl[_i7].querySelector('svg').classList.add('mf-bg');
+
           for (var _j = 0; _j < svgGroup.length; _j++) {
-            if (_i7 == _j) {
+            if (_i7 == svgGroup[_j].dataset.area) {
               rect = svgGroup[_j].querySelectorAll('rect');
-              console.log(rect);
+
+              for (var k = 0; k < rect.length; k++) {
+                rect[k].classList.add('mf-bg');
+              }
+            }
+          }
+        });
+
+        unitEl[_i7].addEventListener('mouseleave', function () {
+          decorEl[_i7].querySelector('svg').classList.remove('mf-bg');
+
+          for (var _j2 = 0; _j2 < svgGroup.length; _j2++) {
+            if (_i7 == svgGroup[_j2].dataset.area) {
+              rect = svgGroup[_j2].querySelectorAll('rect');
+
+              for (var k = 0; k < rect.length; k++) {
+                rect[k].classList.remove('mf-bg');
+              }
             }
           }
         });
@@ -1682,18 +1695,32 @@ $(function () {
 
       var _loop2 = function _loop2(_i8) {
         svgGroup[_i8].addEventListener('mouseenter', function () {
+          arrowEl = decorEl[svgGroup[_i8].dataset.area].querySelectorAll('svg');
+
+          for (var k = 0; k < arrowEl.length; k++) {
+            arrowEl[k].classList.add('mf-bg');
+          }
+
           rect = svgGroup[_i8].querySelectorAll('rect');
 
-          for (var _j2 = 0; _j2 < rect.length; _j2++) {
-            rect[_j2].classList.add('test');
+          for (var _j3 = 0; _j3 < rect.length; _j3++) {
+            rect[_j3].classList.add('mf-bg');
           }
         });
 
         svgGroup[_i8].addEventListener('mouseleave', function () {
+          decorEl[_i8].querySelector('svg').classList.remove('mf-bg');
+
+          arrowEl = decorEl[svgGroup[_i8].dataset.area].querySelectorAll('svg');
+
+          for (var k = 0; k < arrowEl.length; k++) {
+            arrowEl[k].classList.remove('mf-bg');
+          }
+
           rect = svgGroup[_i8].querySelectorAll('rect');
 
-          for (var _j3 = 0; _j3 < rect.length; _j3++) {
-            rect[_j3].classList.remove('test');
+          for (var _j4 = 0; _j4 < rect.length; _j4++) {
+            rect[_j4].classList.remove('mf-bg');
           }
         });
       };
