@@ -1383,6 +1383,87 @@ button {
         border-bottom: none;
       }
     }
+
+    &__quote {
+      color: $black;
+    }
+
+    span {
+      color: #6AA1FB;
+    }
+  }
+
+  .popup--entry .popup {
+    &__date {
+      background-color: #6AA1FB;
+    }
+
+    &__title {
+      color: $black;
+    }
+
+    &__info {
+      color: $black;
+    }
+
+    &__close {
+
+      &:hover:after,
+      &:hover:before {
+        background-color: #6AA1FB;
+      }
+    }
+  }
+
+  .cloud {
+    &__inner {
+      background-color: transparent;
+    }
+
+    &__btn {
+      i {
+        opacity: 0;
+
+        @media(max-width: 1024px) {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .entry {
+    &__date {
+      background-color: #6AA1FB;
+    }
+
+    &__tag {
+      color: #27202c;
+    }
+  }
+
+  .tags {
+    & .active {
+      background-color: #6AA1FB;
+    }
+  }
+
+  .include {
+    &__unit {
+      color: $gray-3;
+
+      @media(max-width: 1300px) {
+        color: $black;
+      }
+
+      @media(max-width: 600px) {
+        background-color: transparent;
+        color: $gray-3;
+      }
+    }
+
+    &__link {
+      color: #6AA1FB;
+    }
   }
 
   .agreement {
