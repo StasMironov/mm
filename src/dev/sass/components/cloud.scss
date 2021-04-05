@@ -1,0 +1,122 @@
+.cloud {
+
+    @media(max-width: 1024px) {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin-top: 24px;
+    }
+
+    @media(max-width: 500px) {
+        flex-direction: column;
+    }
+
+    &__inner {
+
+        // max-height: 0;
+        // overflow: hidden;
+        transition: max-height .4s ease-in-out;
+        background-color: #fff;
+
+        @media(max-width: 1024px) {
+            padding: 20px 0;
+        }
+    }
+
+    &__panel {
+        margin-top: 20px;
+        transition: .2s ease-out;
+
+        @media(max-width: 1024px) {
+            width: calc(200% + 10px);
+            margin-top: 0;
+            padding: 0px 19px 0px 17px;
+            border: 1px solid transparent;
+            max-height: 0;
+            overflow: hidden;
+        }
+
+        @media(max-width: 500px) {
+            width: initial;
+        }
+    }
+
+    &__title {
+
+        padding-right: 0;
+        letter-spacing: 0.6px;
+
+        @media(max-width: 1024px) {
+            font-family: "OpenSans", sans-serif;
+            font-size: 14px;
+            line-height: 14px;
+            color: white;
+            font-weight: 400;
+        }
+    }
+
+    &__wrp {
+        position: relative;
+        margin-top: 43px;
+
+        @media(max-width: 1024px) {
+            display: flex;
+            flex-direction: column;
+            margin-top: 0;
+            width: calc(50% - 5px)
+        }
+
+        @media(max-width: 500px) {
+            width: 100%;
+            margin-top: 8px;
+        }
+    }
+
+    &__btn {
+        display: flex;
+        flex: 1;
+
+        @media(max-width: 1024px) {
+            align-items: center;
+            background-color: $purple-3;
+            padding: 16px 20px 16px 16px;
+        }
+
+        @media(max-width: 500px) {
+            padding: 15px 20px 15px 16px;
+        }
+
+        i {
+            margin-left: auto;
+            transform-origin: center;
+            transition: .2s ease-out;
+
+            svg>path {
+                stroke: white;
+            }
+        }
+    }
+
+    .btn {
+        margin-top: 0;
+
+        @media(max-width: 1024px) {
+            width: calc(50% - 5px)
+        }
+
+        @media(max-width: 500px) {
+            width: 100%;
+        }
+    }
+
+
+    .active {
+        i {
+            transform: scale(1, -1);
+        }
+
+        .cloud__panel {
+            border-color: $gray-3;
+        }
+    }
+}

@@ -6,237 +6,173 @@ block variables
 	- var linkCss = '<link rel="stylesheet" type="text/css" href="css/main.css">';
 block content
 	.container
-		.wrapper
-			.wrapper__left
-				.article
-					.article__title.title-1 ММК — Видеоархив
-					<form class="filter" action="" method="get" >
-						.filter__item
-							.filter__bloc
-								.filter__txt ММК
-								.filter__ic
-									<svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M1 5L5.24264 9.24264L9.48528 5" stroke="#27202C" stroke-width="2"/>
-									</svg>
-							.filter__box
-								.filter__list
-									<div class="filter__block">
-										<input id="m1" type="radio" name="article" value="" checked>
-										<label for="m1">ММК</label>
-									</div>
-									<div class="filter__block">
-										<input id="m2" type="radio" name="article" value="">
-										<label for="m2">Первая улица</label>
-									</div>
-					</form>
-
-					<form class="article__form article__wrapper" action="" method="get" >
-						.article__inner
-							<div class="article__link article__link--active">
-								<input id="a1" type="radio" name="article" value="">
-								<label for="a1">ММК</label>
-							</div>
-							<div class="article__link">
-								<input id="a2" type="radio" name="article" value="">
-								<label for="a2">Памятники</label>
-							</div>
-							<div class="article__link">
-								<input id="a3" type="radio" name="article" value="">
-								<label for="a3">Первая улица</label>
-							</div>
-							<div class="article__link">
-								<input id="a4" type="radio" name="article" value="">
-								<label for="a4">Ленинский</label>
-							</div>
-							<div class="article__link">
-								<input id="a5" type="radio" name="article" value="">
-								<label for="a5">Орджоникидзевский</label>
-							</div>
-							<div class="article__link">
-								<input id="a6" type="radio" name="article" value="">
-								<label for="a6">ВОВ</label>
-							</div>
-
-							<div class="article__link">
-								<input id="a7" type="radio" name="article" value="">
-								<label for="a7">Городской проспект</label>
-							</div>
-
-							<div class="article__link">
-								<input id="a8" type="radio" name="article" value="">
-								<label for="a8">Память</label>
-							</div>
-
-							<div class="article__link">
-								<input id="a9" type="radio" name="article" value="">
-								<label for="a9">Реальные истории</label>
-							</div>
-
-							<div class="article__link">
-								<input id="a10" type="radio" name="article" value="">
-								<label for="a10">Реальные истории</label>
-							</div>
-
-							<div class="article__link">
-								<input id="a11" type="radio" name="article" value="">
-								<label for="a11">О ком говорят</label>
-							</div>
-
-							<div class="article__link">
-								<input id="a12" type="radio" name="article" value="">
-								<label for="a12">Народная экономика: и жизнь, и кошелек</label>
-							</div>
-
-							<div class="article__link">
-								<input id="a13" type="radio" name="article" value="">
-								<label for="a13">Политика. Власть. Общество</label>
-							</div>
-
-							<div class="article__link">
-								<input id="a14" type="radio" name="article" value="">
-								<label for="a14">Православие</label>
-							</div>
-						</form>
-
-					a(href="javascript:void(0);").btn.btn--video 
-						.btn__txt Просмотреть архив с видео
-						.btn__ic 
-							+svg('polygon')
-					.video-archive
-						#video-gallery.video-gallery
-							.video-gallery__bloc
-								.video-gallery__wrapper
-									<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
-										.video-gallery__inner
-											<img src="img/video/thumb1.jpg" />
-											.news-archive__cover
-												.news-archive__btn
-												.news-archive__time 22:00
-										.video-gallery__caption Строительство первой палатки в Магнитогорске
-									</a>
-									<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
-										.video-gallery__inner
-											<img src="img/video/thumb2.jpg" />
-											.news-archive__cover
-												.news-archive__btn
-												.news-archive__time 22:00
-										.video-gallery__caption Магнитогорский Прометей
-									</a>
-							.video-gallery__bloc
-								.video-gallery__wrapper
-									<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
-										.video-gallery__inner
-											<img src="img/video/thumb1.jpg" />
-											.news-archive__cover
-												.news-archive__btn
-												.news-archive__time 22:00
-										.video-gallery__caption Магнитогорский Прометей
-									</a>
-									<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
-										.video-gallery__inner
-											<img src="img/video/thumb2.jpg" />
-											.news-archive__cover
-												.news-archive__btn
-												.news-archive__time 22:00
-										.video-gallery__caption Магнитогорский Прометей
-									</a>
-							.video-gallery__bloc
-								.video-gallery__wrapper
-									<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
-										.video-gallery__inner
-											<img src="img/video/thumb1.jpg" />
-											.news-archive__cover
-												.news-archive__btn
-												.news-archive__time 22:00
-										.video-gallery__caption Магнитогорский Прометей
-									</a>
-									<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
-										.video-gallery__inner
-											<img src="img/video/thumb2.jpg" />
-											.news-archive__cover
-												.news-archive__btn
-												.news-archive__time 22:00
-										.video-gallery__caption Магнитогорский Прометей
-									</a>
-							.video-gallery__bloc
-								.video-gallery__wrapper
-									<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
-										.video-gallery__inner
-											<img src="img/video/thumb1.jpg" />
-											.news-archive__cover
-												.news-archive__btn
-												.news-archive__time 22:00
-										.video-gallery__caption Магнитогорский Прометей
-									</a>
-									<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
-										.video-gallery__inner
-											<img src="img/video/thumb2.jpg" />
-											.news-archive__cover
-												.news-archive__btn
-												.news-archive__time 22:00
-										.video-gallery__caption Магнитогорский Прометей
-									</a>						
-						.edition-rewards__pagination.edition-rewards__pagination--video
-							a(href="javascript:void(0);").edition-rewards__link.edition-rewards__link--prev
-								<svg width="31" height="8" viewBox="0 0 31 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M0.646445 3.64645C0.451183 3.84171 0.451183 4.15829 0.646445 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.73079 7.34027 4.73079 7.02369 4.53553 6.82843L1.7071 4L4.53553 1.17157C4.73079 0.976311 4.73079 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646445 3.64645ZM31 3.5L0.999998 3.5V4.5L31 4.5V3.5Z" fill="black"/>
-								</svg>
-							a(href="javascript:void(0);").edition-rewards__link.edition-rewards__link--active 1
-							a(href="javascript:void(0);").edition-rewards__link 2
-							a(href="javascript:void(0);").edition-rewards__link 3
-							a(href="javascript:void(0);").edition-rewards__link ...
-							a(href="javascript:void(0);").edition-rewards__link 13
-							a(href="javascript:void(0);").edition-rewards__link 14
-							a(href="javascript:void(0);").edition-rewards__link 15
-							a(href="javascript:void(0);").edition-rewards__link.edition-rewards__link--next
-								<svg width="31" height="8" viewBox="0 0 31 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M0.646445 3.64645C0.451183 3.84171 0.451183 4.15829 0.646445 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.73079 7.34027 4.73079 7.02369 4.53553 6.82843L1.7071 4L4.53553 1.17157C4.73079 0.976311 4.73079 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646445 3.64645ZM31 3.5L0.999998 3.5V4.5L31 4.5V3.5Z" fill="black"/>
-								</svg>
-				.news-today.news-today--include
-					.news-today__item
-						.news-today__title.title-2 Сегодняшняя газета
-						a(href="javascript:void(0);").btn Посмотреть электронное издание
-			.wrapper__right.wrapper__right--special
-				.news-today
-					.news-today__item
-						.news-today__title.title-2 Сегодняшняя газета
-						a(href="javascript:void(0);").btn Посмотреть электронное издание
-				.news-survey
-					a(href="javascript:void(0);").news-survey__title.title-3 Что вы думаете <br> об обязательном тестировании на коронавирусную инфекцию?
-					form.news-survey__form(method="get")
-						label(for="qu1" class="news-survey__radio") 
-							input(type="radio" id="qu1" name="rdbtn" checked)
-							div.news-survey__text Нужно сделать всем, вдруг кто-то болеет без симптомов
-						label(for="qu2" class="news-survey__radio") 
-							input(type="radio" id="qu2" name="rdbtn")
-							div.news-survey__text Нужно сделать всем, вдруг кто-то болеет без симптомов
-						button(type="submit" class="btn") Голосовать
-				.news-hidden
-					a(href="javascript:void(0);").news-today__block.news-today__block--other
-							img(src="./img/index/p36.jpg" alt="")
-				.news-city
-					a(href="javascript:void(0);").news-city__title.title-2 История города
-						+svg("ar-title")
-					.news-city__items
-						a(href="javascript:void(0);").news-city__item
-							.news-city__pic(style="background-image: url(./img/history/city/hc1.jpg);")
-							.news-city__title.title-3 Газета в рабочей спецовке
-						a(href="javascript:void(0);").news-city__item
-							.news-city__pic(style="background-image: url(./img/index/p32.jpg);")
-							.news-city__title.title-3 Больницы для солдат
-						a(href="javascript:void(0);").news-city__item
-							.news-city__pic(style="background-image: url(./img/index/p34.jpg);")
-							.news-city__title.title-3 Маленькая женщина с большим сердцем
-						a(href="javascript:void(0);").news-city__item
-							.news-city__pic(style="background-image: url(./img/index/p33.jpg);")
-							.news-city__title.title-3 Первые секретари
+		.video-archive
+			.video-archive__header 
+				.video-archive__title.title-1 Видеоархив
+				a(href="javascript:void(0);").btn История города
+			.video-archive__grid#video-gallery.video-gallery
+				<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+					.video-gallery__inner
+						<img src="img/video/thumb1.jpg" />
+						.news-archive__cover
+							.news-archive__btn
+							.news-archive__time 22:00
+					.video-gallery__caption Магнитогорский Прометей
+				</a>
+				<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+					.video-gallery__inner
+						<img src="img/video/thumb1.jpg" />
+						.news-archive__cover
+							.news-archive__btn
+							.news-archive__time 22:00
+					.video-gallery__caption Магнитогорский Прометей
+				</a>
+				<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+					.video-gallery__inner
+						<img src="img/video/thumb1.jpg" />
+						.news-archive__cover
+							.news-archive__btn
+							.news-archive__time 22:00
+					.video-gallery__caption Магнитогорский Прометей
+				</a>
+				<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+					.video-gallery__inner
+						<img src="img/video/thumb1.jpg" />
+						.news-archive__cover
+							.news-archive__btn
+							.news-archive__time 22:00
+					.video-gallery__caption Магнитогорский Прометей
+				</a>
+				<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+					.video-gallery__inner
+						<img src="img/video/thumb1.jpg" />
+						.news-archive__cover
+							.news-archive__btn
+							.news-archive__time 22:00
+					.video-gallery__caption Магнитогорский Прометей
+				</a>
+				<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+					.video-gallery__inner
+						<img src="img/video/thumb1.jpg" />
+						.news-archive__cover
+							.news-archive__btn
+							.news-archive__time 22:00
+					.video-gallery__caption Магнитогорский Прометей
+				</a>
+				<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+					.video-gallery__inner
+						<img src="img/video/thumb1.jpg" />
+						.news-archive__cover
+							.news-archive__btn
+							.news-archive__time 22:00
+					.video-gallery__caption Магнитогорский Прометей
+				</a>
+				<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+					.video-gallery__inner
+						<img src="img/video/thumb1.jpg" />
+						.news-archive__cover
+							.news-archive__btn
+							.news-archive__time 22:00
+					.video-gallery__caption Магнитогорский Прометей
+				</a>
+				<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+					.video-gallery__inner
+						<img src="img/video/thumb1.jpg" />
+						.news-archive__cover
+							.news-archive__btn
+							.news-archive__time 22:00
+					.video-gallery__caption Магнитогорский Прометей
+				</a>
+				<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+					.video-gallery__inner
+						<img src="img/video/thumb1.jpg" />
+						.news-archive__cover
+							.news-archive__btn
+							.news-archive__time 22:00
+					.video-gallery__caption Магнитогорский Прометей
+				</a>
+				<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+					.video-gallery__inner
+						<img src="img/video/thumb1.jpg" />
+						.news-archive__cover
+							.news-archive__btn
+							.news-archive__time 22:00
+					.video-gallery__caption Магнитогорский Прометей
+				</a>
+				<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+					.video-gallery__inner
+						<img src="img/video/thumb1.jpg" />
+						.news-archive__cover
+							.news-archive__btn
+							.news-archive__time 22:00
+					.video-gallery__caption Магнитогорский Прометей
+				</a>
+				<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+					.video-gallery__inner
+						<img src="img/video/thumb1.jpg" />
+						.news-archive__cover
+							.news-archive__btn
+							.news-archive__time 22:00
+					.video-gallery__caption Магнитогорский Прометей
+				</a>
+				<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+					.video-gallery__inner
+						<img src="img/video/thumb1.jpg" />
+						.news-archive__cover
+							.news-archive__btn
+							.news-archive__time 22:00
+					.video-gallery__caption Магнитогорский Прометей
+				</a>
+				<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+					.video-gallery__inner
+						<img src="img/video/thumb1.jpg" />
+						.news-archive__cover
+							.news-archive__btn
+							.news-archive__time 22:00
+					.video-gallery__caption Магнитогорский Прометей
+				</a>
+				<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+					.video-gallery__inner
+						<img src="img/video/thumb1.jpg" />
+						.news-archive__cover
+							.news-archive__btn
+							.news-archive__time 22:00
+					.video-gallery__caption Магнитогорский Прометей
+				</a>
+				<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+					.video-gallery__inner
+						<img src="img/video/thumb1.jpg" />
+						.news-archive__cover
+							.news-archive__btn
+							.news-archive__time 22:00
+					.video-gallery__caption Магнитогорский Прометей
+				</a>
+				<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+					.video-gallery__inner
+						<img src="img/video/thumb1.jpg" />
+						.news-archive__cover
+							.news-archive__btn
+							.news-archive__time 22:00
+					.video-gallery__caption Магнитогорский Прометей
+				</a>
+		.edition-rewards__pagination.edition-rewards__pagination--video
+			a(href="javascript:void(0);").edition-rewards__link.edition-rewards__link--prev
+				<svg width="31" height="8" viewBox="0 0 31 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M0.646445 3.64645C0.451183 3.84171 0.451183 4.15829 0.646445 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.73079 7.34027 4.73079 7.02369 4.53553 6.82843L1.7071 4L4.53553 1.17157C4.73079 0.976311 4.73079 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646445 3.64645ZM31 3.5L0.999998 3.5V4.5L31 4.5V3.5Z" fill="black"/>
+				</svg>
+			a(href="javascript:void(0);").edition-rewards__link.edition-rewards__link--active 1
+			a(href="javascript:void(0);").edition-rewards__link 2
+			a(href="javascript:void(0);").edition-rewards__link 3
+			a(href="javascript:void(0);").edition-rewards__link ...
+			a(href="javascript:void(0);").edition-rewards__link 13
+			a(href="javascript:void(0);").edition-rewards__link 14
+			a(href="javascript:void(0);").edition-rewards__link 15
+			a(href="javascript:void(0);").edition-rewards__link.edition-rewards__link--next
+				<svg width="31" height="8" viewBox="0 0 31 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M0.646445 3.64645C0.451183 3.84171 0.451183 4.15829 0.646445 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.73079 7.34027 4.73079 7.02369 4.53553 6.82843L1.7071 4L4.53553 1.17157C4.73079 0.976311 4.73079 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646445 3.64645ZM31 3.5L0.999998 3.5V4.5L31 4.5V3.5Z" fill="black"/>
+				</svg>
+			
 		
-							
-
-					
-
 		
-							
-
 
 block script

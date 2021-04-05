@@ -133,4 +133,53 @@
             background-color: transparent;
         }
     }
+
+    &--light {
+        background-color: $gray-1;
+        border: 1px solid $black;
+        color: $black;
+
+        .btn {
+            &__txt {
+                font-size: 16px;
+                letter-spacing: 0.6px;
+                margin-right: 6px;
+
+                @media(max-width: 1024px) {
+                    font-size: 14px;
+                }
+            }
+
+            &__ic {
+                width: 22px;
+                height: 22px;
+
+                circle,
+                path {
+                    transition: .2s ease-out;
+                }
+
+            }
+        }
+
+
+        &:hover {
+            background-color: $purple-3;
+            border-color: $purple-3;
+            color: white;
+
+            .btn__ic {
+                width: 22px;
+                height: 22px;
+
+                circle {
+                    stroke: white;
+                }
+
+                path {
+                    fill: white;
+                }
+            }
+        }
+    }
 }

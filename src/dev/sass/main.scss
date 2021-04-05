@@ -13,17 +13,24 @@
   outline: none !important;
 }
 
+:root {
+  --wScroll: 0px;
+}
+
 html {
   height: 100%;
   min-width: 320px;
   overflow-x: hidden;
   font-size: 16px;
+  padding: 0 calc(var(--wScroll) - (100vw - 100%)) 0 0;
+
 
   @media (max-width: 1023px) {
     font-size: 14px;
     line-height: 20px;
   }
 }
+
 
 body {
   font-family: "OpenSans", sans-serif;
@@ -45,7 +52,8 @@ html {
 .container {
   width: 100%;
   max-width: 1367px;
-  margin: auto;
+  margin: 0 auto;
+  margin-bottom: auto;
   padding: 0 20px 0px;
   box-sizing: border-box;
 
@@ -2040,7 +2048,13 @@ button {
 }
 
 
+.js-slider {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
 
+@import "./components/overlay.scss";
 @import "./components/archive/archive-table.scss";
 @import "./components/release/release-datepicker.scss";
 @import "./components/release/release-month.scss";
@@ -2054,6 +2068,7 @@ button {
 @import "./components/search/search.scss";
 @import "./components/subscription/subscription.scss";
 @import "./components/filter.scss";
+@import "./components/article/info.scss";
 @import "./components/article/article.scss";
 @import "./components/journal/journal.scss";
 @import "./components/headings/headings.scss";
@@ -2089,3 +2104,8 @@ button {
 @import "./components/author/author-articles.scss";
 @import "./components/news/news-detail.scss";
 @import "./components/content.scss";
+@import "./components/entry.scss";
+@import "./components/popup.scss";
+@import "./components/tags.scss";
+@import "./components/cloud.scss";
+@import "./components/include.scss";

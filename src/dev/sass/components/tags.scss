@@ -1,0 +1,30 @@
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -10px;
+    margin-left: -10px;
+
+    &__tag {
+        font-size: 12px;
+        line-height: 12px;
+        display: inline-block;
+        padding: .5em .583em;
+        background-color: $gray-9;
+        color: #fff;
+        align-self: flex-start;
+        color: $black;
+        margin-top: 10px;
+
+        margin-left: 10px;
+
+        &:hover {
+            background-color: $purple-3;
+            color: white;
+        }
+    }
+
+    .active {
+        background-color: $purple-3;
+        color: white;
+    }
+}
