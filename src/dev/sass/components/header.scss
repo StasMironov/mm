@@ -479,7 +479,7 @@
 
                 &:checked {
 
-                    & + .checkbox__text {
+                    &+.checkbox__text {
 
                         &:before {
                             background: $black;
@@ -517,10 +517,11 @@
                     background: #CDD1DA;
                     box-shadow: inset 0 2px 3px rgba(0, 0, 0, .2);
                     transition: .2s;
-                    background-image: url(../img/icon/light.svg);
+                    background: url(../img/icon/light.svg);
                     background-repeat: no-repeat;
                     background-position: 85% 50%;
                     background-size: auto;
+                    background-color: #cdd1da;
 
                     @media(max-width: 1024px) {
                         width: 41px;
@@ -763,6 +764,7 @@
     &__partner {
         display: block;
         height: 41px;
+        width: 41px;
 
         &:not(:last-child) {
             margin-right: 20px;
@@ -770,6 +772,9 @@
 
         img {
             height: 100%;
+            max-width: 100%;
+            width: 100%;
+            object-fit: contain;
         }
     }
 
