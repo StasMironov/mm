@@ -2,13 +2,13 @@
     margin-top: 0px;
 
     @media(max-width: 1024px) {
-        padding-top: 24px;
+        // padding-top: 24px;
         padding-bottom: 16px;
         border-top: none;
     }
 
     @media(max-width: 600px) {
-        padding-top: 24px;
+        // padding-top: 24px;
         padding-bottom: 30px;
         border-bottom: 1px solid $gray-3;
     }
