@@ -834,6 +834,10 @@ button {
   .news-actual {
     border-bottom: 1px solid #f6f6f6;
 
+    @media(max-width:640px) {
+      border-bottom: none;
+    }
+
     &__text {
       color: #d7d7d7;
     }
@@ -2133,6 +2137,18 @@ button {
   height: 100%;
   width: 100%;
   overflow: hidden;
+}
+
+#aside {
+  @media(max-width:1024px) {
+    order: -1
+  }
+}
+
+.js-banner-slider {
+  @media(max-width:1024px) {
+    order: -1
+  }
 }
 
 @import "./components/overlay.scss";
