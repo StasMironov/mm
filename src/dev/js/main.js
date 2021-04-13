@@ -1510,9 +1510,7 @@ $(() => {
                             projectFunc.objAd($(element).find('.js-out-date'), $(element).find('.popup__header'));
                         }
                     }
-                })
-
-
+                });
             }
         });
     }
@@ -1548,12 +1546,30 @@ $(() => {
                 })
             }
 
+
+            if ($('.js-banner-slider').exists()) {
+                projectFunc.objAd($('.js-banner-slider'), $('.js-in-banner '));
+            }
+
         }
         else {
+            if ($('.js-banner-slider').exists()) {
+                //projectFunc.objAd($('.js-banner-slider'), $('.news-city'));
+
+                if ($('.js-banner-slider').exists()) {
+                    $('.js-banner-slider').each(function (index) {
+                        let adObj = $(this).clone();
+                        $('.news-city').after($(adObj));
+                        $(this).remove();
+                    });
+                }
+            }
             if ($('.js-out-cloud').exists()) {
                 projectFunc.objAd('.js-out-cloud', '.wrapper__right');
             }
         }
+
+
 
 
     });

@@ -5,12 +5,13 @@
 
     @media(max-width: 1024px) {
         margin-top: 21px;
-        padding-bottom: 24px;
+        padding-bottom: 0px;
+        border-bottom: none;
     }
 
-    @media(max-width: 640px) {
-        padding-bottom: 20px;
-    }
+    // @media(max-width: 640px) {
+    //     padding-bottom: 20px;
+    // }
 
     &__item {
         &:hover {
