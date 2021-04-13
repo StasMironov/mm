@@ -37,6 +37,14 @@
 
 .news-banner__cover--kiosk {
     padding-bottom: 34px;
+
+    @media(max-width: 1024px) {
+        border-bottom: 1px solid #d7d7d7;
+    }
+
+    @media(max-width: 640px) {
+        padding-bottom: 20px;
+    }
 }
 
 @media (max-width: 1024px) {
