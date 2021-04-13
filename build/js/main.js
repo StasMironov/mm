@@ -1496,6 +1496,10 @@ $(function () {
       if ($('.js-banner-slider').exists()) {
         projectFunc.objAd($('.js-banner-slider'), $('.js-in-banner '));
       }
+
+      if ($('.js-out-kiosk').exists()) {
+        projectFunc.objAd($('.js-out-kiosk'), $('.js-in-kiosk '));
+      }
     } else {
       if ($('.js-banner-slider').exists()) {
         //projectFunc.objAd($('.js-banner-slider'), $('.news-city'));
@@ -1503,6 +1507,18 @@ $(function () {
           $('.js-banner-slider').each(function (index) {
             var adObj = $(this).clone();
             $('.news-city').after($(adObj));
+            $(this).remove();
+          });
+        }
+      }
+
+      if ($('.js-out-kiosk').exists()) {
+        //projectFunc.objAd($('.js-banner-slider'), $('.news-city'));
+        if ($('.js-out-kiosk').exists()) {
+          $('.js-out-kiosk').each(function (index) {
+            var adObj = $(this).clone(); // $('.wrapper__right').prependTo($(adObj));
+
+            $(adObj).prependTo($('.wrapper__right'));
             $(this).remove();
           });
         }

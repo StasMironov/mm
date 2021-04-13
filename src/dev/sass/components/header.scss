@@ -378,6 +378,14 @@
                 // font-weight: bold;
             }
         }
+
+        &--mobile {
+            display: none;
+
+            @media(max-width: 1024px) {
+                display: inline-block;
+            }
+        }
     }
 
     &__logo {
