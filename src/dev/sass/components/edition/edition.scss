@@ -30,17 +30,27 @@
 .b-edition__margin {
     margin-top: 20px;
 }
+
 .news-banner--kiosk {
     margin-top: 0;
 }
+
 .news-banner__cover--kiosk {
     padding-bottom: 34px;
 }
+
 @media (max-width: 1024px) {
     .news-banner--kiosk {
         margin-top: 34px;
     }
+
     .news-banner__cover--kiosk {
         justify-content: center;
+    }
+}
+
+@media(max-width:1024px) {
+    .news-banner--kiosk {
+        order: -1;
     }
 }
