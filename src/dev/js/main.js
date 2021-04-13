@@ -1035,7 +1035,8 @@ $(() => {
             if (allEl[a] == allEl[allEl.length - 1]) {
                 if (result) {
                     setTimeout(function () {
-                        $('.news-detail__item').css('opacity', '1')
+                        $('.news-detail__item img').css('opacity', '1');
+                        $('.gallery').css('opacity', '1')
                     }, 500);
                     createGallery();
                 }
@@ -1043,7 +1044,8 @@ $(() => {
         } else {
             if (result) {
                 setTimeout(function () {
-                    $('.news-detail__item').css('opacity', '1')
+                    $('.news-detail__item img').css('opacity', '1');
+                    $('.gallery').css('opacity', '1')
                 }, 500);
                 createGallery();
             }

@@ -147,13 +147,20 @@
         display: flex;
         flex-direction: column;
         transition: .2s ease-out;
-        opacity: 0;
-        overflow: hidden;
+        // opacity: 0;
+        // overflow: hidden;
 
         @media(max-width: 600px) {
             padding-bottom: 20px;
             border-bottom: 1px solid $gray-3;
         }
+
+        img {
+            max-height: 544px;
+            opacity: 0;
+            transition: .2s ease-out;
+        }
+
     }
 
     &__txt {
