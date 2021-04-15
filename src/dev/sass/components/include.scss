@@ -179,8 +179,8 @@
         &:nth-child(1) {
             position: absolute;
             top: 88px;
-            right: -267px;
-            max-width: 258px;
+            right: -276px;
+            max-width: 266px;
             width: 100%;
 
 
@@ -302,10 +302,10 @@
         }
 
         &:nth-child(4) {
-            max-width: 261px;
-            width: 100%;
-            left: -263px;
             bottom: 157px;
+            max-width: 266px;
+            width: 100%;
+            left: -269px;
 
             @media(max-width: 1300px) {
                 max-width: 272px;
