@@ -28,7 +28,11 @@
 }
 
 .b-edition__margin {
-    margin-top: 20px;
+    margin-top: 45px;
+
+    @media(max-width: 1024px) {
+        margin-top: 20px;
+    }
 }
 
 .news-banner--kiosk {
@@ -47,7 +51,11 @@
     }
 }
 
-@media (max-width: 1024px) {
+@media(max-width:1024px) {
+    .news-banner--kiosk {
+        order: -1;
+    }
+
     .news-banner--kiosk {
         margin-top: 34px;
     }
@@ -57,8 +65,8 @@
     }
 }
 
-@media(max-width:1024px) {
+@media(max-width:600px) {
     .news-banner--kiosk {
-        order: -1;
+        margin-top: 23px;
     }
 }
