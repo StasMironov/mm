@@ -497,22 +497,30 @@ $(() => {
     adaptiveArticle('.article__box', '.article__cover');
 
     if ($('.header__bottom .header__nav').exists) {
-        $(function () {
-            var csObj = new Object();
-            csObj.axis = "x";
-            csObj.theme = "my-theme";
-            csObj.advanced = {
-                autoExpandHorizontalScroll: true
-            };
-            csObj.scrollButtons = {
-                scrollType: "pixels",
-                scrollAmount: 300
-            };
-            csObj.mouseWheel = {
-                invert: true
-            };
-            $(".header__bottom .header__nav").mCustomScrollbar(csObj);
+
+        var csObj = new Object();
+        csObj.axis = "x";
+        csObj.theme = "my-theme";
+        csObj.advanced = {
+            // autoExpandHorizontalScroll: true
+        };
+        csObj.scrollButtons = {
+            scrollType: "pixels",
+            scrollAmount: 300
+        };
+        csObj.mouseWheel = {
+            invert: true
+        };
+
+        $(window).on('resize load', function () {
+            if ($(this).width() <= 1024) {
+                $(".header__bottom .header__nav").mCustomScrollbar(csObj);
+            }
+            else {
+                $(".header__bottom .header__nav").mCustomScrollbar("destroy");
+            }
         });
+
     }
 
     if ($('.filter__item').exists()) {
