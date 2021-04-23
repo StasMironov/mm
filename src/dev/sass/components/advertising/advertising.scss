@@ -163,6 +163,23 @@
 
             @media(max-width: 600px) {
                 margin-top: 22px;
+                display: block;
+            }
+
+            .advertising {
+                &__column {
+                    &:nth-child(3) {
+                        grid-column: 1/14;
+                        grid-row: 2/3;
+                        margin-top: 0;
+                    }
+
+                    &:nth-child(4) {
+                        grid-column: 13/22;
+                        margin-left: 24px;
+                        grid-row: 2/3;
+                    }
+                }
             }
         }
     }
@@ -862,6 +879,22 @@
         &:last-child {
             .advertising__column {
                 display: initial;
+
+                @media(max-width: 600px) {
+                    display: block;
+                }
+
+                &:not(:first-child) {
+                    @media(max-width: 600px) {
+                        margin-top: 22px;
+                    }
+                }
+
+                &:last-child {
+                    @media(max-width: 600px) {
+                        margin-left: 0;
+                    }
+                }
             }
         }
 
