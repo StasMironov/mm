@@ -655,8 +655,6 @@ $(function () {
   truncateText('.news-most__text', 46);
   truncateText('.news-photo__info', 115);
   truncateText('.author-articles__txt', 72);
-  truncateText('.search__text', 72);
-  truncateText('.search__text', 72);
   truncateText('.news-slider__txt', 250);
   truncateText('.news-slider__txt', 250);
   truncateText('.publish__txt', 15);
