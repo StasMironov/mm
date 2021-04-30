@@ -1437,7 +1437,6 @@ $(() => {
         return dataJson.slides;
     }
 
-
     if ($('.entry').exists()) {
         let slides = '',
             outInfo = '',
@@ -1520,13 +1519,13 @@ $(() => {
                     }
                 });
             }
-        });
-    }
 
-    if ($('.js-scroll').exists()) {
-        Scrollbar.init(document.querySelector('.js-scroll'), {
-            damping: 0.05,
-            alwaysShowTracks: true
+            if ($(element).find('.js-scroll').exists()) {
+                Scrollbar.init($(element).find('.js-scroll')[0], {
+                    damping: 0.05,
+                    alwaysShowTracks: true
+                });
+            }
         });
     }
 
