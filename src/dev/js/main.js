@@ -159,66 +159,75 @@ if ($('.news-archive__slider').exists()) {
     });
 }
 
-if ($('.theme-button').exists()) {
-    const mainElement = document.querySelector("body");
-    const toggleSwitch = document.querySelectorAll(".theme-button");
+(function () {
+    if ($('.theme-button').exists()) {
+        const toggleSwitch = document.querySelectorAll(".theme-button");
+        const mainElement = document.querySelector("body");
 
-    function getCookie(cname) {
-        var name = cname + "=";
-        var decodedCookie = decodeURIComponent(document.cookie);
-        var ca = decodedCookie.split(';');
-        for (var i = 0; i < ca.length; i++) {
-            var c = ca[i];
-            while (c.charAt(0) == ' ') {
-                c = c.substring(1);
-            }
-            if (c.indexOf(name) == 0) {
-                return c.substring(name.length, c.length);
+        function switchTheme(e) {
+            if (!e.target.checked) {
+                darkTheme();
+                e.target.checked = false;
+            } else {
+                lightTheme();
+                e.target.checked = true;
             }
         }
-        return "";
-    }
-    function alertCookie() {
-        alert(document.cookie);
-    }
-    function restoreTheme() {
-        var theme = getCookie("theme");
-        if (theme == "dark") {
-            //alert("dark");
-            darkTheme();
-        } else {
-            //alert("light");
-            lightTheme();
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
         }
-    }
-    function darkTheme() {
-        document.cookie = "theme=dark";
-        mainElement.setAttribute("data-theme", "dark");
-        toggleSwitch.forEach(item => {
-            item.checked = false;
-        });
-    }
-    function lightTheme() {
-        document.cookie = "theme=light";
-        mainElement.setAttribute("data-theme", "light");
-        toggleSwitch.forEach(item => {
-            item.checked = true;
-        });
-    }
 
-    function switchTheme(e) {
-        if (!e.target.checked) {
-            darkTheme();
-        } else {
-            lightTheme();
+        function restoreTheme() {
+            var theme = getCookie("theme");
+
+            if (theme == "dark") {
+                darkTheme();
+            }
+            else {
+                lightTheme();
+            }
+
+            toggleSwitch.forEach(item => {
+                if (theme == "dark") {
+                    item.checked = false;
+                } else {
+                    item.checked = true;
+                }
+            });
         }
+
+
+        restoreTheme();
+
+        function darkTheme() {
+            document.cookie = "theme=dark; path=/;";
+            mainElement.setAttribute("data-theme", "dark");
+        }
+
+        function lightTheme() {
+            document.cookie = "theme=light; path=/;";
+            mainElement.setAttribute("data-theme", "light");
+        }
+
+        toggleSwitch.forEach(item => {
+            item.addEventListener("click", switchTheme, false);
+        });
+
     }
-
-    toggleSwitch.forEach(item => {
-        item.addEventListener("click", switchTheme, false);
-    });
-
-}
+})();
 
 if ($('#btnUp').exists()) {
     var btn = $('#btnUp');
@@ -521,15 +530,16 @@ $(() => {
     adaptiveArticle('.article__box', '.article__cover');
 
     if ($('.header__bottom .header__nav').exists) {
+
         var Scrollbar = window.Scrollbar;
         $(window).on('resize load', function () {
             if ($(this).width() <= 1024) {
                 Scrollbar.init(document.querySelector(".header__bottom .header__nav"));
-            }
-            else {
+            } else {
                 Scrollbar.destroy(document.querySelector(".header__bottom .header__nav"));
             }
         });
+
     }
 
     if ($('.filter__item').exists()) {
@@ -693,8 +703,7 @@ $(() => {
     $(window).on('resize load', function () {
         if ($(this).width() <= 640) {
             truncateText('.news-actual__text', 1000);
-        }
-        else {
+        } else {
             truncateText('.news-actual__text', 55);
         }
     });
@@ -1413,10 +1422,17 @@ $(() => {
     }
 
     function declOfNum(n, text_forms) {
-        n = Math.abs(n) % 100; var n1 = n % 10;
-        if (n > 10 && n < 20) { return text_forms[2]; }
-        if (n1 > 1 && n1 < 5) { return text_forms[1]; }
-        if (n1 == 1) { return text_forms[0]; }
+        n = Math.abs(n) % 100;
+        var n1 = n % 10;
+        if (n > 10 && n < 20) {
+            return text_forms[2];
+        }
+        if (n1 > 1 && n1 < 5) {
+            return text_forms[1];
+        }
+        if (n1 == 1) {
+            return text_forms[0];
+        }
         return text_forms[2];
     }
 
@@ -1434,8 +1450,7 @@ $(() => {
                     ctx.drawImage(img, 0, -100);
                 }
             });
-        }
-        catch (err) {
+        } catch (err) {
             console.log(err)
         }
     }
@@ -1445,7 +1460,6 @@ $(() => {
         dataJson = JSON.parse(dataJson);
         return dataJson.slides;
     }
-
 
     if ($('.entry').exists()) {
         let slides = '',
@@ -1521,8 +1535,7 @@ $(() => {
                         if ($(element).find('.js-out-date').exists()) {
                             projectFunc.objAd($(element).find('.js-out-date'), $(element).find('.js-in-date'));
                         }
-                    }
-                    else {
+                    } else {
                         if ($(element).find('.js-out-date').exists()) {
                             projectFunc.objAd($(element).find('.js-out-date'), $(element).find('.popup__header'));
                         }
@@ -1580,8 +1593,7 @@ $(() => {
             }
 
 
-        }
-        else {
+        } else {
             if ($('.js-banner-slider').exists()) {
                 //projectFunc.objAd($('.js-banner-slider'), $('.news-city'));
 
@@ -1622,8 +1634,7 @@ $(() => {
     const lockedDOM = (status) => {
         if (status) {
             $('html').css('overflow', 'hidden');
-        }
-        else {
+        } else {
             $('html').css('overflow', 'auto');
         }
     }
@@ -1631,8 +1642,7 @@ $(() => {
     const stateObject = (status, popup) => {
         if (status == 'start') {
             formShow(popup, true);
-        }
-        else {
+        } else {
             formShow(popup, false);
         }
     }
@@ -1643,7 +1653,9 @@ $(() => {
             const showOvTl = new TimelineMax({
                 reversed: true,
                 paused: true,
-                defaults: { duration: 0.6 },
+                defaults: {
+                    duration: 0.6
+                },
                 onStart: lockedDOM,
                 onStartParams: [status, false],
                 onComplete: stateObject,
@@ -1653,7 +1665,9 @@ $(() => {
             const hideOvTl = new TimelineMax({
                 reversed: true,
                 paused: true,
-                defaults: { duration: 0.3 },
+                defaults: {
+                    duration: 0.3
+                },
                 onStart: stateObject,
                 onStartParams: ['end', popup],
                 onComplete: lockedDOM,
@@ -1662,28 +1676,25 @@ $(() => {
 
             showOvTl
                 .to(
-                    overlayEl,
-                    {
-                        autoAlpha: 1,
-                        ease: "power2.out"
-                    }
+                    overlayEl, {
+                    autoAlpha: 1,
+                    ease: "power2.out"
+                }
                 )
 
             hideOvTl
                 .to(
-                    overlayEl,
-                    {
-                        autoAlpha: 0,
-                        ease: "power2.out"
-                    },
+                    overlayEl, {
+                    autoAlpha: 0,
+                    ease: "power2.out"
+                },
                     '+=0.6'
                 )
 
             if (status) {
                 showOvTl.reverse();
                 showOvTl.play();
-            }
-            else {
+            } else {
                 hideOvTl.reverse();
                 hideOvTl.play();
             }
@@ -1695,44 +1706,44 @@ $(() => {
             const formShowTl = new TimelineMax({
                 reversed: true,
                 paused: true,
-                defaults: { duration: 0.4 }
+                defaults: {
+                    duration: 0.4
+                }
             });
 
             const formHideTl = new TimelineMax({
                 reversed: true,
                 paused: true,
-                defaults: { duration: 0.4 }
+                defaults: {
+                    duration: 0.4
+                }
             });
 
             formHideTl
                 .to(
-                    element,
-                    {
-                        yPercent: -110,
-                        autoAlpha: 0,
-                    }
+                    element, {
+                    yPercent: -110,
+                    autoAlpha: 0,
+                }
                 )
             formShowTl
                 .set(
-                    element,
-                    {
-                        yPercent: -100
-                    }
+                    element, {
+                    yPercent: -100
+                }
                 )
                 .to(
-                    element,
-                    {
-                        yPercent: 0,
-                        autoAlpha: 1,
-                        ease: "power2.out"
-                    }
+                    element, {
+                    yPercent: 0,
+                    autoAlpha: 1,
+                    ease: "power2.out"
+                }
                 )
 
             if (status) {
                 formHideTl.reverse();
                 formShowTl.play();
-            }
-            else {
+            } else {
                 formShowTl.reverse();
                 formHideTl.play();
             }

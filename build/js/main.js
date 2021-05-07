@@ -156,80 +156,74 @@ if ($('.news-archive__slider').exists()) {
   });
 }
 
-if ($('.theme-button').exists()) {
-  var getCookie = function getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-
-    for (var i = 0; i < ca.length; i++) {
-      var c = ca[i];
-
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-      }
-
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
-    }
-
-    return "";
-  };
-
-  var alertCookie = function alertCookie() {
-    alert(document.cookie);
-  };
-
-  var restoreTheme = function restoreTheme() {
-    var theme = getCookie("theme");
-
-    if (theme == "dark") {
-      //alert("dark");
-      checkSwitch();
-      darkTheme();
-    } else {
-      //alert("light");
-      checkSwitch();
-      lightTheme();
-    }
-  };
-
-  var darkTheme = function darkTheme() {
-    document.cookie = "theme=dark";
-    mainElement.setAttribute("data-theme", "dark");
-  };
-
-  var lightTheme = function lightTheme() {
-    document.cookie = "theme=light";
-    mainElement.setAttribute("data-theme", "light");
-  };
-
-  var switchTheme = function switchTheme(e) {
-    if (!e.target.checked) {
-      darkTheme();
-    } else {
-      lightTheme();
-    }
-  };
-
-  var checkSwitch = function checkSwitch() {
-    var theme = getCookie("theme");
-    toggleSwitch.forEach(function (item) {
-      if (theme == "dark") {
-        item.checked = false;
+(function () {
+  if ($('.theme-button').exists()) {
+    var switchTheme = function switchTheme(e) {
+      if (!e.target.checked) {
+        darkTheme();
+        e.target.checked = false;
       } else {
-        item.checked = true;
+        lightTheme();
+        e.target.checked = true;
       }
-    });
-  };
+    };
 
-  var mainElement = document.querySelector("body");
-  var toggleSwitch = document.querySelectorAll(".theme-button");
-  toggleSwitch.forEach(function (item) {
-    item.addEventListener("click", switchTheme, false);
-  });
-}
+    var getCookie = function getCookie(cname) {
+      var name = cname + "=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(';');
+
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+
+      return "";
+    };
+
+    var restoreTheme = function restoreTheme() {
+      var theme = getCookie("theme");
+
+      if (theme == "dark") {
+        darkTheme();
+      } else {
+        lightTheme();
+      }
+
+      toggleSwitch.forEach(function (item) {
+        if (theme == "dark") {
+          item.checked = false;
+        } else {
+          item.checked = true;
+        }
+      });
+    };
+
+    var darkTheme = function darkTheme() {
+      document.cookie = "theme=dark; path=/;";
+      mainElement.setAttribute("data-theme", "dark");
+    };
+
+    var lightTheme = function lightTheme() {
+      document.cookie = "theme=light; path=/;";
+      mainElement.setAttribute("data-theme", "light");
+    };
+
+    var toggleSwitch = document.querySelectorAll(".theme-button");
+    var mainElement = document.querySelector("body");
+    restoreTheme();
+    toggleSwitch.forEach(function (item) {
+      item.addEventListener("click", switchTheme, false);
+    });
+  }
+})();
 
 if ($('#btnUp').exists()) {
   var btn = $('#btnUp');
