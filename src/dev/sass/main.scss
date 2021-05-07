@@ -1780,6 +1780,18 @@ button {
   }
 
   .search {
+
+    &__text {
+      b {
+        color: #6AA1FB;
+
+        span {
+          background-color: #6AA1FB;
+          ;
+        }
+      }
+    }
+
     &__cover {
       &:hover {
         & .search__header {

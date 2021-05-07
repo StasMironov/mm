@@ -203,6 +203,10 @@
             font-size: 14px;
             line-height: 21px;
         }
+
+        b {
+            color: #3B5999;
+        }
     }
 
     &__cover {
@@ -213,5 +217,12 @@
         }
     }
 
+
+    .search-select {
+        color: #f6f6f6;
+        font-weight: bold;
+        background-color: #34558b;
+        padding: 2px 5px;
+    }
 
 }
