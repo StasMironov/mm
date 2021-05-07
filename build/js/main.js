@@ -186,9 +186,11 @@ if ($('.theme-button').exists()) {
 
     if (theme == "dark") {
       //alert("dark");
+      checkSwitch();
       darkTheme();
     } else {
       //alert("light");
+      checkSwitch();
       lightTheme();
     }
   };
@@ -196,17 +198,11 @@ if ($('.theme-button').exists()) {
   var darkTheme = function darkTheme() {
     document.cookie = "theme=dark";
     mainElement.setAttribute("data-theme", "dark");
-    toggleSwitch.forEach(function (item) {
-      item.checked = false;
-    });
   };
 
   var lightTheme = function lightTheme() {
     document.cookie = "theme=light";
     mainElement.setAttribute("data-theme", "light");
-    toggleSwitch.forEach(function (item) {
-      item.checked = true;
-    });
   };
 
   var switchTheme = function switchTheme(e) {
@@ -217,39 +213,22 @@ if ($('.theme-button').exists()) {
     }
   };
 
+  var checkSwitch = function checkSwitch() {
+    var theme = getCookie("theme");
+    toggleSwitch.forEach(function (item) {
+      if (theme == "dark") {
+        item.checked = false;
+      } else {
+        item.checked = true;
+      }
+    });
+  };
+
   var mainElement = document.querySelector("body");
   var toggleSwitch = document.querySelectorAll(".theme-button");
   toggleSwitch.forEach(function (item) {
     item.addEventListener("click", switchTheme, false);
-  }); // const currentTheme = localStorage.getItem("theme");
-  // const mainElement = document.querySelector("body");
-  // const toggleSwitch = document.querySelectorAll(".theme-button");
-  // if (currentTheme) {
-  //     mainElement.setAttribute("data-theme", currentTheme);
-  //     if (currentTheme === "dark") {
-  //         toggleSwitch.forEach(item => {
-  //             item.checked = false;
-  //         });
-  //     }
-  // }
-  // function switchTheme(e) {
-  //     if (!e.target.checked) {
-  //         mainElement.setAttribute("data-theme", "dark");
-  //         localStorage.setItem("theme", "dark");
-  //         toggleSwitch.forEach(item => {
-  //             item.checked = false;
-  //         });
-  //     } else {
-  //         mainElement.setAttribute("data-theme", "light");
-  //         localStorage.setItem("theme", "light");
-  //         toggleSwitch.forEach(item => {
-  //             item.checked = true;
-  //         });
-  //     }
-  // }
-  // toggleSwitch.forEach(item => {
-  //     item.addEventListener("click", switchTheme, false);
-  // });
+  });
 }
 
 if ($('#btnUp').exists()) {

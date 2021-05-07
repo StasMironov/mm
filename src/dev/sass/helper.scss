@@ -40,7 +40,7 @@
         &__top {
 
             .container {
-                padding: 7px 20px!important;
+                padding: 7px 20px !important;
 
                 @media(max-width: 1024px) {
                     padding: 10px 40px 8px !important;
@@ -54,14 +54,15 @@
 
         &__bottom {
             & .container {
-                padding: 0 20px!important;
+                padding: 0 20px !important;
 
                 @media(max-width: 1024px) {
-                    padding: 10px 40px!important;
+                    padding: 0px 40px !important;
+                    height: 42px;
                 }
 
                 @media(max-width: 768px) {
-                    padding: 10px 15px!important;
+                    padding: 0px 15px !important;
                 }
             }
         }
@@ -127,7 +128,7 @@
             }
         }
 
-        &__article{
+        &__article {
             font-size: 14px;
             line-height: 19px;
         }
