@@ -160,33 +160,51 @@ if ($('.news-archive__slider').exists()) {
 }
 
 if ($('.theme-button').exists()) {
-
-    const currentTheme = document.cookie.match(/theme=(.+?)(;|$)/)[1];
     const mainElement = document.querySelector("body");
     const toggleSwitch = document.querySelectorAll(".theme-button");
+    var currentTheme = '';
+    var selected = document.cookie.match(/select=(.+?);/);
 
-    if (currentTheme) {
+
+
+
+    if (document.cookie.match(/theme=(.+?)(;|$)/)) {
+        currentTheme = document.cookie.match(/theme=(.+?)(;|$)/)[1];
         mainElement.setAttribute("data-theme", currentTheme);
 
-        if (currentTheme === "dark") {
+        //if (currentTheme === "dark") {
+        if (selected) {
             toggleSwitch.forEach(item => {
-                item.checked = false;
+                item.checked = selected;
             });
         }
+
+        //}
     }
+
+
+    // console.log(document.cookie.match(/theme=(.+?)(;|$)/));
+
+
 
     function switchTheme(e) {
         if (!e.target.checked) {
             mainElement.setAttribute("data-theme", "dark");
             document.cookie = "theme=dark";
             toggleSwitch.forEach(item => {
-                item.checked = false;
+                // item.checked = false;
+                document.cookie = "select=" + item.checked;
+                console.log(document.cookie);
             });
+
+            console.log(e.target.checked);
         } else {
+            console.log(e.target.checked);
             mainElement.setAttribute("data-theme", "light");
             document.cookie = "theme=light";
             toggleSwitch.forEach(item => {
-                item.checked = true;
+                // item.checked = true;
+                document.cookie = "select=" + item.checked;
             });
         }
     }
