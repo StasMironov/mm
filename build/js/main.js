@@ -510,23 +510,12 @@ $(function () {
   adaptiveArticle('.article__box', '.article__cover');
 
   if ($('.header__bottom .header__nav').exists) {
-    var csObj = new Object();
-    csObj.axis = "x";
-    csObj.theme = "my-theme";
-    csObj.advanced = {// autoExpandHorizontalScroll: true
-    };
-    csObj.scrollButtons = {
-      scrollType: "pixels",
-      scrollAmount: 300
-    };
-    csObj.mouseWheel = {
-      invert: true
-    };
+    var Scrollbar = window.Scrollbar;
     $(window).on('resize load', function () {
       if ($(this).width() <= 1024) {
-        $(".header__bottom .header__nav").mCustomScrollbar(csObj);
+        Scrollbar.init(document.querySelector(".header__bottom .header__nav"));
       } else {
-        $(".header__bottom .header__nav").mCustomScrollbar("destroy");
+        Scrollbar.destroy(document.querySelector(".header__bottom .header__nav"));
       }
     });
   }
