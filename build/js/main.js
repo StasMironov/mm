@@ -154,111 +154,69 @@ if ($('.news-archive__slider').exists()) {
     authorSlider.destroy();
     authorSlider = new Swiper('.news-archive__slider', settings);
   });
-<<<<<<< HEAD
-} // if ($('.theme-button').exists()) {
-//     const currentTheme = document.cookie.match(/theme=(.+?)(;|$)/)[1];
-//     const mainElement = document.querySelector("body");
-//     const toggleSwitch = document.querySelectorAll(".theme-button");
-//     if (currentTheme) {
-//         mainElement.setAttribute("data-theme", currentTheme);
-//         if (currentTheme === "dark") {
-//             toggleSwitch.forEach(item => {
-//                 item.checked = false;
-//             });
-//         }
-//     }
-//     function switchTheme(e) {
-//         if (!e.target.checked) {
-//             mainElement.setAttribute("data-theme", "dark");
-//             document.cookie = "theme=dark";
-//             toggleSwitch.forEach(item => {
-//                 item.checked = false;
-//             });
-//         } else {
-//             mainElement.setAttribute("data-theme", "light");
-//             document.cookie = "theme=light";
-//             toggleSwitch.forEach(item => {
-//                 item.checked = true;
-//             });
-//         }
-//     }
-//     toggleSwitch.forEach(item => {
-//         item.addEventListener("click", switchTheme, false);
-//     });
-//     // const currentTheme = localStorage.getItem("theme");
-//     // const mainElement = document.querySelector("body");
-//     // const toggleSwitch = document.querySelectorAll(".theme-button");
-//     // if (currentTheme) {
-//     //     mainElement.setAttribute("data-theme", currentTheme);
-//     //     if (currentTheme === "dark") {
-//     //         toggleSwitch.forEach(item => {
-//     //             item.checked = false;
-//     //         });
-//     //     }
-//     // }
-//     // function switchTheme(e) {
-//     //     if (!e.target.checked) {
-//     //         mainElement.setAttribute("data-theme", "dark");
-//     //         localStorage.setItem("theme", "dark");
-//     //         toggleSwitch.forEach(item => {
-//     //             item.checked = false;
-//     //         });
-//     //     } else {
-//     //         mainElement.setAttribute("data-theme", "light");
-//     //         localStorage.setItem("theme", "light");
-//     //         toggleSwitch.forEach(item => {
-//     //             item.checked = true;
-//     //         });
-//     //     }
-//     // }
-//     // toggleSwitch.forEach(item => {
-//     //     item.addEventListener("click", switchTheme, false);
-//     // });
-// }
-=======
 }
 
-if ($('.theme-button').exists()) {
-  // console.log(document.cookie.match(/theme=(.+?)(;|$)/));
-  var switchTheme = function switchTheme(e) {
-    if (!e.target.checked) {
+(function () {
+  if ($('.theme-button').exists()) {
+    var switchTheme = function switchTheme(e) {
+      if (!e.target.checked) {
+        darkTheme();
+        e.target.checked = false;
+      } else {
+        lightTheme();
+        e.target.checked = true;
+      }
+    };
+
+    var getCookie = function getCookie(cname) {
+      var name = cname + "=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(';');
+
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+
+      return "";
+    };
+
+    var restoreTheme = function restoreTheme() {
+      var theme = getCookie("theme");
+      toggleSwitch.forEach(function (item) {
+        if (theme == "dark") {
+          item.checked = false;
+        } else {
+          item.checked = true;
+        }
+      });
+    };
+
+    var darkTheme = function darkTheme() {
+      document.cookie = "theme=dark; path=/;";
       mainElement.setAttribute("data-theme", "dark");
-      document.cookie = "theme=dark";
-      toggleSwitch.forEach(function (item) {
-        // item.checked = false;
-        document.cookie = "select=" + item.checked;
-        console.log(document.cookie);
-      });
-      console.log(e.target.checked);
-    } else {
-      console.log(e.target.checked);
+    };
+
+    var lightTheme = function lightTheme() {
+      document.cookie = "theme=light; path=/;";
       mainElement.setAttribute("data-theme", "light");
-      document.cookie = "theme=light";
-      toggleSwitch.forEach(function (item) {
-        // item.checked = true;
-        document.cookie = "select=" + item.checked;
-      });
-    }
-  };
+    };
 
-  var mainElement = document.querySelector("body");
-  var toggleSwitch = document.querySelectorAll(".theme-button");
-  var currentTheme = '';
-  var selected = document.cookie.match(/select=(.+?);/);
-
-  if (document.cookie.match(/theme=(.+?)(;|$)/)) {
-    currentTheme = document.cookie.match(/theme=(.+?)(;|$)/)[1];
-    mainElement.setAttribute("data-theme", currentTheme); //if (currentTheme === "dark") {
-
-    if (selected) {
-      toggleSwitch.forEach(function (item) {
-        item.checked = selected;
-      });
-    } //}
-
+    var toggleSwitch = document.querySelectorAll(".theme-button");
+    var mainElement = document.querySelector("body");
+    restoreTheme();
+    toggleSwitch.forEach(function (item) {
+      item.addEventListener("click", switchTheme, false);
+    });
   }
->>>>>>> 1c4e0039be934273250db04399a9c33e93e00b8e
-
+})();
 
 if ($('#btnUp').exists()) {
   var btn = $('#btnUp');
@@ -550,12 +508,23 @@ $(function () {
   adaptiveArticle('.article__box', '.article__cover');
 
   if ($('.header__bottom .header__nav').exists) {
-    var Scrollbar = window.Scrollbar;
+    var csObj = new Object();
+    csObj.axis = "x";
+    csObj.theme = "my-theme";
+    csObj.advanced = {// autoExpandHorizontalScroll: true
+    };
+    csObj.scrollButtons = {
+      scrollType: "pixels",
+      scrollAmount: 300
+    };
+    csObj.mouseWheel = {
+      invert: true
+    };
     $(window).on('resize load', function () {
       if ($(this).width() <= 1024) {
-        Scrollbar.init(document.querySelector(".header__bottom .header__nav"));
+        $(".header__bottom .header__nav").mCustomScrollbar(csObj);
       } else {
-        Scrollbar.destroy(document.querySelector(".header__bottom .header__nav"));
+        $(".header__bottom .header__nav").mCustomScrollbar("destroy");
       }
     });
   }

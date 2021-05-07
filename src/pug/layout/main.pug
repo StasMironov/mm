@@ -32,7 +32,7 @@ html(lang="ru-RU")
 		//- 	document.createElement('aside');
 		//- 	document.createElement('footer');
 		<![endif]-->
-	body(data-theme="")
+	body(data-theme=""  onLoad="restoreTheme()")
 		.b-page
 			include ../modules/header
 			block content
