@@ -515,12 +515,12 @@ $(function () {
   adaptiveArticle('.article__box', '.article__cover');
 
   if ($('.header__bottom .header__nav').exists) {
-    var Scrollbar = window.Scrollbar;
+    var _Scrollbar = window.Scrollbar;
     $(window).on('resize load', function () {
       if ($(this).width() <= 1024) {
-        Scrollbar.init(document.querySelector(".header__bottom .header__nav"));
+        _Scrollbar.init(document.querySelector(".header__bottom .header__nav"));
       } else {
-        Scrollbar.destroy(document.querySelector(".header__bottom .header__nav"));
+        _Scrollbar.destroy(document.querySelector(".header__bottom .header__nav"));
       }
     });
   }

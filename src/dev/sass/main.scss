@@ -1935,11 +1935,16 @@ button {
 
   .release-month {
     &__item {
+      color: #34558b;
 
       &--active,
       &:hover {
         color: #6AA1FB;
       }
+    }
+
+    &__txt {
+      color: #34558b;
     }
   }
 

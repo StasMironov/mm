@@ -530,8 +530,7 @@ $(() => {
     adaptiveArticle('.article__box', '.article__cover');
 
     if ($('.header__bottom .header__nav').exists) {
-
-        var Scrollbar = window.Scrollbar;
+        const Scrollbar = window.Scrollbar;
         $(window).on('resize load', function () {
             if ($(this).width() <= 1024) {
                 Scrollbar.init(document.querySelector(".header__bottom .header__nav"));
@@ -539,7 +538,6 @@ $(() => {
                 Scrollbar.destroy(document.querySelector(".header__bottom .header__nav"));
             }
         });
-
     }
 
     if ($('.filter__item').exists()) {
