@@ -143,6 +143,7 @@
             max-width: 230px;
             width: 100%;
             margin-right: 37px;
+            color: $black;
 
             @media(max-width: 1300px) {
                 max-width: 25%;
@@ -172,6 +173,7 @@
 
         div {
             margin-bottom: 7px;
+            color: $black;
 
             @media(max-width: 640px) {
                 margin-top: 16px;

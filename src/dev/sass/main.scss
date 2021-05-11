@@ -113,6 +113,7 @@ input::-ms-clear {
   line-height: 42px;
   transition: .2s ease-out;
   letter-spacing: -.5px;
+  color: $black;
 
   @media (max-width:1024px) {
     font-size: 30px;
@@ -134,6 +135,7 @@ input::-ms-clear {
   line-height: 33px;
   transition: .2s ease-out;
   padding-right: 30px;
+  color: $black;
 
   @media (max-width:1024px) {
     font-size: 25px;
@@ -185,6 +187,7 @@ input::-ms-clear {
   font-size: 22px;
   line-height: 26px;
   transition: .2s ease-out;
+  color: $black;
 
   @media (max-width:1024px) {
     font-size: 22px;
@@ -201,6 +204,7 @@ input::-ms-clear {
   font-weight: bold;
   font-size: 16px;
   line-height: 21px;
+  color: $black;
 }
 
 .b-svg {
@@ -1319,6 +1323,19 @@ button {
     }
   }
 
+  .edition-team {
+
+    &__col {
+      &--caption {
+        color: #d7d7d7;
+      }
+
+      div {
+        color: #d7d7d7;
+      }
+    }
+  }
+
   .edition-network {
     background-color: #F6F6F6;
 
@@ -1392,6 +1409,10 @@ button {
 
     &__quote {
       color: $black;
+    }
+
+    &__article {
+      color: #d7d7d7;
     }
 
     span {
