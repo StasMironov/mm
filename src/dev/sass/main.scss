@@ -806,6 +806,8 @@ button {
 
     &__link {
 
+      color: #f6f6f6;
+
       &--active,
       &:hover {
         text-shadow: 0 0 0.65px#6AA1FB, 0 0 0.65px #6AA1FB;
@@ -926,6 +928,10 @@ button {
       &:hover+.news-actual__rgh .news-actual__article {
         color: #6AA1FB;
       }
+    }
+
+    &__article {
+      color: #f6f6f6;
     }
   }
 
@@ -1109,6 +1115,10 @@ button {
         }
       }
     }
+
+    &__title {
+      color: #f6f6f6;
+    }
   }
 
   .news-photo {
@@ -1256,6 +1266,10 @@ button {
     &__job {
       color: #6AA1FB;
     }
+
+    &__name {
+      color: #d7d7d7;
+    }
   }
 
   .title-1,
@@ -1356,10 +1370,6 @@ button {
     .title-2 {
       color: #27202C;
     }
-  }
-
-  .edition-contact {
-    border-bottom: 1px solid #F6F6F6;
   }
 
   .edition-rewards {
@@ -1804,12 +1814,8 @@ button {
 
     &__text {
       b {
-        color: #6AA1FB;
-
-        span {
-          background-color: #6AA1FB;
-          ;
-        }
+        color: white;
+        background-color: #6AA1FB;
       }
     }
 
@@ -1818,6 +1824,66 @@ button {
         & .search__header {
           color: #6AA1FB;
         }
+      }
+    }
+
+    &--pdf {
+      .search {
+        &__header {
+          span {
+            color: #6AA1FB;
+          }
+        }
+
+        &__item {
+          &:hover {
+            .search__header {
+              color: #f6f6f6;
+
+              span {
+                color: #f6f6f6;
+              }
+            }
+          }
+        }
+
+
+      }
+    }
+  }
+
+  .search-nav {
+    &__link {
+      color: #f6f6f6;
+      opacity: .6;
+
+      &:hover {
+        color: #6AA1FB;
+        opacity: 1;
+
+        &:after {
+          background-color: #6AA1FB;
+        }
+      }
+
+      &.active {
+        color: #6AA1FB;
+        opacity: 1;
+
+        &:after {
+          background-color: #6AA1FB;
+        }
+      }
+    }
+  }
+
+  .search-form {
+    button {
+      background-color: #6AA1FB;
+      border: 1px solid #6AA1FB;
+
+      &:hover {
+        border-color: rgb(246, 246, 246);
       }
     }
   }
@@ -2309,3 +2375,5 @@ button {
 @import "./components/tags.scss";
 @import "./components/cloud.scss";
 @import "./components/include.scss";
+@import "./components/search/search-nav.scss";
+@import "./components/search/search-form.scss";

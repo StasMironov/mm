@@ -9,7 +9,16 @@ block content
 		.wrapper
 			.wrapper__left
 				.search 
-					.search__title.title-1 Поиск по сайту
+					.search__title.title-1 Результаты поиска
+					.search-nav
+						a(href="javascript:void(0);").search-nav__link.active Поиск по сайту
+						a(href="javascript:void(0);").search-nav__link Поиск по PDF
+
+					form(class="search-form" action="" method="get")
+						.search-form__field
+							input(name="s" placeholder="Поиск" type="search" id="input-search")
+							+svg('search')
+						button(type="submit" class="mf-search") Найти
 					.search__wrapper
 						.search__bloc
 							.search__items
@@ -17,11 +26,14 @@ block content
 									.search__box
 										a(href="javascript:void(0);").search__cover
 											.search__header.title-4 Сергей Бердников свой голос на губернаторских выборах
-											.search__text Сергей Бердников продемонстрировал, <b>насколько</b> голосовать <b>быстро</b> и просто. Сергей Бердников продемонстрировал, насколько голосовать быстро и просто.
+											.search__text Сергей Бердников продемонстрировал, <b>убило</b> голосовать <b>быстро</b> и просто. Сергей Бердников продемонстрировал, насколько голосовать быстро и просто.
 										.publish
 											.publish__wrapper
 												.publish__date 19 марта 2019
-												a(href="javascript:void(0);").publish__person Фантасмогорьев Фантасмогорь
+												a(href="javascript:void(0);" title="Фантасмогорьев Фантасмогорь").publish__person
+													.publish__pic
+														+svg('user')
+													.publish__txt Миронов Стас
 								.search__item
 									.search__box
 										a(href="javascript:void(0);").search__cover
@@ -30,7 +42,10 @@ block content
 										.publish
 											.publish__wrapper
 												.publish__date 19 марта 2019
-												a(href="javascript:void(0);").publish__person Фантасмогорьев Фантасмогорь
+												a(href="javascript:void(0);" title="Фантасмогорьев Фантасмогорь").publish__person
+													.publish__pic
+														+svg('user')
+													.publish__txt Фантасмогорьев Фантасмогорь
 						.search__bloc
 							.search__items
 								.search__item
@@ -41,7 +56,10 @@ block content
 										.publish
 											.publish__wrapper
 												.publish__date 19 марта 2019
-												a(href="javascript:void(0);").publish__person Фантасмогорьев Фантасмогорь
+												a(href="javascript:void(0);" title="Фантасмогорьев Фантасмогорь").publish__person
+													.publish__pic
+														+svg('user')
+													.publish__txt Фантасмогорьев Фантасмогорь
 								.search__item
 									.search__box
 										a(href="javascript:void(0);").search__cover
@@ -50,7 +68,10 @@ block content
 										.publish
 											.publish__wrapper
 												.publish__date 19 марта 2019
-												a(href="javascript:void(0);").publish__person Фантасмогорьев Фантасмогорь
+												a(href="javascript:void(0);" title="Фантасмогорьев Фантасмогорь").publish__person
+													.publish__pic
+														+svg('user')
+													.publish__txt Фантасмогорьев Фантасмогорь
 						.search__bloc
 							.search__items
 								.search__item
@@ -61,7 +82,10 @@ block content
 										.publish
 											.publish__wrapper
 												.publish__date 19 марта 2019
-												a(href="javascript:void(0);").publish__person Фантасмогорьев Фантасмогорь
+												a(href="javascript:void(0);" title="Фантасмогорьев Фантасмогорь").publish__person
+													.publish__pic
+														+svg('user')
+													.publish__txt Фантасмогорьев Фантасмогорь
 								.search__item
 									.search__box
 										a(href="javascript:void(0);").search__cover
@@ -70,7 +94,10 @@ block content
 										.publish
 											.publish__wrapper
 												.publish__date 19 марта 2019
-												a(href="javascript:void(0);").publish__person Фантасмогорьев Фантасмогорь
+												a(href="javascript:void(0);" title="Фантасмогорьев Фантасмогорь").publish__person
+													.publish__pic
+														+svg('user')
+													.publish__txt Фантасмогорьев Фантасмогорь
 						.search__bloc
 							.search__items
 								.search__item
@@ -81,7 +108,10 @@ block content
 										.publish
 											.publish__wrapper
 												.publish__date 19 марта 2019
-												a(href="javascript:void(0);").publish__person Фантасмогорьев Фантасмогорь
+												a(href="javascript:void(0);" title="Фантасмогорьев Фантасмогорь").publish__person
+													.publish__pic
+														+svg('user')
+													.publish__txt Фантасмогорьев Фантасмогорь
 								.search__item
 									.search__box
 										a(href="javascript:void(0);").search__cover
@@ -90,7 +120,10 @@ block content
 										.publish
 											.publish__wrapper
 												.publish__date 19 марта 2019
-												a(href="javascript:void(0);").publish__person Фантасмогорьев Фантасмогорь
+												a(href="javascript:void(0);" title="Фантасмогорьев Фантасмогорь").publish__person
+													.publish__pic
+														+svg('user')
+													.publish__txt Фантасмогорьев Фантасмогорь
 						.search__bloc
 							.search__items
 								.search__item
@@ -101,7 +134,10 @@ block content
 										.publish
 											.publish__wrapper
 												.publish__date 19 марта 2019
-												a(href="javascript:void(0);").publish__person Фантасмогорьев Фантасмогорь
+												a(href="javascript:void(0);" title="Фантасмогорьев Фантасмогорь").publish__person
+													.publish__pic
+														+svg('user')
+													.publish__txt Фантасмогорьев Фантасмогорь
 								.search__item
 									.search__box
 										a(href="javascript:void(0);").search__cover
@@ -110,7 +146,10 @@ block content
 										.publish
 											.publish__wrapper
 												.publish__date 19 марта 2019
-												a(href="javascript:void(0);").publish__person Фантасмогорьев Фантасмогорь
+												a(href="javascript:void(0);" title="Фантасмогорьев Фантасмогорь").publish__person
+													.publish__pic
+														+svg('user')
+													.publish__txt Фантасмогорьев Фантасмогорь
 						.search__bloc
 							.search__items
 								.search__item
@@ -121,7 +160,10 @@ block content
 										.publish
 											.publish__wrapper
 												.publish__date 19 марта 2019
-												a(href="javascript:void(0);").publish__person Фантасмогорьев Фантасмогорь
+												a(href="javascript:void(0);" title="Фантасмогорьев Фантасмогорь").publish__person
+													.publish__pic
+														+svg('user')
+													.publish__txt Фантасмогорьев Фантасмогорь
 								.search__item
 									.search__box
 										a(href="javascript:void(0);").search__cover
@@ -130,7 +172,10 @@ block content
 										.publish
 											.publish__wrapper
 												.publish__date 19 марта 2019
-												a(href="javascript:void(0);").publish__person Фантасмогорьев Фантасмогорь
+												a(href="javascript:void(0);" title="Фантасмогорьев Фантасмогорь").publish__person
+													.publish__pic
+														+svg('user')
+													.publish__txt Фантасмогорьев Фантасмогорь
 						.search__bloc.search__bloc--full
 							.search__items
 								.search__item
@@ -141,7 +186,10 @@ block content
 										.publish
 											.publish__wrapper
 												.publish__date 19 марта 2019
-												a(href="javascript:void(0);").publish__person Фантасмогорьев Фантасмогорь
+												a(href="javascript:void(0);" title="Фантасмогорьев Фантасмогорь").publish__person
+													.publish__pic
+														+svg('user')
+													.publish__txt Фантасмогорьев Фантасмогорь
 					.edition-rewards__pagination
 						a(href="javascript:void(0);").edition-rewards__link.edition-rewards__link--prev
 							<svg width="31" height="8" viewBox="0 0 31 8" fill="none" xmlns="http://www.w3.org/2000/svg">

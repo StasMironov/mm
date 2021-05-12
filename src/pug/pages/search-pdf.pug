@@ -1,0 +1,121 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Главная страница'
+	- var pageClass = 'index-page';
+
+block content
+	.container
+		.wrapper
+			.wrapper__left
+				.search.search--pdf
+					.search__title.title-1 Результаты поиска
+					.search-nav
+						a(href="javascript:void(0);").search-nav__link Поиск по сайту
+						a(href="javascript:void(0);").search-nav__link.active Поиск по PDF
+
+					form(class="search-form" action="" method="get")
+						.search-form__field
+							input(name="s" placeholder="Поиск" type="search" id="input-search")
+							+svg('search')
+						button(type="submit" class="mf-search") Найти
+					.search__wrapper
+						.search__bloc
+							.search__items
+								.search__item
+									.search__box
+										a(href="javascript:void(0);").search__cover
+											.search__header.title-4 Полоса: 1 | <span>021-04-15_01-o.pdf</span> (646.2 КБ)
+											.search__text Сергей Бердников продемонстрировал, <b>убило</b> голосовать <b>быстро</b> и просто. Сергей Бердников продемонстрировал, насколько голосовать быстро и просто.
+										.publish
+											.publish__wrapper
+												.publish__date 19 марта 2019
+												a(href="javascript:void(0);" title="Фантасмогорьев Фантасмогорь").publish__person
+													.publish__pic
+														+svg('user')
+													.publish__txt Фантасмогорьев Фантасмогорь
+								.search__item
+									.search__box
+										a(href="javascript:void(0);").search__cover
+											.search__header.title-4 Полоса: 1 | <span>2021-04-15_01-o.pdf</span> (646.2 КБ)
+											.search__text Сергей Бердников продемонстрировал, насколько голосовать быстро и просто. Сергей Бердников продемонстрировал, насколько голосовать быстро и просто.
+										.publish
+											.publish__wrapper
+												.publish__date 19 марта 2019
+												a(href="javascript:void(0);" title="Фантасмогорьев Фантасмогорь").publish__person
+													.publish__pic
+														+svg('user')
+													.publish__txt Фантасмогорьев Фантасмогорь
+					
+						.search__bloc.search__bloc--full
+							.search__items
+								.search__item
+									.search__box
+										a(href="javascript:void(0);").search__cover
+											.search__header.title-4 Полоса: 1 | <span>2021-04-15_01-o.pdf</span> (646.2 КБ)
+											.search__text Сергей Бердников продемонстрировал, насколько голосовать быстро и просто.
+										.publish
+											.publish__wrapper
+												.publish__date 19 марта 2019
+												a(href="javascript:void(0);" title="Фантасмогорьев Фантасмогорь").publish__person
+													.publish__pic
+														+svg('user')
+													.publish__txt Фантасмогорьев Фантасмогорь
+					.edition-rewards__pagination
+						a(href="javascript:void(0);").edition-rewards__link.edition-rewards__link--prev
+							<svg width="31" height="8" viewBox="0 0 31 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M0.646445 3.64645C0.451183 3.84171 0.451183 4.15829 0.646445 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.73079 7.34027 4.73079 7.02369 4.53553 6.82843L1.7071 4L4.53553 1.17157C4.73079 0.976311 4.73079 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646445 3.64645ZM31 3.5L0.999998 3.5V4.5L31 4.5V3.5Z" fill="black"/>
+							</svg>
+						a(href="javascript:void(0);").edition-rewards__link.edition-rewards__link--active 1
+						a(href="javascript:void(0);").edition-rewards__link 2
+						a(href="javascript:void(0);").edition-rewards__link 3
+						a(href="javascript:void(0);").edition-rewards__link ...
+						a(href="javascript:void(0);").edition-rewards__link 13
+						a(href="javascript:void(0);").edition-rewards__link 14
+						a(href="javascript:void(0);").edition-rewards__link 15
+						a(href="javascript:void(0);").edition-rewards__link.edition-rewards__link--next
+							<svg width="31" height="8" viewBox="0 0 31 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M0.646445 3.64645C0.451183 3.84171 0.451183 4.15829 0.646445 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.73079 7.34027 4.73079 7.02369 4.53553 6.82843L1.7071 4L4.53553 1.17157C4.73079 0.976311 4.73079 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646445 3.64645ZM31 3.5L0.999998 3.5V4.5L31 4.5V3.5Z" fill="black"/>
+							</svg>
+				.news-today.news-today--include
+					.news-today__item
+						.news-today__title.title-2 Сегодняшняя газета
+						a(href="javascript:void(0);").btn Посмотреть электронное издание						
+			.wrapper__right.wrapper__right--special
+				.news-today
+					.news-today__item
+						.news-today__title.title-2 Сегодняшняя газета
+						a(href="javascript:void(0);").btn Посмотреть электронное издание
+				.news-survey
+					a(href="javascript:void(0);").news-survey__title.title-3 Что вы думаете <br> об обязательном тестировании на коронавирусную инфекцию?
+					form.news-survey__form(method="get")
+						label(for="qu1" class="news-survey__radio") 
+							input(type="radio" id="qu1" name="rdbtn" checked)
+							div.news-survey__text Нужно сделать всем, вдруг кто-то болеет без симптомов
+						label(for="qu2" class="news-survey__radio") 
+							input(type="radio" id="qu2" name="rdbtn")
+							div.news-survey__text Нужно сделать всем, вдруг кто-то болеет без симптомов
+						button(type="submit" class="btn") Голосовать
+				.news-city
+					a(href="javascript:void(0);").news-city__title.title-2 История города
+						+svg("ar-title")
+					.news-city__items
+						a(href="javascript:void(0);").news-city__item
+							.news-city__pic(style="background-image: url(./img/history/city/hc1.jpg);")
+							.news-city__title.title-3 Газета в рабочей спецовке
+						a(href="javascript:void(0);").news-city__item
+							.news-city__pic(style="background-image: url(./img/index/p32.jpg);")
+							.news-city__title.title-3 Больницы для солдат
+						a(href="javascript:void(0);").news-city__item
+							.news-city__pic(style="background-image: url(./img/index/p34.jpg);")
+							.news-city__title.title-3 Маленькая женщина с большим сердцем
+						a(href="javascript:void(0);").news-city__item
+							.news-city__pic(style="background-image: url(./img/index/p33.jpg);")
+							.news-city__title.title-3 Первые секретари
+					
+
+		
+							
+
+
+block script
