@@ -409,6 +409,19 @@ if ($(".content--ad").exists()) {
     }
 }
 
+if ($('.js-video-content').exists()) {
+    try {
+        let videoItem = document.querySelectorAll('.js-video-content');
+
+        videoItem.forEach(elem => {
+            lightGallery(elem);
+        });
+    }
+    catch (err) {
+        console.log(err);
+    }
+}
+
 $(window).on('load', () => {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -437,6 +450,7 @@ $(() => {
     createLightGallery('archiveVideo');
     createLightGallery('lightgallery');
     createLightGallery('video-gallery');
+    createGallery('content-video');
 
 
 

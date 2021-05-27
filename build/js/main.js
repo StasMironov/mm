@@ -404,6 +404,17 @@ if ($(".content--ad").exists()) {
   }
 }
 
+if ($('.js-video-content').exists()) {
+  try {
+    var videoItem = document.querySelectorAll('.js-video-content');
+    videoItem.forEach(function (elem) {
+      lightGallery(elem);
+    });
+  } catch (err) {
+    console.log(err);
+  }
+}
+
 $(window).on('load', function () {
   var vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', "".concat(vh, "px"));
@@ -426,6 +437,7 @@ $(function () {
   createLightGallery('archiveVideo');
   createLightGallery('lightgallery');
   createLightGallery('video-gallery');
+  createGallery('content-video');
   var parentEl = '';
 
   function adaptiveArticle(container, text) {

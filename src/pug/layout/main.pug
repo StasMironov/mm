@@ -16,6 +16,8 @@ html(lang="ru-RU")
 		link(rel="stylesheet" type='text/css' href="css/main.css")
 		<link rel="stylesheet" type="text/css" href="css/light.css" id="theme-link">
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+		<script src="http://releases.flowplayer.org/js/flowplayer-3.2.11.min.js"></script>
 		
 		
 		
@@ -32,7 +34,7 @@ html(lang="ru-RU")
 		//- 	document.createElement('aside');
 		//- 	document.createElement('footer');
 		<![endif]-->
-	body(data-theme=""  onLoad="restoreTheme()")
+	body
 		.b-page
 			include ../modules/header
 			block content
