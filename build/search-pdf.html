@@ -122,8 +122,38 @@
                           <use xlink:href="svg/symbol/sprite.svg#search"></use>
                         </svg>
                 </div>
+                <input type="hidden" name="year_from">
+                <input type="hidden" name="year_to">
                 <button class="mf-search" type="submit">Найти</button>
               </form>
+              <div class="archive-filter archive-filter--search-pdf">
+                <div class="archive-filter__item archive-filter__item--year archive-filter__search-year">
+                  <label class="archive-filter__item-label" id="yearFrom">Год начала поиска</label>
+                  <div class="archive-filter__bloc">
+                    <div class="archive-filter__txt">1935</div>
+                    <div class="archive-filter__ic"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 5L5.24264 9.24264L9.48528 5" stroke="#27202C" stroke-width="2"/>
+</svg>
+                    </div>
+                  </div>
+                  <div class="archive-filter__box">
+                    <div class="archive-filter__list"></div>
+                  </div>
+                </div>
+                <div class="archive-filter__item archive-filter__item--year archive-filter__search-year">
+                  <label class="archive-filter__item-label" id="yearTo">Год окончания поиска</label>
+                  <div class="archive-filter__bloc">
+                    <div class="archive-filter__txt">1935</div>
+                    <div class="archive-filter__ic"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 5L5.24264 9.24264L9.48528 5" stroke="#27202C" stroke-width="2"/>
+</svg>
+                    </div>
+                  </div>
+                  <div class="archive-filter__box">
+                    <div class="archive-filter__list"></div>
+                  </div>
+                </div>
+              </div>
               <div class="search__wrapper">
                 <div class="search__bloc">
                   <div class="search__items">
@@ -193,7 +223,7 @@
             </div>
             <div class="news-today news-today--include">
               <div class="news-today__item">
-                <div class="news-today__title title-2">Сегодняшняя газета</div><a class="btn" href="javascript:void(0);">Посмотреть электронное издание						</a>
+                <div class="news-today__title title-2">Сегодняшняя газета</div><a class="btn" href="javascript:void(0);">Посмотреть электронное издание</a>
               </div>
             </div>
           </div>
@@ -205,11 +235,11 @@
             </div>
             <div class="news-survey"><a class="news-survey__title title-3" href="javascript:void(0);">Что вы думаете <br> об обязательном тестировании на коронавирусную инфекцию?</a>
               <form class="news-survey__form" method="get">
-                <label class="news-survey__radio" for="qu1"> 
+                <label class="news-survey__radio" for="qu1">
                   <input type="radio" id="qu1" name="rdbtn" checked>
                   <div class="news-survey__text">Нужно сделать всем, вдруг кто-то болеет без симптомов</div>
                 </label>
-                <label class="news-survey__radio" for="qu2"> 
+                <label class="news-survey__radio" for="qu2">
                   <input type="radio" id="qu2" name="rdbtn">
                   <div class="news-survey__text">Нужно сделать всем, вдруг кто-то болеет без симптомов</div>
                 </label>
