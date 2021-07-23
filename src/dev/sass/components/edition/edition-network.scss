@@ -326,11 +326,44 @@
     }
 
     &--detaile {
+        justify-content: space-between;
         max-width: 100%;
         margin-top: 66px;
 
         @media(max-width: 600px) {
             margin-top: 35px;
+        }
+
+        .edition-network {
+            &__item {
+                width: calc(33.333% - 29px);
+            }
+
+            &__items {
+                width: 261px;
+                justify-content: center;
+
+                @media(max-width: 1024px) {
+                    width: 225px;
+                    justify-content: flex-end;
+                }
+
+                @media(max-width: 600px) {
+                    justify-content: center;
+                }
+
+                @media(max-width: 500px) {
+                    justify-content: flex-start
+                }
+            }
+
+            &__left {
+                padding-right: 20%;
+
+                @media(max-width: 1300px) {
+                    padding-right: 0;
+                }
+            }
         }
     }
 
