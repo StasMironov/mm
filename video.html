@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="utf-8">
+    <title>Главная страница</title><!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE = edge"><![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" type="text/css" href="css/main.css"><link rel="stylesheet" type="text/css" href="css/light.css" id="theme-link">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="http://releases.flowplayer.org/js/flowplayer-3.2.11.min.js"></script>
+<!--[if lt IE 9]>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
+  </head>
+  <body>
+    <div class="b-page">
+      <header class="header">
+        <div class="header__inner">
+          <div class="header__top">
+            <div class="container">
+              <div class="header__wrapper">
+                <div class="header__block">
+                  <div class="burger burger--laptop"><span></span><span></span><span></span></div>
+                </div><a class="header__logo" href="index.html">
+                        <svg class="b-svg svg-logo ">
+                          <use xlink:href="svg/symbol/sprite.svg#logo"></use>
+                        </svg></a>
+                <div class="header__func">
+                  <div class="burger"><span></span><span></span><span></span></div>
+                  <div class="header__article">Все рубрики</div>
+                </div>
+                <div class="header__wrp">
+                  <nav class="header__nav"><a class="header__link" href="javascript:void(0);">Фоторепортажи</a><a class="header__link" href="javascript:void(0);">История города</a><a class="header__link" href="javascript:void(0);">Подать объявление</a><a class="header__link" href="archive.html">Архив</a><a class="header__link" href="edition.html">Редакция</a></nav>
+                  <form class="header__switch"><label class=" theme-switch checkbox header__theme">
+<input type="checkbox" class="theme-button" checked/>
+<div class="checkbox__text"></div>
+</label>
+                  </form>
+                </div>
+                <div class="header__block"></div>
+                <form class="header__search header__search--laptop" action="" method="get">
+                  <button class="btn btn--close"></button>
+                  <div class="header__in">
+                    <input type="text" name="search" placeholder="Ваш запрос" autocomplete="off">
+                  </div>
+                  <button class="header__btn">
+                          <svg class="b-svg svg-search ">
+                            <use xlink:href="svg/symbol/sprite.svg#search"></use>
+                          </svg>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="header__bottom">
+            <div class="container">
+              <div class="header__wrapper">
+                <nav class="header__nav mcs-horizontal-example"><a class="header__link header__link--active" href="javascript:void(0);">Экономика</a><a class="header__link" href="javascript:void(0);">Политика</a><a class="header__link header__link--mobile" href="javascript:void(0);">Реклама и объявления</a><a class="header__link" href="javascript:void(0);">Спорт</a><a class="header__link" href="javascript:void(0);">Город</a><a class="header__link" href="javascript:void(0);">Область</a><a class="header__link" href="javascript:void(0);">Мир</a><a class="header__link" href="javascript:void(0);">Россия</a><a class="header__link" href="javascript:void(0);">События</a><a class="header__link" href="javascript:void(0);">ММК</a></nav>
+                <form class="header__form" action="" method="get">
+                  <div class="header__field">
+                    <input name="s" placeholder="Поиск" type="search" id="input-search">
+                          <svg class="b-svg svg-search ">
+                            <use xlink:href="svg/symbol/sprite.svg#search"></use>
+                          </svg>
+                  </div>
+                  <button class="mf-search" type="submit"></button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="header__section">
+            <div class="container">
+              <div class="header__items">
+                <div class="header__item"><a class="header__ref header__ref--active" href="javascript:void(0);">Официально</a><a class="header__ref" href="javascript:void(0);">События и комментарии</a><a class="header__ref" href="javascript:void(0);">Политика. Власть. Общество</a><a class="header__ref" href="javascript:void(0);">Экономика и финансы</a><a class="header__ref" href="javascript:void(0);">Городской проспект</a><a class="header__ref" href="javascript:void(0);">Авто миг</a><a class="header__ref" href="javascript:void(0);">О ком говорят</a><a class="header__ref" href="javascript:void(0);">О чем говорят</a><a class="header__ref" href="javascript:void(0);">Экстрим</a><a class="header__ref" href="javascript:void(0);">Здоровье</a><a class="header__ref" href="javascript:void(0);">Авто миг</a><a class="header__ref" href="javascript:void(0);">О ком говорят</a><a class="header__ref" href="javascript:void(0);">О чем говорят</a><a class="header__ref" href="javascript:void(0);">Экстрим</a><a class="header__ref" href="javascript:void(0);">Здоровье</a><a class="header__ref" href="javascript:void(0);">Авто миг</a><a class="header__ref" href="javascript:void(0);">О ком говорят</a></div>
+                <div class="header__item"><a class="header__ref" href="javascript:void(0);">Действующие лица</a><a class="header__ref" href="javascript:void(0);">Спорт</a><a class="header__ref" href="javascript:void(0);">Рабочий квартал</a><a class="header__ref" href="javascript:void(0);">Таланты Магнитки</a><a class="header__ref" href="javascript:void(0);">Кумиры</a><a class="header__ref" href="javascript:void(0);">Действующие лица</a><a class="header__ref" href="javascript:void(0);">Спорт</a><a class="header__ref" href="javascript:void(0);">Рабочий квартал</a><a class="header__ref" href="javascript:void(0);">Действующие лица</a><a class="header__ref" href="javascript:void(0);">Спорт</a><a class="header__ref" href="javascript:void(0);">Рабочий квартал</a><a class="header__ref" href="javascript:void(0);">Таланты Магнитки</a><a class="header__ref" href="javascript:void(0);">Кумиры</a><a class="header__ref" href="javascript:void(0);">Действующие лица</a><a class="header__ref" href="javascript:void(0);">Спорт</a><a class="header__ref" href="javascript:void(0);">Рабочий квартал</a><a class="header__ref" href="javascript:void(0);">Спорт</a><a class="header__ref" href="javascript:void(0);">Рабочий квартал</a></div>
+                <div class="header__item"><a class="header__ref" href="javascript:void(0);">Официально</a><a class="header__ref" href="javascript:void(0);">События и комментарии</a><a class="header__ref" href="javascript:void(0);">Политика. Власть. Общество</a><a class="header__ref" href="javascript:void(0);">Экономика и финансы</a><a class="header__ref" href="javascript:void(0);">Городской проспект</a><a class="header__ref" href="javascript:void(0);">Народная экономика: и жизнь</a><a class="header__ref" href="javascript:void(0);">Кино на ТВЦ/ТВ-ИН</a><a class="header__ref" href="javascript:void(0);">Письмо в редакцию</a><a class="header__ref" href="javascript:void(0);">Педсовет</a><a class="header__ref" href="javascript:void(0);">Социум</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="header__menu">
+            <div class="container">
+              <div class="header__cover">
+                <div class="header__bloc"><a class="header__refer header__refer--active" href="javascript:void(0);">Фоторепортажи</a><a class="header__refer" href="javascript:void(0);">История города</a><a class="header__refer" href="javascript:void(0);">Подать объявление</a><a class="header__refer" href="javascript:void(0);">Реклама</a><a class="header__refer" href="javascript:void(0);">Архив</a><a class="header__refer" href="javascript:void(0);">Редакция</a><a class="header__refer" href="javascript:void(0);">Все рубрики</a></div>
+              </div>
+              <div class="header__partners"><a class="header__partner" href="javascript:void(0);"><img src="./img/p1.svg" alt=""></a></div>
+            </div>
+            <div class="header__unique">
+              <div class="header__container">
+                <div class="header__specific">
+                  <div class="header__box"><a class="header__soc header__soc--vk" href="javascript:void(0);">
+                            <svg class="b-svg svg-vk ">
+                              <use xlink:href="svg/symbol/sprite.svg#vk"></use>
+                            </svg></a><a class="header__soc header__soc--inst" href="javascript:void(0);"><img src="./img/icon/inst.png" alt=""></a><a class="header__soc header__soc--face" href="javascript:void(0);">
+                            <svg class="b-svg svg-face ">
+                              <use xlink:href="svg/symbol/sprite.svg#face"></use>
+                            </svg></a><a class="header__soc header__soc--ok" href="javascript:void(0);">
+                            <svg class="b-svg svg-ok ">
+                              <use xlink:href="svg/symbol/sprite.svg#ok"></use>
+                            </svg></a></div>
+                  <form class="header__switch header__switch--laptop"><label class="checkbox header__theme">
+<input type="checkbox" class="theme-button" checked/>
+<div class="checkbox__text"></div>
+</label>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="container">
+        <div class="video-archive">
+          <div class="video-archive__header"> 
+            <div class="video-archive__title title-1">Видеоархив</div><a class="btn" href="javascript:void(0);">История города</a>
+          </div>
+          <div class="video-archive__grid video-gallery" id="video-gallery"><a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+            <div class="video-gallery__inner"><img src="img/video/thumb1.jpg" />
+              <div class="news-archive__cover">
+                <div class="news-archive__btn"></div>
+                <div class="news-archive__time">22:00</div>
+              </div>
+            </div>
+            <div class="video-gallery__caption">Магнитогорский Прометей</div></a>
+<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+            <div class="video-gallery__inner"><img src="img/video/thumb1.jpg" />
+              <div class="news-archive__cover">
+                <div class="news-archive__btn"></div>
+                <div class="news-archive__time">22:00</div>
+              </div>
+            </div>
+            <div class="video-gallery__caption">Магнитогорский Прометей</div></a>
+<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+            <div class="video-gallery__inner"><img src="img/video/thumb1.jpg" />
+              <div class="news-archive__cover">
+                <div class="news-archive__btn"></div>
+                <div class="news-archive__time">22:00</div>
+              </div>
+            </div>
+            <div class="video-gallery__caption">Магнитогорский Прометей</div></a>
+<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+            <div class="video-gallery__inner"><img src="img/video/thumb1.jpg" />
+              <div class="news-archive__cover">
+                <div class="news-archive__btn"></div>
+                <div class="news-archive__time">22:00</div>
+              </div>
+            </div>
+            <div class="video-gallery__caption">Магнитогорский Прометей</div></a>
+<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+            <div class="video-gallery__inner"><img src="img/video/thumb1.jpg" />
+              <div class="news-archive__cover">
+                <div class="news-archive__btn"></div>
+                <div class="news-archive__time">22:00</div>
+              </div>
+            </div>
+            <div class="video-gallery__caption">Магнитогорский Прометей</div></a>
+<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+            <div class="video-gallery__inner"><img src="img/video/thumb1.jpg" />
+              <div class="news-archive__cover">
+                <div class="news-archive__btn"></div>
+                <div class="news-archive__time">22:00</div>
+              </div>
+            </div>
+            <div class="video-gallery__caption">Магнитогорский Прометей</div></a>
+<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+            <div class="video-gallery__inner"><img src="img/video/thumb1.jpg" />
+              <div class="news-archive__cover">
+                <div class="news-archive__btn"></div>
+                <div class="news-archive__time">22:00</div>
+              </div>
+            </div>
+            <div class="video-gallery__caption">Магнитогорский Прометей</div></a>
+<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+            <div class="video-gallery__inner"><img src="img/video/thumb1.jpg" />
+              <div class="news-archive__cover">
+                <div class="news-archive__btn"></div>
+                <div class="news-archive__time">22:00</div>
+              </div>
+            </div>
+            <div class="video-gallery__caption">Магнитогорский Прометей</div></a>
+<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+            <div class="video-gallery__inner"><img src="img/video/thumb1.jpg" />
+              <div class="news-archive__cover">
+                <div class="news-archive__btn"></div>
+                <div class="news-archive__time">22:00</div>
+              </div>
+            </div>
+            <div class="video-gallery__caption">Магнитогорский Прометей</div></a>
+<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+            <div class="video-gallery__inner"><img src="img/video/thumb1.jpg" />
+              <div class="news-archive__cover">
+                <div class="news-archive__btn"></div>
+                <div class="news-archive__time">22:00</div>
+              </div>
+            </div>
+            <div class="video-gallery__caption">Магнитогорский Прометей</div></a>
+<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+            <div class="video-gallery__inner"><img src="img/video/thumb1.jpg" />
+              <div class="news-archive__cover">
+                <div class="news-archive__btn"></div>
+                <div class="news-archive__time">22:00</div>
+              </div>
+            </div>
+            <div class="video-gallery__caption">Магнитогорский Прометей</div></a>
+<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+            <div class="video-gallery__inner"><img src="img/video/thumb1.jpg" />
+              <div class="news-archive__cover">
+                <div class="news-archive__btn"></div>
+                <div class="news-archive__time">22:00</div>
+              </div>
+            </div>
+            <div class="video-gallery__caption">Магнитогорский Прометей</div></a>
+<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+            <div class="video-gallery__inner"><img src="img/video/thumb1.jpg" />
+              <div class="news-archive__cover">
+                <div class="news-archive__btn"></div>
+                <div class="news-archive__time">22:00</div>
+              </div>
+            </div>
+            <div class="video-gallery__caption">Магнитогорский Прометей</div></a>
+<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+            <div class="video-gallery__inner"><img src="img/video/thumb1.jpg" />
+              <div class="news-archive__cover">
+                <div class="news-archive__btn"></div>
+                <div class="news-archive__time">22:00</div>
+              </div>
+            </div>
+            <div class="video-gallery__caption">Магнитогорский Прометей</div></a>
+<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+            <div class="video-gallery__inner"><img src="img/video/thumb1.jpg" />
+              <div class="news-archive__cover">
+                <div class="news-archive__btn"></div>
+                <div class="news-archive__time">22:00</div>
+              </div>
+            </div>
+            <div class="video-gallery__caption">Магнитогорский Прометей</div></a>
+<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+            <div class="video-gallery__inner"><img src="img/video/thumb1.jpg" />
+              <div class="news-archive__cover">
+                <div class="news-archive__btn"></div>
+                <div class="news-archive__time">22:00</div>
+              </div>
+            </div>
+            <div class="video-gallery__caption">Магнитогорский Прометей</div></a>
+<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+            <div class="video-gallery__inner"><img src="img/video/thumb1.jpg" />
+              <div class="news-archive__cover">
+                <div class="news-archive__btn"></div>
+                <div class="news-archive__time">22:00</div>
+              </div>
+            </div>
+            <div class="video-gallery__caption">Магнитогорский Прометей</div></a>
+<a href="https://youtu.be/k7boml0K3a0" class="video-gallery__item">
+            <div class="video-gallery__inner"><img src="img/video/thumb1.jpg" />
+              <div class="news-archive__cover">
+                <div class="news-archive__btn"></div>
+                <div class="news-archive__time">22:00</div>
+              </div>
+            </div>
+            <div class="video-gallery__caption">Магнитогорский Прометей</div></a>
+          </div>
+        </div>
+        <div class="edition-rewards__pagination edition-rewards__pagination--video"><a class="edition-rewards__link edition-rewards__link--prev" href="javascript:void(0);"><svg width="31" height="8" viewBox="0 0 31 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.646445 3.64645C0.451183 3.84171 0.451183 4.15829 0.646445 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.73079 7.34027 4.73079 7.02369 4.53553 6.82843L1.7071 4L4.53553 1.17157C4.73079 0.976311 4.73079 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646445 3.64645ZM31 3.5L0.999998 3.5V4.5L31 4.5V3.5Z" fill="black"/>
+</svg></a><a class="edition-rewards__link edition-rewards__link--active" href="javascript:void(0);">1</a><a class="edition-rewards__link" href="javascript:void(0);">2</a><a class="edition-rewards__link" href="javascript:void(0);">3</a><a class="edition-rewards__link" href="javascript:void(0);">...</a><a class="edition-rewards__link" href="javascript:void(0);">13</a><a class="edition-rewards__link" href="javascript:void(0);">14</a><a class="edition-rewards__link" href="javascript:void(0);">15</a><a class="edition-rewards__link edition-rewards__link--next" href="javascript:void(0);"><svg width="31" height="8" viewBox="0 0 31 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.646445 3.64645C0.451183 3.84171 0.451183 4.15829 0.646445 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.73079 7.34027 4.73079 7.02369 4.53553 6.82843L1.7071 4L4.53553 1.17157C4.73079 0.976311 4.73079 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646445 3.64645ZM31 3.5L0.999998 3.5V4.5L31 4.5V3.5Z" fill="black"/>
+</svg></a></div>
+      </div>
+      <footer class="footer"><a id="btnUp">
+<svg width="20" height="20" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M19 11L9.99996 1.99996L0.999921 11" stroke="#F6F6F6" stroke-width="2"/>
+</svg>
+</a>
+        <div class="footer__top">
+          <div class="footer__container container">
+            <div class="footer__box"><a class="footer__logo" href="javascript:void(0);">
+                      <svg class="b-svg svg-logo ">
+                        <use xlink:href="svg/symbol/sprite.svg#logo"></use>
+                      </svg></a>
+              <!--меню в три колонки-->
+              <div class="footer__items footer__items--cols3">
+                <div class="footer__bloc"><a class="footer__item footer__item--active" href="javascript:void(0);">Главная</a><a class="footer__item" href="javascript:void(0);">Архив</a><a class="footer__item" href="javascript:void(0);">Рубрики</a></div>
+                <div class="footer__bloc"><a class="footer__item" href="javascript:void(0);">Фоторепортажи</a><a class="footer__item" href="javascript:void(0);">Редакция</a><a class="footer__item" href="javascript:void(0);">Реклама и объявления</a></div>
+                <div class="footer__bloc"><a class="footer__item" href="javascript:void(0);">История города</a><a class="footer__item" href="javascript:void(0);">Бригада</a><a class="footer__item" href="javascript:void(0);">Видеоархив</a></div>
+              </div>
+              <!--меню в две колонки для мобильных-->
+              <div class="footer__items footer__items--cols2">
+                <div class="footer__bloc"><a class="footer__item footer__item--active" href="javascript:void(0);">Главная</a><a class="footer__item" href="javascript:void(0);">Архив</a><a class="footer__item" href="javascript:void(0);">Рубрики</a><a class="footer__item" href="javascript:void(0);">Фоторепортажи</a><a class="footer__item" href="javascript:void(0);">Редакция</a></div>
+                <div class="footer__bloc"><a class="footer__item" href="javascript:void(0);">Реклама и объявления</a><a class="footer__item" href="javascript:void(0);">Бригада</a><a class="footer__item" href="javascript:void(0);">История города</a><a class="footer__item" href="javascript:void(0);">Видеоархив</a></div>
+              </div>
+              <div class="footer__wrapper">
+                <div class="footer__soc">
+                  <div class="header__box"><a class="header__soc header__soc--vk" href="javascript:void(0);">
+                            <svg class="b-svg svg-vk ">
+                              <use xlink:href="svg/symbol/sprite.svg#vk"></use>
+                            </svg></a><a class="header__soc header__soc--inst" href="javascript:void(0);"><img src="./img/icon/inst.png" alt=""></a><a class="header__soc header__soc--face" href="javascript:void(0);">
+                            <svg class="b-svg svg-face ">
+                              <use xlink:href="svg/symbol/sprite.svg#face"></use>
+                            </svg></a><a class="header__soc header__soc--ok" href="javascript:void(0);">
+                            <svg class="b-svg svg-ok ">
+                              <use xlink:href="svg/symbol/sprite.svg#ok"></use>
+                            </svg></a></div>
+                </div>
+                <div class="header__box"><a class="footer__partner" href="javascript:void(0);"><img src="./img/p1.png" alt=""></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="footer__container container">
+            <div class="footer__box footer__box--quote"><a class="footer__person" href="javascript:void(0);"> Пользовательское соглашение</a>
+              <div class="footer__note">© АНО «Редакция газеты «Магнитогорский металл». (2005-2019).</div>
+              <div class="footer__quote">Digital агентство <a href="javascript:void(0);">Uralmedias</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="overlay"></div>
+      </footer>
+    </div>
+    <script src="js/smooth-scrollbar.js"></script>
+    <script src="js/libs-min.js"></script>
+    <script src="js/main-min.js"></script>
+    <script src="js/lg-video.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineMax.min.js"></script>
+  </body>
+</html>
